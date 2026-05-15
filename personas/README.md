@@ -1,25 +1,26 @@
 # Personas
 
-每个 persona 都是一个可独立加载的 `SKILL.md`。
+每个 persona 都是一个可独立加载的 `SKILL.md`，但它们不是角色扮演脚本，而是学科思维工具。
 
-推荐调用顺序：
+## Disciplines
 
-1. `socrates`：先问清楚问题。
-2. `wittgenstein`：清理概念和语言。
-3. `aristotle`：分类、定目标、定判断框架。
-4. 按需要调用其他人格施加判断压力。
-
-快速映射：
-
-| 问题类型 | 优先 Agent |
+| 目录 | 用途 |
 | --- | --- |
-| 我是不是问错了问题 | Socrates |
-| 这个概念是不是混乱 | Wittgenstein |
-| 如何分类和落到实践 | Aristotle |
-| 是否符合原则和边界 | Kant |
-| 是否只是从众或软弱 | Nietzsche |
-| 欲望和痛苦是否被低估 | Schopenhauer |
-| 还能怀疑什么 | Descartes |
-| 矛盾会如何演化 | Hegel |
-| 无意义时如何行动 | Camus |
+| `philosophy/` | 概念、价值、原则、意义和矛盾分析 |
+| `literature/` | 叙事、人物、冲突、声音和修辞分析 |
+| `history/` | 周期、制度、权力、路径依赖和长时段结构 |
+| `mathematics/` | 定义、结构、证明、概率和模型 |
+| `physics/` | 约束、变量、观察者、尺度和系统动态 |
+| `art/` | 构图、形式、感知、审美判断和视觉一致性 |
 
+## Routing Heuristic
+
+1. 先用哲学澄清概念和价值。
+2. 再用数学或物理检查结构、变量和约束。
+3. 如果涉及组织、战略或社会变化，加入历史视角。
+4. 如果涉及表达、品牌、文章或叙事，加入文学和艺术视角。
+5. 对高风险决策，交给 `teams/decision-council/SKILL.md` 汇总。
+
+## Rule
+
+不要要求 persona “像某人一样说话”。要求它输出该学科能提供的判断压力。

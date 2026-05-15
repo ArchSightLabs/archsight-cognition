@@ -1,81 +1,99 @@
 # ArchSight Cognitive Agents
 
-ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Code 的跨学科认知智能体库，用哲学、文学、历史、数学、物理等学科视角辅助思考、写作、决策和研究。
+ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Code 的跨学科认知人格与学科思维库，用哲学、文学、历史、数学、物理、艺术、科学方法、决策思维和写作批评等视角辅助思考、写作、决策和研究。
 
-当前版本先收录哲学人格与哲学团队提示词。它不把哲学家做成“聊天角色扮演”，而是把他们抽象成可调用的认知工具：追问前提、分类判断、概念澄清、辩证分析、意义审视、意志挑战和体系化决策。后续可按同一结构扩展文学、历史、数学、物理等学科 agent。
+它不是 ArchSight AI OS 的工程交付组件，而是更横向的个人认知操作系统：把稳定的学科视角做成可快速装配的 persona、skill、team 和 debate 模板，需要哪个就装哪个。
 
-## Roster
+## Core Principle
 
-| Agent | 中文 | 主要用途 |
+不要做人格 cosplay，要做学科思维工具。
+
+- `Plato` 不是“柏拉图聊天机器人”，而是理想型、形式和现实偏差的分析工具。
+- `Shakespeare` 不是“模仿莎士比亚说话”，而是戏剧冲突、人物动机和叙事张力分析工具。
+- `Newton` 不是“牛顿人格”，而是力、约束、变量和系统建模视角。
+- `Einstein` 不是“名人角色”，而是相对性、观察者、假设变换和尺度转换思维工具。
+
+每个 agent 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
+
+## What It Helps With
+
+| 目标 | 典型用法 |
+| --- | --- |
+| 思考增强 | 用不同学科视角审查同一个问题，避免只靠工程视角下判断。 |
+| 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美。 |
+| 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
+| 快速装配 | 给 Hermes / OpenClaw / Codex / Claude Code 直接提供 persona、team 和模板。 |
+
+## Library Map
+
+| 领域 | 路径 | 主要问题 |
 | --- | --- | --- |
-| Socrates | 苏格拉底 | 追问前提、拆解概念、反问式澄清 |
-| Aristotle | 亚里士多德 | 分类、目的论、实践理性、体系化判断 |
-| Wittgenstein | 维特根斯坦 | 语言边界、概念误用、表达澄清 |
-| Kant | 康德 | 原则、义务、边界条件、可普遍化检验 |
-| Nietzsche | 尼采 | 价值重估、权力意志、精神强度、反从众 |
-| Schopenhauer | 叔本华 | 欲望、痛苦、悲观检验、节制策略 |
-| Descartes | 笛卡尔 | 怀疑、确定性、第一原理、方法论清理 |
-| Hegel | 黑格尔 | 矛盾、历史进程、结构演化、辩证分析 |
-| Camus | 加缪 | 荒诞、意义、个体选择、精神韧性 |
-
-核心三人组：
-
-- `Socrates` 负责把问题问清楚。
-- `Aristotle` 负责把问题分层分类。
-- `Wittgenstein` 负责检查语言和概念是否混乱。
+| 哲学 | `personas/philosophy/` | 价值、概念、原则、意义、矛盾、怀疑 |
+| 文学 | `personas/literature/` | 叙事、人物、冲突、声音、节奏 |
+| 历史 | `personas/history/` | 周期、制度、权力、路径依赖、长时段结构 |
+| 数学 | `personas/mathematics/` | 定义、结构、证明、不确定性、模型 |
+| 物理 | `personas/physics/` | 约束、变量、观察者、尺度、系统动态 |
+| 艺术 | `personas/art/` | 构图、感知、形式、风格、一致性 |
 
 ## Layout
 
 ```text
 archsight-cognitive-agents/
-├── AGENTS.md
 ├── README.md
+├── AGENTS.md
 ├── personas/
-│   ├── socrates/SKILL.md
-│   ├── aristotle/SKILL.md
-│   ├── wittgenstein/SKILL.md
-│   ├── kant/SKILL.md
-│   ├── nietzsche/SKILL.md
-│   ├── schopenhauer/SKILL.md
-│   ├── descartes/SKILL.md
-│   ├── hegel/SKILL.md
-│   └── camus/SKILL.md
+│   ├── README.md
+│   ├── philosophy/
+│   ├── literature/
+│   ├── history/
+│   ├── mathematics/
+│   ├── physics/
+│   └── art/
 ├── teams/
-│   └── philosophy-cavalry/SKILL.md
+│   ├── philosophy-cavalry/
+│   ├── writing-review-panel/
+│   ├── historical-strategy-panel/
+│   ├── scientific-reasoning-panel/
+│   └── decision-council/
 ├── debates/
-│   ├── work-and-meaning.md
-│   ├── ai-and-human-agency.md
-│   └── architecture-and-order.md
-└── adapters/
-    ├── hermes/README.md
-    └── openclaw/README.md
+├── adapters/
+│   ├── hermes/
+│   ├── openclaw/
+│   ├── codex/
+│   └── claude-code/
+└── templates/
 ```
 
 ## Usage
 
-单 Agent 调用：
+单个学科工具：
 
 ```text
-Load personas/socrates/SKILL.md.
-Use Socrates to examine the hidden assumptions in this decision:
+Load personas/physics/newton/SKILL.md.
+Use Newton as a constraint and system-modeling lens for this product decision:
 ...
 ```
 
-团队调用：
+写作评审：
 
 ```text
-Load teams/philosophy-cavalry/SKILL.md.
-Run the Philosophy Cavalry on this architecture decision:
+Load teams/writing-review-panel/SKILL.md.
+Review this essay for argument, narrative force, clarity, and style:
 ...
 ```
 
-辩论调用：
+决策审查：
 
 ```text
-Use debates/architecture-and-order.md as the debate script.
-Topic: Should this system favor strict architecture boundaries or rapid local iteration?
+Load teams/decision-council/SKILL.md.
+Run a cross-disciplinary decision review on this strategy:
+...
 ```
 
-## Operating Principle
+## Operating Contract
 
-这些人格不是为了生成“像某位哲学家说话”的文学模仿，而是为了稳定地产生不同类型的判断压力。每次调用都应输出可用于写作、架构、决策或复盘的结论。
+- 输出优先使用清晰中文，工具名、目录名和 agent name 保持英文稳定。
+- 不要冒充历史人物、艺术家或科学家本人。
+- 不要生成空泛评论；每次输出都要服务一个可执行判断。
+- 不要默认全员上场；按任务选择 3 到 5 个视角。
+- 事实性问题需要区分已知事实、推断和需要外部检索的内容。
