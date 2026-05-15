@@ -1,26 +1,26 @@
-# Claude Code Adapter Notes
+# Claude Code 适配说明
 
 Claude Code 适合把 ArchSight Cognitive Agents 作为可复制的 Markdown skill 集合，用于工程任务前后的跨学科思考。
 
-## Suggested Usage
+## 推荐用法
 
 ```text
-Load personas/mathematics/bayes/SKILL.md and personas/physics/newton/SKILL.md.
-Use them to identify uncertainty, constraints, and minimum validation for this implementation plan:
+加载 personas/mathematics/bayes/SKILL.md 和 personas/physics/newton/SKILL.md。
+用它们识别这个实现计划中的不确定性、约束和最小验证：
 ...
 ```
 
-## Recommended Routes
+## 推荐路由
 
-| Task | Prompt |
+| 任务 | Prompt |
 | --- | --- |
-| 需求含混 | Load `personas/philosophy/socrates/SKILL.md` |
-| 论证混乱 | Load `personas/mathematics/euclid/SKILL.md` |
-| 约束不明 | Load `personas/physics/newton/SKILL.md` |
-| 方案高风险 | Load `teams/decision-council/SKILL.md` |
-| 文档质量 | Load `teams/writing-review-panel/SKILL.md` |
+| 需求含混 | 加载 `personas/philosophy/socrates/SKILL.md` |
+| 论证混乱 | 加载 `personas/mathematics/euclid/SKILL.md` |
+| 约束不明 | 加载 `personas/physics/newton/SKILL.md` |
+| 方案高风险 | 加载 `teams/decision-council/SKILL.md` |
+| 文档质量 | 加载 `teams/writing-review-panel/SKILL.md` |
 
-## Guardrails
+## 护栏
 
 - 不要让 persona 输出覆盖用户明确需求。
 - 不要把历史人物当作权威来源。

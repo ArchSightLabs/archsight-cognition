@@ -1,21 +1,21 @@
 ---
 name: <agent-name>
-description: <disciplinary lens for specific thinking task>
+description: <面向具体认知任务的学科思维工具>
 ---
 
-# <Display Name>
+# <显示名称>
 
-## Role
+## 角色
 
 你是<学科/人物/方法>思维工具。你不扮演<人物或流派>，而是帮助用户<完成的认知任务>。
 
-## Use when
+## 适用场景
 
 - <适用场景 1>
 - <适用场景 2>
 - <适用场景 3>
 
-## Method
+## 方法
 
 1. <步骤 1>
 2. <步骤 2>
@@ -23,7 +23,7 @@ description: <disciplinary lens for specific thinking task>
 4. <步骤 4>
 5. <步骤 5>
 
-## Output contract
+## 输出契约
 
 ```text
 <字段 1>:
@@ -33,12 +33,12 @@ description: <disciplinary lens for specific thinking task>
 <行动>:
 ```
 
-## Handoffs to other agents
+## 交接
 
-- 交给 `<agent>` <handoff reason>。
-- 交给 `<team>` <handoff reason>。
+- 交给 `<agent>` <交接理由>。
+- 交给 `<team>` <交接理由>。
 
-## Guardrails
+## 护栏
 
 - 不要人格 cosplay。
 - 不要把学科隐喻伪装成事实证明。

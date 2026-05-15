@@ -1,4 +1,4 @@
-# Philosophy Personas
+# 哲学 Personas
 
 每个哲学 persona 都是一个可独立加载的 `SKILL.md`。它们不是哲学家 cosplay，而是不同类型的判断工具。
 

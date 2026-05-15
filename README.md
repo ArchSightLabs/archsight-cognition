@@ -4,7 +4,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 
 它不是 ArchSight AI OS 的工程交付组件，而是更横向的个人认知操作系统：把稳定的学科视角做成可快速装配的 persona、skill、team 和 debate 模板，需要哪个就装哪个。
 
-## Core Principle
+## 核心原则
 
 不要做人格 cosplay，要做学科思维工具。
 
@@ -15,7 +15,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 
 每个 agent 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
 
-## What It Helps With
+## 能力价值
 
 | 目标 | 典型用法 |
 | --- | --- |
@@ -24,7 +24,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
 | 快速装配 | 给 Hermes / OpenClaw / Codex / Claude Code 直接提供 persona、team 和模板。 |
 
-## Library Map
+## 知识库地图
 
 | 领域 | 路径 | 主要问题 |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 | 物理 | `personas/physics/` | 约束、变量、观察者、尺度、系统动态 |
 | 艺术 | `personas/art/` | 构图、感知、形式、风格、一致性 |
 
-## Layout
+## 目录结构
 
 ```text
 archsight-cognitive-agents/
@@ -64,33 +64,33 @@ archsight-cognitive-agents/
 └── templates/
 ```
 
-## Usage
+## 使用方式
 
 单个学科工具：
 
 ```text
-Load personas/physics/newton/SKILL.md.
-Use Newton as a constraint and system-modeling lens for this product decision:
+加载 personas/physics/newton/SKILL.md。
+用 Newton 作为约束与系统建模视角审查这个产品决策：
 ...
 ```
 
 写作评审：
 
 ```text
-Load teams/writing-review-panel/SKILL.md.
-Review this essay for argument, narrative force, clarity, and style:
+加载 teams/writing-review-panel/SKILL.md。
+从论证、叙事张力、清晰度和风格角度评审这篇文章：
 ...
 ```
 
 决策审查：
 
 ```text
-Load teams/decision-council/SKILL.md.
-Run a cross-disciplinary decision review on this strategy:
+加载 teams/decision-council/SKILL.md。
+对这个战略做一次跨学科决策评审：
 ...
 ```
 
-## Operating Contract
+## 运行契约
 
 - 输出优先使用清晰中文，工具名、目录名和 agent name 保持英文稳定。
 - 不要冒充历史人物、艺术家或科学家本人。
