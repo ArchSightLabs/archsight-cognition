@@ -225,6 +225,105 @@ hermes logs gateway -f
 
 gateway 跑起来后，飞书里发送 `/socrates ...`、`/decision-council ...`。只要 Hermes 已识别这些 skill，命令就会走 Hermes 原生 skill 加载机制。
 
+### 飞书中文触发词
+
+飞书入口不要强依赖 `/socrates` 这类斜杠命令。命令行和 TUI 里可以继续使用 Hermes 原生命令；飞书、群聊和移动端入口更适合用中文前缀或 `#` 前缀。
+
+本目录提供 `skill-aliases.yaml` 作为中文触发词契约。gateway 或 Archie wrapper 可以读取该文件，把用户消息归一化为 Hermes skill 命令。
+
+推荐支持的输入形态：
+
+```text
+@Archie 决策委员会：评审这个方案是否值得做。
+@Archie #苏格拉底 帮我澄清这个产品问题。
+@Archie 用贝叶斯分析这个判断的证据强度。
+@Archie 写作评审：帮我看这篇文章的论证和表达。
+```
+
+归一化后的内部消息：
+
+```text
+/decision-council 评审这个方案是否值得做。
+/socrates 帮我澄清这个产品问题。
+/bayes 分析这个判断的证据强度。
+/writing-review-panel 帮我看这篇文章的论证和表达。
+```
+
+常用中文触发词：
+
+| 中文触发词 | Hermes 命令 | 适用场景 |
+| --- | --- | --- |
+| 苏格拉底、追问、问题澄清 | `/socrates` | 澄清问题、暴露前提 |
+| 决策委员会、决策评审、方案评审 | `/decision-council` | 跨学科决策判断 |
+| 哲学骑兵、哲学面板、自我复盘 | `/philosophy-cavalry` | 概念、价值、原则和意义审查 |
+| 写作评审、文章评审、论证评审 | `/writing-review-panel` | 文章、文案、叙事和表达评审 |
+| 科学推理、假设检验、证据评审 | `/scientific-reasoning-panel` | 假设、变量、证据和实验设计 |
+| 历史战略、周期评审、路径依赖 | `/historical-strategy-panel` | 战略、制度、周期和历史结构 |
+| 贝叶斯、不确定性、证据更新 | `/bayes` | 信息不足下的概率判断 |
+| 牛顿、系统建模、约束分析 | `/newton` | 变量、约束、惯性和系统建模 |
+| 维特根斯坦、语言澄清、概念澄清 | `/wittgenstein` | 概念误用和表达混乱 |
+
+完整 alias 表见 `adapters/hermes/skill-aliases.yaml`。
+
+如果没有命中中文触发词，不要强行路由到某个 skill；应交给 Archie 默认 agent，由 Archie 根据问题选择合适视角。
+
+### 让 `skill-aliases.yaml` 生效
+
+`skill-aliases.yaml` 不是 Hermes 原生配置文件，单独放在仓库里不会自动生效。它是给 Feishu/Lark gateway 或 Archie wrapper 使用的“归一化配置”。
+
+生效位置应放在 Hermes skills 系统之前：
+
+```text
+飞书消息
+  -> gateway/Archie wrapper 读取 skill-aliases.yaml
+  -> 识别中文触发词
+  -> 改写为 /<skill-name> ...
+  -> 交给 Hermes agent
+  -> Hermes 原生 skills 系统加载 SKILL.md
+```
+
+也就是说，Hermes 本身继续只需要识别 `/socrates`、`/decision-council` 等命令；中文触发词由 gateway 或 wrapper 转换。
+
+推荐配置项形态：
+
+```yaml
+archsight:
+  skill_aliases: /opt/archsight/archsight-cognitive-agents/adapters/hermes/skill-aliases.yaml
+  alias_match:
+    enabled: true
+    strip_bot_mention: true
+    rewrite_to_hermes_command: true
+```
+
+运行时逻辑：
+
+```text
+输入: @Archie 决策委员会：评审这个方案
+去掉 @Archie: 决策委员会：评审这个方案
+命中 aliases: 决策委员会 -> /decision-council
+输出给 Hermes: /decision-council 评审这个方案
+```
+
+最小伪代码：
+
+```text
+aliases = load_yaml(skill_aliases)
+message = strip_bot_mention(message)
+
+for skill in aliases.skills:
+  for alias in skill.aliases:
+    if message starts with alias + "：" or alias + ":":
+      return skill.command + " " + text_after_prefix
+    if message starts with "#" + alias + " ":
+      return skill.command + " " + text_after_prefix
+    if message starts with "用" + alias:
+      return skill.command + " " + text_after_alias
+
+return message
+```
+
+如果当前 Hermes Feishu/Lark gateway 没有“预处理消息”或“wrapper”扩展点，就需要在 gateway 接收飞书事件后、调用 Hermes agent 前加这一层。不要把中文 alias 写进每个 `SKILL.md`，否则命令入口会分散，后续维护困难。
+
 ## Agent 配置契约
 
 如果使用 Hermes 原生 skills 系统，通常不需要额外配置命令路由表；`/<skill-name>` 会由 Hermes skills 机制处理。

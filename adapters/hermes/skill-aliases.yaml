@@ -1,0 +1,127 @@
+version: 1
+default_language: zh-CN
+
+normalization:
+  description: 飞书、群聊和移动端入口可用中文触发词；gateway 或 Archie wrapper 将命中的别名归一化为 Hermes skill 命令。
+  prefix_formats:
+    - "<alias>：<task>"
+    - "<alias>: <task>"
+    - "#<alias> <task>"
+    - "用<alias><task>"
+  fallback: 未命中别名时交给 Archie 默认 agent，不强制加载特定 skill。
+
+skills:
+  - name: socrates
+    command: /socrates
+    path: personas/philosophy/socrates/SKILL.md
+    aliases: [苏格拉底, 追问, 问题澄清, 澄清问题, 前提检查]
+
+  - name: aristotle
+    command: /aristotle
+    path: personas/philosophy/aristotle/SKILL.md
+    aliases: [亚里士多德, 实践理性, 分类判断, 落地分析, 目的分析]
+
+  - name: wittgenstein
+    command: /wittgenstein
+    path: personas/philosophy/wittgenstein/SKILL.md
+    aliases: [维特根斯坦, 语言澄清, 概念澄清, 表达澄清, 语言边界]
+
+  - name: kant
+    command: /kant
+    path: personas/philosophy/kant/SKILL.md
+    aliases: [康德, 原则审查, 义务审查, 普遍化, 边界审查]
+
+  - name: plato
+    command: /plato
+    path: personas/philosophy/plato/SKILL.md
+    aliases: [柏拉图, 理想型, 形式分析, 理想现实, 规范设计]
+
+  - name: camus
+    command: /camus
+    path: personas/philosophy/camus/SKILL.md
+    aliases: [加缪, 荒诞, 反抗, 意义感, 精神韧性]
+
+  - name: descartes
+    command: /descartes
+    path: personas/philosophy/descartes/SKILL.md
+    aliases: [笛卡尔, 方法怀疑, 第一原理, 确定性, 推理卫生]
+
+  - name: hegel
+    command: /hegel
+    path: personas/philosophy/hegel/SKILL.md
+    aliases: [黑格尔, 辩证法, 矛盾分析, 结构演化, 综合]
+
+  - name: nietzsche
+    command: /nietzsche
+    path: personas/philosophy/nietzsche/SKILL.md
+    aliases: [尼采, 价值重估, 反从众, 能动性, 强度挑战]
+
+  - name: schopenhauer
+    command: /schopenhauer
+    path: personas/philosophy/schopenhauer/SKILL.md
+    aliases: [叔本华, 欲望检查, 痛苦检查, 悲观风险, 预期纪律]
+
+  - name: braudel
+    command: /braudel
+    path: personas/history/braudel/SKILL.md
+    aliases: [布罗代尔, 长时段, 慢变量, 周期结构, 制度地理]
+
+  - name: thucydides
+    command: /thucydides
+    path: personas/history/thucydides/SKILL.md
+    aliases: [修昔底德, 权力分析, 冲突升级, 联盟动态, 恐惧利益]
+
+  - name: shakespeare
+    command: /shakespeare
+    path: personas/literature/shakespeare/SKILL.md
+    aliases: [莎士比亚, 叙事张力, 人物动机, 戏剧冲突, 文学批评]
+
+  - name: bayes
+    command: /bayes
+    path: personas/mathematics/bayes/SKILL.md
+    aliases: [贝叶斯, 概率更新, 不确定性, 证据更新, 先验]
+
+  - name: euclid
+    command: /euclid
+    path: personas/mathematics/euclid/SKILL.md
+    aliases: [欧几里得, 公理, 证明结构, 定义检查, 逻辑结构]
+
+  - name: einstein
+    command: /einstein
+    path: personas/physics/einstein/SKILL.md
+    aliases: [爱因斯坦, 参照系, 框架变换, 不变量, 思想实验]
+
+  - name: newton
+    command: /newton
+    path: personas/physics/newton/SKILL.md
+    aliases: [牛顿, 系统建模, 约束分析, 变量分析, 惯性]
+
+  - name: visual-composition
+    command: /visual-composition
+    path: personas/art/visual-composition/SKILL.md
+    aliases: [视觉构图, 构图分析, 审美批评, 视觉层级, 形式一致性]
+
+  - name: decision-council
+    command: /decision-council
+    path: teams/decision-council/SKILL.md
+    aliases: [决策委员会, 决策评审, 跨学科决策, 战略评审, 方案评审]
+
+  - name: philosophy-cavalry
+    command: /philosophy-cavalry
+    path: teams/philosophy-cavalry/SKILL.md
+    aliases: [哲学骑兵, 哲学马队, 哲学面板, 哲学评审, 自我复盘]
+
+  - name: writing-review-panel
+    command: /writing-review-panel
+    path: teams/writing-review-panel/SKILL.md
+    aliases: [写作评审, 文章评审, 文案评审, 表达评审, 论证评审]
+
+  - name: historical-strategy-panel
+    command: /historical-strategy-panel
+    path: teams/historical-strategy-panel/SKILL.md
+    aliases: [历史战略, 历史评审, 周期评审, 制度评审, 路径依赖]
+
+  - name: scientific-reasoning-panel
+    command: /scientific-reasoning-panel
+    path: teams/scientific-reasoning-panel/SKILL.md
+    aliases: [科学推理, 科学评审, 假设检验, 实验设计, 证据评审]
