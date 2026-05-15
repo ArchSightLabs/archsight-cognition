@@ -12,7 +12,7 @@ Hermes 适合把 ArchSight Cognitive Agents 作为长期可成长 Agent 的“�
 飞书机器人
   -> Hermes Feishu/Lark gateway
   -> Hermes agent: archsight-cognitive-agents
-  -> 命令路由表
+  -> Hermes skills
   -> 读取本仓库 SKILL.md
   -> 返回飞书会话
 ```
@@ -21,7 +21,8 @@ Hermes 适合把 ArchSight Cognitive Agents 作为长期可成长 Agent 的“�
 
 - Feishu/Lark gateway 负责接收飞书事件、解析消息、调用 Hermes agent、发送回复。
 - Hermes agent 负责根据 gateway 传入的用户消息加载对应 skill。
-- 命令到 skill 的映射应使用确定性的配置表或代码路由，不建议只靠提示词让模型猜。
+- Hermes 原生支持将已安装或已发现的 skill 作为 `/<skill-name>` 命令使用，优先使用这个机制。
+- 只有在不使用 Hermes skills 系统时，才需要额外写自定义命令路由表。
 
 ## 获取本项目
 
@@ -95,7 +96,7 @@ sudo systemctl status hermes-feishu-gateway --no-pager
 
 ## 推荐安装形态
 
-第一版推荐让 Hermes 直接读取本仓库，不复制文件。这样更新仓库后，skill 内容会随 `git pull` 更新。
+第一版推荐让 Hermes 通过软链接或 `skills.external_dirs` 读取本仓库，不复制文件。这样更新仓库后，skill 内容会随 `git pull` 更新。
 
 如果 Hermes 只能从固定 skills 目录读取，则把需要的 skill 复制或链接到 Hermes 本地 skills 目录，例如：
 
@@ -106,9 +107,129 @@ sudo systemctl status hermes-feishu-gateway --no-pager
 .hermes/skills/literature/shakespeare/SKILL.md
 ```
 
+## 命令行设置
+
+Hermes 的 CLI 入口通常是 `hermes`。先确认服务器上的 Hermes 状态：
+
+```bash
+hermes version
+hermes status
+hermes config path
+hermes config show
+```
+
+### 方式一：软链接到 Hermes skills 目录
+
+这是最直接、最容易验收的方式。把本仓库中的 skill 目录链接到 `~/.hermes/skills/`，Hermes 会把这些 skill 作为斜杠命令暴露出来。
+
+```bash
+mkdir -p ~/.hermes/skills/philosophy ~/.hermes/skills/teams
+
+ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates ~/.hermes/skills/philosophy/socrates
+ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/aristotle ~/.hermes/skills/philosophy/aristotle
+ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/wittgenstein ~/.hermes/skills/philosophy/wittgenstein
+ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/kant ~/.hermes/skills/philosophy/kant
+ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/plato ~/.hermes/skills/philosophy/plato
+ln -sfn /opt/archsight/archsight-cognitive-agents/teams/philosophy-cavalry ~/.hermes/skills/teams/philosophy-cavalry
+ln -sfn /opt/archsight/archsight-cognitive-agents/teams/decision-council ~/.hermes/skills/teams/decision-council
+```
+
+如果 Hermes 以 `hermes` 用户运行，应该在该用户的 home 下设置：
+
+```bash
+sudo -u hermes mkdir -p /home/hermes/.hermes/skills/philosophy /home/hermes/.hermes/skills/teams
+
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates /home/hermes/.hermes/skills/philosophy/socrates
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/aristotle /home/hermes/.hermes/skills/philosophy/aristotle
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/wittgenstein /home/hermes/.hermes/skills/philosophy/wittgenstein
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/kant /home/hermes/.hermes/skills/philosophy/kant
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/plato /home/hermes/.hermes/skills/philosophy/plato
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/teams/philosophy-cavalry /home/hermes/.hermes/skills/teams/philosophy-cavalry
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/teams/decision-council /home/hermes/.hermes/skills/teams/decision-council
+```
+
+然后检查 Hermes 是否识别：
+
+```bash
+hermes skills list | grep -E 'socrates|aristotle|wittgenstein|kant|plato|philosophy-cavalry|decision-council'
+```
+
+用 CLI 做一次端到端测试：
+
+```bash
+hermes chat --skills socrates -q "帮我澄清这个产品方向的核心问题。"
+hermes chat -q "/decision-council 这个架构决策有哪些风险和下一步？"
+```
+
+如果新 skill 没立刻出现在当前会话中，开启新会话或在消息平台里发送 `/reset`。
+
+### 方式二：配置外部 skill 目录
+
+如果不想在 `~/.hermes/skills/` 里放软链接，可以让 Hermes 扫描外部目录。目标是让 `~/.hermes/config.yaml` 包含类似配置：
+
+```yaml
+skills:
+  external_dirs:
+    - /opt/archsight/archsight-cognitive-agents/personas/philosophy
+    - /opt/archsight/archsight-cognitive-agents/personas/history
+    - /opt/archsight/archsight-cognitive-agents/personas/mathematics
+    - /opt/archsight/archsight-cognitive-agents/personas/physics
+    - /opt/archsight/archsight-cognitive-agents/personas/literature
+    - /opt/archsight/archsight-cognitive-agents/personas/art
+    - /opt/archsight/archsight-cognitive-agents/teams
+```
+
+可以用 Hermes 自带配置编辑器：
+
+```bash
+hermes config edit
+```
+
+也可以先定位配置文件再用服务器上的编辑器修改：
+
+```bash
+hermes config path
+nano "$(hermes config path)"
+```
+
+修改后检查：
+
+```bash
+hermes config check
+hermes skills list | grep -E 'socrates|decision-council'
+```
+
+### Feishu/Lark gateway
+
+飞书侧凭据填入 Hermes gateway，不写进本仓库：
+
+```bash
+hermes gateway setup
+hermes gateway install
+hermes gateway start
+hermes gateway status
+```
+
+调试时可以前台运行：
+
+```bash
+hermes gateway run
+```
+
+查看日志：
+
+```bash
+hermes logs gateway -n 100
+hermes logs gateway -f
+```
+
+gateway 跑起来后，飞书里发送 `/socrates ...`、`/decision-council ...`。只要 Hermes 已识别这些 skill，命令就会走 Hermes 原生 skill 加载机制。
+
 ## Agent 配置契约
 
-Hermes agent 应配置一个固定知识库根目录和一张命令路由表。
+如果使用 Hermes 原生 skills 系统，通常不需要额外配置命令路由表；`/<skill-name>` 会由 Hermes skills 机制处理。
+
+只有在 gateway 或 agent wrapper 不走 Hermes skills 系统时，才需要配置一个固定知识库根目录和一张命令路由表。
 
 Linux 服务器示例：
 
@@ -171,18 +292,17 @@ commands:
 
 ## 消息处理逻辑
 
-Hermes gateway 或 agent wrapper 应按以下顺序处理飞书消息：
+使用 Hermes 原生 skills 系统时，gateway 不需要自己解析 `/socrates` 对应哪个文件。它只需要把飞书消息交给 Hermes；Hermes 会在已安装或已发现的 skills 中解析 `/<skill-name>`。
 
 ```text
 1. 接收飞书消息文本。
-2. 读取第一个 token，例如 /socrates。
-3. 在 commands 路由表中查找 token。
-4. 如果命中，拼接 skill_root 和相对路径。
-5. 读取对应 SKILL.md。
-6. 将 SKILL.md 内容作为 system/developer context 注入 Hermes agent。
-7. 将去掉命令后的用户正文作为 user message。
-8. 调用 Hermes agent。
-9. 将 agent 输出发送回原飞书 chat_id。
+2. gateway 将消息交给 Hermes agent。
+3. Hermes 识别第一个 token，例如 /socrates。
+4. Hermes 从 skills 索引中找到 name 为 socrates 的 SKILL.md。
+5. Hermes 按需加载 skill 内容。
+6. Hermes 将去掉命令后的用户正文作为任务输入。
+7. Hermes agent 生成回复。
+8. gateway 将 agent 输出发送回原飞书 chat_id。
 ```
 
 示例：
@@ -198,11 +318,11 @@ personas/philosophy/socrates/SKILL.md
 我现在该不该重构这个系统？
 ```
 
-如果没有命中命令，可以使用默认 skill，例如 `teams/decision-council/SKILL.md`，或者返回可用命令列表。
+如果不使用 Hermes 原生 skills 系统，才需要在 gateway 或 agent wrapper 里实现命令路由表：读取第一个 token，拼接 `skill_root` 和相对路径，读取对应 `SKILL.md`，再注入 agent context。
 
 ## 推荐 Hermes Prompt
 
-Hermes agent 的系统提示词应只描述如何使用已加载的 skill，不要把命令路由完全交给提示词猜测。
+Hermes agent 的系统提示词应只描述如何使用已加载的 skill，不要把命令路由交给提示词猜测。
 
 ```text
 你是 ArchSight Cognitive Agents 的 Hermes agent。
@@ -210,7 +330,7 @@ Hermes agent 的系统提示词应只描述如何使用已加载的 skill，不�
 你可以从以下目录加载认知 skill：
 /opt/archsight/archsight-cognitive-agents
 
-gateway 会根据用户消息前缀命令加载对应 SKILL.md。
+Hermes skills 系统会根据用户消息前缀命令加载对应 SKILL.md。
 当 skill 已加载时，严格遵守该 skill 的角色、适用场景、方法、输出契约、交接和护栏。
 
 这些 persona 和 team 是学科启发的思维工具，不是历史人物、艺术家或科学家本人的模拟。
