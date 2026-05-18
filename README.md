@@ -1,8 +1,10 @@
-# ArchSight Cognitive Agents
+# ArchSight Cognition
 
-ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Code 的跨学科认知人格与学科思维库，用哲学、文学、历史、数学、物理、艺术、科学方法、决策思维和写作批评等视角辅助思考、写作、决策和研究。
+ArchSight Cognition 是 ArchSightLabs 的跨学科认知工具库，面向 ArchSight AI OS、Hermes、OpenClaw、Codex、Claude Code 等系统和 agent host 提供可移植的 persona、team、debate 和 template。
 
-它不是 ArchSight AI OS 的工程交付组件，而是更横向的个人认知操作系统：把稳定的学科视角做成可快速装配的 persona、skill、team 和 debate 模板，需要哪个就装哪个。
+它不是 ArchSight AI OS 的工程交付组件，而是可被 AI OS、Hermes、OpenClaw、Codex、Claude Code 装配使用的跨学科认知工具库。
+
+本仓库的正确定位是：沉淀 persona、跨学科思维、team、debate、写作视角、决策视角和研究视角，让不同系统可以按任务选择合适的认知工具，而不是绑定到某一个运行时、某一种 agent 形态或某个具体应用。
 
 ## 核心原则
 
@@ -13,7 +15,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 - `Newton` 不是“牛顿人格”，而是力、约束、变量和系统建模视角。
 - `Einstein` 不是“名人角色”，而是相对性、观察者、假设变换和尺度转换思维工具。
 
-每个 agent 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
+每个 persona、team 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
 
 ## 能力价值
 
@@ -22,7 +24,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠工程视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 快速装配 | 给 Hermes / OpenClaw / Codex / Claude Code 直接提供 persona、team 和模板。 |
+| 快速装配 | 给 ArchSight AI OS、Hermes、OpenClaw、Codex、Claude Code 直接提供 persona、team、debate 和模板。 |
 
 ## 知识库地图
 
@@ -38,7 +40,7 @@ ArchSight Cognitive Agents 是一套面向 Hermes / OpenClaw / Codex / Claude Co
 ## 目录结构
 
 ```text
-archsight-cognitive-agents/
+archsight-cognition/
 ├── README.md
 ├── AGENTS.md
 ├── personas/
@@ -92,7 +94,7 @@ archsight-cognitive-agents/
 
 ## 运行契约
 
-- 输出优先使用清晰中文，工具名、目录名和 agent name 保持英文稳定。
+- 输出优先使用清晰中文，工具名、目录名和 persona / team name 保持英文稳定。
 - 不要冒充历史人物、艺术家或科学家本人。
 - 不要生成空泛评论；每次输出都要服务一个可执行判断。
 - 不要默认全员上场；按任务选择 3 到 5 个视角。
