@@ -2,7 +2,9 @@
 
 Codex 适合把 ArchSight Cognition 当作本地认知工具库，用于代码之外或代码之前的思考、写作、架构判断、研究问题框定和决策复盘。
 
-Codex 会读取项目中的 `AGENTS.md`。因此最稳的接入方式不是把所有 persona 都塞进 `AGENTS.md`，而是在 `AGENTS.md` 里放一个短路由规则：需要跨学科思考时，按任务加载本仓库里的具体 `SKILL.md` 或 team 文件。
+Codex 会读取全局和项目中的 `AGENTS.md`。因此最稳的接入方式不是把所有 persona 都塞进 `AGENTS.md`，而是在 `AGENTS.md` 里放一个短路由规则：需要跨学科思考时，按任务加载本仓库里的具体 `SKILL.md` 或 team 文件。
+
+Codex 的全局位置是 `CODEX_HOME/AGENTS.md`；如果没有设置 `CODEX_HOME`，默认是 `~/.codex/AGENTS.md`。项目级 `AGENTS.md` 会和全局指导合并，离当前目录更近的项目规则优先级更高。
 
 ## 安装
 
@@ -17,6 +19,14 @@ npx @archsight/cognition install codex
 这会创建或更新当前目录的 `AGENTS.md`，写入一个带 marker 的 ArchSight Cognition 指针区块。
 
 同时会把本包内容复制到当前项目的 `.archsight-cognition/`，让 Codex 指向稳定的本地目录，而不是临时 npm cache 路径。
+
+安装到全局 Codex 指令：
+
+```powershell
+npx @archsight/cognition install codex --global
+```
+
+这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，并更新对应的全局 `AGENTS.md`。
 
 如果已经存在该区块，默认不会覆盖；需要更新时执行：
 

@@ -85,12 +85,12 @@ function install(args) {
   }
 
   if (target === "codex") {
-    installCodex(options.cwd, options.force);
+    installCodex(options, options.force);
     return;
   }
 
   if (target === "all") {
-    installCodex(options.cwd, options.force);
+    installCodex(options, options.force);
     installSkills({
       host: "Claude Code",
       destination: options.global
@@ -170,9 +170,12 @@ function installSkills({ host, destination, skills, force }) {
   }
 }
 
-function installCodex(cwd, force) {
-  const contentRoot = installCodexContent(cwd, force);
-  const agentsPath = path.join(cwd, "AGENTS.md");
+function installCodex(options, force) {
+  const codexRoot = options.global
+    ? getCodexHome()
+    : options.cwd;
+  const contentRoot = installCodexContent(codexRoot, force, options.global);
+  const agentsPath = path.join(codexRoot, "AGENTS.md");
   const block = buildCodexBlock(contentRoot);
 
   if (!fs.existsSync(agentsPath)) {
@@ -199,8 +202,10 @@ function installCodex(cwd, force) {
   console.log(`Codex: 已追加到 ${agentsPath}`);
 }
 
-function installCodexContent(cwd, force) {
-  const contentRoot = path.join(cwd, ".archsight-cognition");
+function installCodexContent(root, force, globalInstall) {
+  const contentRoot = globalInstall
+    ? path.join(root, "archsight-cognition")
+    : path.join(root, ".archsight-cognition");
   const entries = [
     "personas",
     "teams",
@@ -225,6 +230,12 @@ function installCodexContent(cwd, force) {
 
   console.log(`Codex: 已安装内容到 ${contentRoot}`);
   return contentRoot;
+}
+
+function getCodexHome() {
+  return process.env.CODEX_HOME
+    ? path.resolve(process.env.CODEX_HOME)
+    : path.join(os.homedir(), ".codex");
 }
 
 function installAntigravityWorkflow(cwd, force) {
@@ -330,10 +341,10 @@ function printHelp() {
   archsight-cognition list
 
 安装目标:
-  codex          安装 .archsight-cognition 内容目录，并写入 AGENTS.md 指针
+  codex          安装内容目录，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
   antigravity    安装 skills 到 .agents/skills 或 ~/.gemini/antigravity/skills
-  all            安装 codex、claude-code 和 antigravity
+  all            安装 codex、claude-code 和 antigravity；--global 时安装到各自全局目录
 
 常用示例:
   npx @archsight/cognition install codex
@@ -346,10 +357,14 @@ function printHelp() {
 
 function printInstallHelp() {
   console.log(`安装用法:
-  archsight-cognition install codex [--cwd <path>] [--force]
+  archsight-cognition install codex [--cwd <path>] [--global] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force] [--workflow]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
+
+说明:
+  codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
+  codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
 `);
 }
 

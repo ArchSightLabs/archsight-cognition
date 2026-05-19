@@ -149,12 +149,14 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 命令 | 作用 |
 | --- | --- |
 | `npx @archsight/cognition install codex` | 在当前目录安装 `.archsight-cognition/`，并创建或更新 `AGENTS.md` 指针。 |
+| `npx @archsight/cognition install codex --global` | 安装到 `CODEX_HOME` 或 `~/.codex`，并创建或更新全局 `AGENTS.md`。 |
 | `npx @archsight/cognition install claude-code` | 把常用 skills 复制到当前项目 `.claude/skills/`。 |
 | `npx @archsight/cognition install claude-code --global` | 把常用 skills 复制到 `~/.claude/skills/`。 |
 | `npx @archsight/cognition install antigravity` | 把常用 skills 复制到当前项目 `.agents/skills/`。 |
 | `npx @archsight/cognition install antigravity --global` | 把常用 skills 复制到 `~/.gemini/antigravity/skills/`。 |
 | `npx @archsight/cognition install antigravity --workflow` | 同时创建 `.agents/workflows/decision-review.md`。 |
 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code 和 Antigravity 入口。 |
+| `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code 和 Antigravity 的全局目录。 |
 
 默认只安装高频工具：`decision-council`、`writing-review-panel`、`scientific-reasoning-panel`、`socrates`、`bayes`、`newton`。
 
@@ -206,7 +208,12 @@ archsight-cognition install antigravity --workflow
 
 Codex 推荐用 `AGENTS.md` 指向一个稳定的本地内容目录，不要把所有 persona 内容直接复制进 `AGENTS.md`。
 
-自动安装：
+Codex 支持全局和项目级两种安装：
+
+- 全局安装：写入 `CODEX_HOME/AGENTS.md`；如果没有设置 `CODEX_HOME`，默认写入 `~/.codex/AGENTS.md`。
+- 项目安装：写入当前项目 `AGENTS.md`，并把内容复制到当前项目 `.archsight-cognition/`。
+
+项目级安装：
 
 ```powershell
 npx @archsight/cognition install codex
@@ -217,6 +224,18 @@ npx @archsight/cognition install codex
 - 把 `personas/`、`teams/`、`debates/`、`templates/`、`adapters/` 复制到当前项目的 `.archsight-cognition/`。
 - 创建或更新当前项目的 `AGENTS.md`。
 - 让 `AGENTS.md` 指向 `.archsight-cognition/`，避免依赖临时 npm cache 路径。
+
+全局安装：
+
+```powershell
+npx @archsight/cognition install codex --global
+```
+
+该命令会：
+
+- 把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`。
+- 创建或更新全局 `AGENTS.md`。
+- 让所有 Codex 项目默认继承 ArchSight Cognition 路由规则。
 
 手动安装：
 
