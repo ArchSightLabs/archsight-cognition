@@ -1,0 +1,30 @@
+{
+  "name": "@archsight/cognition",
+  "version": "0.1.0",
+  "description": "可移植的跨学科认知 skills、persona、team 和 debate 工具库。",
+  "type": "module",
+  "bin": {
+    "archsight-cognition": "bin/archsight-cognition.mjs"
+  },
+  "files": [
+    "bin/",
+    "personas/",
+    "teams/",
+    "debates/",
+    "adapters/",
+    "templates/",
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "OPEN_SOURCE.md"
+  ],
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "claude-code",
+    "antigravity",
+    "personas",
+    "prompt-engineering"
+  ],
+  "license": "UNLICENSED"
+}

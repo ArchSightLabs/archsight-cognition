@@ -1,6 +1,6 @@
 # Hermes 适配说明
 
-Hermes 适合把 ArchSight Cognitive Agents 作为长期可成长 Agent 的“思维技能库”。
+Hermes 适合把 ArchSight Cognition 作为长期可成长 Agent 的“思维技能库”。
 
 当前内容已经按学科分层：哲学、文学、历史、数学、物理、艺术，以及跨学科 team 面板。
 
@@ -11,7 +11,7 @@ Hermes 适合把 ArchSight Cognitive Agents 作为长期可成长 Agent 的“�
 ```text
 飞书机器人
   -> Hermes Feishu/Lark gateway
-  -> Hermes agent: archsight-cognitive-agents
+  -> Hermes agent: archsight-cognition
   -> Hermes skills
   -> 读取本仓库 SKILL.md
   -> 返回飞书会话
@@ -28,58 +28,58 @@ Hermes 适合把 ArchSight Cognitive Agents 作为长期可成长 Agent 的“�
 
 把仓库克隆到 Hermes 运行进程可读取的本地目录。
 
-Linux 服务器推荐放在稳定的应用目录，例如 `/opt/archsight/archsight-cognitive-agents`：
+Linux 服务器推荐放在稳定的应用目录，例如 `/opt/archsight/archsight-cognition`：
 
 ```bash
 sudo mkdir -p /opt/archsight
 sudo chown -R "$USER":"$USER" /opt/archsight
-git clone https://github.com/ArchSightLabs/archsight-cognitive-agents.git /opt/archsight/archsight-cognitive-agents
+git clone https://github.com/ArchSightLabs/archsight-cognition.git /opt/archsight/archsight-cognition
 ```
 
 如果 Hermes 以独立服务用户运行，例如 `hermes`，应确保该用户可读：
 
 ```bash
-sudo chown -R hermes:hermes /opt/archsight/archsight-cognitive-agents
-sudo -u hermes test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates/SKILL.md
+sudo chown -R hermes:hermes /opt/archsight/archsight-cognition
+sudo -u hermes test -r /opt/archsight/archsight-cognition/personas/philosophy/socrates/SKILL.md
 ```
 
 如果已经克隆，进入目录并更新：
 
 ```bash
-cd /opt/archsight/archsight-cognitive-agents
+cd /opt/archsight/archsight-cognition
 git pull
 ```
 
 在 Hermes 配置中记录这个根目录：
 
 ```text
-/opt/archsight/archsight-cognitive-agents
+/opt/archsight/archsight-cognition
 ```
 
 Windows 本地调试可以使用：
 
 ```powershell
-git clone https://github.com/ArchSightLabs/archsight-cognitive-agents.git C:\Work\ArchSightLabs\archsight-cognitive-agents
+git clone https://github.com/ArchSightLabs/archsight-cognition.git C:\Work\ArchSightLabs\archsight-cognition
 ```
 
 如果已经克隆，进入目录并更新：
 
 ```powershell
-cd C:\Work\ArchSightLabs\archsight-cognitive-agents
+cd C:\Work\ArchSightLabs\archsight-cognition
 git pull
 ```
 
 在 Hermes 配置中记录这个根目录：
 
 ```text
-C:\Work\ArchSightLabs\archsight-cognitive-agents
+C:\Work\ArchSightLabs\archsight-cognition
 ```
 
 ## Linux 部署差异
 
 Linux 和 Windows 的核心链路没有差异，差异主要在运行环境：
 
-- 路径使用 `/opt/archsight/archsight-cognitive-agents` 这类 POSIX 路径。
+- 路径使用 `/opt/archsight/archsight-cognition` 这类 POSIX 路径。
 - Hermes 以哪个系统用户运行，就必须让哪个用户可读本仓库。
 - 如果 Hermes 或 gateway 由 `systemd` 管理，修改配置后需要重启对应服务。
 - 如果 gateway 接收飞书事件，需要保证公网入口、反向代理、TLS 和回调路径已经指向 Hermes Feishu/Lark gateway。
@@ -125,13 +125,13 @@ hermes config show
 ```bash
 mkdir -p ~/.hermes/skills/philosophy ~/.hermes/skills/teams
 
-ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates ~/.hermes/skills/philosophy/socrates
-ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/aristotle ~/.hermes/skills/philosophy/aristotle
-ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/wittgenstein ~/.hermes/skills/philosophy/wittgenstein
-ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/kant ~/.hermes/skills/philosophy/kant
-ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/plato ~/.hermes/skills/philosophy/plato
-ln -sfn /opt/archsight/archsight-cognitive-agents/teams/philosophy-cavalry ~/.hermes/skills/teams/philosophy-cavalry
-ln -sfn /opt/archsight/archsight-cognitive-agents/teams/decision-council ~/.hermes/skills/teams/decision-council
+ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/socrates ~/.hermes/skills/philosophy/socrates
+ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/aristotle ~/.hermes/skills/philosophy/aristotle
+ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/wittgenstein ~/.hermes/skills/philosophy/wittgenstein
+ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/kant ~/.hermes/skills/philosophy/kant
+ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/plato ~/.hermes/skills/philosophy/plato
+ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-cavalry ~/.hermes/skills/teams/philosophy-cavalry
+ln -sfn /opt/archsight/archsight-cognition/teams/decision-council ~/.hermes/skills/teams/decision-council
 ```
 
 如果 Hermes 以 `hermes` 用户运行，应该在该用户的 home 下设置：
@@ -139,13 +139,13 @@ ln -sfn /opt/archsight/archsight-cognitive-agents/teams/decision-council ~/.herm
 ```bash
 sudo -u hermes mkdir -p /home/hermes/.hermes/skills/philosophy /home/hermes/.hermes/skills/teams
 
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates /home/hermes/.hermes/skills/philosophy/socrates
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/aristotle /home/hermes/.hermes/skills/philosophy/aristotle
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/wittgenstein /home/hermes/.hermes/skills/philosophy/wittgenstein
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/kant /home/hermes/.hermes/skills/philosophy/kant
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/personas/philosophy/plato /home/hermes/.hermes/skills/philosophy/plato
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/teams/philosophy-cavalry /home/hermes/.hermes/skills/teams/philosophy-cavalry
-sudo -u hermes ln -sfn /opt/archsight/archsight-cognitive-agents/teams/decision-council /home/hermes/.hermes/skills/teams/decision-council
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/socrates /home/hermes/.hermes/skills/philosophy/socrates
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/aristotle /home/hermes/.hermes/skills/philosophy/aristotle
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/wittgenstein /home/hermes/.hermes/skills/philosophy/wittgenstein
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/kant /home/hermes/.hermes/skills/philosophy/kant
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/plato /home/hermes/.hermes/skills/philosophy/plato
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-cavalry /home/hermes/.hermes/skills/teams/philosophy-cavalry
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/decision-council /home/hermes/.hermes/skills/teams/decision-council
 ```
 
 然后检查 Hermes 是否识别：
@@ -170,13 +170,13 @@ hermes chat -q "/decision-council 这个架构决策有哪些风险和下一步�
 ```yaml
 skills:
   external_dirs:
-    - /opt/archsight/archsight-cognitive-agents/personas/philosophy
-    - /opt/archsight/archsight-cognitive-agents/personas/history
-    - /opt/archsight/archsight-cognitive-agents/personas/mathematics
-    - /opt/archsight/archsight-cognitive-agents/personas/physics
-    - /opt/archsight/archsight-cognitive-agents/personas/literature
-    - /opt/archsight/archsight-cognitive-agents/personas/art
-    - /opt/archsight/archsight-cognitive-agents/teams
+    - /opt/archsight/archsight-cognition/personas/philosophy
+    - /opt/archsight/archsight-cognition/personas/history
+    - /opt/archsight/archsight-cognition/personas/mathematics
+    - /opt/archsight/archsight-cognition/personas/physics
+    - /opt/archsight/archsight-cognition/personas/literature
+    - /opt/archsight/archsight-cognition/personas/art
+    - /opt/archsight/archsight-cognition/teams
 ```
 
 可以用 Hermes 自带配置编辑器：
@@ -288,7 +288,7 @@ gateway 跑起来后，飞书里发送 `/socrates ...`、`/decision-council ...`
 
 ```yaml
 archsight:
-  skill_aliases: /opt/archsight/archsight-cognitive-agents/adapters/hermes/skill-aliases.yaml
+  skill_aliases: /opt/archsight/archsight-cognition/adapters/hermes/skill-aliases.yaml
   alias_match:
     enabled: true
     strip_bot_mention: true
@@ -334,8 +334,8 @@ Linux 服务器示例：
 
 ```yaml
 agent:
-  name: archsight-cognitive-agents
-  skill_root: "/opt/archsight/archsight-cognitive-agents"
+  name: archsight-cognition
+  skill_root: "/opt/archsight/archsight-cognition"
   default_language: zh-CN
 
 commands:
@@ -352,8 +352,8 @@ Windows 本地调试示例：
 
 ```yaml
 agent:
-  name: archsight-cognitive-agents
-  skill_root: "C:\\Work\\ArchSightLabs\\archsight-cognitive-agents"
+  name: archsight-cognition
+  skill_root: "C:\\Work\\ArchSightLabs\\archsight-cognition"
   default_language: zh-CN
 
 commands:
@@ -371,8 +371,8 @@ commands:
 ```json
 {
   "agent": {
-    "name": "archsight-cognitive-agents",
-    "skill_root": "/opt/archsight/archsight-cognitive-agents",
+    "name": "archsight-cognition",
+    "skill_root": "/opt/archsight/archsight-cognition",
     "default_language": "zh-CN"
   },
   "commands": {
@@ -424,10 +424,10 @@ personas/philosophy/socrates/SKILL.md
 Hermes agent 的系统提示词应只描述如何使用已加载的 skill，不要把命令路由交给提示词猜测。
 
 ```text
-你是 ArchSight Cognitive Agents 的 Hermes agent。
+你是 ArchSight Cognition 的 Hermes agent。
 
 你可以从以下目录加载认知 skill：
-/opt/archsight/archsight-cognitive-agents
+/opt/archsight/archsight-cognition
 
 Hermes skills 系统会根据用户消息前缀命令加载对应 SKILL.md。
 当 skill 已加载时，严格遵守该 skill 的角色、适用场景、方法、输出契约、交接和护栏。
@@ -443,26 +443,26 @@ Hermes skills 系统会根据用户消息前缀命令加载对应 SKILL.md。
 Linux：
 
 ```bash
-test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/socrates/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/aristotle/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/wittgenstein/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/kant/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/personas/philosophy/plato/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/teams/philosophy-cavalry/SKILL.md
-test -r /opt/archsight/archsight-cognitive-agents/teams/decision-council/SKILL.md
+test -r /opt/archsight/archsight-cognition/personas/philosophy/socrates/SKILL.md
+test -r /opt/archsight/archsight-cognition/personas/philosophy/aristotle/SKILL.md
+test -r /opt/archsight/archsight-cognition/personas/philosophy/wittgenstein/SKILL.md
+test -r /opt/archsight/archsight-cognition/personas/philosophy/kant/SKILL.md
+test -r /opt/archsight/archsight-cognition/personas/philosophy/plato/SKILL.md
+test -r /opt/archsight/archsight-cognition/teams/philosophy-cavalry/SKILL.md
+test -r /opt/archsight/archsight-cognition/teams/decision-council/SKILL.md
 echo "all routed skill paths are readable"
 ```
 
 Windows：
 
 ```powershell
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\personas\philosophy\socrates\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\personas\philosophy\aristotle\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\personas\philosophy\wittgenstein\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\personas\philosophy\kant\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\personas\philosophy\plato\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\teams\philosophy-cavalry\SKILL.md
-Test-Path C:\Work\ArchSightLabs\archsight-cognitive-agents\teams\decision-council\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\aristotle\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\wittgenstein\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\kant\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\plato\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\teams\philosophy-cavalry\SKILL.md
+Test-Path C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council\SKILL.md
 ```
 
 Linux 命令全部成功并输出 `all routed skill paths are readable` 即通过；Windows 命令的预期结果都应为 `True`。

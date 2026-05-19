@@ -1,27 +1,115 @@
 # Claude Code 适配说明
 
-Claude Code 适合把 ArchSight Cognitive Agents 作为可复制的 Markdown skill 集合，用于工程任务前后的跨学科思考。
+Claude Code 适合把 ArchSight Cognition 作为 Markdown skills 使用。常用 persona 和 team 可以安装到 `.claude/skills/<skill-name>/SKILL.md`，然后用 `/skill-name` 直接调用。
 
-## 推荐用法
+Claude Code 的 skill 机制会读取 `SKILL.md` 的 frontmatter 和正文。本仓库的 persona/team 已按这种形态组织，因此可以直接复制或链接使用。
+
+## 安装
+
+### npm / npx 安装
+
+安装到当前项目：
+
+```powershell
+npx @archsight/cognition install claude-code
+```
+
+安装到个人全局 skills：
+
+```powershell
+npx @archsight/cognition install claude-code --global
+```
+
+安装全部 skills：
+
+```powershell
+npx @archsight/cognition install claude-code --all
+```
+
+已存在的 skill 默认不会被覆盖。需要更新时加 `--force`。
+
+### 方式一：安装到当前项目
+
+适合只在某个项目里使用。
+
+```powershell
+mkdir .claude\skills
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\newton -Recurse
+```
+
+### 方式二：安装到个人全局 skills
+
+适合跨项目复用。
+
+```powershell
+mkdir $HOME\.claude\skills
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.claude\skills\writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\newton -Recurse
+```
+
+### macOS / Linux 示例
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/decision-council
+cp -R ~/work/archsight-cognition/teams/writing-review-panel ~/.claude/skills/writing-review-panel
+cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/socrates
+cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/bayes
+cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/newton
+```
+
+## 使用
+
+在 Claude Code 中启动项目后，直接调用：
 
 ```text
-加载 personas/mathematics/bayes/SKILL.md 和 personas/physics/newton/SKILL.md。
-用它们识别这个实现计划中的不确定性、约束和最小验证：
-...
+/decision-council
+对这个架构方案做一次跨学科决策评审，输出风险、反对条件和下一步验证。
+```
+
+```text
+/writing-review-panel
+评审这篇文章的结构、叙事张力、论证清晰度和可执行修改建议。
+```
+
+```text
+/bayes
+评估这个产品假设的证据强度、不确定性和最小验证实验。
 ```
 
 ## 推荐路由
 
-| 任务 | Prompt |
+| 任务 | Skill |
 | --- | --- |
-| 需求含混 | 加载 `personas/philosophy/socrates/SKILL.md` |
-| 论证混乱 | 加载 `personas/mathematics/euclid/SKILL.md` |
-| 约束不明 | 加载 `personas/physics/newton/SKILL.md` |
-| 方案高风险 | 加载 `teams/decision-council/SKILL.md` |
-| 文档质量 | 加载 `teams/writing-review-panel/SKILL.md` |
+| 需求含混 | `/socrates` |
+| 论证混乱 | `/euclid` |
+| 概率、证据和不确定性 | `/bayes` |
+| 约束不明 | `/newton` |
+| 方案高风险 | `/decision-council` |
+| 文档质量 | `/writing-review-panel` |
+| 研究和验证路径 | `/scientific-reasoning-panel` |
+
+## 维护建议
+
+- 优先只安装高频工具，避免 `/` 命令列表过长。
+- 修改原仓库后，如果使用复制安装，需要重新复制对应目录。
+- 如果使用符号链接或目录链接，要确保团队成员的本地路径一致。
+- 不要给这些 skill 配置宽泛工具权限；它们主要是认知和评审工具，不需要自动执行危险命令。
 
 ## 护栏
 
 - 不要让 persona 输出覆盖用户明确需求。
 - 不要把历史人物当作权威来源。
 - 每次调用都应输出可执行判断、风险或下一步。
+- 对事实性、法律、医疗、金融和安全问题，必须要求来源和验证。
+
+## 参考
+
+- Claude Code Skills 文档：`https://code.claude.com/docs/en/skills`
