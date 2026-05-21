@@ -11,8 +11,8 @@ const packageRoot = path.resolve(__dirname, "..");
 
 const curatedSkills = [
   { name: "cog-decision-council", source: "teams/decision-council" },
-  { name: "cog-writing-review-panel", source: "teams/writing-review-panel" },
-  { name: "cog-scientific-reasoning-panel", source: "teams/scientific-reasoning-panel" },
+  { name: "cog-writing-review", source: "teams/writing-review" },
+  { name: "cog-scientific-reasoning", source: "teams/scientific-reasoning" },
   { name: "cog-socrates", source: "personas/philosophy/socrates" },
   { name: "cog-bayes", source: "personas/mathematics/bayes" },
   { name: "cog-newton", source: "personas/physics/newton" }
@@ -281,7 +281,7 @@ function buildCodexBlock(contentRoot) {
 - 不确定性和证据判断：\`personas/mathematics/bayes/SKILL.md\`
 - 变量、约束和系统建模：\`personas/physics/newton/SKILL.md\`
 - 高风险决策：\`teams/decision-council/SKILL.md\`
-- 文章、叙事和表达：\`teams/writing-review-panel/SKILL.md\`
+- 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
 
 对外 skill 调用名统一使用 \`cog-\` 前缀，例如 \`cog-socrates\`、\`cog-bayes\`、\`cog-newton\`、\`cog-decision-council\`。
 
@@ -315,6 +315,13 @@ function walk(dir, visit) {
 }
 
 function toSkillName(name) {
+  const aliases = {
+    "history-strategy": "cog-history-strategy",
+    "scientific-reasoning": "cog-scientific-reasoning",
+    "writing-review": "cog-writing-review"
+  };
+
+  if (aliases[name]) return aliases[name];
   return name.startsWith("cog-") ? name : `cog-${name}`;
 }
 

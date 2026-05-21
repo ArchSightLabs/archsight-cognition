@@ -45,7 +45,7 @@ npx @archsight/cognition install antigravity --all
 ```powershell
 mkdir .agents\skills
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .agents\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents\skills\cog-writing-review -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
@@ -64,7 +64,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .age
 ```powershell
 mkdir $HOME\.gemini\antigravity\skills
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.gemini\antigravity\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.gemini\antigravity\skills\cog-writing-review -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
@@ -85,7 +85,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 - 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
 - 约束和系统建模：`personas/physics/newton/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
-- 写作和表达评审：`teams/writing-review-panel/SKILL.md`
+- 写作和表达评审：`teams/writing-review/SKILL.md`
 
 对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
 
@@ -123,8 +123,8 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 | 不确定性和证据 | `cog-bayes` |
 | 约束和系统建模 | `cog-newton` |
 | 方案高风险 | `cog-decision-council` |
-| 文档、文章、品牌叙事 | `cog-writing-review-panel` |
-| 研究假设和验证路径 | `cog-scientific-reasoning-panel` |
+| 文档、文章、品牌叙事 | `cog-writing-review` |
+| 研究假设和验证路径 | `cog-scientific-reasoning` |
 
 ## 安全与权限
 

@@ -55,7 +55,7 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 - 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
 - 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
-- 文章、叙事和表达：`teams/writing-review-panel/SKILL.md`
+- 文章、叙事和表达：`teams/writing-review/SKILL.md`
 
 对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
 
@@ -80,7 +80,7 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 或者用相对路径：
 
 ```text
-加载 adapters 旁边的 teams/writing-review-panel/SKILL.md。
+加载 adapters 旁边的 teams/writing-review/SKILL.md。
 评审这篇 README 的定位、结构和开源可读性。
 ```
 
@@ -94,8 +94,8 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 | 不确定性和证据权重 | `cog-bayes` | `personas/mathematics/bayes/SKILL.md` |
 | 约束、变量和系统动态 | `cog-newton` | `personas/physics/newton/SKILL.md` |
 | 高风险决策 | `cog-decision-council` | `teams/decision-council/SKILL.md` |
-| 技术写作和叙事 | `cog-writing-review-panel` | `teams/writing-review-panel/SKILL.md` |
-| 科学推理和验证设计 | `cog-scientific-reasoning-panel` | `teams/scientific-reasoning-panel/SKILL.md` |
+| 技术写作和叙事 | `cog-writing-review` | `teams/writing-review/SKILL.md` |
+| 科学推理和验证设计 | `cog-scientific-reasoning` | `teams/scientific-reasoning/SKILL.md` |
 
 ## 护栏
 

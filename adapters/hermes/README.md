@@ -246,7 +246,7 @@ gateway 跑起来后，飞书里发送 `/cog-socrates ...`、`/cog-decision-coun
 /cog-decision-council 评审这个方案是否值得做。
 /cog-socrates 帮我澄清这个产品问题。
 /cog-bayes 分析这个判断的证据强度。
-/cog-writing-review-panel 帮我看这篇文章的论证和表达。
+/cog-writing-review 帮我看这篇文章的论证和表达。
 ```
 
 常用中文触发词：
@@ -256,9 +256,9 @@ gateway 跑起来后，飞书里发送 `/cog-socrates ...`、`/cog-decision-coun
 | 苏格拉底、追问、问题澄清 | `/cog-socrates` | 澄清问题、暴露前提 |
 | 决策委员会、决策评审、方案评审 | `/cog-decision-council` | 跨学科决策判断 |
 | 哲学骑兵、哲学面板、自我复盘 | `/cog-philosophy-cavalry` | 概念、价值、原则和意义审查 |
-| 写作评审、文章评审、论证评审 | `/cog-writing-review-panel` | 文章、文案、叙事和表达评审 |
-| 科学推理、假设检验、证据评审 | `/cog-scientific-reasoning-panel` | 假设、变量、证据和实验设计 |
-| 历史战略、周期评审、路径依赖 | `/cog-historical-strategy-panel` | 战略、制度、周期和历史结构 |
+| 写作评审、文章评审、论证评审 | `/cog-writing-review` | 文章、文案、叙事和表达评审 |
+| 科学推理、假设检验、证据评审 | `/cog-scientific-reasoning` | 假设、变量、证据和实验设计 |
+| 历史战略、周期评审、路径依赖 | `/cog-history-strategy` | 战略、制度、周期和历史结构 |
 | 贝叶斯、不确定性、证据更新 | `/cog-bayes` | 信息不足下的概率判断 |
 | 牛顿、系统建模、约束分析 | `/cog-newton` | 变量、约束、惯性和系统建模 |
 | 维特根斯坦、语言澄清、概念澄清 | `/cog-wittgenstein` | 概念误用和表达混乱 |

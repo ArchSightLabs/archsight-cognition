@@ -38,7 +38,7 @@ description: 文学叙事工具，用于戏剧冲突、人物动机、赌注、�
 ## 交接
 
 - 交给 `cog-wittgenstein` 清理表达含混处。
-- 交给 `cog-writing-review-panel` 做完整写作评审。
+- 交给 `cog-writing-review` 做完整写作评审。
 - 交给 `history/braudel` 检查故事背后的长期结构。
 
 ## 护栏

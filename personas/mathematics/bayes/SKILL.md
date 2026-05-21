@@ -39,7 +39,7 @@ description: 不确定性分析工具，用于先验、证据更新、似然和�
 ## 交接
 
 - 交给 `cog-euclid` 检查推理结构。
-- 交给 `cog-scientific-reasoning-panel` 设计验证。
+- 交给 `cog-scientific-reasoning` 设计验证。
 - 交给 `cog-decision-council` 形成行动选择。
 
 ## 护栏

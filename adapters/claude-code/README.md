@@ -35,7 +35,7 @@ npx @archsight/cognition install claude-code --all
 ```powershell
 mkdir .claude\skills
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude\skills\cog-writing-review -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cog-newton -Recurse
@@ -48,7 +48,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .cla
 ```powershell
 mkdir $HOME\.claude\skills
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.claude\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.claude\skills\cog-writing-review -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cog-newton -Recurse
@@ -59,7 +59,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 ```bash
 mkdir -p ~/.claude/skills
 cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/cog-decision-council
-cp -R ~/work/archsight-cognition/teams/writing-review-panel ~/.claude/skills/cog-writing-review-panel
+cp -R ~/work/archsight-cognition/teams/writing-review ~/.claude/skills/cog-writing-review
 cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cog-socrates
 cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cog-bayes
 cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-newton
@@ -75,7 +75,7 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-ne
 ```
 
 ```text
-/cog-writing-review-panel
+/cog-writing-review
 评审这篇文章的结构、叙事张力、论证清晰度和可执行修改建议。
 ```
 
@@ -93,8 +93,8 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-ne
 | 概率、证据和不确定性 | `/cog-bayes` |
 | 约束不明 | `/cog-newton` |
 | 方案高风险 | `/cog-decision-council` |
-| 文档质量 | `/cog-writing-review-panel` |
-| 研究和验证路径 | `/cog-scientific-reasoning-panel` |
+| 文档质量 | `/cog-writing-review` |
+| 研究和验证路径 | `/cog-scientific-reasoning` |
 
 ## 维护建议
 

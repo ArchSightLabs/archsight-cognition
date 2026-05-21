@@ -111,17 +111,17 @@ skills:
     path: teams/philosophy-cavalry/SKILL.md
     aliases: [哲学骑兵, 哲学马队, 哲学面板, 哲学评审, 自我复盘]
 
-  - name: cog-writing-review-panel
-    command: /cog-writing-review-panel
-    path: teams/writing-review-panel/SKILL.md
+  - name: cog-writing-review
+    command: /cog-writing-review
+    path: teams/writing-review/SKILL.md
     aliases: [写作评审, 文章评审, 文案评审, 表达评审, 论证评审]
 
-  - name: cog-historical-strategy-panel
-    command: /cog-historical-strategy-panel
-    path: teams/historical-strategy-panel/SKILL.md
+  - name: cog-history-strategy
+    command: /cog-history-strategy
+    path: teams/history-strategy/SKILL.md
     aliases: [历史战略, 历史评审, 周期评审, 制度评审, 路径依赖]
 
-  - name: cog-scientific-reasoning-panel
-    command: /cog-scientific-reasoning-panel
-    path: teams/scientific-reasoning-panel/SKILL.md
+  - name: cog-scientific-reasoning
+    command: /cog-scientific-reasoning
+    path: teams/scientific-reasoning/SKILL.md
     aliases: [科学推理, 科学评审, 假设检验, 实验设计, 证据评审]

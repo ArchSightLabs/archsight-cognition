@@ -19,7 +19,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 加载最相关的 ArchSight Cognition team。
 把 persona 当作学科思维镜头，而不是历史人物模仿。
 默认决策路由：Socrates -> Bayes -> Newton -> Braudel -> Aristotle。
-写作任务使用 Writing Review Panel。科学推理任务使用 Scientific Reasoning Panel。
+写作任务使用 `cog-writing-review`。科学推理任务使用 `cog-scientific-reasoning`。
 最终回答必须包含可执行下一步。
 ```
 
