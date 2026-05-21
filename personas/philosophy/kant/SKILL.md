@@ -1,5 +1,5 @@
 ---
-name: kant
+name: cog-kant
 description: 康德式原则审查工具，用于义务、普遍化、边界、自主和决策原则。
 ---
 
@@ -41,9 +41,9 @@ description: 康德式原则审查工具，用于义务、普遍化、边界、�
 
 ## 交接
 
-- 概念不清时，交给 `wittgenstein`。
-- 需要现实分类时，交给 `aristotle`。
-- 需要意志和价值挑战时，交给 `nietzsche`。
+- 概念不清时，交给 `cog-wittgenstein`。
+- 需要现实分类时，交给 `cog-aristotle`。
+- 需要意志和价值挑战时，交给 `cog-nietzsche`。
 
 ## 护栏
 

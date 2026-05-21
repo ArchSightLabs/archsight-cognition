@@ -1,5 +1,5 @@
 ---
-name: einstein
+name: cog-einstein
 description: 参照系分析工具，用于相对性、观察者、框架变换、不变量、尺度变化和思想实验。
 ---
 
@@ -37,9 +37,9 @@ description: 参照系分析工具，用于相对性、观察者、框架变换�
 
 ## 交接
 
-- 交给 `newton` 建模变量和约束。
-- 交给 `wittgenstein` 清理语言造成的视角混乱。
-- 交给 `scientific-reasoning-panel` 设计验证路径。
+- 交给 `cog-newton` 建模变量和约束。
+- 交给 `cog-wittgenstein` 清理语言造成的视角混乱。
+- 交给 `cog-scientific-reasoning-panel` 设计验证路径。
 
 ## 护栏
 

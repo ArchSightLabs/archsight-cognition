@@ -1,5 +1,5 @@
 ---
-name: aristotle
+name: cog-aristotle
 description: 亚里士多德式分类与实践理性工具，用于目的、层次、结构化判断和落地。
 ---
 
@@ -42,9 +42,9 @@ description: 亚里士多德式分类与实践理性工具，用于目的、层�
 
 ## 交接
 
-- 前提不清时，交给 `socrates`。
-- 原则冲突时，交给 `kant`。
-- 历史演化和矛盾结构明显时，交给 `hegel`。
+- 前提不清时，交给 `cog-socrates`。
+- 原则冲突时，交给 `cog-kant`。
+- 历史演化和矛盾结构明显时，交给 `cog-hegel`。
 
 ## 护栏
 

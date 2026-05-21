@@ -1,5 +1,5 @@
 ---
-name: euclid
+name: cog-euclid
 description: 数学结构工具，用于定义、公理、逻辑结构、证明形态和必要结论。
 ---
 
@@ -37,9 +37,9 @@ description: 数学结构工具，用于定义、公理、逻辑结构、证明�
 
 ## 交接
 
-- 交给 `bayes` 处理概率和不确定性。
-- 交给 `descartes` 做怀疑和确定性检查。
-- 交给 `scientific-reasoning-panel` 做假设检验。
+- 交给 `cog-bayes` 处理概率和不确定性。
+- 交给 `cog-descartes` 做怀疑和确定性检查。
+- 交给 `cog-scientific-reasoning-panel` 做假设检验。
 
 ## 护栏
 

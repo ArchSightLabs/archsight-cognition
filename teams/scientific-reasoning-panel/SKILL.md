@@ -1,5 +1,5 @@
 ---
-name: scientific-reasoning-panel
+name: cog-scientific-reasoning-panel
 description: 科学推理面板，用于假设、变量、证据、不确定性、约束和实验设计。
 ---
 

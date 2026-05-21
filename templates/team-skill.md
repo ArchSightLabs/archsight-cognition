@@ -1,5 +1,5 @@
 ---
-name: <team-name>
+name: cog-<team-name>
 description: <跨学科团队用途>
 ---
 

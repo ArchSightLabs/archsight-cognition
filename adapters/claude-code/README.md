@@ -34,11 +34,11 @@ npx @archsight/cognition install claude-code --all
 
 ```powershell
 mkdir .claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cog-newton -Recurse
 ```
 
 ### 方式二：安装到个人全局 skills
@@ -47,22 +47,22 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .cla
 
 ```powershell
 mkdir $HOME\.claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.claude\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.claude\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cog-newton -Recurse
 ```
 
 ### macOS / Linux 示例
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/decision-council
-cp -R ~/work/archsight-cognition/teams/writing-review-panel ~/.claude/skills/writing-review-panel
-cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/socrates
-cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/bayes
-cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/newton
+cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/cog-decision-council
+cp -R ~/work/archsight-cognition/teams/writing-review-panel ~/.claude/skills/cog-writing-review-panel
+cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cog-socrates
+cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cog-bayes
+cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-newton
 ```
 
 ## 使用
@@ -70,17 +70,17 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/newton
 在 Claude Code 中启动项目后，直接调用：
 
 ```text
-/decision-council
+/cog-decision-council
 对这个架构方案做一次跨学科决策评审，输出风险、反对条件和下一步验证。
 ```
 
 ```text
-/writing-review-panel
+/cog-writing-review-panel
 评审这篇文章的结构、叙事张力、论证清晰度和可执行修改建议。
 ```
 
 ```text
-/bayes
+/cog-bayes
 评估这个产品假设的证据强度、不确定性和最小验证实验。
 ```
 
@@ -88,13 +88,13 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/newton
 
 | 任务 | Skill |
 | --- | --- |
-| 需求含混 | `/socrates` |
-| 论证混乱 | `/euclid` |
-| 概率、证据和不确定性 | `/bayes` |
-| 约束不明 | `/newton` |
-| 方案高风险 | `/decision-council` |
-| 文档质量 | `/writing-review-panel` |
-| 研究和验证路径 | `/scientific-reasoning-panel` |
+| 需求含混 | `/cog-socrates` |
+| 论证混乱 | `/cog-euclid` |
+| 概率、证据和不确定性 | `/cog-bayes` |
+| 约束不明 | `/cog-newton` |
+| 方案高风险 | `/cog-decision-council` |
+| 文档质量 | `/cog-writing-review-panel` |
+| 研究和验证路径 | `/cog-scientific-reasoning-panel` |
 
 ## 维护建议
 

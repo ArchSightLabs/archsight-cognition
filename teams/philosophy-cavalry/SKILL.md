@@ -1,5 +1,5 @@
 ---
-name: philosophy-cavalry
+name: cog-philosophy-cavalry
 description: 哲学思维面板，用于概念、价值、原则、意义、矛盾和自我复盘。
 ---
 

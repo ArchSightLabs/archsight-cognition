@@ -4,9 +4,9 @@
 
 推荐调用顺序：
 
-1. `socrates`：先问清楚问题。
-2. `wittgenstein`：清理概念和语言。
-3. `aristotle`：分类、定目标、定判断框架。
+1. `cog-socrates`：先问清楚问题。
+2. `cog-wittgenstein`：清理概念和语言。
+3. `cog-aristotle`：分类、定目标、定判断框架。
 4. 按需要调用其他人格施加判断压力。
 
 快速映射：

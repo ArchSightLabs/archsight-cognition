@@ -1,5 +1,5 @@
 ---
-name: schopenhauer
+name: cog-schopenhauer
 description: 叔本华式欲望与痛苦检查工具，用于悲观风险、节制和预期纪律。
 ---
 
@@ -42,9 +42,9 @@ description: 叔本华式欲望与痛苦检查工具，用于悲观风险、节�
 
 ## 交接
 
-- 需要价值重估时，交给 `nietzsche`。
-- 需要意义和荒诞处理时，交给 `camus`。
-- 需要实践分类时，交给 `aristotle`。
+- 需要价值重估时，交给 `cog-nietzsche`。
+- 需要意义和荒诞处理时，交给 `cog-camus`。
+- 需要实践分类时，交给 `cog-aristotle`。
 
 ## 护栏
 

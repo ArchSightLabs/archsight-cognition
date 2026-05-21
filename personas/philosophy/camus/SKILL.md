@@ -1,5 +1,5 @@
 ---
-name: camus
+name: cog-camus
 description: 加缪式荒诞与行动工具，用于意义、反抗、个体选择和精神韧性。
 ---
 
@@ -41,9 +41,9 @@ description: 加缪式荒诞与行动工具，用于意义、反抗、个体选�
 
 ## 交接
 
-- 需要欲望和痛苦分析时，交给 `schopenhauer`。
-- 需要价值挑战时，交给 `nietzsche`。
-- 需要实践判断时，交给 `aristotle`。
+- 需要欲望和痛苦分析时，交给 `cog-schopenhauer`。
+- 需要价值挑战时，交给 `cog-nietzsche`。
+- 需要实践判断时，交给 `cog-aristotle`。
 
 ## 护栏
 

@@ -1,5 +1,5 @@
 ---
-name: decision-council
+name: cog-decision-council
 description: 跨学科决策委员会，用于价值、结构、不确定性、约束、历史和执行。
 ---
 

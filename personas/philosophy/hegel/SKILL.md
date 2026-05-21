@@ -1,5 +1,5 @@
 ---
-name: hegel
+name: cog-hegel
 description: 黑格尔式辩证分析工具，用于矛盾、历史运动、结构演化和综合。
 ---
 
@@ -41,9 +41,9 @@ description: 黑格尔式辩证分析工具，用于矛盾、历史运动、结�
 
 ## 交接
 
-- 概念混乱时，交给 `wittgenstein`。
-- 需要分类和目的时，交给 `aristotle`。
-- 需要原则审查时，交给 `kant`。
+- 概念混乱时，交给 `cog-wittgenstein`。
+- 需要分类和目的时，交给 `cog-aristotle`。
+- 需要原则审查时，交给 `cog-kant`。
 
 ## 护栏
 

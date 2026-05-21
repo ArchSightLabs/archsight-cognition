@@ -44,17 +44,17 @@ npx @archsight/cognition install antigravity --all
 
 ```powershell
 mkdir .agents\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .agents\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .agents\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
 ```
 
 安装后，Antigravity agent 可以根据 `SKILL.md` 的 `name` 和 `description` 自动判断是否加载，也可以在对话中显式要求：
 
 ```text
-使用 decision-council skill 评审这个技术路线，输出风险、反对条件和下一步验证。
+使用 cog-decision-council skill 评审这个技术路线，输出风险、反对条件和下一步验证。
 ```
 
 ### 方式二：安装为全局 skills
@@ -63,11 +63,11 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .age
 
 ```powershell
 mkdir $HOME\.gemini\antigravity\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.gemini\antigravity\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.gemini\antigravity\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
 ```
 
 ### 方式三：只添加 workspace 规则指针
@@ -87,6 +87,8 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 写作和表达评审：`teams/writing-review-panel/SKILL.md`
 
+对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+
 不要人格 cosplay。persona 只作为学科思维工具。
 ```
 
@@ -97,7 +99,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 ```markdown
 # Decision Review
 
-使用 ArchSight Cognition 的 `decision-council` 思路评审用户给出的决策。
+使用 ArchSight Cognition 的 `cog-decision-council` 思路评审用户给出的决策。
 
 输出：
 - 决策重述
@@ -116,13 +118,13 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 
 | 任务 | 推荐 skill / 文件 |
 | --- | --- |
-| 需求含混 | `socrates` |
-| 概念边界混乱 | `wittgenstein` |
-| 不确定性和证据 | `bayes` |
-| 约束和系统建模 | `newton` |
-| 方案高风险 | `decision-council` |
-| 文档、文章、品牌叙事 | `writing-review-panel` |
-| 研究假设和验证路径 | `scientific-reasoning-panel` |
+| 需求含混 | `cog-socrates` |
+| 概念边界混乱 | `cog-wittgenstein` |
+| 不确定性和证据 | `cog-bayes` |
+| 约束和系统建模 | `cog-newton` |
+| 方案高风险 | `cog-decision-council` |
+| 文档、文章、品牌叙事 | `cog-writing-review-panel` |
+| 研究假设和验证路径 | `cog-scientific-reasoning-panel` |
 
 ## 安全与权限
 

@@ -1,5 +1,5 @@
 ---
-name: writing-review-panel
+name: cog-writing-review-panel
 description: 跨学科写作批评面板，用于论证、叙事、清晰度、节奏和风格。
 ---
 

@@ -36,5 +36,7 @@
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review-panel/SKILL.md`
 
+对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 <!-- ARCHSIGHT-COGNITION:END -->

@@ -1,5 +1,5 @@
 ---
-name: visual-composition
+name: cog-visual-composition
 description: 艺术构图工具，用于构图、层级、节奏、对比、视觉一致性和审美批评。
 ---
 
@@ -37,8 +37,8 @@ description: 艺术构图工具，用于构图、层级、节奏、对比、视�
 
 ## 交接
 
-- 交给 `shakespeare` 检查叙事和情绪张力。
-- 交给 `writing-review-panel` 检查文案与视觉是否一致。
+- 交给 `cog-shakespeare` 检查叙事和情绪张力。
+- 交给 `cog-writing-review-panel` 检查文案与视觉是否一致。
 - 交给设计或前端执行 agent 做落地。
 
 ## 护栏

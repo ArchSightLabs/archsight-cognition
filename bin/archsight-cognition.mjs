@@ -10,12 +10,12 @@ const __dirname = path.dirname(__filename);
 const packageRoot = path.resolve(__dirname, "..");
 
 const curatedSkills = [
-  { name: "decision-council", source: "teams/decision-council" },
-  { name: "writing-review-panel", source: "teams/writing-review-panel" },
-  { name: "scientific-reasoning-panel", source: "teams/scientific-reasoning-panel" },
-  { name: "socrates", source: "personas/philosophy/socrates" },
-  { name: "bayes", source: "personas/mathematics/bayes" },
-  { name: "newton", source: "personas/physics/newton" }
+  { name: "cog-decision-council", source: "teams/decision-council" },
+  { name: "cog-writing-review-panel", source: "teams/writing-review-panel" },
+  { name: "cog-scientific-reasoning-panel", source: "teams/scientific-reasoning-panel" },
+  { name: "cog-socrates", source: "personas/philosophy/socrates" },
+  { name: "cog-bayes", source: "personas/mathematics/bayes" },
+  { name: "cog-newton", source: "personas/physics/newton" }
 ];
 
 const allSkills = [
@@ -252,7 +252,7 @@ function installAntigravityWorkflow(cwd, force) {
     workflowPath,
     `# Decision Review
 
-使用 ArchSight Cognition 的 \`decision-council\` 思路评审用户给出的决策。
+使用 ArchSight Cognition 的 \`cog-decision-council\` 思路评审用户给出的决策。
 
 输出：
 - 决策重述
@@ -283,6 +283,8 @@ function buildCodexBlock(contentRoot) {
 - 高风险决策：\`teams/decision-council/SKILL.md\`
 - 文章、叙事和表达：\`teams/writing-review-panel/SKILL.md\`
 
+对外 skill 调用名统一使用 \`cog-\` 前缀，例如 \`cog-socrates\`、\`cog-bayes\`、\`cog-newton\`、\`cog-decision-council\`。
+
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 <!-- ARCHSIGHT-COGNITION:END -->`;
 }
@@ -295,7 +297,7 @@ function findSkillDirs(baseDir) {
   walk(root, (dir) => {
     if (fs.existsSync(path.join(dir, "SKILL.md"))) {
       skills.push({
-        name: path.basename(dir),
+        name: toSkillName(path.basename(dir)),
         source: path.relative(packageRoot, dir).replaceAll(path.sep, "/")
       });
     }
@@ -310,6 +312,10 @@ function walk(dir, visit) {
     visit(fullPath);
     walk(fullPath, visit);
   }
+}
+
+function toSkillName(name) {
+  return name.startsWith("cog-") ? name : `cog-${name}`;
 }
 
 function dedupeSkills(skills) {

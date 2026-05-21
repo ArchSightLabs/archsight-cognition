@@ -1,5 +1,5 @@
 ---
-name: historical-strategy-panel
+name: cog-historical-strategy-panel
 description: 历史战略评审面板，用于周期、权力、制度和路径依赖。
 ---
 

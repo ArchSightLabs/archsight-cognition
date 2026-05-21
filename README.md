@@ -158,7 +158,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code 和 Antigravity 入口。 |
 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code 和 Antigravity 的全局目录。 |
 
-默认只安装高频工具：`decision-council`、`writing-review-panel`、`scientific-reasoning-panel`、`socrates`、`bayes`、`newton`。
+默认只安装高频工具：`cog-decision-council`、`cog-writing-review-panel`、`cog-scientific-reasoning-panel`、`cog-socrates`、`cog-bayes`、`cog-newton`。
 
 如需安装全部 `SKILL.md`：
 
@@ -254,6 +254,8 @@ npx @archsight/cognition install codex --global
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review-panel/SKILL.md`
 
+对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 ```
 
@@ -286,28 +288,28 @@ npx @archsight/cognition install antigravity --global
 
 ```powershell
 mkdir .agents\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .agents\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .agents\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
 ```
 
 然后在 Antigravity agent 对话中输入：
 
 ```text
-使用 decision-council skill 评审这个技术路线，输出风险、反对条件和下一步验证。
+使用 cog-decision-council skill 评审这个技术路线，输出风险、反对条件和下一步验证。
 ```
 
 方式二：安装为全局 skills，供所有 workspace 使用。
 
 ```powershell
 mkdir $HOME\.gemini\antigravity\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.gemini\antigravity\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel $HOME\.gemini\antigravity\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
 ```
 
 方式三：只添加 workspace rule 指针。
@@ -327,6 +329,8 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 写作和表达评审：`teams/writing-review-panel/SKILL.md`
 
+对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+
 不要人格 cosplay。persona 只作为学科思维工具。
 ```
 
@@ -335,7 +339,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 ```markdown
 # Decision Review
 
-使用 ArchSight Cognition 的 `decision-council` 思路评审用户给出的决策。
+使用 ArchSight Cognition 的 `cog-decision-council` 思路评审用户给出的决策。
 
 输出：
 - 决策重述
@@ -370,15 +374,15 @@ npx @archsight/cognition install claude-code --global
 
 ```powershell
 mkdir .claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\writing-review-panel -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cog-decision-council -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review-panel .claude\skills\cog-writing-review-panel -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
 ```
 
 调用示例：
 
 ```text
-/decision-council
+/cog-decision-council
 对这个产品方向做一次跨学科决策评审。
 ```
 

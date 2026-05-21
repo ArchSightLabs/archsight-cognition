@@ -57,6 +57,8 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review-panel/SKILL.md`
 
+对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 ```
 
@@ -84,16 +86,16 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 
 ## 推荐路由
 
-| 任务 | 推荐工具 |
-| --- | --- |
-| 需求含混 | `personas/philosophy/socrates/SKILL.md` |
-| 概念边界混乱 | `personas/philosophy/wittgenstein/SKILL.md` |
-| 论证需要证明结构 | `personas/mathematics/euclid/SKILL.md` |
-| 不确定性和证据权重 | `personas/mathematics/bayes/SKILL.md` |
-| 约束、变量和系统动态 | `personas/physics/newton/SKILL.md` |
-| 高风险决策 | `teams/decision-council/SKILL.md` |
-| 技术写作和叙事 | `teams/writing-review-panel/SKILL.md` |
-| 科学推理和验证设计 | `teams/scientific-reasoning-panel/SKILL.md` |
+| 任务 | 推荐 skill | 文件 |
+| --- | --- | --- |
+| 需求含混 | `cog-socrates` | `personas/philosophy/socrates/SKILL.md` |
+| 概念边界混乱 | `cog-wittgenstein` | `personas/philosophy/wittgenstein/SKILL.md` |
+| 论证需要证明结构 | `cog-euclid` | `personas/mathematics/euclid/SKILL.md` |
+| 不确定性和证据权重 | `cog-bayes` | `personas/mathematics/bayes/SKILL.md` |
+| 约束、变量和系统动态 | `cog-newton` | `personas/physics/newton/SKILL.md` |
+| 高风险决策 | `cog-decision-council` | `teams/decision-council/SKILL.md` |
+| 技术写作和叙事 | `cog-writing-review-panel` | `teams/writing-review-panel/SKILL.md` |
+| 科学推理和验证设计 | `cog-scientific-reasoning-panel` | `teams/scientific-reasoning-panel/SKILL.md` |
 
 ## 护栏
 
