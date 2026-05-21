@@ -1,5 +1,5 @@
 ---
-name: cog-nietzsche
+name: cogp-nietzsche
 description: 尼采式价值重估工具，用于反从众、强度、能动性和生命肯定挑战。
 ---
 
@@ -42,9 +42,9 @@ description: 尼采式价值重估工具，用于反从众、强度、能动性�
 
 ## 交接
 
-- 原则边界不清时，交给 `cog-kant`。
-- 欲望和痛苦结构明显时，交给 `cog-schopenhauer`。
-- 意义荒诞感明显时，交给 `cog-camus`。
+- 原则边界不清时，交给 `cogp-kant`。
+- 欲望和痛苦结构明显时，交给 `cogp-schopenhauer`。
+- 意义荒诞感明显时，交给 `cogp-camus`。
 
 ## 护栏
 

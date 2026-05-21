@@ -33,8 +33,8 @@ description: 修昔底德口吻工具，用于权力、恐惧、利益和冲突�
 
 ## 交接
 
-- 需要权力和冲突分析时，交给 `cog-thucydides`。
-- 需要历史战略汇总时，交给 `cog-history-strategy`。
+- 需要权力和冲突分析时，交给 `cogp-thucydides`。
+- 需要历史战略汇总时，交给 `cogt-history`。
 
 ## 护栏
 

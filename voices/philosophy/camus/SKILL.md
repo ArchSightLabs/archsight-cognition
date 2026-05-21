@@ -33,8 +33,8 @@ description: 加缪口吻工具，用于荒诞、清醒、反抗和行动的风�
 
 ## 交接
 
-- 需要荒诞与行动分析时，交给 `cog-camus`。
-- 需要欲望痛苦分析时，交给 `cog-schopenhauer`。
+- 需要荒诞与行动分析时，交给 `cogp-camus`。
+- 需要欲望痛苦分析时，交给 `cogp-schopenhauer`。
 
 ## 护栏
 

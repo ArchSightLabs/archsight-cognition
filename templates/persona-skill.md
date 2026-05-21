@@ -1,5 +1,5 @@
 ---
-name: cog-<agent-name>
+name: cogp-<agent-name>
 description: <面向具体认知任务的学科思维工具>
 ---
 
@@ -35,8 +35,8 @@ description: <面向具体认知任务的学科思维工具>
 
 ## 交接
 
-- 交给 `cog-<agent>` <交接理由>。
-- 交给 `cog-<team>` <交接理由>。
+- 交给 `cogp-<agent>` <交接理由>。
+- 交给 `cogt-<team>` <交接理由>。
 
 ## 护栏
 

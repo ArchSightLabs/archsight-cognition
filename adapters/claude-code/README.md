@@ -34,11 +34,14 @@ npx @archsight/cognition install claude-code --all
 
 ```powershell
 mkdir .claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude\skills\cog-writing-review -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cog-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council .claude\skills\cogt-think -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cogt-decide -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude\skills\cogt-write -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review .claude\skills\cogt-design -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .claude\skills\cogt-learn -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cogp-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cogp-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
 ```
 
@@ -48,11 +51,14 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .clau
 
 ```powershell
 mkdir $HOME\.claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.claude\skills\cog-writing-review -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cog-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cog-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council $HOME\.claude\skills\cogt-think -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.claude\skills\cogt-decide -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.claude\skills\cogt-write -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review $HOME\.claude\skills\cogt-design -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path $HOME\.claude\skills\cogt-learn -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cogp-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cogp-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.claude\skills\cogv-kant -Recurse
 ```
 
@@ -60,11 +66,14 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/cog-decision-council
-cp -R ~/work/archsight-cognition/teams/writing-review ~/.claude/skills/cog-writing-review
-cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cog-socrates
-cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cog-bayes
-cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-newton
+cp -R ~/work/archsight-cognition/teams/thinking-council ~/.claude/skills/cogt-think
+cp -R ~/work/archsight-cognition/teams/decision-council ~/.claude/skills/cogt-decide
+cp -R ~/work/archsight-cognition/teams/writing-review ~/.claude/skills/cogt-write
+cp -R ~/work/archsight-cognition/teams/design-review ~/.claude/skills/cogt-design
+cp -R ~/work/archsight-cognition/teams/learning-path ~/.claude/skills/cogt-learn
+cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cogp-socrates
+cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cogp-bayes
+cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cogp-newton
 cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-kant
 ```
 
@@ -73,17 +82,32 @@ cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-ka
 在 Claude Code 中启动项目后，直接调用：
 
 ```text
-/cog-decision-council
+/cogt-think
+我不知道该用哪个视角，请先帮我判断问题类型并给出下一步。
+```
+
+```text
+/cogt-decide
 对这个架构方案做一次跨学科决策评审，输出风险、反对条件和下一步验证。
 ```
 
 ```text
-/cog-writing-review
+/cogt-write
 评审这篇文章的结构、叙事张力、论证清晰度和可执行修改建议。
 ```
 
 ```text
-/cog-bayes
+/cogt-design
+评审这个产品界面的信息架构、视觉层级和交互风险。
+```
+
+```text
+/cogt-learn
+帮我分析这个学习路径和亲子沟通问题，给出下一步。
+```
+
+```text
+/cogp-bayes
 评估这个产品假设的证据强度、不确定性和最小验证实验。
 ```
 
@@ -96,13 +120,16 @@ cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-ka
 
 | 任务 | Skill |
 | --- | --- |
-| 需求含混 | `/cog-socrates` |
-| 论证混乱 | `/cog-euclid` |
-| 概率、证据和不确定性 | `/cog-bayes` |
-| 约束不明 | `/cog-newton` |
-| 方案高风险 | `/cog-decision-council` |
-| 文档质量 | `/cog-writing-review` |
-| 研究和验证路径 | `/cog-scientific-reasoning` |
+| 不知道该用哪个工具 | `/cogt-think` |
+| 需求含混 | `/cogp-socrates` |
+| 论证混乱 | `/cogp-euclid` |
+| 概率、证据和不确定性 | `/cogp-bayes` |
+| 约束不明 | `/cogp-newton` |
+| 方案高风险 | `/cogt-decide` |
+| 文档质量 | `/cogt-write` |
+| 研究和验证路径 | `/cogt-science` |
+| 产品、体验、视觉、交互评审 | `/cogt-design` |
+| 教育、学习路径、亲子成长 | `/cogt-learn` |
 | 风格化口吻 | `/cogv-kant`、`/cogv-nietzsche` |
 
 ## 维护建议

@@ -1,5 +1,5 @@
 ---
-name: cog-braudel
+name: cogp-braudel
 description: 长时段历史工具，用于结构、周期、地理、制度和慢变量分析。
 ---
 
@@ -37,9 +37,9 @@ description: 长时段历史工具，用于结构、周期、地理、制度和�
 
 ## 交接
 
-- 交给 `cog-thucydides` 分析权力和冲突。
+- 交给 `cogp-thucydides` 分析权力和冲突。
 - 交给 `mathematics/bayes` 更新不确定判断。
-- 交给 `cog-history-strategy` 汇总战略含义。
+- 交给 `cogt-history` 汇总战略含义。
 
 ## 护栏
 

@@ -33,8 +33,8 @@ description: 苏格拉底口吻工具，用于追问、反讽、概念澄清的�
 
 ## 交接
 
-- 需要正式澄清问题时，交给 `cog-socrates`。
-- 需要语言边界时，交给 `cog-wittgenstein`。
+- 需要正式澄清问题时，交给 `cogp-socrates`。
+- 需要语言边界时，交给 `cogp-wittgenstein`。
 
 ## 护栏
 

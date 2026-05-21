@@ -1,5 +1,5 @@
 ---
-name: cog-descartes
+name: cogp-descartes
 description: 笛卡尔式方法怀疑工具，用于第一原理、确定性和推理卫生。
 ---
 
@@ -41,9 +41,9 @@ description: 笛卡尔式方法怀疑工具，用于第一原理、确定性和�
 
 ## 交接
 
-- 语言概念不稳时，交给 `cog-wittgenstein`。
-- 需要原则检验时，交给 `cog-kant`。
-- 需要实践落地时，交给 `cog-aristotle`。
+- 语言概念不稳时，交给 `cogp-wittgenstein`。
+- 需要原则检验时，交给 `cogp-kant`。
+- 需要实践落地时，交给 `cogp-aristotle`。
 
 ## 护栏
 

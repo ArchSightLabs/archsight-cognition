@@ -9,7 +9,8 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 | 层级 | 触发 | Prompt |
 | --- | --- | --- |
 | Simple | 单个概念澄清 | 加载 `personas/philosophy/wittgenstein/SKILL.md` |
-| Medium | 决策、文章、架构评审 | 加载 `teams/decision-council/SKILL.md` 或任务专用 team |
+| Default | 不知道该用哪个工具 | 加载 `teams/thinking-council/SKILL.md` |
+| Medium | 决策、文章、架构、设计、教育评审 | 加载 `teams/decision-council/SKILL.md` 或任务专用 team |
 | Heavy | 多主题辩论或长期计划 | 加载一个 debate 文件和选定 persona |
 
 ## 可直接粘贴的频道指令
@@ -19,7 +20,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 加载最相关的 ArchSight Cognition team。
 把 persona 当作学科思维镜头，而不是历史人物模仿。
 默认决策路由：Socrates -> Bayes -> Newton -> Braudel -> Aristotle。
-写作任务使用 `cog-writing-review`。科学推理任务使用 `cog-scientific-reasoning`。
+不知道该用哪个工具时使用 `cogt-think`。写作任务使用 `cogt-write`。科学推理任务使用 `cogt-science`。产品、体验、视觉和交互任务使用 `cogt-design`。教育、学习路径和亲子成长任务使用 `cogt-learn`。
 用户明确要求口吻、风格化表达时，使用 `cogv-*`，例如 `cogv-kant` 或 `cogv-nietzsche`。
 最终回答必须包含可执行下一步。
 ```

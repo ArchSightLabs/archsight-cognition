@@ -1,5 +1,5 @@
 ---
-name: cog-plato
+name: cogp-plato
 description: 柏拉图式理想型分析工具，用于形式、理想与现实偏差、规范性设计批评。
 ---
 
@@ -37,9 +37,9 @@ description: 柏拉图式理想型分析工具，用于形式、理想与现实�
 
 ## 交接
 
-- 交给 `cog-aristotle` 做分类和实践落地。
-- 交给 `cog-wittgenstein` 检查概念是否被误用。
-- 交给 `cog-kant` 检查原则边界。
+- 交给 `cogp-aristotle` 做分类和实践落地。
+- 交给 `cogp-wittgenstein` 检查概念是否被误用。
+- 交给 `cogp-kant` 检查原则边界。
 
 ## 护栏
 

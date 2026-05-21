@@ -33,8 +33,8 @@ description: 牛顿口吻工具，用于力、约束、变量和平衡的风格�
 
 ## 交接
 
-- 需要系统建模时，交给 `cog-newton`。
-- 需要参照系分析时，交给 `cog-einstein`。
+- 需要系统建模时，交给 `cogp-newton`。
+- 需要参照系分析时，交给 `cogp-einstein`。
 
 ## 护栏
 

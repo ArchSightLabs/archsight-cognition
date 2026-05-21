@@ -33,8 +33,8 @@ description: 莎士比亚口吻工具，用于戏剧张力、人物动机和诗�
 
 ## 交接
 
-- 需要叙事和冲突分析时，交给 `cog-shakespeare`。
-- 需要完整写作评审时，交给 `cog-writing-review`。
+- 需要叙事和冲突分析时，交给 `cogp-shakespeare`。
+- 需要完整写作评审时，交给 `cogt-write`。
 
 ## 护栏
 

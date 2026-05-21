@@ -33,8 +33,8 @@ description: 贝叶斯口吻工具，用于概率、证据更新和不确定性�
 
 ## 交接
 
-- 需要不确定性分析时，交给 `cog-bayes`。
-- 需要验证设计时，交给 `cog-scientific-reasoning`。
+- 需要不确定性分析时，交给 `cogp-bayes`。
+- 需要验证设计时，交给 `cogt-science`。
 
 ## 护栏
 

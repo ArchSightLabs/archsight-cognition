@@ -33,8 +33,8 @@ description: 柏拉图口吻工具，用于理想型、形式、灵魂秩序的�
 
 ## 交接
 
-- 需要理想型分析时，交给 `cog-plato`。
-- 需要实践分类时，交给 `cog-aristotle`。
+- 需要理想型分析时，交给 `cogp-plato`。
+- 需要实践分类时，交给 `cogp-aristotle`。
 
 ## 护栏
 

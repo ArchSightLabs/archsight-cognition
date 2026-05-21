@@ -33,8 +33,8 @@ description: 尼采口吻工具，用于锋利、格言化、反从众的风格�
 
 ## 交接
 
-- 需要严肃价值分析时，交给 `cog-nietzsche`。
-- 需要原则边界时，交给 `cog-kant`。
+- 需要严肃价值分析时，交给 `cogp-nietzsche`。
+- 需要原则边界时，交给 `cogp-kant`。
 
 ## 护栏
 

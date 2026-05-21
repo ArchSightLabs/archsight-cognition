@@ -33,8 +33,8 @@ description: 布罗代尔口吻工具，用于长时段、慢变量、结构感�
 
 ## 交接
 
-- 需要长时段结构分析时，交给 `cog-braudel`。
-- 需要战略汇总时，交给 `cog-history-strategy`。
+- 需要长时段结构分析时，交给 `cogp-braudel`。
+- 需要战略汇总时，交给 `cogt-history`。
 
 ## 护栏
 

@@ -44,18 +44,21 @@ npx @archsight/cognition install antigravity --all
 
 ```powershell
 mkdir .agents\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents\skills\cog-writing-review -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council .agents\skills\cogt-think -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cogt-decide -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents\skills\cogt-write -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review .agents\skills\cogt-design -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .agents\skills\cogt-learn -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cogp-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cogp-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
 ```
 
 安装后，Antigravity agent 可以根据 `SKILL.md` 的 `name` 和 `description` 自动判断是否加载，也可以在对话中显式要求：
 
 ```text
-使用 cog-decision-council skill 评审这个技术路线，输出风险、反对条件和下一步验证。
+使用 cogt-decide skill 评审这个技术路线，输出风险、反对条件和下一步验证。
 ```
 
 ### 方式二：安装为全局 skills
@@ -64,11 +67,14 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agen
 
 ```powershell
 mkdir $HOME\.gemini\antigravity\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cog-decision-council -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.gemini\antigravity\skills\cog-writing-review -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council $HOME\.gemini\antigravity\skills\cogt-think -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cogt-decide -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.gemini\antigravity\skills\cogt-write -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review $HOME\.gemini\antigravity\skills\cogt-design -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path $HOME\.gemini\antigravity\skills\cogt-learn -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cogp-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cogp-bayes -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
 ```
 
@@ -86,10 +92,14 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 - 概念和需求不清：`personas/philosophy/socrates/SKILL.md`
 - 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
 - 约束和系统建模：`personas/physics/newton/SKILL.md`
+- 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 写作和表达评审：`teams/writing-review/SKILL.md`
+- 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
+- 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
 
-对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
+单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。persona 只作为学科思维工具。
@@ -102,7 +112,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 ```markdown
 # Decision Review
 
-使用 ArchSight Cognition 的 `cog-decision-council` 思路评审用户给出的决策。
+使用 ArchSight Cognition 的 `cogt-decide` 思路评审用户给出的决策。
 
 输出：
 - 决策重述
@@ -121,13 +131,16 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 
 | 任务 | 推荐 skill / 文件 |
 | --- | --- |
-| 需求含混 | `cog-socrates` |
-| 概念边界混乱 | `cog-wittgenstein` |
-| 不确定性和证据 | `cog-bayes` |
-| 约束和系统建模 | `cog-newton` |
-| 方案高风险 | `cog-decision-council` |
-| 文档、文章、品牌叙事 | `cog-writing-review` |
-| 研究假设和验证路径 | `cog-scientific-reasoning` |
+| 不知道该用哪个工具 | `cogt-think` |
+| 需求含混 | `cogp-socrates` |
+| 概念边界混乱 | `cogp-wittgenstein` |
+| 不确定性和证据 | `cogp-bayes` |
+| 约束和系统建模 | `cogp-newton` |
+| 方案高风险 | `cogt-decide` |
+| 文档、文章、品牌叙事 | `cogt-write` |
+| 研究假设和验证路径 | `cogt-science` |
+| 产品、体验、视觉、交互评审 | `cogt-design` |
+| 教育、学习路径、亲子成长 | `cogt-learn` |
 | 风格化口吻 | `cogv-kant`、`cogv-nietzsche` |
 
 ## 安全与权限

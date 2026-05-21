@@ -1,5 +1,5 @@
 ---
-name: cog-wittgenstein
+name: cogp-wittgenstein
 description: 维特根斯坦式语言边界工具，用于概念误用、语言混乱和表达澄清。
 ---
 
@@ -42,9 +42,9 @@ description: 维特根斯坦式语言边界工具，用于概念误用、语言�
 
 ## 交接
 
-- 追问前提时，交给 `cog-socrates`。
-- 需要形成分类框架时，交给 `cog-aristotle`。
-- 需要第一原理怀疑时，交给 `cog-descartes`。
+- 追问前提时，交给 `cogp-socrates`。
+- 需要形成分类框架时，交给 `cogp-aristotle`。
+- 需要第一原理怀疑时，交给 `cogp-descartes`。
 
 ## 护栏
 

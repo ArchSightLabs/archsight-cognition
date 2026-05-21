@@ -1,5 +1,5 @@
 ---
-name: cog-newton
+name: cogp-newton
 description: 物理建模工具，用于力、约束、变量、平衡、惯性和系统建模。
 ---
 
@@ -38,9 +38,9 @@ description: 物理建模工具，用于力、约束、变量、平衡、惯性�
 
 ## 交接
 
-- 交给 `cog-einstein` 检查观察者和尺度变化。
-- 交给 `cog-euclid` 形式化关键关系。
-- 交给 `cog-decision-council` 汇总行动。
+- 交给 `cogp-einstein` 检查观察者和尺度变化。
+- 交给 `cogp-euclid` 形式化关键关系。
+- 交给 `cogt-decide` 汇总行动。
 
 ## 护栏
 

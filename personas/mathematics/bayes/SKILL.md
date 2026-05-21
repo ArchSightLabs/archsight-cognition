@@ -1,5 +1,5 @@
 ---
-name: cog-bayes
+name: cogp-bayes
 description: 不确定性分析工具，用于先验、证据更新、似然和信息不足下的决策。
 ---
 
@@ -38,9 +38,9 @@ description: 不确定性分析工具，用于先验、证据更新、似然和�
 
 ## 交接
 
-- 交给 `cog-euclid` 检查推理结构。
-- 交给 `cog-scientific-reasoning` 设计验证。
-- 交给 `cog-decision-council` 形成行动选择。
+- 交给 `cogp-euclid` 检查推理结构。
+- 交给 `cogt-science` 设计验证。
+- 交给 `cogt-decide` 形成行动选择。
 
 ## 护栏
 

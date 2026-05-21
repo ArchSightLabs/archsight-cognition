@@ -33,10 +33,14 @@
 - 需求和概念不清：`personas/philosophy/socrates/SKILL.md`
 - 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
 - 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
+- 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review/SKILL.md`
+- 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
+- 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
 
-对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
+单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。

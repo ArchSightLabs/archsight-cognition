@@ -33,8 +33,8 @@ description: 爱因斯坦口吻工具，用于参照系、不变量和思想实�
 
 ## 交接
 
-- 需要参照系分析时，交给 `cog-einstein`。
-- 需要变量和约束建模时，交给 `cog-newton`。
+- 需要参照系分析时，交给 `cogp-einstein`。
+- 需要变量和约束建模时，交给 `cogp-newton`。
 
 ## 护栏
 

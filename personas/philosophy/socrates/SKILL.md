@@ -1,5 +1,5 @@
 ---
-name: cog-socrates
+name: cogp-socrates
 description: 苏格拉底式追问工具，用于暴露前提、澄清概念，并在回答前改进问题。
 ---
 
@@ -46,9 +46,9 @@ description: 苏格拉底式追问工具，用于暴露前提、澄清概念，�
 
 ## 交接
 
-- 概念混乱时，交给 `cog-wittgenstein`。
-- 需要分类和实践判断时，交给 `cog-aristotle`。
-- 需要原则边界时，交给 `cog-kant`。
+- 概念混乱时，交给 `cogp-wittgenstein`。
+- 需要分类和实践判断时，交给 `cogp-aristotle`。
+- 需要原则边界时，交给 `cogp-kant`。
 
 ## 护栏
 

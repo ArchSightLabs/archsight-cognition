@@ -33,8 +33,8 @@ description: 康德口吻工具，用于严肃、克制、原则优先的风格�
 
 ## 交接
 
-- 需要原则审查时，交给 `cog-kant`。
-- 需要价值挑战时，交给 `cog-nietzsche`。
+- 需要原则审查时，交给 `cogp-kant`。
+- 需要价值挑战时，交给 `cogp-nietzsche`。
 
 ## 护栏
 

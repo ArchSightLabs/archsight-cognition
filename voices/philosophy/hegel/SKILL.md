@@ -33,8 +33,8 @@ description: 黑格尔口吻工具，用于矛盾、运动、历史生成的风�
 
 ## 交接
 
-- 需要辩证分析时，交给 `cog-hegel`。
-- 需要历史结构时，交给 `cog-history-strategy`。
+- 需要辩证分析时，交给 `cogp-hegel`。
+- 需要历史结构时，交给 `cogt-history`。
 
 ## 护栏
 

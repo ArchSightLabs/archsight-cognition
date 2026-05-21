@@ -19,6 +19,7 @@ npx @archsight/cognition install codex
 这会创建或更新当前目录的 `AGENTS.md`，写入一个带 marker 的 ArchSight Cognition 指针区块。
 
 同时会把本包内容复制到当前项目的 `.archsight-cognition/`，让 Codex 指向稳定的本地目录，而不是临时 npm cache 路径。
+常用 `cogt-*` / `cogp-*` / `cogv-*` 也会注册到 `CODEX_HOME\skills`；未设置 `CODEX_HOME` 时使用 `~\.codex\skills`。
 
 安装到全局 Codex 指令：
 
@@ -26,7 +27,13 @@ npx @archsight/cognition install codex
 npx @archsight/cognition install codex --global
 ```
 
-这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，并更新对应的全局 `AGENTS.md`。
+这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，把常用 `cogt-*` / `cogp-*` / `cogv-*` 注册到 Codex skills，并更新对应的全局 `AGENTS.md`。
+
+如果要注册全部 persona、team 和 voice：
+
+```powershell
+npx @archsight/cognition install codex --global --all --force
+```
 
 如果已经存在该区块，默认不会覆盖；需要更新时执行：
 
@@ -54,10 +61,14 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 - 需求和概念不清：`personas/philosophy/socrates/SKILL.md`
 - 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
 - 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
+- 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review/SKILL.md`
+- 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
+- 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
 
-对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
+单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
@@ -71,7 +82,14 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 
 ## 使用
 
-在 Codex 中直接说明要加载的工具：
+在 Codex 中可以直接使用注册后的 skill：
+
+```text
+/cogp-socrates
+帮我澄清这个产品问题。
+```
+
+也可以直接说明要加载的工具：
 
 ```text
 加载 C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council\SKILL.md。
@@ -96,14 +114,17 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 
 | 任务 | 推荐 skill | 文件 |
 | --- | --- | --- |
-| 需求含混 | `cog-socrates` | `personas/philosophy/socrates/SKILL.md` |
-| 概念边界混乱 | `cog-wittgenstein` | `personas/philosophy/wittgenstein/SKILL.md` |
-| 论证需要证明结构 | `cog-euclid` | `personas/mathematics/euclid/SKILL.md` |
-| 不确定性和证据权重 | `cog-bayes` | `personas/mathematics/bayes/SKILL.md` |
-| 约束、变量和系统动态 | `cog-newton` | `personas/physics/newton/SKILL.md` |
-| 高风险决策 | `cog-decision-council` | `teams/decision-council/SKILL.md` |
-| 技术写作和叙事 | `cog-writing-review` | `teams/writing-review/SKILL.md` |
-| 科学推理和验证设计 | `cog-scientific-reasoning` | `teams/scientific-reasoning/SKILL.md` |
+| 不知道该用哪个工具 | `cogt-think` | `teams/thinking-council/SKILL.md` |
+| 需求含混 | `cogp-socrates` | `personas/philosophy/socrates/SKILL.md` |
+| 概念边界混乱 | `cogp-wittgenstein` | `personas/philosophy/wittgenstein/SKILL.md` |
+| 论证需要证明结构 | `cogp-euclid` | `personas/mathematics/euclid/SKILL.md` |
+| 不确定性和证据权重 | `cogp-bayes` | `personas/mathematics/bayes/SKILL.md` |
+| 约束、变量和系统动态 | `cogp-newton` | `personas/physics/newton/SKILL.md` |
+| 高风险决策 | `cogt-decide` | `teams/decision-council/SKILL.md` |
+| 技术写作和叙事 | `cogt-write` | `teams/writing-review/SKILL.md` |
+| 科学推理和验证设计 | `cogt-science` | `teams/scientific-reasoning/SKILL.md` |
+| 产品、体验、视觉、交互评审 | `cogt-design` | `teams/design-review/SKILL.md` |
+| 教育、学习路径、亲子成长 | `cogt-learn` | `teams/learning-path/SKILL.md` |
 | 风格化口吻 | `cogv-kant` / `cogv-nietzsche` | `voices/philosophy/kant/SKILL.md` |
 
 ## 护栏

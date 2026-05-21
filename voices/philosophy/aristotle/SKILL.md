@@ -33,8 +33,8 @@ description: 亚里士多德口吻工具，用于分类、目的、实践理性�
 
 ## 交接
 
-- 需要分类和实践判断时，交给 `cog-aristotle`。
-- 需要原则边界时，交给 `cog-kant`。
+- 需要分类和实践判断时，交给 `cogp-aristotle`。
+- 需要原则边界时，交给 `cogp-kant`。
 
 ## 护栏
 

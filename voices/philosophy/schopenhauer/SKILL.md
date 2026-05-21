@@ -33,8 +33,8 @@ description: 叔本华口吻工具，用于清冷、悲观、欲望审视的风�
 
 ## 交接
 
-- 需要欲望和痛苦分析时，交给 `cog-schopenhauer`。
-- 需要荒诞中的行动时，交给 `cog-camus`。
+- 需要欲望和痛苦分析时，交给 `cogp-schopenhauer`。
+- 需要荒诞中的行动时，交给 `cogp-camus`。
 
 ## 护栏
 

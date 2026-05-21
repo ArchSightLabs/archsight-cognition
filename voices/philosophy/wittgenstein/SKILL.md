@@ -33,8 +33,8 @@ description: 维特根斯坦口吻工具，用于语言边界、短句、概念�
 
 ## 交接
 
-- 需要概念澄清时，交给 `cog-wittgenstein`。
-- 需要追问前提时，交给 `cog-socrates`。
+- 需要概念澄清时，交给 `cogp-wittgenstein`。
+- 需要追问前提时，交给 `cogp-socrates`。
 
 ## 护栏
 

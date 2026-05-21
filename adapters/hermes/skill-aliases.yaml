@@ -11,118 +11,213 @@ normalization:
   fallback: 未命中别名时交给 Archie 默认 agent，不强制加载特定 skill。
 
 skills:
-  - name: cog-socrates
-    command: /cog-socrates
+  - name: cogp-socrates
+    command: /cogp-socrates
     path: personas/philosophy/socrates/SKILL.md
     aliases: [苏格拉底, 追问, 问题澄清, 澄清问题, 前提检查]
 
-  - name: cog-aristotle
-    command: /cog-aristotle
+  - name: cogp-aristotle
+    command: /cogp-aristotle
     path: personas/philosophy/aristotle/SKILL.md
     aliases: [亚里士多德, 实践理性, 分类判断, 落地分析, 目的分析]
 
-  - name: cog-wittgenstein
-    command: /cog-wittgenstein
+  - name: cogp-wittgenstein
+    command: /cogp-wittgenstein
     path: personas/philosophy/wittgenstein/SKILL.md
     aliases: [维特根斯坦, 语言澄清, 概念澄清, 表达澄清, 语言边界]
 
-  - name: cog-kant
-    command: /cog-kant
+  - name: cogp-kant
+    command: /cogp-kant
     path: personas/philosophy/kant/SKILL.md
     aliases: [康德, 原则审查, 义务审查, 普遍化, 边界审查]
 
-  - name: cog-plato
-    command: /cog-plato
+  - name: cogp-plato
+    command: /cogp-plato
     path: personas/philosophy/plato/SKILL.md
     aliases: [柏拉图, 理想型, 形式分析, 理想现实, 规范设计]
 
-  - name: cog-camus
-    command: /cog-camus
+  - name: cogp-camus
+    command: /cogp-camus
     path: personas/philosophy/camus/SKILL.md
     aliases: [加缪, 荒诞, 反抗, 意义感, 精神韧性]
 
-  - name: cog-descartes
-    command: /cog-descartes
+  - name: cogp-descartes
+    command: /cogp-descartes
     path: personas/philosophy/descartes/SKILL.md
     aliases: [笛卡尔, 方法怀疑, 第一原理, 确定性, 推理卫生]
 
-  - name: cog-hegel
-    command: /cog-hegel
+  - name: cogp-hegel
+    command: /cogp-hegel
     path: personas/philosophy/hegel/SKILL.md
     aliases: [黑格尔, 辩证法, 矛盾分析, 结构演化, 综合]
 
-  - name: cog-nietzsche
-    command: /cog-nietzsche
+  - name: cogp-nietzsche
+    command: /cogp-nietzsche
     path: personas/philosophy/nietzsche/SKILL.md
     aliases: [尼采, 价值重估, 反从众, 能动性, 强度挑战]
 
-  - name: cog-schopenhauer
-    command: /cog-schopenhauer
+  - name: cogp-schopenhauer
+    command: /cogp-schopenhauer
     path: personas/philosophy/schopenhauer/SKILL.md
     aliases: [叔本华, 欲望检查, 痛苦检查, 悲观风险, 预期纪律]
 
-  - name: cog-braudel
-    command: /cog-braudel
+  - name: cogp-braudel
+    command: /cogp-braudel
     path: personas/history/braudel/SKILL.md
     aliases: [布罗代尔, 长时段, 慢变量, 周期结构, 制度地理]
 
-  - name: cog-thucydides
-    command: /cog-thucydides
+  - name: cogp-thucydides
+    command: /cogp-thucydides
     path: personas/history/thucydides/SKILL.md
     aliases: [修昔底德, 权力分析, 冲突升级, 联盟动态, 恐惧利益]
 
-  - name: cog-shakespeare
-    command: /cog-shakespeare
+  - name: cogp-shakespeare
+    command: /cogp-shakespeare
     path: personas/literature/shakespeare/SKILL.md
     aliases: [莎士比亚, 叙事张力, 人物动机, 戏剧冲突, 文学批评]
 
-  - name: cog-bayes
-    command: /cog-bayes
+  - name: cogp-orwell
+    command: /cogp-orwell
+    path: personas/literature/orwell/SKILL.md
+    aliases: [奥威尔, 清晰写作, 去空话, 反套话, 表达诚实, Orwell]
+
+  - name: cogp-bayes
+    command: /cogp-bayes
     path: personas/mathematics/bayes/SKILL.md
     aliases: [贝叶斯, 概率更新, 不确定性, 证据更新, 先验]
 
-  - name: cog-euclid
-    command: /cog-euclid
+  - name: cogp-euclid
+    command: /cogp-euclid
     path: personas/mathematics/euclid/SKILL.md
     aliases: [欧几里得, 公理, 证明结构, 定义检查, 逻辑结构]
 
-  - name: cog-einstein
-    command: /cog-einstein
+  - name: cogp-einstein
+    command: /cogp-einstein
     path: personas/physics/einstein/SKILL.md
     aliases: [爱因斯坦, 参照系, 框架变换, 不变量, 思想实验]
 
-  - name: cog-newton
-    command: /cog-newton
+  - name: cogp-newton
+    command: /cogp-newton
     path: personas/physics/newton/SKILL.md
     aliases: [牛顿, 系统建模, 约束分析, 变量分析, 惯性]
 
-  - name: cog-visual-composition
-    command: /cog-visual-composition
+  - name: cogp-simon
+    command: /cogp-simon
+    path: personas/decision/simon/SKILL.md
+    aliases: [西蒙, Herbert Simon, 有限理性, 满意解, 搜索成本, 组织决策]
+
+  - name: cogp-kahneman
+    command: /cogp-kahneman
+    path: personas/decision/kahneman/SKILL.md
+    aliases: [卡尼曼, Daniel Kahneman, 判断偏差, 基准率, 损失厌恶, 决策卫生]
+
+  - name: cogp-drucker
+    command: /cogp-drucker
+    path: personas/decision/drucker/SKILL.md
+    aliases: [德鲁克, Peter Drucker, 管理有效性, 责任边界, 组织贡献, 反馈周期]
+
+  - name: cogp-popper
+    command: /cogp-popper
+    path: personas/science/popper/SKILL.md
+    aliases: [波普尔, Karl Popper, 可证伪性, 反证条件, 科学边界, 假设检验]
+
+  - name: cogp-feynman
+    command: /cogp-feynman
+    path: personas/science/feynman/SKILL.md
+    aliases: [费曼, Richard Feynman, 简单解释, 实验直觉, 自欺检查, 小实验]
+
+  - name: cogp-piaget
+    command: /cogp-piaget
+    path: personas/education/piaget/SKILL.md
+    aliases: [皮亚杰, Jean Piaget, 认知发展, 抽象能力, 同化顺应, 发展阶段]
+
+  - name: cogp-vygotsky
+    command: /cogp-vygotsky
+    path: personas/education/vygotsky/SKILL.md
+    aliases: [维果茨基, Lev Vygotsky, 最近发展区, 学习支架, 社会互动, 反馈语言]
+
+  - name: cogp-montessori
+    command: /cogp-montessori
+    path: personas/education/montessori/SKILL.md
+    aliases: [蒙台梭利, Maria Montessori, 自主学习, 环境设计, 专注, 成人边界]
+
+  - name: cogp-clausewitz
+    command: /cogp-clausewitz
+    path: personas/history/clausewitz/SKILL.md
+    aliases: [克劳塞维茨, Clausewitz, 战略摩擦, 重心, 升级风险, 执行不确定性]
+
+  - name: cogp-machiavelli
+    command: /cogp-machiavelli
+    path: personas/history/machiavelli/SKILL.md
+    aliases: [马基雅维利, Machiavelli, 权力现实, 联盟, 承诺可信度, 政治风险]
+
+  - name: cogp-visual-composition
+    command: /cogp-visual-composition
     path: personas/art/visual-composition/SKILL.md
     aliases: [视觉构图, 构图分析, 审美批评, 视觉层级, 形式一致性]
 
-  - name: cog-decision-council
-    command: /cog-decision-council
+  - name: cogp-rams
+    command: /cogp-rams
+    path: personas/art/rams/SKILL.md
+    aliases: [拉姆斯, Dieter Rams, 产品克制, 少而精, 工业设计, 设计十诫]
+
+  - name: cogp-norman
+    command: /cogp-norman
+    path: personas/art/norman/SKILL.md
+    aliases: [诺曼, Don Norman, 人本设计, 可供性, 交互反馈, 用户理解]
+
+  - name: cogp-vignelli
+    command: /cogp-vignelli
+    path: personas/art/vignelli/SKILL.md
+    aliases: [维涅利, Massimo Vignelli, 网格系统, 版式系统, 品牌系统, 视觉纪律]
+
+  - name: cogp-albers
+    command: /cogp-albers
+    path: personas/art/albers/SKILL.md
+    aliases: [阿尔伯斯, Josef Albers, 色彩关系, 色彩互动, 色彩感知, 对比检查]
+
+  - name: cogp-klee
+    command: /cogp-klee
+    path: personas/art/klee/SKILL.md
+    aliases: [克利, Paul Klee, 绘画构成, 视觉节奏, 形态动势, 象征构成]
+
+  - name: cogt-think
+    command: /cogt-think
+    path: teams/thinking-council/SKILL.md
+    aliases: [通用思考, 想一想, 帮我想想, 不知道怎么想, 不知道用哪个, 问题分流]
+
+  - name: cogt-decide
+    command: /cogt-decide
     path: teams/decision-council/SKILL.md
     aliases: [决策委员会, 决策评审, 跨学科决策, 战略评审, 方案评审]
 
-  - name: cog-philosophy-cavalry
-    command: /cog-philosophy-cavalry
+  - name: cogt-philosophy
+    command: /cogt-philosophy
     path: teams/philosophy-cavalry/SKILL.md
     aliases: [哲学骑兵, 哲学马队, 哲学面板, 哲学评审, 自我复盘]
 
-  - name: cog-writing-review
-    command: /cog-writing-review
+  - name: cogt-write
+    command: /cogt-write
     path: teams/writing-review/SKILL.md
     aliases: [写作评审, 文章评审, 文案评审, 表达评审, 论证评审]
 
-  - name: cog-history-strategy
-    command: /cog-history-strategy
+  - name: cogt-design
+    command: /cogt-design
+    path: teams/design-review/SKILL.md
+    aliases: [产品设计, 体验评审, 交互评审, 视觉评审, 设计评审, UX]
+
+  - name: cogt-learn
+    command: /cogt-learn
+    path: teams/learning-path/SKILL.md
+    aliases: [学习路径, 教育问题, 亲子成长, 学习规划, 学习动机, 孩子学习]
+
+  - name: cogt-history
+    command: /cogt-history
     path: teams/history-strategy/SKILL.md
     aliases: [历史战略, 历史评审, 周期评审, 制度评审, 路径依赖]
 
-  - name: cog-scientific-reasoning
-    command: /cog-scientific-reasoning
+  - name: cogt-science
+    command: /cogt-science
     path: teams/scientific-reasoning/SKILL.md
     aliases: [科学推理, 科学评审, 假设检验, 实验设计, 证据评审]
 

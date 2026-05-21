@@ -10,12 +10,33 @@ const __dirname = path.dirname(__filename);
 const packageRoot = path.resolve(__dirname, "..");
 
 const curatedSkills = [
-  { name: "cog-decision-council", source: "teams/decision-council" },
-  { name: "cog-writing-review", source: "teams/writing-review" },
-  { name: "cog-scientific-reasoning", source: "teams/scientific-reasoning" },
-  { name: "cog-socrates", source: "personas/philosophy/socrates" },
-  { name: "cog-bayes", source: "personas/mathematics/bayes" },
-  { name: "cog-newton", source: "personas/physics/newton" },
+  { name: "cogt-think", source: "teams/thinking-council" },
+  { name: "cogt-decide", source: "teams/decision-council" },
+  { name: "cogt-write", source: "teams/writing-review" },
+  { name: "cogt-science", source: "teams/scientific-reasoning" },
+  { name: "cogt-history", source: "teams/history-strategy" },
+  { name: "cogt-philosophy", source: "teams/philosophy-cavalry" },
+  { name: "cogt-design", source: "teams/design-review" },
+  { name: "cogt-learn", source: "teams/learning-path" },
+  { name: "cogp-socrates", source: "personas/philosophy/socrates" },
+  { name: "cogp-bayes", source: "personas/mathematics/bayes" },
+  { name: "cogp-newton", source: "personas/physics/newton" },
+  { name: "cogp-simon", source: "personas/decision/simon" },
+  { name: "cogp-kahneman", source: "personas/decision/kahneman" },
+  { name: "cogp-drucker", source: "personas/decision/drucker" },
+  { name: "cogp-popper", source: "personas/science/popper" },
+  { name: "cogp-feynman", source: "personas/science/feynman" },
+  { name: "cogp-piaget", source: "personas/education/piaget" },
+  { name: "cogp-vygotsky", source: "personas/education/vygotsky" },
+  { name: "cogp-montessori", source: "personas/education/montessori" },
+  { name: "cogp-clausewitz", source: "personas/history/clausewitz" },
+  { name: "cogp-machiavelli", source: "personas/history/machiavelli" },
+  { name: "cogp-orwell", source: "personas/literature/orwell" },
+  { name: "cogp-rams", source: "personas/art/rams" },
+  { name: "cogp-norman", source: "personas/art/norman" },
+  { name: "cogp-vignelli", source: "personas/art/vignelli" },
+  { name: "cogp-albers", source: "personas/art/albers" },
+  { name: "cogp-klee", source: "personas/art/klee" },
   { name: "cogv-kant", source: "voices/philosophy/kant" },
   { name: "cogv-nietzsche", source: "voices/philosophy/nietzsche" },
   { name: "cogv-schopenhauer", source: "voices/philosophy/schopenhauer" },
@@ -154,6 +175,7 @@ function parseOptions(args) {
 function installSkills({ host, destination, skills, force }) {
   fs.mkdirSync(destination, { recursive: true });
   console.log(`${host}: 安装到 ${destination}`);
+  removeLegacySkills(destination);
 
   for (const skill of dedupeSkills(skills)) {
     const source = path.join(packageRoot, skill.source);
@@ -180,6 +202,7 @@ function installCodex(options, force) {
     ? getCodexHome()
     : options.cwd;
   const contentRoot = installCodexContent(codexRoot, force, options.global);
+  installCodexSkills(options, force);
   const agentsPath = path.join(codexRoot, "AGENTS.md");
   const block = buildCodexBlock(contentRoot);
 
@@ -238,6 +261,15 @@ function installCodexContent(root, force, globalInstall) {
   return contentRoot;
 }
 
+function installCodexSkills(options, force) {
+  installSkills({
+    host: "Codex skills",
+    destination: path.join(getCodexHome(), "skills"),
+    skills: options.all ? allSkills : curatedSkills,
+    force
+  });
+}
+
 function getCodexHome() {
   return process.env.CODEX_HOME
     ? path.resolve(process.env.CODEX_HOME)
@@ -258,7 +290,7 @@ function installAntigravityWorkflow(cwd, force) {
     workflowPath,
     `# Decision Review
 
-使用 ArchSight Cognition 的 \`cog-decision-council\` 思路评审用户给出的决策。
+使用 ArchSight Cognition 的 \`cogt-decide\` 思路评审用户给出的决策。
 
 输出：
 - 决策重述
@@ -286,10 +318,14 @@ function buildCodexBlock(contentRoot) {
 - 需求和概念不清：\`personas/philosophy/socrates/SKILL.md\`
 - 不确定性和证据判断：\`personas/mathematics/bayes/SKILL.md\`
 - 变量、约束和系统建模：\`personas/physics/newton/SKILL.md\`
+- 不知道该用哪个工具：\`teams/thinking-council/SKILL.md\`
 - 高风险决策：\`teams/decision-council/SKILL.md\`
 - 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
+- 产品、体验、视觉和交互：\`teams/design-review/SKILL.md\`
+- 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
 
-对外 skill 调用名统一使用 \`cog-\` 前缀，例如 \`cog-socrates\`、\`cog-bayes\`、\`cog-newton\`、\`cog-decision-council\`。
+综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-learn\`。
+单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
@@ -326,14 +362,77 @@ function toSkillName(name, baseDir) {
     return name.startsWith("cogv-") ? name : `cogv-${name}`;
   }
 
+  if (baseDir === "personas") {
+    return name.startsWith("cogp-") ? name : `cogp-${name}`;
+  }
+
   const aliases = {
-    "history-strategy": "cog-history-strategy",
-    "scientific-reasoning": "cog-scientific-reasoning",
-    "writing-review": "cog-writing-review"
+    "decision-council": "cogt-decide",
+    "design-review": "cogt-design",
+    "history-strategy": "cogt-history",
+    "learning-path": "cogt-learn",
+    "philosophy-cavalry": "cogt-philosophy",
+    "scientific-reasoning": "cogt-science",
+    "thinking-council": "cogt-think",
+    "writing-review": "cogt-write"
   };
 
   if (aliases[name]) return aliases[name];
+  return name.startsWith("cogt-") ? name : `cogt-${name}`;
+}
+
+function removeLegacySkills(destination) {
+  for (const skillName of legacySkillNames()) {
+    const target = path.join(destination, skillName);
+    if (!fs.existsSync(target)) continue;
+
+    fs.rmSync(target, { recursive: true, force: true });
+    console.log(`- 已删除旧 skill ${skillName}`);
+  }
+}
+
+function legacySkillNames() {
+  return [
+    ...legacyPersonaSkillNames(),
+    "cog-think",
+    "cog-decide",
+    "cog-write",
+    "cog-science",
+    "cog-history",
+    "cog-philosophy",
+    "cog-design",
+    "cog-learn",
+    "cog-decision-council",
+    "cog-history-strategy",
+    "cog-philosophy-cavalry",
+    "cog-scientific-reasoning",
+    "cog-thinking-council",
+    "cog-writing-review"
+  ];
+}
+
+function legacyPersonaSkillNames() {
+  return findSkillDirsWithName("personas", legacyPersonaSkillName).map((skill) => skill.name);
+}
+
+function legacyPersonaSkillName(name) {
   return name.startsWith("cog-") ? name : `cog-${name}`;
+}
+
+function findSkillDirsWithName(baseDir, nameForDir) {
+  const root = path.join(packageRoot, baseDir);
+  if (!fs.existsSync(root)) return [];
+
+  const skills = [];
+  walk(root, (dir) => {
+    if (fs.existsSync(path.join(dir, "SKILL.md"))) {
+      skills.push({
+        name: nameForDir(path.basename(dir)),
+        source: path.relative(packageRoot, dir).replaceAll(path.sep, "/")
+      });
+    }
+  });
+  return skills;
 }
 
 function dedupeSkills(skills) {
@@ -365,7 +464,7 @@ function printHelp() {
   archsight-cognition list
 
 安装目标:
-  codex          安装内容目录，并写入项目或全局 AGENTS.md 指针
+  codex          安装内容目录、注册 Codex skills，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
   antigravity    安装 skills 到 .agents/skills 或 ~/.gemini/antigravity/skills
   all            安装 codex、claude-code 和 antigravity；--global 时安装到各自全局目录
@@ -381,12 +480,13 @@ function printHelp() {
 
 function printInstallHelp() {
   console.log(`安装用法:
-  archsight-cognition install codex [--cwd <path>] [--global] [--force]
+  archsight-cognition install codex [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force] [--workflow]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
 
 说明:
+  codex 会把 skills 注册到 CODEX_HOME/skills；未设置 CODEX_HOME 时使用 ~/.codex/skills。
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
 `);

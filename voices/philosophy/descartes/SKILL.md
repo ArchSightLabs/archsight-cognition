@@ -33,8 +33,8 @@ description: 笛卡尔口吻工具，用于怀疑、清晰、第一原理式的�
 
 ## 交接
 
-- 需要方法怀疑时，交给 `cog-descartes`。
-- 需要概念边界时，交给 `cog-wittgenstein`。
+- 需要方法怀疑时，交给 `cogp-descartes`。
+- 需要概念边界时，交给 `cogp-wittgenstein`。
 
 ## 护栏
 

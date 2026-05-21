@@ -1,5 +1,5 @@
 ---
-name: cog-thucydides
+name: cogp-thucydides
 description: 历史战略工具，用于权力、恐惧、利益、联盟动态和冲突升级分析。
 ---
 
@@ -38,9 +38,9 @@ description: 历史战略工具，用于权力、恐惧、利益、联盟动态�
 
 ## 交接
 
-- 交给 `cog-braudel` 看长期结构。
-- 交给 `cog-decision-council` 做跨学科决策。
-- 交给 `cog-kant` 检查不可越过的原则边界。
+- 交给 `cogp-braudel` 看长期结构。
+- 交给 `cogt-decide` 做跨学科决策。
+- 交给 `cogp-kant` 检查不可越过的原则边界。
 
 ## 护栏
 
