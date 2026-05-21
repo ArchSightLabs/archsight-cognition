@@ -15,12 +15,17 @@ const curatedSkills = [
   { name: "cog-scientific-reasoning", source: "teams/scientific-reasoning" },
   { name: "cog-socrates", source: "personas/philosophy/socrates" },
   { name: "cog-bayes", source: "personas/mathematics/bayes" },
-  { name: "cog-newton", source: "personas/physics/newton" }
+  { name: "cog-newton", source: "personas/physics/newton" },
+  { name: "cogv-kant", source: "voices/philosophy/kant" },
+  { name: "cogv-nietzsche", source: "voices/philosophy/nietzsche" },
+  { name: "cogv-schopenhauer", source: "voices/philosophy/schopenhauer" },
+  { name: "cogv-descartes", source: "voices/philosophy/descartes" }
 ];
 
 const allSkills = [
   ...findSkillDirs("teams"),
-  ...findSkillDirs("personas")
+  ...findSkillDirs("personas"),
+  ...findSkillDirs("voices")
 ];
 
 const argv = process.argv.slice(2);
@@ -209,6 +214,7 @@ function installCodexContent(root, force, globalInstall) {
   const entries = [
     "personas",
     "teams",
+    "voices",
     "debates",
     "templates",
     "adapters",
@@ -284,6 +290,7 @@ function buildCodexBlock(contentRoot) {
 - 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
 
 对外 skill 调用名统一使用 \`cog-\` 前缀，例如 \`cog-socrates\`、\`cog-bayes\`、\`cog-newton\`、\`cog-decision-council\`。
+风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 <!-- ARCHSIGHT-COGNITION:END -->`;
@@ -297,7 +304,7 @@ function findSkillDirs(baseDir) {
   walk(root, (dir) => {
     if (fs.existsSync(path.join(dir, "SKILL.md"))) {
       skills.push({
-        name: toSkillName(path.basename(dir)),
+        name: toSkillName(path.basename(dir), baseDir),
         source: path.relative(packageRoot, dir).replaceAll(path.sep, "/")
       });
     }
@@ -314,7 +321,11 @@ function walk(dir, visit) {
   }
 }
 
-function toSkillName(name) {
+function toSkillName(name, baseDir) {
+  if (baseDir === "voices") {
+    return name.startsWith("cogv-") ? name : `cogv-${name}`;
+  }
+
   const aliases = {
     "history-strategy": "cog-history-strategy",
     "scientific-reasoning": "cog-scientific-reasoning",

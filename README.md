@@ -2,7 +2,7 @@
 
 ArchSight Cognition 是一个可移植的跨学科认知工具库。
 
-它把哲学、文学、历史、数学、物理和艺术中的思维方法整理成可被 AI agent 加载的 Markdown `SKILL.md`、team prompt、debate prompt 和模板，用来辅助问题澄清、写作评审、研究设计、战略判断和决策复盘。
+它把哲学、文学、历史、数学、物理和艺术中的思维方法整理成可被 AI agent 加载的 Markdown `SKILL.md`、team prompt、voice prompt、debate prompt 和模板，用来辅助问题澄清、写作评审、研究设计、战略判断、风格化表达和决策复盘。
 
 一句话定位：
 
@@ -12,14 +12,14 @@ ArchSight Cognition 是一个可移植的跨学科认知工具库。
 
 - 可移植的 Markdown prompt / skill 仓库。
 - 面向 Codex、Claude Code、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
-- 用 persona 表达单一学科视角，用 team 表达多视角综合，用 debate 表达结构化分歧。
+- 用 persona 表达单一学科视角，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
 - 用于真实工作中的思考、写作、判断、研究问题框定和自我复盘。
 
 ## 它不是什么
 
 - 不是应用程序，没有后端、前端、数据库或运行时服务。
 - 不是 agent 框架，不负责调度、记忆、工具调用或权限管理。
-- 不是名人模拟器，不要求模型冒充历史人物本人。
+- 不是名人模拟器，不要求模型冒充历史人物本人；`cogv-*` 只做明确标注的风格化表达。
 - 不是事实权威库，事实性问题仍需要检索、引用和验证。
 
 ## 核心原则
@@ -31,7 +31,7 @@ ArchSight Cognition 是一个可移植的跨学科认知工具库。
 - `Newton` 不是“牛顿人格”，而是力、约束、变量和系统建模视角。
 - `Einstein` 不是“名人角色”，而是相对性、观察者、假设变换和尺度转换思维工具。
 
-每个 persona、team 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
+每个 persona、team、voice 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
 
 ## 能力价值
 
@@ -53,6 +53,7 @@ ArchSight Cognition 是一个可移植的跨学科认知工具库。
 | 物理 | `personas/physics/` | 约束、变量、观察者、尺度、系统动态 |
 | 艺术 | `personas/art/` | 构图、感知、形式、风格、一致性 |
 | 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理 |
+| 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
 | 模板 | `templates/` | 新增 persona 和 team 的标准结构 |
@@ -80,6 +81,12 @@ archsight-cognition/
 │   ├── history-strategy/
 │   ├── scientific-reasoning/
 │   └── decision-council/
+├── voices/
+│   ├── philosophy/
+│   ├── literature/
+│   ├── history/
+│   ├── mathematics/
+│   └── physics/
 ├── debates/
 ├── adapters/
 │   ├── README.md
@@ -130,6 +137,7 @@ personas/mathematics/bayes/SKILL.md
 personas/physics/newton/SKILL.md
 teams/decision-council/SKILL.md
 teams/writing-review/SKILL.md
+voices/philosophy/kant/SKILL.md
 ```
 
 在你的 agent host 中加载对应文件，并给出真实任务。
@@ -158,7 +166,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code 和 Antigravity 入口。 |
 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code 和 Antigravity 的全局目录。 |
 
-默认只安装高频工具：`cog-decision-council`、`cog-writing-review`、`cog-scientific-reasoning`、`cog-socrates`、`cog-bayes`、`cog-newton`。
+默认只安装高频工具：`cog-decision-council`、`cog-writing-review`、`cog-scientific-reasoning`、`cog-socrates`、`cog-bayes`、`cog-newton`，以及 `cogv-kant`、`cogv-nietzsche`、`cogv-schopenhauer`、`cogv-descartes`。
 
 如需安装全部 `SKILL.md`：
 
@@ -255,6 +263,7 @@ npx @archsight/cognition install codex --global
 - 文章、叙事和表达：`teams/writing-review/SKILL.md`
 
 对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 ```
@@ -293,6 +302,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
 ```
 
 然后在 Antigravity agent 对话中输入：
@@ -310,6 +320,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
 ```
 
 方式三：只添加 workspace rule 指针。
@@ -330,6 +341,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 - 写作和表达评审：`teams/writing-review/SKILL.md`
 
 对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。persona 只作为学科思维工具。
 ```
@@ -377,6 +389,7 @@ mkdir .claude\skills
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cog-decision-council -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude\skills\cog-writing-review -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
 ```
 
 调用示例：
@@ -384,6 +397,13 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 ```text
 /cog-decision-council
 对这个产品方向做一次跨学科决策评审。
+```
+
+风格化口吻：
+
+```text
+/cogv-kant
+用康德式克制、原则优先的口吻回应这段话。
 ```
 
 详细说明见：
@@ -420,18 +440,28 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 ...
 ```
 
+风格化口吻：
+
+```text
+加载 voices/philosophy/nietzsche/SKILL.md。
+用尼采式锋利、反从众的口吻改写这段表达：
+...
+```
+
 ## 新增工具
 
 新增 persona 时，从 `templates/persona-skill.md` 开始。
 
 新增 team 时，从 `templates/team-skill.md` 开始。
 
+新增 voice 时，从 `templates/voice-skill.md` 开始。
+
 新增内容必须满足：
 
 - 有 `name` 与中文 `description` frontmatter。
 - 明确角色、适用场景、方法、输出契约、交接和护栏。
 - 不要求模型扮演历史人物本人。
-- 输出服务现实任务，而不是展示知识或风格模仿。
+- 输出服务现实任务，而不是只展示知识或风格模仿。
 
 ## 开源状态
 

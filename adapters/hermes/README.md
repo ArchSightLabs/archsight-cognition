@@ -6,7 +6,7 @@ Hermes 适合把 ArchSight Cognition 作为长期可成长 Agent 的“思维技
 
 ## 最小可用链路
 
-飞书机器人只负责收发消息。真正决定 `/cog-socrates`、`/cog-decision-council` 等命令是否可用的是 Hermes 侧的 gateway 和 agent 配置。
+飞书机器人只负责收发消息。真正决定 `/cog-socrates`、`/cog-decision-council`、`/cogv-kant` 等命令是否可用的是 Hermes 侧的 gateway 和 agent 配置。
 
 ```text
 飞书机器人
@@ -105,6 +105,7 @@ sudo systemctl status hermes-feishu-gateway --no-pager
 .hermes/skills/philosophy/cog-socrates/SKILL.md
 .hermes/skills/physics/cog-newton/SKILL.md
 .hermes/skills/literature/cog-shakespeare/SKILL.md
+.hermes/skills/voices/cogv-kant/SKILL.md
 ```
 
 ## 命令行设置
@@ -123,7 +124,7 @@ hermes config show
 这是最直接、最容易验收的方式。把本仓库中的 skill 目录链接到 `~/.hermes/skills/`，Hermes 会把这些 skill 作为斜杠命令暴露出来。
 
 ```bash
-mkdir -p ~/.hermes/skills/philosophy ~/.hermes/skills/teams
+mkdir -p ~/.hermes/skills/philosophy ~/.hermes/skills/teams ~/.hermes/skills/voices
 
 ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/socrates ~/.hermes/skills/philosophy/cog-socrates
 ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/aristotle ~/.hermes/skills/philosophy/cog-aristotle
@@ -132,12 +133,13 @@ ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/kant ~/.hermes/sk
 ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/plato ~/.hermes/skills/philosophy/cog-plato
 ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-cavalry ~/.hermes/skills/teams/cog-philosophy-cavalry
 ln -sfn /opt/archsight/archsight-cognition/teams/decision-council ~/.hermes/skills/teams/cog-decision-council
+ln -sfn /opt/archsight/archsight-cognition/voices/philosophy/kant ~/.hermes/skills/voices/cogv-kant
 ```
 
 如果 Hermes 以 `hermes` 用户运行，应该在该用户的 home 下设置：
 
 ```bash
-sudo -u hermes mkdir -p /home/hermes/.hermes/skills/philosophy /home/hermes/.hermes/skills/teams
+sudo -u hermes mkdir -p /home/hermes/.hermes/skills/philosophy /home/hermes/.hermes/skills/teams /home/hermes/.hermes/skills/voices
 
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/socrates /home/hermes/.hermes/skills/philosophy/cog-socrates
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/aristotle /home/hermes/.hermes/skills/philosophy/cog-aristotle
@@ -146,12 +148,13 @@ sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/ka
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/personas/philosophy/plato /home/hermes/.hermes/skills/philosophy/cog-plato
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-cavalry /home/hermes/.hermes/skills/teams/cog-philosophy-cavalry
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/decision-council /home/hermes/.hermes/skills/teams/cog-decision-council
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/voices/philosophy/kant /home/hermes/.hermes/skills/voices/cogv-kant
 ```
 
 然后检查 Hermes 是否识别：
 
 ```bash
-hermes skills list | grep -E 'cog-(socrates|aristotle|wittgenstein|kant|plato|philosophy-cavalry|decision-council)'
+hermes skills list | grep -E '(cog-(socrates|aristotle|wittgenstein|kant|plato|philosophy-cavalry|decision-council)|cogv-kant)'
 ```
 
 用 CLI 做一次端到端测试：
@@ -159,6 +162,7 @@ hermes skills list | grep -E 'cog-(socrates|aristotle|wittgenstein|kant|plato|ph
 ```bash
 hermes chat --skills cog-socrates -q "帮我澄清这个产品方向的核心问题。"
 hermes chat -q "/cog-decision-council 这个架构决策有哪些风险和下一步？"
+hermes chat -q "/cogv-kant 用康德式克制、原则优先的口吻回应这段话。"
 ```
 
 如果新 skill 没立刻出现在当前会话中，开启新会话或在消息平台里发送 `/reset`。
@@ -177,6 +181,11 @@ skills:
     - /opt/archsight/archsight-cognition/personas/literature
     - /opt/archsight/archsight-cognition/personas/art
     - /opt/archsight/archsight-cognition/teams
+    - /opt/archsight/archsight-cognition/voices/philosophy
+    - /opt/archsight/archsight-cognition/voices/history
+    - /opt/archsight/archsight-cognition/voices/mathematics
+    - /opt/archsight/archsight-cognition/voices/physics
+    - /opt/archsight/archsight-cognition/voices/literature
 ```
 
 可以用 Hermes 自带配置编辑器：
@@ -247,6 +256,7 @@ gateway 跑起来后，飞书里发送 `/cog-socrates ...`、`/cog-decision-coun
 /cog-socrates 帮我澄清这个产品问题。
 /cog-bayes 分析这个判断的证据强度。
 /cog-writing-review 帮我看这篇文章的论证和表达。
+/cogv-nietzsche 用尼采式锋利、反从众的口吻改写这段表达。
 ```
 
 常用中文触发词：
@@ -262,6 +272,7 @@ gateway 跑起来后，飞书里发送 `/cog-socrates ...`、`/cog-decision-coun
 | 贝叶斯、不确定性、证据更新 | `/cog-bayes` | 信息不足下的概率判断 |
 | 牛顿、系统建模、约束分析 | `/cog-newton` | 变量、约束、惯性和系统建模 |
 | 维特根斯坦、语言澄清、概念澄清 | `/cog-wittgenstein` | 概念误用和表达混乱 |
+| 康德口吻、尼采口吻、叔本华口吻 | `/cogv-kant`、`/cogv-nietzsche`、`/cogv-schopenhauer` | 风格化表达，不声称本人在说话 |
 
 完整 alias 表见 `adapters/hermes/skill-aliases.yaml`。
 
@@ -344,6 +355,8 @@ commands:
   /cog-wittgenstein: personas/philosophy/wittgenstein/SKILL.md
   /cog-kant: personas/philosophy/kant/SKILL.md
   /cog-plato: personas/philosophy/plato/SKILL.md
+  /cogv-kant: voices/philosophy/kant/SKILL.md
+  /cogv-nietzsche: voices/philosophy/nietzsche/SKILL.md
   /cog-philosophy-cavalry: teams/philosophy-cavalry/SKILL.md
   /cog-decision-council: teams/decision-council/SKILL.md
 ```
@@ -362,6 +375,8 @@ commands:
   /cog-wittgenstein: personas/philosophy/wittgenstein/SKILL.md
   /cog-kant: personas/philosophy/kant/SKILL.md
   /cog-plato: personas/philosophy/plato/SKILL.md
+  /cogv-kant: voices/philosophy/kant/SKILL.md
+  /cogv-nietzsche: voices/philosophy/nietzsche/SKILL.md
   /cog-philosophy-cavalry: teams/philosophy-cavalry/SKILL.md
   /cog-decision-council: teams/decision-council/SKILL.md
 ```
@@ -381,6 +396,8 @@ commands:
     "/cog-wittgenstein": "personas/philosophy/wittgenstein/SKILL.md",
     "/cog-kant": "personas/philosophy/kant/SKILL.md",
     "/cog-plato": "personas/philosophy/plato/SKILL.md",
+    "/cogv-kant": "voices/philosophy/kant/SKILL.md",
+    "/cogv-nietzsche": "voices/philosophy/nietzsche/SKILL.md",
     "/cog-philosophy-cavalry": "teams/philosophy-cavalry/SKILL.md",
     "/cog-decision-council": "teams/decision-council/SKILL.md"
   }
@@ -473,6 +490,7 @@ Linux 命令全部成功并输出 `all routed skill paths are readable` 即通�
 /cog-socrates 帮我澄清这个产品方向的核心问题。
 /cog-philosophy-cavalry 评审这个战略是否自洽。
 /cog-decision-council 这个架构决策有哪些风险和下一步？
+/cogv-kant 用康德式克制、原则优先的口吻回应这段话。
 ```
 
 如果飞书能收到 Hermes 回复，并且回复遵守对应 `SKILL.md` 的输出契约，就说明飞书到 Hermes 再到本仓库 skill 的链路已经打通。

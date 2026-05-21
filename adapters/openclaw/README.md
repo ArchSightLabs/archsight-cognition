@@ -20,6 +20,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 把 persona 当作学科思维镜头，而不是历史人物模仿。
 默认决策路由：Socrates -> Bayes -> Newton -> Braudel -> Aristotle。
 写作任务使用 `cog-writing-review`。科学推理任务使用 `cog-scientific-reasoning`。
+用户明确要求口吻、风格化表达时，使用 `cogv-*`，例如 `cogv-kant` 或 `cogv-nietzsche`。
 最终回答必须包含可执行下一步。
 ```
 
@@ -28,4 +29,4 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 - 不要把 persona 输出当作法律、医疗、金融或心理健康建议。
 - 不要让修辞风格压过证据。
 - 不要默认运行所有 agent；过多声音会制造噪音。
-- 不要 cosplay 历史人物；提取其思维功能。
+- `cogv-*` 可以做明确标注的风格化口吻，但不要声称历史人物本人在说话。

@@ -125,3 +125,88 @@ skills:
     command: /cog-scientific-reasoning
     path: teams/scientific-reasoning/SKILL.md
     aliases: [科学推理, 科学评审, 假设检验, 实验设计, 证据评审]
+
+  - name: cogv-socrates
+    command: /cogv-socrates
+    path: voices/philosophy/socrates/SKILL.md
+    aliases: [苏格拉底口吻, 苏格拉底风格, 苏格拉底voice, 追问口吻]
+
+  - name: cogv-aristotle
+    command: /cogv-aristotle
+    path: voices/philosophy/aristotle/SKILL.md
+    aliases: [亚里士多德口吻, 亚里士多德风格, 亚里士多德voice, 实践理性口吻]
+
+  - name: cogv-wittgenstein
+    command: /cogv-wittgenstein
+    path: voices/philosophy/wittgenstein/SKILL.md
+    aliases: [维特根斯坦口吻, 维特根斯坦风格, 维特根斯坦voice, 语言澄清口吻]
+
+  - name: cogv-kant
+    command: /cogv-kant
+    path: voices/philosophy/kant/SKILL.md
+    aliases: [康德口吻, 康德风格, 康德voice, 原则口吻]
+
+  - name: cogv-plato
+    command: /cogv-plato
+    path: voices/philosophy/plato/SKILL.md
+    aliases: [柏拉图口吻, 柏拉图风格, 柏拉图voice, 理想型口吻]
+
+  - name: cogv-camus
+    command: /cogv-camus
+    path: voices/philosophy/camus/SKILL.md
+    aliases: [加缪口吻, 加缪风格, 加缪voice, 荒诞口吻]
+
+  - name: cogv-descartes
+    command: /cogv-descartes
+    path: voices/philosophy/descartes/SKILL.md
+    aliases: [笛卡尔口吻, 笛卡尔风格, 笛卡尔voice, 怀疑口吻]
+
+  - name: cogv-hegel
+    command: /cogv-hegel
+    path: voices/philosophy/hegel/SKILL.md
+    aliases: [黑格尔口吻, 黑格尔风格, 黑格尔voice, 辩证法口吻]
+
+  - name: cogv-nietzsche
+    command: /cogv-nietzsche
+    path: voices/philosophy/nietzsche/SKILL.md
+    aliases: [尼采口吻, 尼采风格, 尼采voice, 锋利口吻]
+
+  - name: cogv-schopenhauer
+    command: /cogv-schopenhauer
+    path: voices/philosophy/schopenhauer/SKILL.md
+    aliases: [叔本华口吻, 叔本华风格, 叔本华voice, 悲观口吻]
+
+  - name: cogv-braudel
+    command: /cogv-braudel
+    path: voices/history/braudel/SKILL.md
+    aliases: [布罗代尔口吻, 布罗代尔风格, 布罗代尔voice, 长时段口吻]
+
+  - name: cogv-thucydides
+    command: /cogv-thucydides
+    path: voices/history/thucydides/SKILL.md
+    aliases: [修昔底德口吻, 修昔底德风格, 修昔底德voice, 权力口吻]
+
+  - name: cogv-shakespeare
+    command: /cogv-shakespeare
+    path: voices/literature/shakespeare/SKILL.md
+    aliases: [莎士比亚口吻, 莎士比亚风格, 莎士比亚voice, 戏剧口吻]
+
+  - name: cogv-bayes
+    command: /cogv-bayes
+    path: voices/mathematics/bayes/SKILL.md
+    aliases: [贝叶斯口吻, 贝叶斯风格, 贝叶斯voice, 概率口吻]
+
+  - name: cogv-euclid
+    command: /cogv-euclid
+    path: voices/mathematics/euclid/SKILL.md
+    aliases: [欧几里得口吻, 欧几里得风格, 欧几里得voice, 证明口吻]
+
+  - name: cogv-einstein
+    command: /cogv-einstein
+    path: voices/physics/einstein/SKILL.md
+    aliases: [爱因斯坦口吻, 爱因斯坦风格, 爱因斯坦voice, 参照系口吻]
+
+  - name: cogv-newton
+    command: /cogv-newton
+    path: voices/physics/newton/SKILL.md
+    aliases: [牛顿口吻, 牛顿风格, 牛顿voice, 建模口吻]

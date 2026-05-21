@@ -39,6 +39,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
 ```
 
 ### 方式二：安装到个人全局 skills
@@ -52,6 +53,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.claude\skills\cogv-kant -Recurse
 ```
 
 ### macOS / Linux 示例
@@ -63,6 +65,7 @@ cp -R ~/work/archsight-cognition/teams/writing-review ~/.claude/skills/cog-writi
 cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cog-socrates
 cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cog-bayes
 cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-newton
+cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-kant
 ```
 
 ## 使用
@@ -84,6 +87,11 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-ne
 评估这个产品假设的证据强度、不确定性和最小验证实验。
 ```
 
+```text
+/cogv-kant
+用康德式克制、原则优先的口吻回应这段话。
+```
+
 ## 推荐路由
 
 | 任务 | Skill |
@@ -95,6 +103,7 @@ cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cog-ne
 | 方案高风险 | `/cog-decision-council` |
 | 文档质量 | `/cog-writing-review` |
 | 研究和验证路径 | `/cog-scientific-reasoning` |
+| 风格化口吻 | `/cogv-kant`、`/cogv-nietzsche` |
 
 ## 维护建议
 

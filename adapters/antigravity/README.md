@@ -49,6 +49,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
 ```
 
 安装后，Antigravity agent 可以根据 `SKILL.md` 的 `name` 和 `description` 自动判断是否加载，也可以在对话中显式要求：
@@ -68,6 +69,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cog-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cog-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cog-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
 ```
 
 ### 方式三：只添加 workspace 规则指针
@@ -88,6 +90,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 - 写作和表达评审：`teams/writing-review/SKILL.md`
 
 对外 skill 调用名统一使用 `cog-` 前缀，例如 `cog-socrates`、`cog-bayes`、`cog-newton`、`cog-decision-council`。
+风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 
 不要人格 cosplay。persona 只作为学科思维工具。
 ```
@@ -125,6 +128,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOM
 | 方案高风险 | `cog-decision-council` |
 | 文档、文章、品牌叙事 | `cog-writing-review` |
 | 研究假设和验证路径 | `cog-scientific-reasoning` |
+| 风格化口吻 | `cogv-kant`、`cogv-nietzsche` |
 
 ## 安全与权限
 
