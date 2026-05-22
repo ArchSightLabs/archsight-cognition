@@ -15,6 +15,7 @@
     "adapters/",
     "templates/",
     "README.md",
+    "RELEASE_NOTES.md",
     "CONTRIBUTING.md",
     "SECURITY.md",
     "OPEN_SOURCE.md"

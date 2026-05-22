@@ -1,12 +1,43 @@
 # ArchSight Cognition
 
-ArchSight Cognition 是一个可移植的跨学科认知工具库。
+ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
-它把哲学、文学、历史、数学、物理和艺术中的思维方法整理成可被 AI agent 加载的 Markdown `SKILL.md`、team prompt、voice prompt、debate skill 和模板，用来辅助问题澄清、写作评审、研究设计、战略判断、风格化表达和决策复盘。
+它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
 
 一句话定位：
 
 > ArchSight Cognition 不是运行时框架，也不是历史人物角色扮演库，而是一组可复制、可审查、可组合的学科思维工具。
+
+## 更直白地说
+
+多数 agent 工具关注“怎么执行任务”。ArchSight Cognition 关注“用什么思维方式看这个任务”。
+
+当你把一个复杂问题交给 AI 时，可以不只让它“直接回答”，而是让它加载一个合适的认知工具：
+
+- 概念不清时，加载 `cogp-socrates`，先拆概念、边界和矛盾。
+- 决策风险高时，加载 `cogt-decide`，从价值、证据、约束、历史和执行风险审查方案。
+- 文案像 AI 套话时，加载 `cogt-write`，检查论证、叙事、清晰度、节奏和表达诚实性。
+- 产品体验需要评审时，加载 `cogt-design`，从可用性、交互模型、版式、色彩和系统一致性给反馈。
+- 议题本身有强分歧时，加载 `cogd-*`，保留不同立场的张力，而不是急着调和。
+
+你可以把它理解成一套“思维镜头”：每个 persona 是一个学科视角，team 是多个视角的组合，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
+
+## 适合谁
+
+- 想让 Codex、Claude Code 或其他 agent 在规划、写作和决策时更有判断力的人。
+- 需要把一组稳定 prompt / skill 复制到多个项目、多个 agent host 中复用的团队。
+- 想用跨学科视角审查产品、工程、研究、战略、教育或表达问题的创作者和工程师。
+- 不想要“名人角色扮演”，而是想要可审查、可维护、可落地的思维工具库的人。
+
+## 什么时候用
+
+| 场景 | 推荐入口 | 结果 |
+| --- | --- | --- |
+| 不知道问题到底是什么 | `cogt-think` 或 `cogp-socrates` | 澄清目标、概念、边界和关键矛盾 |
+| 要做重要选择 | `cogt-decide` | 输出风险、反对条件、信息缺口和下一步验证 |
+| 要改文章、文案或叙事 | `cogt-write` | 找出空话、结构问题、论证漏洞和更清楚的改法 |
+| 要评审产品、体验或视觉 | `cogt-design` | 审查可用性、交互模型、版式、色彩和系统一致性 |
+| 要研究复杂议题 | `cogt-science`、`cogt-history` 或 `cogd-*` | 区分事实、模型、证据、历史周期和立场分歧 |
 
 ## 它是什么
 
@@ -143,18 +174,16 @@ git clone <repo-url> archsight-cognition
 cd archsight-cognition
 ```
 
-然后选择一个认知工具。
+然后选择一个认知工具。新用户建议先从下面这些入口开始：
 
 ```text
-personas/philosophy/socrates/SKILL.md
-personas/mathematics/bayes/SKILL.md
-personas/physics/newton/SKILL.md
-teams/decision-council/SKILL.md
-teams/thinking-council/SKILL.md
-teams/writing-review/SKILL.md
-teams/design-review/SKILL.md
-teams/learning-path/SKILL.md
-voices/philosophy/kant/SKILL.md
+teams/thinking-council/SKILL.md      # 不知道该从哪个视角切入
+teams/decision-council/SKILL.md      # 重要决策评审
+teams/writing-review/SKILL.md        # 写作、文案、叙事评审
+teams/design-review/SKILL.md         # 产品、体验、视觉评审
+personas/philosophy/socrates/SKILL.md # 概念澄清
+personas/mathematics/bayes/SKILL.md   # 证据和不确定性判断
+personas/physics/newton/SKILL.md      # 变量、约束和系统建模
 ```
 
 在你的 agent host 中加载对应文件，并给出真实任务。
@@ -164,6 +193,10 @@ voices/philosophy/kant/SKILL.md
 对这个产品方向做一次跨学科决策评审：
 ...
 ```
+
+## 版本发布说明
+
+当前版本的完整发布说明见 [`RELEASE_NOTES.md`](./RELEASE_NOTES.md)。
 
 ## Host 安装与使用
 
