@@ -1,6 +1,6 @@
 {
   "name": "@archsight/cognition",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "可移植的跨学科认知 skills、persona、team 和 debate 工具库。",
   "type": "module",
   "bin": {
