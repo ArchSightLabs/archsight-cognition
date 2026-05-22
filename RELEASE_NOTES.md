@@ -1,20 +1,14 @@
 # ArchSight Cognition 发布说明
 
-## v1.0.3
+## v1.0.2
 
 发布日期：2026-05-22
 
 - Antigravity workspace 安装现在默认创建 `.agents/workflows/decision-review.md`，不再需要额外传 `--workflow`；该参数仅保留兼容旧命令。
 - 新增 Antigravity plugin 安装结构：workspace 写入 `.agents/plugins/archsight-cognition/`，global 写入 `~/.gemini/config/plugins/archsight-cognition/`。
-- 保留裸 skills 目录复制，用于兼容 CLI 和旧版路径；plugin 路径用于支持 Antigravity 2.x 的第三方技能包形态。
-
-## v1.0.2
-
-发布日期：2026-05-22
-
-- 兼容 Antigravity 2.x 目录拆分：`install antigravity --global` 会把 skills 真实复制到 `~/.gemini/antigravity/skills/`、`~/.gemini/antigravity-cli/skills/` 和 `~/.gemini/antigravity-ide/skills/`。
-- 保留 Antigravity 1.x legacy 目录，避免已安装用户升级后丢失全局 skills。
-- 明确不使用符号链接；新版 CLI 需要 `antigravity-cli/skills` 中存在真实复制的 skill 目录才能识别。
+- 全局安装不再复制到 `antigravity-cli/skills` 或 `antigravity-ide/skills`；Antigravity 2.x 统一走 plugin 目录。
+- 仅当 `~/.gemini/antigravity/` 已存在时，额外写入 `~/.gemini/antigravity/skills/`，用于兼容 Antigravity 1.x legacy 环境。
+- 文档推荐顺序调整为优先全局安装，workspace 安装只作为 Antigravity IDE 不识别全局安装时的 fallback。
 
 ## v1.0.0
 

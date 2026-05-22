@@ -294,7 +294,8 @@ function installAntigravitySkills(options, force) {
     return;
   }
 
-  for (const destination of getAntigravityGlobalSkillDirs()) {
+  const legacySkillDirs = getAntigravityGlobalSkillDirs();
+  for (const destination of legacySkillDirs) {
     installSkills({
       host: "Antigravity",
       destination,
@@ -309,16 +310,17 @@ function installAntigravitySkills(options, force) {
     force
   });
 
-  console.log("Antigravity: 已复制到 1.x legacy、2.x cli/ide skills 目录，并安装到官方 plugin 目录。当前 IDE 如不扫描全局 skills，请改用项目级 .agents/skills 或 .agents/plugins。");
+  const legacyMessage = legacySkillDirs.length > 0
+    ? "并兼容写入 1.x legacy skills 目录"
+    : "未发现 1.x legacy 目录，跳过 legacy skills 复制";
+  console.log(`Antigravity: 已安装到 2.x 官方 plugin 目录，${legacyMessage}。当前 IDE 如不扫描全局 plugin，请改用项目级 .agents/plugins。`);
 }
 
 function getAntigravityGlobalSkillDirs() {
   const geminiRoot = path.join(os.homedir(), ".gemini");
-  return [
-    path.join(geminiRoot, "antigravity", "skills"),
-    path.join(geminiRoot, "antigravity-cli", "skills"),
-    path.join(geminiRoot, "antigravity-ide", "skills")
-  ];
+  const legacyRoot = path.join(geminiRoot, "antigravity");
+  if (!fs.existsSync(legacyRoot)) return [];
+  return [path.join(legacyRoot, "skills")];
 }
 
 function installAntigravityPlugin({ destination, skills, force }) {
@@ -587,7 +589,7 @@ function printInstallHelp() {
   codex 会把 skills 注册到 CODEX_HOME/skills；未设置 CODEX_HOME 时使用 ~/.codex/skills。
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
-  antigravity --global 会同时写入 ~/.gemini/antigravity/skills、~/.gemini/antigravity-cli/skills 和 ~/.gemini/antigravity-ide/skills。
+  antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
   antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md；--workflow 保留为兼容参数。
 `);
 }
