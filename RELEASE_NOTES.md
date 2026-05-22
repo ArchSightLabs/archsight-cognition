@@ -10,7 +10,7 @@
 - 仅当 `~/.gemini/antigravity/` 已存在时，额外写入 `~/.gemini/antigravity/skills/`，用于兼容 Antigravity 1.x legacy 环境。
 - 文档推荐顺序调整为优先全局安装，workspace 安装只作为 Antigravity IDE 不识别全局安装时的 fallback。
 
-## v1.0.0
+## v1.0.1
 
 发布日期：2026-05-22
 
@@ -24,7 +24,7 @@
 - 把写作、决策、研究和产品评审都压成同一种通用思路。
 - 用“角色扮演”替代真实的学科判断，输出看起来有风格，但很难审查和复用。
 
-ArchSight Cognition v1.0.0 的目标，是提供一套可复制、可审查、可组合的思维工具，让 agent 在回答前先选择合适的判断框架。
+ArchSight Cognition v1.0.1 的目标，是提供一套可复制、可审查、可组合的思维工具，让 agent 在回答前先选择合适的判断框架。
 
 ## 核心内容
 
