@@ -9,6 +9,11 @@
 | `philosophy/` | 概念、价值、原则、意义和矛盾分析 |
 | `literature/` | 叙事、人物、冲突、声音和修辞分析 |
 | `history/` | 周期、制度、权力、路径依赖和长时段结构 |
+| `information/` | 信号、噪声、编码、冗余和沟通失真 |
+| `computation/` | 计算边界、自动化、可判定性和人机分工 |
+| `biology/` | 选择压力、适应、生态位和演化路径 |
+| `sociology/` | 合法性、权威、官僚制和制度责任 |
+| `systems/` | 反馈回路、延迟、杠杆点和复杂系统干预 |
 | `mathematics/` | 定义、结构、证明、概率和模型 |
 | `physics/` | 约束、变量、观察者、尺度和系统动态 |
 | `art/` | 构图、形式、感知、审美判断、产品设计和视觉系统 |
@@ -21,11 +26,12 @@
 1. 先用哲学澄清概念和价值。
 2. 再用数学或物理检查结构、变量和约束。
 3. 如果涉及组织、战略或社会变化，加入历史视角。
-4. 如果涉及表达、品牌、文章或叙事，加入文学和艺术视角。
-5. 不知道该用哪个综合工具时，交给 `teams/thinking-council/SKILL.md` 分流。
-6. 对产品、体验、视觉和交互评审，交给 `teams/design-review/SKILL.md` 汇总。
-7. 对教育、学习路径和亲子成长问题，交给 `teams/learning-path/SKILL.md` 汇总。
-8. 对高风险决策，交给 `teams/decision-council/SKILL.md` 汇总。
+4. 如果涉及信息传递、自动化、演化、制度或系统反馈，加入对应现代基础视角。
+5. 如果涉及表达、品牌、文章或叙事，加入文学和艺术视角。
+6. 不知道该用哪个综合工具时，交给 `teams/thinking-council/SKILL.md` 分流。
+7. 对产品、体验、视觉和交互评审，交给 `teams/design-review/SKILL.md` 汇总。
+8. 对教育、学习路径和亲子成长问题，交给 `teams/learning-path/SKILL.md` 汇总。
+9. 对高风险决策，交给 `teams/decision-council/SKILL.md` 汇总。
 
 ## 艺术与设计视角
 
@@ -48,6 +54,11 @@
 - `cogp-clausewitz`：战略摩擦、重心、升级风险和执行不确定性。
 - `cogp-machiavelli`：利益、联盟、承诺可信度和政治风险。
 - `cogp-orwell`：清晰写作、去空话、表达诚实性和反遮蔽。
+- `cogp-shannon`：信号、噪声、编码、冗余和沟通失真。
+- `cogp-turing`：计算边界、自动化、人机分工和可判定性。
+- `cogp-darwin`：选择压力、适应、生态位和长期演化。
+- `cogp-weber`：合法性、官僚制、权威类型和制度责任。
+- `cogp-meadows`：反馈回路、延迟、杠杆点和系统干预。
 
 ## 规则
 

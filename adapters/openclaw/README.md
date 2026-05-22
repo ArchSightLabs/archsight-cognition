@@ -11,7 +11,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 | Simple | 单个概念澄清 | 加载 `personas/philosophy/wittgenstein/SKILL.md` |
 | Default | 不知道该用哪个工具 | 加载 `teams/thinking-council/SKILL.md` |
 | Medium | 决策、文章、架构、设计、教育评审 | 加载 `teams/decision-council/SKILL.md` 或任务专用 team |
-| Heavy | 多主题辩论或长期计划 | 加载一个 debate 文件和选定 persona |
+| Heavy | 多主题辩论或长期计划 | 加载 `cogd-*` debate skill 和选定 persona |
 
 ## 可直接粘贴的频道指令
 
@@ -21,6 +21,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 把 persona 当作学科思维镜头，而不是历史人物模仿。
 默认决策路由：Socrates -> Bayes -> Newton -> Braudel -> Aristotle。
 不知道该用哪个工具时使用 `cogt-think`。写作任务使用 `cogt-write`。科学推理任务使用 `cogt-science`。产品、体验、视觉和交互任务使用 `cogt-design`。教育、学习路径和亲子成长任务使用 `cogt-learn`。
+长期议题、结构化分歧和立场压力测试使用 `cogd-*`，通用入口是 `cogd-general`，领域入口例如 `cogd-life`、`cogd-technology`、`cogd-work`。debate 不要强行收敛成共识，要输出对立立场、最强反对意见、不可调和点和行动分叉。
 用户明确要求口吻、风格化表达时，使用 `cogv-*`，例如 `cogv-kant` 或 `cogv-nietzsche`。
 最终回答必须包含可执行下一步。
 ```
@@ -30,4 +31,5 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 - 不要把 persona 输出当作法律、医疗、金融或心理健康建议。
 - 不要让修辞风格压过证据。
 - 不要默认运行所有 agent；过多声音会制造噪音。
+- `cogd-*` 用于保留真实冲突，不用于制造戏剧化争吵。
 - `cogv-*` 可以做明确标注的风格化口吻，但不要声称历史人物本人在说话。

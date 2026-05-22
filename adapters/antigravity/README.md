@@ -4,7 +4,7 @@ Antigravity 适合把 ArchSight Cognition 作为 workspace skills、workspace wo
 
 推荐方式：
 
-- 高频、可自动发现的 persona/team 安装成 skill。
+- 高频、可自动发现的 persona/team/debate 安装成 skill。
 - 明确需要手动触发的评审流程保存成 workflow。
 - 项目长期规则只保留短指针，不把所有 persona 内容塞进规则。
 
@@ -40,7 +40,7 @@ npx @archsight/cognition install antigravity --all
 
 ### 方式一：安装为 workspace skills
 
-在目标项目根目录创建 `.agents/skills/`，并复制常用 persona/team：
+在目标项目根目录创建 `.agents/skills/`，并复制常用 persona/team/debate：
 
 ```powershell
 mkdir .agents\skills
@@ -53,6 +53,9 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .agents\skills\cogd-general -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .agents\skills\cogd-life -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\skills\cogd-technology -Recurse
 ```
 
 安装后，Antigravity agent 可以根据 `SKILL.md` 的 `name` 和 `description` 自动判断是否加载，也可以在对话中显式要求：
@@ -76,6 +79,9 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general $HOME\.gemini\antigravity\skills\cogd-general -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life $HOME\.gemini\antigravity\skills\cogd-life -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology $HOME\.gemini\antigravity\skills\cogd-technology -Recurse
 ```
 
 ### 方式三：只添加 workspace 规则指针
@@ -94,6 +100,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 - 约束和系统建模：`personas/physics/newton/SKILL.md`
 - 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
+- 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
 - 写作和表达评审：`teams/writing-review/SKILL.md`
 - 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
 - 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
@@ -101,6 +108,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
+结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
 
 不要人格 cosplay。persona 只作为学科思维工具。
 ```
@@ -142,6 +150,7 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME
 | 产品、体验、视觉、交互评审 | `cogt-design` |
 | 教育、学习路径、亲子成长 | `cogt-learn` |
 | 风格化口吻 | `cogv-kant`、`cogv-nietzsche` |
+| 长期议题、结构化分歧 | `cogd-general`、`cogd-life`、`cogd-technology` |
 
 ## 安全与权限
 

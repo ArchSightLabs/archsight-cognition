@@ -151,11 +151,6 @@ skills:
     path: personas/history/machiavelli/SKILL.md
     aliases: [马基雅维利, Machiavelli, 权力现实, 联盟, 承诺可信度, 政治风险]
 
-  - name: cogp-visual-composition
-    command: /cogp-visual-composition
-    path: personas/art/visual-composition/SKILL.md
-    aliases: [视觉构图, 构图分析, 审美批评, 视觉层级, 形式一致性]
-
   - name: cogp-rams
     command: /cogp-rams
     path: personas/art/rams/SKILL.md
@@ -180,6 +175,31 @@ skills:
     command: /cogp-klee
     path: personas/art/klee/SKILL.md
     aliases: [克利, Paul Klee, 绘画构成, 视觉节奏, 形态动势, 象征构成]
+
+  - name: cogp-shannon
+    command: /cogp-shannon
+    path: personas/information/shannon/SKILL.md
+    aliases: [香农, Shannon, 信号噪声, 信息编码, 沟通失真, 信息压缩]
+
+  - name: cogp-turing
+    command: /cogp-turing
+    path: personas/computation/turing/SKILL.md
+    aliases: [图灵, Turing, 自动化边界, 人机分工, 可判定性, 任务分解]
+
+  - name: cogp-darwin
+    command: /cogp-darwin
+    path: personas/biology/darwin/SKILL.md
+    aliases: [达尔文, Darwin, 选择压力, 适应性, 生态位, 演化分析]
+
+  - name: cogp-weber
+    command: /cogp-weber
+    path: personas/sociology/weber/SKILL.md
+    aliases: [韦伯, Max Weber, 合法性, 官僚制, 权威类型, 制度责任]
+
+  - name: cogp-meadows
+    command: /cogp-meadows
+    path: personas/systems/meadows/SKILL.md
+    aliases: [梅多斯, Donella Meadows, 系统反馈, 杠杆点, 复杂系统, 延迟反馈]
 
   - name: cogt-think
     command: /cogt-think
@@ -220,6 +240,46 @@ skills:
     command: /cogt-science
     path: teams/scientific-reasoning/SKILL.md
     aliases: [科学推理, 科学评审, 假设检验, 实验设计, 证据评审]
+
+  - name: cogd-general
+    command: /cogd-general
+    path: debates/general/SKILL.md
+    aliases: [结构化分歧, 话题辩论, 辩一辩, 讨论一下, 立场压力测试, 通用辩论]
+
+  - name: cogd-life
+    command: /cogd-life
+    path: debates/life/SKILL.md
+    aliases: [人生辩论, 人生意义, 意义自由, 关系责任, 欲望检查, 如何生活]
+
+  - name: cogd-technology
+    command: /cogd-technology
+    path: debates/technology/SKILL.md
+    aliases: [技术辩论, 技术与人, AI能动性, 自动化责任, 技术代价, 进步代价]
+
+  - name: cogd-engineering
+    command: /cogd-engineering
+    path: debates/engineering/SKILL.md
+    aliases: [工程辩论, 架构秩序, 架构辩论, 技术债, 工程治理, 软件秩序]
+
+  - name: cogd-work
+    command: /cogd-work
+    path: debates/work/SKILL.md
+    aliases: [工作辩论, 工作意义, 职业意义, 工作自由, 自律自由, 职业选择]
+
+  - name: cogd-learning
+    command: /cogd-learning
+    path: debates/learning/SKILL.md
+    aliases: [学习辩论, 教育自主, 教育与自主, 学习自主, 教育放手, 教育塑造]
+
+  - name: cogd-knowledge
+    command: /cogd-knowledge
+    path: debates/knowledge/SKILL.md
+    aliases: [知识辩论, 真实与有用, 事实与效用, 证据叙事, 模型真实, 自欺检查]
+
+  - name: cogd-governance
+    command: /cogd-governance
+    path: debates/governance/SKILL.md
+    aliases: [治理辩论, 专业与民主, 专家治理, 公众参与, 权力责任, 组织治理]
 
   - name: cogv-socrates
     command: /cogv-socrates
@@ -281,10 +341,20 @@ skills:
     path: voices/history/thucydides/SKILL.md
     aliases: [修昔底德口吻, 修昔底德风格, 修昔底德voice, 权力口吻]
 
+  - name: cogv-machiavelli
+    command: /cogv-machiavelli
+    path: voices/history/machiavelli/SKILL.md
+    aliases: [马基雅维利口吻, 马基雅维利风格, 马基雅维利voice, 权力现实口吻]
+
   - name: cogv-shakespeare
     command: /cogv-shakespeare
     path: voices/literature/shakespeare/SKILL.md
     aliases: [莎士比亚口吻, 莎士比亚风格, 莎士比亚voice, 戏剧口吻]
+
+  - name: cogv-orwell
+    command: /cogv-orwell
+    path: voices/literature/orwell/SKILL.md
+    aliases: [奥威尔口吻, 奥威尔风格, 奥威尔voice, 反空话口吻]
 
   - name: cogv-bayes
     command: /cogv-bayes
@@ -305,3 +375,8 @@ skills:
     command: /cogv-newton
     path: voices/physics/newton/SKILL.md
     aliases: [牛顿口吻, 牛顿风格, 牛顿voice, 建模口吻]
+
+  - name: cogv-feynman
+    command: /cogv-feynman
+    path: voices/science/feynman/SKILL.md
+    aliases: [费曼口吻, 费曼风格, 费曼voice, 简单解释口吻]

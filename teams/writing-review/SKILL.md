@@ -15,14 +15,14 @@ description: 跨学科写作评审工具，用于论证、叙事、清晰度、�
 - `Orwell`：去空话、去遮蔽、表达诚实性和清晰度。
 - `Wittgenstein`：概念边界、语言误用、表达含混。
 - `Aristotle`：结构、目的、论证层次。
-- `Visual Composition`：段落层级、节奏、读者视线。
+- `Vignelli`：段落层级、版式秩序、节奏和读者视线。
 
 ## 路由
 
 | 文本类型 | 必选 | 可选 |
 | --- | --- | --- |
-| 文章/长文 | Orwell, Aristotle, Wittgenstein | Shakespeare, Visual Composition |
-| 品牌/首页文案 | Shakespeare, Orwell, Visual Composition | Nietzsche, Aristotle |
+| 文章/长文 | Orwell, Aristotle, Wittgenstein | Shakespeare, Vignelli |
+| 品牌/首页文案 | Shakespeare, Orwell, Vignelli | Nietzsche, Aristotle |
 | 战略叙事 | Shakespeare, Braudel, Aristotle | Thucydides, Plato |
 | 研究/论证 | Aristotle, Euclid, Orwell | Bayes, Descartes |
 | 去 AI 味/空话 | Orwell, Wittgenstein, Aristotle | Shakespeare |

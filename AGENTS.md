@@ -35,6 +35,7 @@
 - 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
 - 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
+- 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review/SKILL.md`
 - 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
 - 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
@@ -42,6 +43,7 @@
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
+结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 <!-- ARCHSIGHT-COGNITION:END -->

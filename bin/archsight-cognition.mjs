@@ -18,6 +18,14 @@ const curatedSkills = [
   { name: "cogt-philosophy", source: "teams/philosophy-cavalry" },
   { name: "cogt-design", source: "teams/design-review" },
   { name: "cogt-learn", source: "teams/learning-path" },
+  { name: "cogd-general", source: "debates/general" },
+  { name: "cogd-life", source: "debates/life" },
+  { name: "cogd-technology", source: "debates/technology" },
+  { name: "cogd-engineering", source: "debates/engineering" },
+  { name: "cogd-work", source: "debates/work" },
+  { name: "cogd-learning", source: "debates/learning" },
+  { name: "cogd-knowledge", source: "debates/knowledge" },
+  { name: "cogd-governance", source: "debates/governance" },
   { name: "cogp-socrates", source: "personas/philosophy/socrates" },
   { name: "cogp-bayes", source: "personas/mathematics/bayes" },
   { name: "cogp-newton", source: "personas/physics/newton" },
@@ -32,6 +40,11 @@ const curatedSkills = [
   { name: "cogp-clausewitz", source: "personas/history/clausewitz" },
   { name: "cogp-machiavelli", source: "personas/history/machiavelli" },
   { name: "cogp-orwell", source: "personas/literature/orwell" },
+  { name: "cogp-shannon", source: "personas/information/shannon" },
+  { name: "cogp-turing", source: "personas/computation/turing" },
+  { name: "cogp-darwin", source: "personas/biology/darwin" },
+  { name: "cogp-weber", source: "personas/sociology/weber" },
+  { name: "cogp-meadows", source: "personas/systems/meadows" },
   { name: "cogp-rams", source: "personas/art/rams" },
   { name: "cogp-norman", source: "personas/art/norman" },
   { name: "cogp-vignelli", source: "personas/art/vignelli" },
@@ -40,13 +53,17 @@ const curatedSkills = [
   { name: "cogv-kant", source: "voices/philosophy/kant" },
   { name: "cogv-nietzsche", source: "voices/philosophy/nietzsche" },
   { name: "cogv-schopenhauer", source: "voices/philosophy/schopenhauer" },
-  { name: "cogv-descartes", source: "voices/philosophy/descartes" }
+  { name: "cogv-descartes", source: "voices/philosophy/descartes" },
+  { name: "cogv-orwell", source: "voices/literature/orwell" },
+  { name: "cogv-feynman", source: "voices/science/feynman" },
+  { name: "cogv-machiavelli", source: "voices/history/machiavelli" }
 ];
 
 const allSkills = [
   ...findSkillDirs("teams"),
   ...findSkillDirs("personas"),
-  ...findSkillDirs("voices")
+  ...findSkillDirs("voices"),
+  ...findSkillDirs("debates")
 ];
 
 const argv = process.argv.slice(2);
@@ -320,6 +337,7 @@ function buildCodexBlock(contentRoot) {
 - 变量、约束和系统建模：\`personas/physics/newton/SKILL.md\`
 - 不知道该用哪个工具：\`teams/thinking-council/SKILL.md\`
 - 高风险决策：\`teams/decision-council/SKILL.md\`
+- 长期议题、立场压力测试和结构化分歧：\`debates/README.md\` 或 \`debates/<topic>/SKILL.md\`
 - 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
 - 产品、体验、视觉和交互：\`teams/design-review/SKILL.md\`
 - 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
@@ -327,6 +345,7 @@ function buildCodexBlock(contentRoot) {
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
+结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 <!-- ARCHSIGHT-COGNITION:END -->`;
@@ -358,6 +377,22 @@ function walk(dir, visit) {
 }
 
 function toSkillName(name, baseDir) {
+  if (baseDir === "debates") {
+    const aliases = {
+      "general": "cogd-general",
+      "life": "cogd-life",
+      "technology": "cogd-technology",
+      "engineering": "cogd-engineering",
+      "work": "cogd-work",
+      "learning": "cogd-learning",
+      "knowledge": "cogd-knowledge",
+      "governance": "cogd-governance"
+    };
+
+    if (aliases[name]) return aliases[name];
+    return name.startsWith("cogd-") ? name : `cogd-${name}`;
+  }
+
   if (baseDir === "voices") {
     return name.startsWith("cogv-") ? name : `cogv-${name}`;
   }

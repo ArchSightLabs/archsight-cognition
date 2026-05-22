@@ -31,7 +31,7 @@ description: 跨学科决策委员会，用于价值、结构、不确定性、�
 | 人生/职业选择 | Socrates, Aristotle, Simon, Camus | Braudel, Nietzsche |
 | 组织/合作决策 | Drucker, Simon, Thucydides, Kahneman | Kant, Hegel |
 | 高风险取舍 | Kahneman, Simon, Bayes, Kant | Aristotle, Descartes |
-| 写作/品牌方向 | Shakespeare, Wittgenstein, Aristotle, Plato | Visual Composition, Nietzsche |
+| 写作/品牌方向 | Shakespeare, Wittgenstein, Aristotle, Plato | Vignelli, Nietzsche |
 
 ## 方法
 

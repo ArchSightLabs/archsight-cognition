@@ -17,11 +17,10 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 - `Rams`：有用性、诚实性、克制、耐久性和少而精。
 - `Vignelli`：网格、版式、信息层级和视觉系统纪律。
 - `Albers`：色彩关系、对比、可读性和感知稳定性。
-- `Visual Composition`：视觉层级、构图、节奏和注意力路径。
+- `Klee`：绘画构成、动势、节奏、象征和视觉诗性。
 
 按任务需要加入：
 
-- `Klee`：绘画构成、动势、节奏、象征和视觉诗性。
 - `Aristotle`：目标、场景、优先级和实践落地。
 - `Wittgenstein`：文案、标签、概念和信息边界。
 - `Bayes`：证据强度、用户假设和验证方式。
@@ -36,8 +35,8 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 | --- | --- | --- |
 | 产品体验评审 | Norman, Rams, Aristotle | Newton, Bayes |
 | 信息架构和导航 | Norman, Vignelli, Wittgenstein | Euclid |
-| UI/视觉层级 | Visual Composition, Vignelli, Albers | Klee |
-| 色彩和审美判断 | Albers, Klee, Visual Composition | Vignelli |
+| UI/视觉层级 | Vignelli, Albers, Klee | Norman |
+| 色彩和审美判断 | Albers, Klee, Vignelli | Rams |
 | 交互流程和转化 | Norman, Newton, Bayes | Wittgenstein |
 | 品牌/落地页 | Vignelli, Klee, Shakespeare | Nietzsche |
 | 设计方案取舍 | Rams, Aristotle, Bayes | Plato |
@@ -46,7 +45,7 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 
 1. 用一句话说明这个界面或方案要帮助谁完成什么任务。
 2. 选择 3 到 5 个视角，不默认全员发言。
-3. 先检查用户目标、概念模型和信息层级，再检查视觉、美学和交互细节。
+3. 先检查用户目标、概念模型和信息层级，再用版式、色彩、构成和注意力路径检查视觉细节。
 4. 把问题分成理解、信任、行动、反馈、美学五类。
 5. 给出最小改动优先级，而不是一次性重设计。
 6. 为每个关键改动配一个验证方式。

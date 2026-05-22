@@ -8,7 +8,7 @@
 
 - 新的 persona：放在 `personas/<discipline>/<name>/SKILL.md`。
 - 新的 team：放在 `teams/<name>/SKILL.md`。
-- 新的 debate 模板：放在 `debates/`。
+- 新的 debate：放在 `debates/<topic>/SKILL.md`。
 - 新的 host 适配说明：放在 `adapters/<host>/README.md`。
 - 模板、README、示例任务和质量检查规则。
 
@@ -50,6 +50,26 @@
 - `护栏`
 
 team 应调度 persona，而不是覆盖 persona。主持人必须综合最终答案，并指出主要分歧、共识、盲点和下一步。
+
+## 新增 debate 的要求
+
+从 `templates/debate-skill.md` 开始。
+
+必须包含：
+
+- `name` frontmatter，使用 `cogd-<short-name>`。
+- 中文 `description` frontmatter。
+- `角色`
+- `适用场景`
+- `推荐视角`
+- `开场问题`
+- `方法`
+- `输出契约`
+- `护栏`
+
+debate 应围绕长期议题和真实冲突展开。它不同于 team：team 要合作并收束成综合判断；debate 要先放大强对立立场，标出不可调和点、最强反对意见和行动分叉，不要为了圆融而伪造共识。
+
+新增 debate 必须能提出至少 2 个强对立立场，并说明分歧如何影响责任边界、行动选择或验证路径。
 
 ## 语言规则
 

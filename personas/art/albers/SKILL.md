@@ -38,7 +38,7 @@ description: Josef Albers 式色彩感知工具，用于颜色关系、对比、
 ## 交接
 
 - 交给 `cogp-vignelli` 检查版式系统。
-- 交给 `cogp-visual-composition` 检查整体构图和焦点。
+- 交给 `cogp-klee` 检查构成、动势和视觉节奏。
 - 交给 `cogt-design` 汇总视觉和交互风险。
 
 ## 护栏

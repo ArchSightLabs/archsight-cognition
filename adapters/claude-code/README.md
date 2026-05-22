@@ -1,8 +1,8 @@
 # Claude Code 适配说明
 
-Claude Code 适合把 ArchSight Cognition 作为 Markdown skills 使用。常用 persona 和 team 可以安装到 `.claude/skills/<skill-name>/SKILL.md`，然后用 `/skill-name` 直接调用。
+Claude Code 适合把 ArchSight Cognition 作为 Markdown skills 使用。常用 persona、team、voice 和 debate 可以安装到 `.claude/skills/<skill-name>/SKILL.md`，然后用 `/skill-name` 直接调用。
 
-Claude Code 的 skill 机制会读取 `SKILL.md` 的 frontmatter 和正文。本仓库的 persona/team 已按这种形态组织，因此可以直接复制或链接使用。
+Claude Code 的 skill 机制会读取 `SKILL.md` 的 frontmatter 和正文。本仓库的 persona/team/voice/debate 已按这种形态组织，因此可以直接复制或链接使用。
 
 ## 安装
 
@@ -43,6 +43,9 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .claude\skills\cogd-general -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .claude\skills\cogd-life -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .claude\skills\cogd-technology -Recurse
 ```
 
 ### 方式二：安装到个人全局 skills
@@ -60,6 +63,9 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cogp-newton -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.claude\skills\cogv-kant -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general $HOME\.claude\skills\cogd-general -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life $HOME\.claude\skills\cogd-life -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology $HOME\.claude\skills\cogd-technology -Recurse
 ```
 
 ### macOS / Linux 示例
@@ -75,6 +81,9 @@ cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/c
 cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cogp-bayes
 cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cogp-newton
 cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-kant
+cp -R ~/work/archsight-cognition/debates/general ~/.claude/skills/cogd-general
+cp -R ~/work/archsight-cognition/debates/life ~/.claude/skills/cogd-life
+cp -R ~/work/archsight-cognition/debates/technology ~/.claude/skills/cogd-technology
 ```
 
 ## 使用
@@ -116,6 +125,11 @@ cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-ka
 用康德式克制、原则优先的口吻回应这段话。
 ```
 
+```text
+/cogd-technology
+围绕“AI 是否增强人的能动性”展开强分歧分析，不要急着调和。
+```
+
 ## 推荐路由
 
 | 任务 | Skill |
@@ -131,6 +145,7 @@ cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-ka
 | 产品、体验、视觉、交互评审 | `/cogt-design` |
 | 教育、学习路径、亲子成长 | `/cogt-learn` |
 | 风格化口吻 | `/cogv-kant`、`/cogv-nietzsche` |
+| 长期议题、结构化分歧 | `/cogd-general`、`/cogd-life`、`/cogd-technology` |
 
 ## 维护建议
 

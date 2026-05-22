@@ -6,7 +6,7 @@ Hermes 适合把 ArchSight Cognition 作为长期可成长 Agent 的“思维技
 
 ## 最小可用链路
 
-飞书机器人只负责收发消息。真正决定 `/cogt-think`、`/cogt-decide`、`/cogt-design`、`/cogt-learn`、`/cogp-socrates`、`/cogv-kant` 等命令是否可用的是 Hermes 侧的 gateway 和 agent 配置。
+飞书机器人只负责收发消息。真正决定 `/cogt-think`、`/cogt-decide`、`/cogt-design`、`/cogt-learn`、`/cogp-socrates`、`/cogv-kant`、`/cogd-general`、`/cogd-life`、`/cogd-technology` 等命令是否可用的是 Hermes 侧的 gateway 和 agent 配置。
 
 ```text
 飞书机器人
@@ -105,6 +105,9 @@ sudo systemctl status hermes-feishu-gateway --no-pager
 .hermes/skills/cogt-decide/SKILL.md
 .hermes/skills/cogt-design/SKILL.md
 .hermes/skills/cogt-learn/SKILL.md
+.hermes/skills/cogd-general/SKILL.md
+.hermes/skills/cogd-life/SKILL.md
+.hermes/skills/cogd-technology/SKILL.md
 .hermes/skills/philosophy/cogp-socrates/SKILL.md
 .hermes/skills/physics/cogp-newton/SKILL.md
 .hermes/skills/literature/cogp-shakespeare/SKILL.md
@@ -139,6 +142,9 @@ ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-cavalry ~/.hermes/sk
 ln -sfn /opt/archsight/archsight-cognition/teams/decision-council ~/.hermes/skills/teams/cogt-decide
 ln -sfn /opt/archsight/archsight-cognition/teams/design-review ~/.hermes/skills/teams/cogt-design
 ln -sfn /opt/archsight/archsight-cognition/teams/learning-path ~/.hermes/skills/teams/cogt-learn
+ln -sfn /opt/archsight/archsight-cognition/debates/general ~/.hermes/skills/debates/cogd-general
+ln -sfn /opt/archsight/archsight-cognition/debates/life ~/.hermes/skills/debates/cogd-life
+ln -sfn /opt/archsight/archsight-cognition/debates/technology ~/.hermes/skills/debates/cogd-technology
 ln -sfn /opt/archsight/archsight-cognition/voices/philosophy/kant ~/.hermes/skills/voices/cogv-kant
 ```
 
@@ -157,6 +163,9 @@ sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/philosophy-caval
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/decision-council /home/hermes/.hermes/skills/teams/cogt-decide
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/design-review /home/hermes/.hermes/skills/teams/cogt-design
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/teams/learning-path /home/hermes/.hermes/skills/teams/cogt-learn
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/debates/general /home/hermes/.hermes/skills/debates/cogd-general
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/debates/life /home/hermes/.hermes/skills/debates/cogd-life
+sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/debates/technology /home/hermes/.hermes/skills/debates/cogd-technology
 sudo -u hermes ln -sfn /opt/archsight/archsight-cognition/voices/philosophy/kant /home/hermes/.hermes/skills/voices/cogv-kant
 ```
 
@@ -174,6 +183,9 @@ hermes chat -q "/cogt-think 我不知道该用哪个视角，请先帮我判断�
 hermes chat -q "/cogt-decide 这个架构决策有哪些风险和下一步？"
 hermes chat -q "/cogt-design 评审这个产品界面的信息架构、视觉层级和交互风险。"
 hermes chat -q "/cogt-learn 只有世界的底层原理才值得探究，应用研究没意思，高一学生这么说正常吗？"
+hermes chat -q "/cogd-general 远程工作到底增强自由还是削弱组织信任？请给对立立场。"
+hermes chat -q "/cogd-life 人生应该追求自由、意义还是责任？请给对立立场。"
+hermes chat -q "/cogd-technology AI 编程助手到底增强还是削弱工程师判断力？不要强行收敛。"
 hermes chat -q "/cogv-kant 用康德式克制、原则优先的口吻回应这段话。"
 ```
 
@@ -273,6 +285,7 @@ gateway 跑起来后，飞书里发送 `/cogt-think ...`、`/cogt-decide ...`、
 /cogt-write 帮我看这篇文章的论证和表达。
 /cogt-design 帮我看这个界面的信息架构和交互风险。
 /cogt-learn 孩子只想研究底层原理，不想做应用题，怎么引导？
+/cogd-work 工作应该服务意义还是自由？请展开强分歧分析，不要急着调和。
 /cogv-nietzsche 用尼采式锋利、反从众的口吻改写这段表达。
 ```
 
@@ -289,6 +302,7 @@ gateway 跑起来后，飞书里发送 `/cogt-think ...`、`/cogt-decide ...`、
 | 学习路径、教育问题、亲子成长、学习动机 | `/cogt-learn` | 教育、学习路径和亲子成长 |
 | 科学推理、假设检验、证据评审 | `/cogt-science` | 假设、变量、证据和实验设计 |
 | 历史战略、周期评审、路径依赖 | `/cogt-history` | 战略、制度、周期和历史结构 |
+| 长期议题、立场压力测试、结构化分歧 | `/cogd-general`、`/cogd-life`、`/cogd-technology` | 对立立场、最强反对意见、不可调和点和行动分叉 |
 | 贝叶斯、不确定性、证据更新 | `/cogp-bayes` | 信息不足下的概率判断 |
 | 牛顿、系统建模、约束分析 | `/cogp-newton` | 变量、约束、惯性和系统建模 |
 | 维特根斯坦、语言澄清、概念澄清 | `/cogp-wittgenstein` | 概念误用和表达混乱 |
@@ -320,7 +334,7 @@ gateway 跑起来后，飞书里发送 `/cogt-think ...`、`/cogt-decide ...`、
   -> Hermes 原生 skills 系统加载 SKILL.md
 ```
 
-也就是说，Hermes 本身继续只需要识别 `/cogt-think`、`/cogt-decide`、`/cogt-design`、`/cogt-learn`、`/cogp-socrates` 等命令；中文触发词由 gateway 或 wrapper 转换。
+也就是说，Hermes 本身继续只需要识别 `/cogt-think`、`/cogt-decide`、`/cogt-design`、`/cogt-learn`、`/cogp-socrates`、`/cogd-general`、`/cogd-life`、`/cogd-technology` 等命令；中文触发词由 gateway 或 wrapper 转换。
 
 推荐配置项形态：
 
@@ -435,7 +449,8 @@ commands:
     "/cogt-philosophy": "teams/philosophy-cavalry/SKILL.md",
     "/cogt-decide": "teams/decision-council/SKILL.md",
     "/cogt-design": "teams/design-review/SKILL.md",
-    "/cogt-learn": "teams/learning-path/SKILL.md"
+    "/cogt-learn": "teams/learning-path/SKILL.md",
+    "/cogd-technology": "debates/technology/SKILL.md"
   }
 }
 ```
@@ -533,6 +548,7 @@ Linux 命令全部成功并输出 `all routed skill paths are readable` 即通�
 /cogt-decide 这个架构决策有哪些风险和下一步？
 /cogt-design 评审这个产品界面的信息架构、视觉层级和交互风险。
 /cogt-learn 这个学习路径和亲子沟通问题应该怎么分析？
+/cogd-technology AI 工具增强还是削弱人的判断？请给对立立场和行动分叉。
 /cogv-kant 用康德式克制、原则优先的口吻回应这段话。
 ```
 

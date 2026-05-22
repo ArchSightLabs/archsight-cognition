@@ -19,7 +19,7 @@ npx @archsight/cognition install codex
 这会创建或更新当前目录的 `AGENTS.md`，写入一个带 marker 的 ArchSight Cognition 指针区块。
 
 同时会把本包内容复制到当前项目的 `.archsight-cognition/`，让 Codex 指向稳定的本地目录，而不是临时 npm cache 路径。
-常用 `cogt-*` / `cogp-*` / `cogv-*` 也会注册到 `CODEX_HOME\skills`；未设置 `CODEX_HOME` 时使用 `~\.codex\skills`。
+常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 也会注册到 `CODEX_HOME\skills`；未设置 `CODEX_HOME` 时使用 `~\.codex\skills`。
 
 安装到全局 Codex 指令：
 
@@ -27,9 +27,9 @@ npx @archsight/cognition install codex
 npx @archsight/cognition install codex --global
 ```
 
-这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，把常用 `cogt-*` / `cogp-*` / `cogv-*` 注册到 Codex skills，并更新对应的全局 `AGENTS.md`。
+这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，把常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 注册到 Codex skills，并更新对应的全局 `AGENTS.md`。
 
-如果要注册全部 persona、team 和 voice：
+如果要注册全部 persona、team、voice 和 debate：
 
 ```powershell
 npx @archsight/cognition install codex --global --all --force
@@ -63,6 +63,7 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 - 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
 - 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
 - 高风险决策：`teams/decision-council/SKILL.md`
+- 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
 - 文章、叙事和表达：`teams/writing-review/SKILL.md`
 - 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
 - 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
@@ -70,6 +71,7 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
+结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
 ```
@@ -110,6 +112,23 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 用康德式克制、原则优先的口吻改写这段回应。
 ```
 
+结构化分歧工具使用 `debates/`：
+
+```text
+/cogd-general
+围绕“远程工作到底增强自由还是削弱组织信任”展开强分歧分析。
+```
+
+```text
+/cogd-life
+围绕“人生应该追求自由、意义还是责任”展开强分歧分析。
+```
+
+```text
+/cogd-technology
+围绕“AI 编程助手是否增强工程师判断力”展开强分歧分析，不要强行收敛。
+```
+
 ## 推荐路由
 
 | 任务 | 推荐 skill | 文件 |
@@ -120,12 +139,18 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 | 论证需要证明结构 | `cogp-euclid` | `personas/mathematics/euclid/SKILL.md` |
 | 不确定性和证据权重 | `cogp-bayes` | `personas/mathematics/bayes/SKILL.md` |
 | 约束、变量和系统动态 | `cogp-newton` | `personas/physics/newton/SKILL.md` |
+| 信息噪声和沟通失真 | `cogp-shannon` | `personas/information/shannon/SKILL.md` |
+| 自动化和人机分工 | `cogp-turing` | `personas/computation/turing/SKILL.md` |
+| 选择压力和长期适应 | `cogp-darwin` | `personas/biology/darwin/SKILL.md` |
+| 制度、权威和责任边界 | `cogp-weber` | `personas/sociology/weber/SKILL.md` |
+| 系统反馈和杠杆点 | `cogp-meadows` | `personas/systems/meadows/SKILL.md` |
 | 高风险决策 | `cogt-decide` | `teams/decision-council/SKILL.md` |
 | 技术写作和叙事 | `cogt-write` | `teams/writing-review/SKILL.md` |
 | 科学推理和验证设计 | `cogt-science` | `teams/scientific-reasoning/SKILL.md` |
 | 产品、体验、视觉、交互评审 | `cogt-design` | `teams/design-review/SKILL.md` |
 | 教育、学习路径、亲子成长 | `cogt-learn` | `teams/learning-path/SKILL.md` |
-| 风格化口吻 | `cogv-kant` / `cogv-nietzsche` | `voices/philosophy/kant/SKILL.md` |
+| 风格化口吻 | `cogv-kant` / `cogv-nietzsche` / `cogv-orwell` | `voices/philosophy/kant/SKILL.md` |
+| 长期议题和立场压力测试 | `cogd-general` / `cogd-life` / `cogd-technology` | `debates/general/SKILL.md` |
 
 ## 护栏
 
