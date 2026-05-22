@@ -114,7 +114,7 @@ function install(args) {
   if (target === "antigravity") {
     installAntigravitySkills(options, options.force);
 
-    if (!options.global && options.workflow) {
+    if (!options.global) {
       installAntigravityWorkflow(options.cwd, options.force);
     }
     return;
@@ -136,6 +136,9 @@ function install(args) {
       force: options.force
     });
     installAntigravitySkills(options, options.force);
+    if (!options.global) {
+      installAntigravityWorkflow(options.cwd, options.force);
+    }
     return;
   }
 
@@ -283,6 +286,11 @@ function installAntigravitySkills(options, force) {
       skills,
       force
     });
+    installAntigravityPlugin({
+      destination: path.join(options.cwd, ".agents", "plugins", "archsight-cognition"),
+      skills,
+      force
+    });
     return;
   }
 
@@ -295,7 +303,13 @@ function installAntigravitySkills(options, force) {
     });
   }
 
-  console.log("Antigravity: 已复制到 1.x legacy 目录和 2.x cli/ide 目录。当前 IDE 如不扫描全局 skills，请改用项目级 .agents/skills。");
+  installAntigravityPlugin({
+    destination: path.join(os.homedir(), ".gemini", "config", "plugins", "archsight-cognition"),
+    skills,
+    force
+  });
+
+  console.log("Antigravity: 已复制到 1.x legacy、2.x cli/ide skills 目录，并安装到官方 plugin 目录。当前 IDE 如不扫描全局 skills，请改用项目级 .agents/skills 或 .agents/plugins。");
 }
 
 function getAntigravityGlobalSkillDirs() {
@@ -305,6 +319,35 @@ function getAntigravityGlobalSkillDirs() {
     path.join(geminiRoot, "antigravity-cli", "skills"),
     path.join(geminiRoot, "antigravity-ide", "skills")
   ];
+}
+
+function installAntigravityPlugin({ destination, skills, force }) {
+  if (fs.existsSync(destination) && !force) {
+    console.log(`Antigravity plugin: 跳过 ${destination}，已存在，使用 --force 覆盖`);
+    return;
+  }
+
+  fs.rmSync(destination, { recursive: true, force: true });
+  fs.mkdirSync(path.join(destination, "skills"), { recursive: true });
+  fs.writeFileSync(
+    path.join(destination, "plugin.json"),
+    `${JSON.stringify({ name: "archsight-cognition" }, null, 2)}\n`,
+    "utf8"
+  );
+
+  console.log(`Antigravity plugin: 安装到 ${destination}`);
+  for (const skill of dedupeSkills(skills)) {
+    const source = path.join(packageRoot, skill.source);
+    const target = path.join(destination, "skills", skill.name);
+
+    if (!fs.existsSync(path.join(source, "SKILL.md"))) {
+      console.log(`- 跳过 ${skill.name}: 找不到 ${source}`);
+      continue;
+    }
+
+    fs.cpSync(source, target, { recursive: true });
+    console.log(`- 已安装 ${skill.name}`);
+  }
 }
 
 function getCodexHome() {
@@ -545,6 +588,7 @@ function printInstallHelp() {
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
   antigravity --global 会同时写入 ~/.gemini/antigravity/skills、~/.gemini/antigravity-cli/skills 和 ~/.gemini/antigravity-ide/skills。
+  antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md；--workflow 保留为兼容参数。
 `);
 }
 

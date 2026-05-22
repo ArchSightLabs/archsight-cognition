@@ -1,6 +1,6 @@
 # Antigravity 适配说明
 
-Antigravity 适合把 ArchSight Cognition 作为 workspace skills、workspace workflows 和规则指针使用。
+Antigravity 适合把 ArchSight Cognition 作为 workspace skills、Antigravity plugins、workspace workflows 和规则指针使用。
 
 推荐方式：
 
@@ -15,14 +15,10 @@ Antigravity 适合把 ArchSight Cognition 作为 workspace skills、workspace wo
 安装到当前 workspace：
 
 ```powershell
-npx @archsight/cognition install antigravity
+npx @archsight/cognition install antigravity --force
 ```
 
-安装到当前 workspace，并创建决策评审 workflow：
-
-```powershell
-npx @archsight/cognition install antigravity --workflow
-```
+该命令会同时安装 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。`--workflow` 是旧版兼容参数，现在不需要额外指定。
 
 安装到全局 skills：
 
@@ -30,17 +26,18 @@ npx @archsight/cognition install antigravity --workflow
 npx @archsight/cognition install antigravity --global
 ```
 
-该命令会真实复制 skills 到三个目录，兼容 Antigravity 1.x 和 2.x：
+该命令会真实复制 skills 到三个目录，并安装官方 plugin 结构，兼容 Antigravity 1.x 和 2.x：
 
 ```text
 ~/.gemini/antigravity/skills       # 1.x legacy 目录
 ~/.gemini/antigravity-cli/skills   # 2.x CLI 当前识别目录
 ~/.gemini/antigravity-ide/skills   # 2.x IDE 兼容预置目录，是否扫描取决于 IDE 版本
+~/.gemini/config/plugins/archsight-cognition/ # 2.x 官方第三方 plugin 目录
 ```
 
-这里不使用符号链接。新版 CLI 需要目录内有真实复制的 skill 文件，否则不会识别。
+这里不使用符号链接。新版 CLI 需要目录内有真实复制的 skill 文件，否则不会识别。Antigravity 2.x 的第三方包推荐使用 plugin 结构；plugin 可以包含 skills、rules、MCP 和 hooks，本包目前先提供 skills。
 
-如果 Antigravity IDE 模式仍然不识别全局 skills，优先在 IDE 打开的项目根目录执行 `npx @archsight/cognition install antigravity --workflow --force`，让 skills 出现在当前 workspace 的 `.agents/skills/` 下，然后重启 IDE 或重开 workspace。
+如果 Antigravity IDE 模式仍然不识别全局 skills，优先在 IDE 打开的项目根目录执行 `npx @archsight/cognition install antigravity --force`，让 skills 和 plugin 同时出现在当前 workspace 的 `.agents/` 下，然后重启 IDE 或重开 workspace。
 
 安装全部 skills：
 
@@ -50,24 +47,21 @@ npx @archsight/cognition install antigravity --all
 
 已存在的 skill 默认不会被覆盖。需要更新时加 `--force`。
 
-### 方式一：安装为 workspace skills
+### 方式一：安装为 workspace skills 和 plugin
 
-在目标项目根目录创建 `.agents/skills/`，并复制常用 persona/team/debate：
+在目标项目根目录执行：
 
 ```powershell
-mkdir .agents\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council .agents\skills\cogt-think -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cogt-decide -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents\skills\cogt-write -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review .agents\skills\cogt-design -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .agents\skills\cogt-learn -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cogp-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cogp-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cogp-newton -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .agents\skills\cogd-general -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .agents\skills\cogd-life -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\skills\cogd-technology -Recurse
+npx @archsight/cognition install antigravity --force
+```
+
+安装后会得到：
+
+```text
+.agents/skills/<skill-name>/SKILL.md
+.agents/plugins/archsight-cognition/plugin.json
+.agents/plugins/archsight-cognition/skills/<skill-name>/SKILL.md
+.agents/workflows/decision-review.md
 ```
 
 安装后，Antigravity agent 可以根据 `SKILL.md` 的 `name` 和 `description` 自动判断是否加载，也可以在对话中显式要求：
@@ -76,11 +70,11 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\s
 使用 cogt-decide skill 评审这个技术路线，输出风险、反对条件和下一步验证。
 ```
 
-### 方式二：安装为全局 skills
+### 方式二：安装为全局 skills 和 plugin
 
 适合跨 workspace 复用：
 
-Antigravity 1.x 使用 `~/.gemini/antigravity/skills/`。Antigravity 2.x 起拆分为 `antigravity-cli` 和 `antigravity-ide`，当前需要把 skills 复制到 `~/.gemini/antigravity-cli/skills/` 才能被 CLI 识别。安装器会同时复制到 legacy、CLI 和 IDE 三个目录。
+Antigravity 1.x 使用 `~/.gemini/antigravity/skills/`。Antigravity 2.x 起拆分为 `antigravity-cli` 和 `antigravity-ide`，当前需要把 skills 复制到 `~/.gemini/antigravity-cli/skills/` 才能被 CLI 识别。官方第三方包路径是 `~/.gemini/config/plugins/`。安装器会同时复制到 legacy、CLI、IDE 和 plugin 目录。
 
 ```powershell
 npx @archsight/cognition install antigravity --global --force
@@ -89,7 +83,7 @@ npx @archsight/cognition install antigravity --global --force
 如果目标是让 IDE 当前 workspace 识别，使用项目级安装：
 
 ```powershell
-npx @archsight/cognition install antigravity --workflow --force
+npx @archsight/cognition install antigravity --force
 ```
 
 ### 方式三：只添加 workspace 规则指针
