@@ -112,14 +112,7 @@ function install(args) {
   }
 
   if (target === "antigravity") {
-    installSkills({
-      host: "Antigravity",
-      destination: options.global
-        ? path.join(os.homedir(), ".gemini", "antigravity", "skills")
-        : path.join(options.cwd, ".agents", "skills"),
-      skills: options.all ? allSkills : curatedSkills,
-      force: options.force
-    });
+    installAntigravitySkills(options, options.force);
 
     if (!options.global && options.workflow) {
       installAntigravityWorkflow(options.cwd, options.force);
@@ -142,14 +135,7 @@ function install(args) {
       skills: options.all ? allSkills : curatedSkills,
       force: options.force
     });
-    installSkills({
-      host: "Antigravity",
-      destination: options.global
-        ? path.join(os.homedir(), ".gemini", "antigravity", "skills")
-        : path.join(options.cwd, ".agents", "skills"),
-      skills: options.all ? allSkills : curatedSkills,
-      force: options.force
-    });
+    installAntigravitySkills(options, options.force);
     return;
   }
 
@@ -285,6 +271,40 @@ function installCodexSkills(options, force) {
     skills: options.all ? allSkills : curatedSkills,
     force
   });
+}
+
+function installAntigravitySkills(options, force) {
+  const skills = options.all ? allSkills : curatedSkills;
+
+  if (!options.global) {
+    installSkills({
+      host: "Antigravity",
+      destination: path.join(options.cwd, ".agents", "skills"),
+      skills,
+      force
+    });
+    return;
+  }
+
+  for (const destination of getAntigravityGlobalSkillDirs()) {
+    installSkills({
+      host: "Antigravity",
+      destination,
+      skills,
+      force
+    });
+  }
+
+  console.log("Antigravity: 已复制到 1.x legacy 目录和 2.x cli/ide 目录。当前 IDE 如不扫描全局 skills，请改用项目级 .agents/skills。");
+}
+
+function getAntigravityGlobalSkillDirs() {
+  const geminiRoot = path.join(os.homedir(), ".gemini");
+  return [
+    path.join(geminiRoot, "antigravity", "skills"),
+    path.join(geminiRoot, "antigravity-cli", "skills"),
+    path.join(geminiRoot, "antigravity-ide", "skills")
+  ];
 }
 
 function getCodexHome() {
@@ -501,7 +521,7 @@ function printHelp() {
 安装目标:
   codex          安装内容目录、注册 Codex skills，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
-  antigravity    安装 skills 到 .agents/skills 或 ~/.gemini/antigravity/skills
+  antigravity    安装 skills 到 .agents/skills 或 Antigravity 全局 skills 目录
   all            安装 codex、claude-code 和 antigravity；--global 时安装到各自全局目录
 
 常用示例:
@@ -524,6 +544,7 @@ function printInstallHelp() {
   codex 会把 skills 注册到 CODEX_HOME/skills；未设置 CODEX_HOME 时使用 ~/.codex/skills。
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
+  antigravity --global 会同时写入 ~/.gemini/antigravity/skills、~/.gemini/antigravity-cli/skills 和 ~/.gemini/antigravity-ide/skills。
 `);
 }
 

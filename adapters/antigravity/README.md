@@ -30,6 +30,18 @@ npx @archsight/cognition install antigravity --workflow
 npx @archsight/cognition install antigravity --global
 ```
 
+该命令会真实复制 skills 到三个目录，兼容 Antigravity 1.x 和 2.x：
+
+```text
+~/.gemini/antigravity/skills       # 1.x legacy 目录
+~/.gemini/antigravity-cli/skills   # 2.x CLI 当前识别目录
+~/.gemini/antigravity-ide/skills   # 2.x IDE 兼容预置目录，是否扫描取决于 IDE 版本
+```
+
+这里不使用符号链接。新版 CLI 需要目录内有真实复制的 skill 文件，否则不会识别。
+
+如果 Antigravity IDE 模式仍然不识别全局 skills，优先在 IDE 打开的项目根目录执行 `npx @archsight/cognition install antigravity --workflow --force`，让 skills 出现在当前 workspace 的 `.agents/skills/` 下，然后重启 IDE 或重开 workspace。
+
 安装全部 skills：
 
 ```powershell
@@ -68,20 +80,16 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\s
 
 适合跨 workspace 复用：
 
+Antigravity 1.x 使用 `~/.gemini/antigravity/skills/`。Antigravity 2.x 起拆分为 `antigravity-cli` 和 `antigravity-ide`，当前需要把 skills 复制到 `~/.gemini/antigravity-cli/skills/` 才能被 CLI 识别。安装器会同时复制到 legacy、CLI 和 IDE 三个目录。
+
 ```powershell
-mkdir $HOME\.gemini\antigravity\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council $HOME\.gemini\antigravity\skills\cogt-think -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cogt-decide -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.gemini\antigravity\skills\cogt-write -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review $HOME\.gemini\antigravity\skills\cogt-design -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path $HOME\.gemini\antigravity\skills\cogt-learn -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cogp-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cogp-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cogp-newton -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general $HOME\.gemini\antigravity\skills\cogd-general -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life $HOME\.gemini\antigravity\skills\cogd-life -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology $HOME\.gemini\antigravity\skills\cogd-technology -Recurse
+npx @archsight/cognition install antigravity --global --force
+```
+
+如果目标是让 IDE 当前 workspace 识别，使用项目级安装：
+
+```powershell
+npx @archsight/cognition install antigravity --workflow --force
 ```
 
 ### 方式三：只添加 workspace 规则指针

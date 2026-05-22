@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Codex | `codex/README.md` | 用 `npx @archsight/cognition install codex` 安装 `.archsight-cognition/` 并写入 `AGENTS.md` 指针。 |
 | Claude Code | `claude-code/README.md` | 用 `npx @archsight/cognition install claude-code` 复制到 `.claude/skills/<name>/SKILL.md` 后用 `/name` 调用。 |
-| Antigravity | `antigravity/README.md` | 用 `npx @archsight/cognition install antigravity --workflow` 复制到 `.agents/skills/`，也可保存 workflow。 |
+| Antigravity | `antigravity/README.md` | 用 `npx @archsight/cognition install antigravity --workflow` 复制到 `.agents/skills/`；全局安装会复制到 Antigravity 1.x legacy 和 2.x cli/ide skills 目录。 |
 | Hermes | `hermes/README.md` | 作为系统侧 persona/team/voice/debate 工具库装配。 |
 | OpenClaw | `openclaw/README.md` | 作为多 agent / 多频道跨学科评审面板。 |
 

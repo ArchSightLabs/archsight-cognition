@@ -1,4 +1,14 @@
-# ArchSight Cognition v1.0.0 发布说明
+# ArchSight Cognition 发布说明
+
+## v1.0.2
+
+发布日期：2026-05-22
+
+- 兼容 Antigravity 2.x 目录拆分：`install antigravity --global` 会把 skills 真实复制到 `~/.gemini/antigravity/skills/`、`~/.gemini/antigravity-cli/skills/` 和 `~/.gemini/antigravity-ide/skills/`。
+- 保留 Antigravity 1.x legacy 目录，避免已安装用户升级后丢失全局 skills。
+- 明确不使用符号链接；新版 CLI 需要 `antigravity-cli/skills` 中存在真实复制的 skill 目录才能识别。
+
+## v1.0.0
 
 发布日期：2026-05-22
 

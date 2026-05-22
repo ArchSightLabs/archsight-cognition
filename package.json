@@ -1,6 +1,6 @@
 {
   "name": "@archsight/cognition",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "给 AI agent 使用的可移植跨学科思维工具包，提供 Markdown skills、personas、teams、voices 和 debates。",
   "type": "module",
   "bin": {

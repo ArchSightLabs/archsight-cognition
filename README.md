@@ -211,7 +211,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | `npx @archsight/cognition install claude-code` | 把常用 skills 复制到当前项目 `.claude/skills/`。 |
 | `npx @archsight/cognition install claude-code --global` | 把常用 skills 复制到 `~/.claude/skills/`。 |
 | `npx @archsight/cognition install antigravity` | 把常用 skills 复制到当前项目 `.agents/skills/`。 |
-| `npx @archsight/cognition install antigravity --global` | 把常用 skills 复制到 `~/.gemini/antigravity/skills/`。 |
+| `npx @archsight/cognition install antigravity --global` | 把常用 skills 复制到 Antigravity 全局目录：`~/.gemini/antigravity/skills/`、`~/.gemini/antigravity-cli/skills/` 和 `~/.gemini/antigravity-ide/skills/`。 |
 | `npx @archsight/cognition install antigravity --workflow` | 同时创建 `.agents/workflows/decision-review.md`。 |
 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code 和 Antigravity 入口。 |
 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code 和 Antigravity 的全局目录。 |
@@ -410,20 +410,16 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\s
 
 方式二：安装为全局 skills，供所有 workspace 使用。
 
+Antigravity 1.x 读取 `~/.gemini/antigravity/skills/`。Antigravity 2.x 起拆成 `antigravity-cli` 和 `antigravity-ide`，目前 CLI 会识别 `~/.gemini/antigravity-cli/skills/`；IDE 目录是否扫描取决于 Antigravity 版本。安装器会把 skills 真实复制到三个目录，避免符号链接在 Windows 权限和 host 扫描中失效。
+
 ```powershell
-mkdir $HOME\.gemini\antigravity\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council $HOME\.gemini\antigravity\skills\cogt-think -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council $HOME\.gemini\antigravity\skills\cogt-decide -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review $HOME\.gemini\antigravity\skills\cogt-write -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review $HOME\.gemini\antigravity\skills\cogt-design -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path $HOME\.gemini\antigravity\skills\cogt-learn -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.gemini\antigravity\skills\cogp-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.gemini\antigravity\skills\cogp-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.gemini\antigravity\skills\cogp-newton -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.gemini\antigravity\skills\cogv-kant -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general $HOME\.gemini\antigravity\skills\cogd-general -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life $HOME\.gemini\antigravity\skills\cogd-life -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology $HOME\.gemini\antigravity\skills\cogd-technology -Recurse
+npx @archsight/cognition install antigravity --global --force
+```
+
+如果 IDE 模式不识别全局 skills，进入 IDE 打开的项目根目录，执行项目级安装后重启 IDE 或重开 workspace：
+
+```powershell
+npx @archsight/cognition install antigravity --workflow --force
 ```
 
 方式三：只添加 workspace rule 指针。
