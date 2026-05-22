@@ -589,11 +589,10 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .claude\s
 
 ## 开源状态
 
-本仓库适合开源，但发布前还需要维护者补齐授权和社区治理文件。检查清单见 `OPEN_SOURCE.md`。
+本仓库使用 MIT License 发布，适合复制、修改、分发和商用。发布前后的治理检查清单见 `OPEN_SOURCE.md`。
 
-最关键的缺口是：
+当前仍建议明确的边界是：
 
-- 选择并添加 `LICENSE`。
 - 明确哪些名称、商标和品牌资产可被复用。
 
 ## 运行契约

@@ -8,9 +8,9 @@ ArchSight Cognition 的内容形态适合开源：它是可读、可复制、可
 
 | 项目 | 状态 | 说明 |
 | --- | --- | --- |
-| `LICENSE` | 待补 | 必须由维护者选择开源协议。常见选择是 MIT、Apache-2.0 或 CC BY 4.0，但本仓库包含提示词和文档，建议明确内容授权范围。 |
-| 版权归属 | 待补 | 在 README 或 LICENSE 中明确版权主体，例如 ArchSightLabs、个人作者或组织。 |
-| npm 授权字段 | 待补 | `package.json` 当前不能替代正式授权。发布 npm 前应把 `license` 改成与 `LICENSE` 一致的 SPDX 标识。 |
+| `LICENSE` | 已补 | 使用 MIT License，覆盖本仓库的软件、Markdown skills、文档和模板。 |
+| 版权归属 | 已补 | `LICENSE` 中声明版权主体为 ArchSightLabs。 |
+| npm 授权字段 | 已补 | `package.json` 使用 SPDX 标识 `MIT`。 |
 | 贡献规则 | 已补 | `CONTRIBUTING.md` 已说明新增 persona/team 的质量标准、命名规则和评审流程。 |
 | 安全边界 | 已补 | `SECURITY.md` 已说明 prompt injection、事实误用、医疗/法律/金融等高风险场景的处理方式。 |
 | 商标和品牌说明 | 待补 | 明确 `ArchSight`、`ArchSightLabs` 等名称是否允许第三方在衍生项目中使用。 |
@@ -55,10 +55,8 @@ ArchSight Cognition 的内容形态适合开源：它是可读、可复制、可
 
 ## 推荐的发布前最小闭环
 
-1. 选择并添加 `LICENSE`。
-2. 把 `package.json` 的 `license` 字段改成与 `LICENSE` 一致的 SPDX 标识。
-3. 明确版权主体和 `ArchSight` / `ArchSightLabs` 品牌使用边界。
-4. 跑一次结构检查：所有 `SKILL.md` 都有 frontmatter，`name` 与目录名一致。
-5. 用 Codex、Claude Code、Antigravity 各完成一次真实调用，确认安装路径和示例输入有效。
+1. 明确 `ArchSight` / `ArchSightLabs` 品牌使用边界。
+2. 跑一次结构检查：所有 `SKILL.md` 都有 frontmatter，`name` 与目录名一致。
+3. 用 Codex、Claude Code、Antigravity 各完成一次真实调用，确认安装路径和示例输入有效。
 
 完成以上项目后，本仓库就具备基础开源可读性、可安装性和可贡献性。

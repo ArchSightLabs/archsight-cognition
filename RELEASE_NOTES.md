@@ -56,7 +56,7 @@ CLI 的重点不是提供运行时框架，而是把 Markdown skills 安装到�
 - ArchSight Cognition 不是 agent runtime，不负责调度、记忆、工具调用、权限管理或服务进程。
 - 它不是事实权威库。事实性问题仍然需要检索、引用和验证。
 - 它不是名人模拟器。persona 是学科思维工具，voice 只是明确标注的表达风格。
-- 当前 `package.json` 仍标记为 `UNLICENSED`；正式开源复用前还需要补齐许可证和品牌资产规则。
+- 本版本使用 MIT License 发布；正式对外复用时仍建议明确品牌和商标资产规则。
 
 ## 推荐升级方式
 
@@ -77,5 +77,5 @@ npx @archsight/cognition install codex --all --force
 ## 已知限制
 
 - 当前版本主要分发 Markdown skills 和安装器，没有独立测试框架或远程服务。
-- npm 包仍未声明开源许可证。
+- 品牌和商标资产规则仍需单独明确。
 - 各 agent host 对 skill、workflow 和 slash command 的支持能力不同，实际体验会随 host 变化。
