@@ -171,30 +171,43 @@ archsight-cognition/
 
 ## 快速开始
 
-推荐使用 npm / npx 作为统一安装入口：
+推荐使用 npm / npx 作为统一安装入口。先选择安装范围：要么都安装到当前项目，要么都安装到全局，不要在同一组命令里混用。
+
+安装到当前项目：
 
 ```powershell
 npx @archsight/cognition install codex
 npx @archsight/cognition install claude-code
 npx @archsight/cognition install opencode
+npx @archsight/cognition install antigravity
+```
+
+也可以用一条命令安装到当前项目：
+
+```powershell
+npx @archsight/cognition install all
+```
+
+安装到全局：
+
+```powershell
+npx @archsight/cognition install codex --global
+npx @archsight/cognition install claude-code --global
+npx @archsight/cognition install opencode --global
 npx @archsight/cognition install antigravity --global
+```
+
+也可以用一条命令安装到全局：
+
+```powershell
+npx @archsight/cognition install all --global
 ```
 
 也可以全局安装 CLI：
 
 ```powershell
 npm install -g @archsight/cognition
-archsight-cognition install opencode --global
-archsight-cognition install antigravity --global
-```
-
-发布到 npm 前，可以在仓库根目录本地安装验证：
-
-```powershell
-npm install -g .
-archsight-cognition install codex
-archsight-cognition install opencode --force
-archsight-cognition install antigravity --force
+archsight-cognition install all --global
 ```
 
 如果不使用 npm，也可以直接克隆仓库后手动加载：
@@ -234,35 +247,53 @@ personas/physics/newton/SKILL.md      # 变量、约束和系统建模
 
 ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markdown skills 和安装器，不代表本项目变成 JavaScript 运行时库。
 
-| 命令 | 作用 |
-| --- | --- |
-| `npx @archsight/cognition install codex` | 在当前目录安装 `.archsight-cognition/`，创建或更新 `AGENTS.md` 指针，并把常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 注册到 `CODEX_HOME/skills`。 |
-| `npx @archsight/cognition install codex --global` | 安装到 `CODEX_HOME` 或 `~/.codex`，创建或更新全局 `AGENTS.md`，并注册 Codex skills。 |
-| `npx @archsight/cognition install claude-code` | 把常用 skills 复制到当前项目 `.claude/skills/`。 |
-| `npx @archsight/cognition install claude-code --global` | 把常用 skills 复制到 `~/.claude/skills/`。 |
-| `npx @archsight/cognition install opencode` | 把常用 skills 复制到当前项目 `.opencode/skills/`。 |
-| `npx @archsight/cognition install opencode --global` | 把常用 skills 复制到 `~/.config/opencode/skills/`。 |
-| `npx @archsight/cognition install antigravity --global` | 推荐方式。一次性安装到 Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
-| `npx @archsight/cognition install antigravity` | IDE fallback。把常用 skills 复制到当前项目 `.agents/skills/`，同时安装 `.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
-| `npx @archsight/cognition install antigravity --workflow` | 兼容旧命令；现在 workflow 已随 `install antigravity` 默认安装。 |
-| `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode 和 Antigravity 入口。 |
-| `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode 和 Antigravity 的全局目录。 |
+| 安装范围 | 命令 | 写入位置 |
+| --- | --- | --- |
+| 当前项目 | `npx @archsight/cognition install codex` | 当前目录 `.archsight-cognition/`、`AGENTS.md`，并注册 Codex skills。 |
+| 当前项目 | `npx @archsight/cognition install claude-code` | 当前目录 `.claude/skills/`。 |
+| 当前项目 | `npx @archsight/cognition install opencode` | 当前目录 `.opencode/skills/`。 |
+| 当前项目 | `npx @archsight/cognition install antigravity` | 当前目录 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
+| 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode 和 Antigravity 入口。 |
+| 全局 | `npx @archsight/cognition install codex --global` | `CODEX_HOME` 或 `~/.codex`，并注册 Codex skills。 |
+| 全局 | `npx @archsight/cognition install claude-code --global` | `~/.claude/skills/`。 |
+| 全局 | `npx @archsight/cognition install opencode --global` | `~/.config/opencode/skills/`。 |
+| 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
+| 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode 和 Antigravity 的全局目录。 |
 
 默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
 
-如需安装全部 `SKILL.md`：
+如需安装全部 `SKILL.md`，同样先选择安装范围。
+
+安装到当前项目：
 
 ```powershell
 npx @archsight/cognition install codex --all
 npx @archsight/cognition install claude-code --all
 npx @archsight/cognition install opencode --all
+npx @archsight/cognition install antigravity --all
+```
+
+安装到全局：
+
+```powershell
+npx @archsight/cognition install codex --global --all
+npx @archsight/cognition install claude-code --global --all
+npx @archsight/cognition install opencode --global --all
 npx @archsight/cognition install antigravity --global --all
 ```
 
-已存在的 skill 默认不会被覆盖。需要更新时使用：
+已存在的 skill 默认不会被覆盖。需要更新时在同一安装范围内加 `--force`：
+
+当前项目：
 
 ```powershell
-npx @archsight/cognition install antigravity --global --force
+npx @archsight/cognition install all --force
+```
+
+全局：
+
+```powershell
+npx @archsight/cognition install all --global --force
 ```
 
 查看可安装 skill：
@@ -271,310 +302,25 @@ npx @archsight/cognition install antigravity --global --force
 npx @archsight/cognition list
 ```
 
-发布到 npm 前的本地验证方式：
+维护者发布到 npm 前的本地验证方式：
 
 ```powershell
 npm install -g .
-archsight-cognition install antigravity --workflow
+archsight-cognition install all --force
 ```
 
-### 手动安装
+### Host 细节
 
-| Host | 推荐方式 | 适合场景 |
-| --- | --- | --- |
-| Codex | 在 `AGENTS.md` 中加入本仓库路径和路由规则 | 适合把本仓库作为项目级或全局认知工具库。 |
-| Claude Code | 把需要的目录复制或链接到 `.claude/skills/<name>/SKILL.md` | 适合把 persona/team/voice/debate 注册成可直接 `/name` 调用的 skill。 |
-| OpenCode | 把需要的目录复制或链接到 `.opencode/skills/<name>/SKILL.md` | 适合让 OpenCode 通过原生 skill tool 按需加载认知工具。 |
-| Antigravity | 复制到 `.agents/skills/` 或写入 workspace rule / workflow | 适合在 Agent Manager / Editor 中作为规划、评审和写作工作流使用。 |
+主 README 只保留常用安装入口。不同 host 的手动路径、兼容说明和安全边界见各自 adapter 文档。
 
-### 安装到 Codex
+| Host | 当前项目 | 全局 | 常用调用 |
+| --- | --- | --- | --- |
+| Codex | `npx @archsight/cognition install codex` | `npx @archsight/cognition install codex --global` | `/cogt-decide` |
+| Claude Code | `npx @archsight/cognition install claude-code` | `npx @archsight/cognition install claude-code --global` | `/cogt-decide` |
+| OpenCode | `npx @archsight/cognition install opencode` | `npx @archsight/cognition install opencode --global` | `使用 cogt-decide skill ...` |
+| Antigravity | `npx @archsight/cognition install antigravity` | `npx @archsight/cognition install antigravity --global` | `使用 cogt-decide skill ...` |
 
-Codex 推荐用 `AGENTS.md` 指向一个稳定的本地内容目录，不要把所有 persona 内容直接复制进 `AGENTS.md`。
-
-Codex 支持全局和项目级两种安装：
-
-- 全局安装：写入 `CODEX_HOME/AGENTS.md`；如果没有设置 `CODEX_HOME`，默认写入 `~/.codex/AGENTS.md`。
-- 项目安装：写入当前项目 `AGENTS.md`，并把内容复制到当前项目 `.archsight-cognition/`。
-
-项目级安装：
-
-```powershell
-npx @archsight/cognition install codex
-```
-
-该命令会：
-
-- 把 `personas/`、`teams/`、`debates/`、`templates/`、`adapters/` 复制到当前项目的 `.archsight-cognition/`。
-- 创建或更新当前项目的 `AGENTS.md`。
-- 把常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 技能注册到 `CODEX_HOME\skills`，未设置 `CODEX_HOME` 时注册到 `~\.codex\skills`。
-- 让 `AGENTS.md` 指向 `.archsight-cognition/`，避免依赖临时 npm cache 路径。
-
-全局安装：
-
-```powershell
-npx @archsight/cognition install codex --global
-```
-
-该命令会：
-
-- 把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`。
-- 把常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 技能注册到 `CODEX_HOME\skills` 或 `~\.codex\skills`。
-- 创建或更新全局 `AGENTS.md`。
-- 让所有 Codex 项目默认继承 ArchSight Cognition 路由规则。
-
-如果希望所有 team、单个 persona、voice 和 debate 都能通过 `/cogt-*`、`/cogp-*`、`/cogv-*` 或 `/cogd-*` 访问，使用：
-
-```powershell
-npx @archsight/cognition install codex --global --all --force
-```
-
-手动安装：
-
-在你的目标项目根目录打开或创建 `AGENTS.md`，加入：
-
-```markdown
-## ArchSight Cognition
-
-当任务需要问题澄清、写作评审、研究设计、战略判断或跨学科决策复盘时，
-从 `C:\Work\ArchSightLabs\archsight-cognition` 加载最相关的认知工具。
-
-默认路由：
-- 需求和概念不清：`personas/philosophy/socrates/SKILL.md`
-- 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
-- 变量、约束和系统建模：`personas/physics/newton/SKILL.md`
-- 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
-- 高风险决策：`teams/decision-council/SKILL.md`
-- 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
-- 文章、叙事和表达：`teams/writing-review/SKILL.md`
-- 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
-- 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
-
-综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
-单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
-风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
-结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
-
-不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
-```
-
-第一次使用时，可以在 Codex 中直接调用注册后的 skill：
-
-```text
-/cogt-decide
-对这个架构决策做跨学科评审，输出风险、反对条件和下一步验证。
-```
-
-结构化分歧：
-
-```text
-/cogd-general
-围绕“远程工作到底增强自由还是削弱组织信任”展开强分歧分析。
-```
-
-领域结构化分歧：
-
-```text
-/cogd-life
-围绕“人生应该追求自由、意义还是责任”展开强分歧分析。
-```
-
-```text
-/cogd-technology
-围绕“AI 编程助手是否增强工程师判断力”做一次立场压力测试，不要强行收敛。
-```
-
-也可以显式加载文件：
-
-```text
-加载 C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council\SKILL.md。
-对这个架构决策做跨学科评审，输出风险、反对条件和下一步验证。
-```
-
-### 安装到 Antigravity
-
-Antigravity 有三种接入方式，推荐优先全局安装。全局安装一次后，CLI 和多数 workspace 可以复用同一份 skills / plugin；只有 IDE 当前版本不识别全局 plugin 或全局 skills 时，才用 workspace 安装作为 fallback。
-
-自动安装到全局：
-
-```powershell
-npx @archsight/cognition install antigravity --global --force
-```
-
-IDE fallback：安装到当前 workspace。
-
-```powershell
-npx @archsight/cognition install antigravity --force
-```
-
-方式一：安装为全局 skills 和 plugin，供所有 workspace 使用。
-
-Antigravity 2.x 的官方第三方包形态是 plugin，安装器会写入 `~/.gemini/config/plugins/archsight-cognition/`。如果检测到 `~/.gemini/antigravity/` 已存在，说明用户环境可能仍有 1.x legacy 目录，安装器才会额外写入 `~/.gemini/antigravity/skills/`；否则不会主动创建 legacy 目录，也不会复制到 `antigravity-cli/skills` 或 `antigravity-ide/skills`。
-
-```powershell
-npx @archsight/cognition install antigravity --global --force
-```
-
-方式二：安装为当前 workspace 的 skills 和 plugin，仅在 IDE 不识别全局安装时使用。
-
-该命令会写入：
-
-```text
-.agents/skills/
-.agents/plugins/archsight-cognition/
-.agents/workflows/decision-review.md
-```
-
-在目标项目根目录执行：
-
-```powershell
-mkdir .agents\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council .agents\skills\cogt-think -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .agents\skills\cogt-decide -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .agents\skills\cogt-write -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review .agents\skills\cogt-design -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .agents\skills\cogt-learn -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .agents\skills\cogp-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .agents\skills\cogp-bayes -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .agents\skills\cogp-newton -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .agents\skills\cogv-kant -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .agents\skills\cogd-general -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .agents\skills\cogd-life -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .agents\skills\cogd-technology -Recurse
-```
-
-然后在 Antigravity agent 对话中输入：
-
-```text
-使用 cogt-decide skill 评审这个技术路线，输出风险、反对条件和下一步验证。
-```
-
-如果 IDE 模式不识别全局 skills，进入 IDE 打开的项目根目录，执行项目级安装后重启 IDE 或重开 workspace：
-
-```powershell
-npx @archsight/cognition install antigravity --force
-```
-
-方式三：只添加 workspace rule 指针。
-
-在目标项目创建 `.agents/rules/archsight-cognition.md`：
-
-```markdown
-# ArchSight Cognition
-
-当任务需要问题澄清、写作评审、研究设计、战略判断或跨学科决策复盘时，
-从 `C:\Work\ArchSightLabs\archsight-cognition` 加载最相关的 Markdown 工具。
-
-默认路由：
-- 概念和需求不清：`personas/philosophy/socrates/SKILL.md`
-- 不确定性和证据判断：`personas/mathematics/bayes/SKILL.md`
-- 约束和系统建模：`personas/physics/newton/SKILL.md`
-- 不知道该用哪个工具：`teams/thinking-council/SKILL.md`
-- 高风险决策：`teams/decision-council/SKILL.md`
-- 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
-- 写作和表达评审：`teams/writing-review/SKILL.md`
-- 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
-- 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
-
-综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
-单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
-风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
-结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
-
-不要人格 cosplay。persona 只作为学科思维工具。
-```
-
-如果要保存成 Antigravity workflow，可以创建 `.agents/workflows/decision-review.md`：
-
-```markdown
-# Decision Review
-
-使用 ArchSight Cognition 的 `cogt-decide` 思路评审用户给出的决策。
-
-输出：
-- 决策重述
-- 不可逆性
-- 信息缺口
-- 关键风险
-- 反对条件
-- 下一步验证
-
-不要默认调用所有视角。按任务选择 3 到 5 个最相关视角。
-```
-
-在 Antigravity 对话中输入 `/decision`，选择该 workflow 后再贴入具体问题。
-
-### 安装到 Claude Code
-
-Claude Code 推荐把常用工具复制到 `.claude/skills/`：
-
-自动安装到当前项目：
-
-```powershell
-npx @archsight/cognition install claude-code
-```
-
-自动安装到全局：
-
-```powershell
-npx @archsight/cognition install claude-code --global
-```
-
-手动安装：
-
-```powershell
-mkdir .claude\skills
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\thinking-council .claude\skills\cogt-think -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\decision-council .claude\skills\cogt-decide -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\writing-review .claude\skills\cogt-write -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\design-review .claude\skills\cogt-design -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .claude\skills\cogt-learn -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cogp-socrates -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .claude\skills\cogd-general -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .claude\skills\cogd-life -Recurse
-Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .claude\skills\cogd-technology -Recurse
-```
-
-调用示例：
-
-```text
-/cogt-decide
-对这个产品方向做一次跨学科决策评审。
-```
-
-风格化口吻：
-
-```text
-/cogv-kant
-用康德式克制、原则优先的口吻回应这段话。
-```
-
-结构化分歧：
-
-```text
-/cogd-work
-围绕“工作应该服务意义还是自由”展开强分歧分析，不要急着调和。
-```
-
-### 安装到 OpenCode
-
-OpenCode 推荐安装到 `.opencode/skills/` 或全局 `~/.config/opencode/skills/`：
-
-```powershell
-npx @archsight/cognition install opencode
-```
-
-```powershell
-npx @archsight/cognition install opencode --global
-```
-
-OpenCode 的 skills 通过原生 skill tool 按需加载，不建议把它们理解成 slash command。调用时在任务里明确 skill 名称即可：
-
-```text
-使用 cogt-decide skill 对这个产品方向做一次跨学科决策评审。
-```
-
-详细说明见：
+详细说明：
 
 - `adapters/codex/README.md`
 - `adapters/claude-code/README.md`
@@ -588,15 +334,15 @@ OpenCode 的 skills 通过原生 skill tool 按需加载，不建议把它们理
 单个学科工具：
 
 ```text
-加载 personas/physics/newton/SKILL.md。
-用 Newton 作为约束与系统建模视角审查这个产品决策：
+/cogp-newton
+从约束、变量和系统建模角度审查这个产品决策：
 ...
 ```
 
 写作评审：
 
 ```text
-加载 teams/writing-review/SKILL.md。
+/cogt-write
 从论证、叙事张力、清晰度和风格角度评审这篇文章：
 ...
 ```
@@ -604,7 +350,7 @@ OpenCode 的 skills 通过原生 skill tool 按需加载，不建议把它们理
 决策审查：
 
 ```text
-加载 teams/decision-council/SKILL.md。
+/cogt-decide
 对这个战略做一次跨学科决策评审：
 ...
 ```
@@ -612,7 +358,7 @@ OpenCode 的 skills 通过原生 skill tool 按需加载，不建议把它们理
 风格化口吻：
 
 ```text
-加载 voices/philosophy/nietzsche/SKILL.md。
+/cogv-nietzsche
 用尼采式锋利、反从众的口吻改写这段表达：
 ...
 ```

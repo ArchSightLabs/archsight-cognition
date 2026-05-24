@@ -124,12 +124,13 @@ function main() {
 
 function install(args) {
   const target = args[0];
-  const options = parseOptions(args.slice(1));
 
-  if (!target || target === "help") {
+  if (!target || target === "help" || target === "--help" || target === "-h") {
     printInstallHelp();
     return;
   }
+
+  const options = parseOptions(args.slice(1));
 
   if (target === "claude-code") {
     installSkills({
@@ -629,9 +630,8 @@ function printHelp() {
   npx @archsight/cognition install codex
   npx @archsight/cognition install claude-code
   npx @archsight/cognition install opencode
-  npx @archsight/cognition install antigravity --workflow
   npx @archsight/cognition install antigravity --global
-  npx @archsight/cognition install claude-code --all --force
+  npx @archsight/cognition install all --global
 `);
 }
 
@@ -640,7 +640,7 @@ function printInstallHelp() {
   archsight-cognition install codex [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install opencode [--cwd <path>] [--global] [--all] [--force]
-  archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force] [--workflow]
+  archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
 
 说明:
@@ -649,7 +649,7 @@ function printInstallHelp() {
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
   opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.config/opencode/skills。
   antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
-  antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md；--workflow 保留为兼容参数。
+  antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md。
 `);
 }
 

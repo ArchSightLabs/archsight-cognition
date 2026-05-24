@@ -34,7 +34,7 @@ IDE fallback：安装到当前 workspace：
 npx @archsight/cognition install antigravity --force
 ```
 
-只有 Antigravity IDE 模式不识别全局 skills / plugin 时，才需要在 IDE 打开的项目根目录执行 workspace 安装。它会同时安装 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。`--workflow` 是旧版兼容参数，现在不需要额外指定。
+只有 Antigravity IDE 模式不识别全局 skills / plugin 时，才需要在 IDE 打开的项目根目录执行 workspace 安装。它会同时安装 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。
 
 安装全部 skills：
 
