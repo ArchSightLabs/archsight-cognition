@@ -30,6 +30,7 @@ description: 哲学思维面板，用于概念、价值、原则、意义、矛�
 中国思想压力测试：
 
 - `Confucius`：检查角色、礼序、关系责任和名实一致。
+- `Xunzi`：检查人性假设、环境塑造、训练纪律和长期习惯。
 - `Laozi`：检查过度干预、反作用和最小有效行动。
 - `Zhuangzi`：切换视角，解除僵化分类和伪问题。
 - `Wang Yangming`：检查知行是否断裂，判断是否进入现场行动。
@@ -48,6 +49,7 @@ description: 哲学思维面板，用于概念、价值、原则、意义、矛�
 | AI 与人类能动性 | Kant, Descartes, Hegel | Camus, Wittgenstein |
 | 组织/制度设计 | Aristotle, Kant, Hegel | Nietzsche, Socrates |
 | 关系/组织秩序 | Confucius, Hanfeizi, Aristotle | Mencius, Weber |
+| 教育/训练/习惯形成 | Xunzi, Aristotle, Vygotsky | Mencius, Hanfeizi |
 | 过度设计/过度治理 | Laozi, Zhuangzi, Meadows | Mozi, Rams |
 | 从判断到行动 | Wang Yangming, Aristotle, Simon | Socrates, Kahneman |
 

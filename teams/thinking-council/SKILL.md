@@ -28,10 +28,14 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 - `Braudel`：长期结构、阶段和发展周期。
 - `Shakespeare`：人物动机、叙事张力和表达意图。
 - `Confucius`：关系责任、角色边界和信任秩序。
+- `Xunzi`：训练纪律、环境塑造和长期习惯形成。
 - `Laozi`：过度干预、反作用和最小行动。
 - `Zhuangzi`：视角切换、伪问题和单一尺度松动。
 - `Mozi`：功用、节用、公共利益和反浪费。
 - `Cao Xueqin`：复杂关系、隐性权力和细节暗线。
+- `Sunzi`：战略态势、虚实、成本和低损耗行动。
+- `Fei Xiaotong`：差序格局、关系半径和传播路径。
+- `Qian Zhongshu`：类比、反讽和知识分辨。
 
 ## 路由
 
@@ -45,8 +49,10 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 | 不知道该用哪个工具 | Socrates, Simon, Aristotle | Bayes |
 | 选择太多/犹豫 | Simon, Kahneman, Aristotle | Bayes |
 | 关系/组织问题 | Confucius, Simon, Kahneman | Hanfeizi, Mencius |
+| 中国组织/传播语境 | Fei Xiaotong, Confucius, Weber | Mozi, Qian Zhongshu |
 | 过度用力/过度设计 | Laozi, Zhuangzi, Meadows | Mozi, Rams |
-| 中文叙事和文化表达 | Cao Xueqin, Sima Qian, Han Yu | Su Shi, Lu Xun |
+| 战略进入/竞争判断 | Sunzi, Bayes, Simon | Clausewitz, Thucydides |
+| 中文叙事和文化表达 | Cao Xueqin, Sima Qian, Han Yu | Su Shi, Lu Xun, Qian Zhongshu |
 
 ## 方法
 

@@ -22,6 +22,7 @@ description: 跨学科决策委员会，用于价值、结构、不确定性、�
 - `Aristotle`：实践落地和行动排序。
 - `Confucius` 或 `Mozi`：关系责任、公共利益、节用和实际效用。
 - `Hanfeizi` 或 `Wang Yangming`：制度执行、激励漏洞、知行合一和现场验证。
+- `Sunzi` 或 `Xunzi`：战略态势、胜前计算、训练纪律和长期习惯。
 
 ## 路由
 
@@ -37,6 +38,8 @@ description: 跨学科决策委员会，用于价值、结构、不确定性、�
 | 关系/治理取舍 | Confucius, Hanfeizi, Simon, Kahneman | Mencius, Weber |
 | 资源/公共价值取舍 | Mozi, Drucker, Bayes, Aristotle | Laozi, Rams |
 | 行动落地取舍 | Wang Yangming, Aristotle, Simon, Newton | Kahneman, Socrates |
+| 战略进入/竞争取舍 | Sunzi, Bayes, Simon, Clausewitz | Thucydides, Machiavelli |
+| 教育/组织训练取舍 | Xunzi, Simon, Kahneman, Aristotle | Mencius, Hanfeizi |
 
 ## 方法
 

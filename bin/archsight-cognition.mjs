@@ -28,6 +28,7 @@ const curatedSkills = [
   { name: "cogd-governance", source: "debates/governance" },
   { name: "cogd-chinese-thought", source: "debates/chinese-thought" },
   { name: "cogd-tradition-modernity", source: "debates/tradition-modernity" },
+  { name: "cogd-technology-humanities", source: "debates/technology-humanities" },
   { name: "cogp-socrates", source: "personas/philosophy/socrates" },
   { name: "cogp-bayes", source: "personas/mathematics/bayes" },
   { name: "cogp-newton", source: "personas/physics/newton" },
@@ -49,15 +50,20 @@ const curatedSkills = [
   { name: "cogp-wang-yangming", source: "personas/philosophy/wang-yangming" },
   { name: "cogp-mozi", source: "personas/philosophy/mozi" },
   { name: "cogp-hanfeizi", source: "personas/philosophy/hanfeizi" },
+  { name: "cogp-xunzi", source: "personas/philosophy/xunzi" },
+  { name: "cogp-sunzi", source: "personas/history/sunzi" },
   { name: "cogp-caoxueqin", source: "personas/literature/caoxueqin" },
   { name: "cogp-simaqian", source: "personas/literature/simaqian" },
   { name: "cogp-sushi", source: "personas/literature/sushi" },
   { name: "cogp-hanyu", source: "personas/literature/hanyu" },
   { name: "cogp-luxun", source: "personas/literature/luxun" },
+  { name: "cogp-qian-zhongshu", source: "personas/literature/qian-zhongshu" },
+  { name: "cogp-ouyang-xiu", source: "personas/literature/ouyang-xiu" },
   { name: "cogp-shannon", source: "personas/information/shannon" },
   { name: "cogp-turing", source: "personas/computation/turing" },
   { name: "cogp-darwin", source: "personas/biology/darwin" },
   { name: "cogp-weber", source: "personas/sociology/weber" },
+  { name: "cogp-fei-xiaotong", source: "personas/sociology/fei-xiaotong" },
   { name: "cogp-meadows", source: "personas/systems/meadows" },
   { name: "cogp-rams", source: "personas/art/rams" },
   { name: "cogp-norman", source: "personas/art/norman" },
@@ -75,11 +81,14 @@ const curatedSkills = [
   { name: "cogv-laozi", source: "voices/philosophy/laozi" },
   { name: "cogv-zhuangzi", source: "voices/philosophy/zhuangzi" },
   { name: "cogv-wang-yangming", source: "voices/philosophy/wang-yangming" },
+  { name: "cogv-sunzi", source: "voices/history/sunzi" },
   { name: "cogv-caoxueqin", source: "voices/literature/caoxueqin" },
   { name: "cogv-simaqian", source: "voices/literature/simaqian" },
   { name: "cogv-sushi", source: "voices/literature/sushi" },
   { name: "cogv-hanyu", source: "voices/literature/hanyu" },
-  { name: "cogv-luxun", source: "voices/literature/luxun" }
+  { name: "cogv-luxun", source: "voices/literature/luxun" },
+  { name: "cogv-qian-zhongshu", source: "voices/literature/qian-zhongshu" },
+  { name: "cogv-ouyang-xiu", source: "voices/literature/ouyang-xiu" }
 ];
 
 const allSkills = [
@@ -134,6 +143,18 @@ function install(args) {
     return;
   }
 
+  if (target === "opencode") {
+    installSkills({
+      host: "OpenCode",
+      destination: options.global
+        ? path.join(os.homedir(), ".config", "opencode", "skills")
+        : path.join(options.cwd, ".opencode", "skills"),
+      skills: options.all ? allSkills : curatedSkills,
+      force: options.force
+    });
+    return;
+  }
+
   if (target === "antigravity") {
     installAntigravitySkills(options, options.force);
 
@@ -155,6 +176,14 @@ function install(args) {
       destination: options.global
         ? path.join(os.homedir(), ".claude", "skills")
         : path.join(options.cwd, ".claude", "skills"),
+      skills: options.all ? allSkills : curatedSkills,
+      force: options.force
+    });
+    installSkills({
+      host: "OpenCode",
+      destination: options.global
+        ? path.join(os.homedir(), ".config", "opencode", "skills")
+        : path.join(options.cwd, ".opencode", "skills"),
       skills: options.all ? allSkills : curatedSkills,
       force: options.force
     });
@@ -476,7 +505,8 @@ function toSkillName(name, baseDir) {
       "knowledge": "cogd-knowledge",
       "governance": "cogd-governance",
       "chinese-thought": "cogd-chinese-thought",
-      "tradition-modernity": "cogd-tradition-modernity"
+      "tradition-modernity": "cogd-tradition-modernity",
+      "technology-humanities": "cogd-technology-humanities"
     };
 
     if (aliases[name]) return aliases[name];
@@ -591,12 +621,14 @@ function printHelp() {
 安装目标:
   codex          安装内容目录、注册 Codex skills，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
+  opencode       安装 skills 到 .opencode/skills 或 ~/.config/opencode/skills
   antigravity    安装 skills 到 .agents/skills 或 Antigravity 全局 skills 目录
-  all            安装 codex、claude-code 和 antigravity；--global 时安装到各自全局目录
+  all            安装 codex、claude-code、opencode 和 antigravity；--global 时安装到各自全局目录
 
 常用示例:
   npx @archsight/cognition install codex
   npx @archsight/cognition install claude-code
+  npx @archsight/cognition install opencode
   npx @archsight/cognition install antigravity --workflow
   npx @archsight/cognition install antigravity --global
   npx @archsight/cognition install claude-code --all --force
@@ -607,6 +639,7 @@ function printInstallHelp() {
   console.log(`安装用法:
   archsight-cognition install codex [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
+  archsight-cognition install opencode [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force] [--workflow]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
 
@@ -614,6 +647,7 @@ function printInstallHelp() {
   codex 会把 skills 注册到 CODEX_HOME/skills；未设置 CODEX_HOME 时使用 ~/.codex/skills。
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
+  opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.config/opencode/skills。
   antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
   antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md；--workflow 保留为兼容参数。
 `);

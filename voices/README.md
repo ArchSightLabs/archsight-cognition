@@ -27,8 +27,11 @@ cogv-kant   康德式口吻表达
 - `cogv-laozi`：克制、留白、反过度干预和柔性转折。
 - `cogv-zhuangzi`：视角切换、松动执念和轻盈反问。
 - `cogv-wang-yangming`：知行合一、当下行动和责任内化。
+- `cogv-sunzi`：胜前计算、虚实、低损耗和战略克制。
 - `cogv-caoxueqin`：细腻关系、暗线、盛衰感和含蓄叙事。
 - `cogv-simaqian`：人物、转折、成败因果和历史评判。
 - `cogv-sushi`：通达、开阔、亲近和中文节奏。
 - `cogv-hanyu`：立论清楚、去浮辞和论辩气势。
+- `cogv-ouyang-xiu`：平易、端正、清楚、有秩序和有余味。
+- `cogv-qian-zhongshu`：机智、反讽、类比和知识分辨。
 - `cogv-luxun`：清醒、反遮蔽、反麻木和尖锐但不泄愤。

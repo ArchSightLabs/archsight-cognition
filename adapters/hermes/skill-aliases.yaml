@@ -71,6 +71,11 @@ skills:
     path: personas/philosophy/mencius/SKILL.md
     aliases: [孟子, 人心, 正当性, 义利, 民心, 领导责任]
 
+  - name: cogp-xunzi
+    command: /cogp-xunzi
+    path: personas/philosophy/xunzi/SKILL.md
+    aliases: [荀子, 教化, 制度化训练, 训练纪律, 礼法结合, 长期习惯]
+
   - name: cogp-laozi
     command: /cogp-laozi
     path: personas/philosophy/laozi/SKILL.md
@@ -96,6 +101,11 @@ skills:
     path: personas/philosophy/hanfeizi/SKILL.md
     aliases: [韩非子, 法家, 制度激励, 规则漏洞, 执行约束, 治理漏洞]
 
+  - name: cogp-fei-xiaotong
+    command: /cogp-fei-xiaotong
+    path: personas/sociology/fei-xiaotong/SKILL.md
+    aliases: [费孝通, 差序格局, 乡土社会, 关系半径, 熟人网络, 中国组织]
+
   - name: cogp-braudel
     command: /cogp-braudel
     path: personas/history/braudel/SKILL.md
@@ -105,6 +115,11 @@ skills:
     command: /cogp-thucydides
     path: personas/history/thucydides/SKILL.md
     aliases: [修昔底德, 权力分析, 冲突升级, 联盟动态, 恐惧利益]
+
+  - name: cogp-sunzi
+    command: /cogp-sunzi
+    path: personas/history/sunzi/SKILL.md
+    aliases: [孙子, 孙子兵法, 战略态势, 虚实, 胜前计算, 低损耗]
 
   - name: cogp-shakespeare
     command: /cogp-shakespeare
@@ -135,6 +150,16 @@ skills:
     command: /cogp-hanyu
     path: personas/literature/hanyu/SKILL.md
     aliases: [韩愈, 古文运动, 立论, 去浮辞, 论证骨架, 中文论辩]
+
+  - name: cogp-ouyang-xiu
+    command: /cogp-ouyang-xiu
+    path: personas/literature/ouyang-xiu/SKILL.md
+    aliases: [欧阳修, 平易文气, 文章秩序, 起承转合, 端正表达, 说明文]
+
+  - name: cogp-qian-zhongshu
+    command: /cogp-qian-zhongshu
+    path: personas/literature/qian-zhongshu/SKILL.md
+    aliases: [钱钟书, 围城, 类比, 反讽, 互文, 知识分辨, 高阶写作]
 
   - name: cogp-luxun
     command: /cogp-luxun
@@ -351,6 +376,11 @@ skills:
     path: debates/tradition-modernity/SKILL.md
     aliases: [传统与现代, 传统现代, 传统现代化, 传统创新, 继承与改造]
 
+  - name: cogd-technology-humanities
+    command: /cogd-technology-humanities
+    path: debates/technology-humanities/SKILL.md
+    aliases: [技术与人文, 技术人文, AI与人文, 效率与意义, 技术边界, 人文保留]
+
   - name: cogv-socrates
     command: /cogv-socrates
     path: voices/philosophy/socrates/SKILL.md
@@ -421,6 +451,11 @@ skills:
     path: voices/philosophy/wang-yangming/SKILL.md
     aliases: [王阳明口吻, 王阳明风格, 知行合一口吻, 行动口吻]
 
+  - name: cogv-sunzi
+    command: /cogv-sunzi
+    path: voices/history/sunzi/SKILL.md
+    aliases: [孙子口吻, 孙子风格, 兵法口吻, 战略克制口吻]
+
   - name: cogv-braudel
     command: /cogv-braudel
     path: voices/history/braudel/SKILL.md
@@ -465,6 +500,16 @@ skills:
     command: /cogv-hanyu
     path: voices/literature/hanyu/SKILL.md
     aliases: [韩愈口吻, 韩愈风格, 立论口吻, 古文运动口吻]
+
+  - name: cogv-ouyang-xiu
+    command: /cogv-ouyang-xiu
+    path: voices/literature/ouyang-xiu/SKILL.md
+    aliases: [欧阳修口吻, 欧阳修风格, 平易口吻, 端正表达]
+
+  - name: cogv-qian-zhongshu
+    command: /cogv-qian-zhongshu
+    path: voices/literature/qian-zhongshu/SKILL.md
+    aliases: [钱钟书口吻, 钱钟书风格, 反讽口吻, 类比口吻, 机智口吻]
 
   - name: cogv-luxun
     command: /cogv-luxun

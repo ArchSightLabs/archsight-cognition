@@ -41,6 +41,8 @@ npx @archsight/cognition install codex --global --all --force
 npx @archsight/cognition install codex --force
 ```
 
+本仓库维护时已用临时 `CODEX_HOME` 验证安装器行为：项目级安装会写入目标项目 `AGENTS.md` 和 `.archsight-cognition/`，同时把 skills 注册到 `CODEX_HOME\skills`；全局安装会写入 `CODEX_HOME\AGENTS.md`、`CODEX_HOME\archsight-cognition\` 和 `CODEX_HOME\skills\`。
+
 ### 项目级安装
 
 把本仓库作为相邻目录或子目录克隆到你的工作区：
@@ -144,17 +146,18 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 | 选择压力和长期适应 | `cogp-darwin` | `personas/biology/darwin/SKILL.md` |
 | 制度、权威和责任边界 | `cogp-weber` | `personas/sociology/weber/SKILL.md` |
 | 系统反馈和杠杆点 | `cogp-meadows` | `personas/systems/meadows/SKILL.md` |
-| 中国思想中的关系、秩序、功用和行动责任 | `cogp-confucius` / `cogp-laozi` / `cogp-mozi` / `cogp-wang-yangming` | `personas/philosophy/*/SKILL.md` |
-| 中文叙事、红学、史传和批判写作 | `cogp-caoxueqin` / `cogp-simaqian` / `cogp-luxun` | `personas/literature/*/SKILL.md` |
+| 中国思想中的关系、秩序、功用和行动责任 | `cogp-confucius` / `cogp-xunzi` / `cogp-laozi` / `cogp-mozi` / `cogp-wang-yangming` | `personas/philosophy/*/SKILL.md` |
+| 中国战略、组织和传播语境 | `cogp-sunzi` / `cogp-fei-xiaotong` | `personas/history/sunzi/SKILL.md` |
+| 中文叙事、红学、史传和批判写作 | `cogp-caoxueqin` / `cogp-simaqian` / `cogp-qian-zhongshu` / `cogp-luxun` | `personas/literature/*/SKILL.md` |
 | 高风险决策 | `cogt-decide` | `teams/decision-council/SKILL.md` |
 | 技术写作和叙事 | `cogt-write` | `teams/writing-review/SKILL.md` |
 | 科学推理和验证设计 | `cogt-science` | `teams/scientific-reasoning/SKILL.md` |
 | 产品、体验、视觉、交互评审 | `cogt-design` | `teams/design-review/SKILL.md` |
 | 教育、学习路径、亲子成长 | `cogt-learn` | `teams/learning-path/SKILL.md` |
 | 风格化口吻 | `cogv-kant` / `cogv-nietzsche` / `cogv-orwell` | `voices/philosophy/kant/SKILL.md` |
-| 中文风格化口吻 | `cogv-sushi` / `cogv-zhuangzi` / `cogv-luxun` | `voices/literature/sushi/SKILL.md` |
+| 中文风格化口吻 | `cogv-sushi` / `cogv-zhuangzi` / `cogv-qian-zhongshu` / `cogv-luxun` | `voices/literature/sushi/SKILL.md` |
 | 长期议题和立场压力测试 | `cogd-general` / `cogd-life` / `cogd-technology` | `debates/general/SKILL.md` |
-| 中国思想或传统/现代分歧 | `cogd-chinese-thought` / `cogd-tradition-modernity` | `debates/chinese-thought/SKILL.md` |
+| 中国思想、传统/现代或技术/人文分歧 | `cogd-chinese-thought` / `cogd-tradition-modernity` / `cogd-technology-humanities` | `debates/chinese-thought/SKILL.md` |
 
 ## 护栏
 

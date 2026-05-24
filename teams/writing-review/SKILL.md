@@ -23,6 +23,8 @@ description: 跨学科写作评审工具，用于论证、叙事、清晰度、�
 - `Sima Qian`：人物传记、关键选择、时代压力和成败因果。
 - `Su Shi`：通达表达、困境中的开阔感和自然中文节奏。
 - `Han Yu`：立论骨架、去浮辞、概念名实和论证气势。
+- `Ouyang Xiu`：平易文气、文章秩序、顺畅推进和端正表达。
+- `Qian Zhongshu`：类比、反讽、互文和知识分辨。
 - `Lu Xun`：遮蔽、麻木、伪善和尖锐但诚实的表达。
 
 ## 路由
@@ -38,6 +40,8 @@ description: 跨学科写作评审工具，用于论证、叙事、清晰度、�
 | 人物/项目故事 | Sima Qian, Shakespeare, Cao Xueqin | Braudel, Aristotle |
 | 复杂组织叙事 | Cao Xueqin, Sima Qian, Orwell | Lu Xun, Weber |
 | 中文批判性表达 | Lu Xun, Orwell, Han Yu | Wittgenstein, Su Shi |
+| 平易说明/公开信 | Ouyang Xiu, Orwell, Aristotle | Su Shi, Vignelli |
+| 高阶评论/反讽 | Qian Zhongshu, Orwell, Wittgenstein | Lu Xun, Shakespeare |
 
 ## 方法
 

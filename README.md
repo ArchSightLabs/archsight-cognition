@@ -2,11 +2,22 @@
 
 ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
-它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
+它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
 
 一句话定位：
 
 > ArchSight Cognition 不是运行时框架，也不是历史人物角色扮演库，而是一组可复制、可审查、可组合的学科思维工具。
+
+## 项目定位
+
+ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生在写代码、改文章、做设计或给结论之前，用来决定该从什么视角看问题、应该输出什么结构、哪些结论还不能直接下。
+
+它最适合这些位置：
+
+- 作为 Codex、Claude Code、OpenCode、Antigravity 等 agent host 的本地 skills 内容包。
+- 作为团队沉淀 prompt / skill 的可审查模板，而不是散落在聊天记录里的临时提示词。
+- 作为写作、产品、研究、教育、组织和战略判断的认知路由层。
+- 作为可被不同项目、不同团队和不同 agent host 组合使用的通用思维工具库。
 
 ## 更直白地说
 
@@ -24,7 +35,7 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
 ## 适合谁
 
-- 想让 Codex、Claude Code 或其他 agent 在规划、写作和决策时更有判断力的人。
+- 想让 Codex、Claude Code、OpenCode 或其他 agent 在规划、写作和决策时更有判断力的人。
 - 需要把一组稳定 prompt / skill 复制到多个项目、多个 agent host 中复用的团队。
 - 想用跨学科视角审查产品、工程、研究、战略、教育或表达问题的创作者和工程师。
 - 不想要“名人角色扮演”，而是想要可审查、可维护、可落地的思维工具库的人。
@@ -37,12 +48,13 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 | 要做重要选择 | `cogt-decide` | 输出风险、反对条件、信息缺口和下一步验证 |
 | 要改文章、文案或叙事 | `cogt-write` | 找出空话、结构问题、论证漏洞和更清楚的改法 |
 | 要评审产品、体验或视觉 | `cogt-design` | 审查可用性、交互模型、版式、色彩和系统一致性 |
+| 要处理中文表达、传统资源或中国组织语境 | `cogp-*`、`cogv-*` 或 `cogd-chinese-thought` | 区分文化符号、真实功能、关系结构和表达风格 |
 | 要研究复杂议题 | `cogt-science`、`cogt-history` 或 `cogd-*` | 区分事实、模型、证据、历史周期和立场分歧 |
 
 ## 它是什么
 
 - 可移植的 Markdown prompt / skill 仓库。
-- 面向 Codex、Claude Code、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
+- 面向 Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
 - 用 persona 表达单一学科视角，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
 - 用于真实工作中的思考、写作、判断、研究问题框定和自我复盘。
 
@@ -71,14 +83,14 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 快速装配 | 给 Codex、Claude Code、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
+| 快速装配 | 给 Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
 
 ## 知识库地图
 
 | 领域 | 路径 | 主要问题 |
 | --- | --- | --- |
-| 哲学 | `personas/philosophy/` | 价值、概念、原则、意义、矛盾、怀疑；包含儒、道、墨、法和心学等中国思想工具 |
-| 文学 | `personas/literature/` | 叙事、人物、冲突、声音、节奏；包含中文叙事、红学、史传、古文论辩和现代批判写作工具 |
+| 哲学 | `personas/philosophy/` | 价值、概念、原则、意义、矛盾、怀疑；包含儒、道、墨、法、荀子和心学等中国思想工具 |
+| 文学 | `personas/literature/` | 叙事、人物、冲突、声音、节奏；包含中文叙事、红学、史传、古文论辩、反讽和现代批判写作工具 |
 | 历史 | `personas/history/` | 周期、制度、权力、路径依赖、长时段结构 |
 | 信息 | `personas/information/` | 信号、噪声、编码、冗余、沟通失真 |
 | 计算 | `personas/computation/` | 自动化、可判定性、任务分解、人机分工 |
@@ -101,10 +113,12 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
 本项目保留 `personas`、`teams`、`voices`、`debates` 四类结构，不按文化来源新增第五类。中国思想和中文叙事工具进入现有分类：
 
-- `personas/philosophy/`：`confucius`、`mencius`、`laozi`、`zhuangzi`、`wang-yangming`、`mozi`、`hanfeizi`，分别对应关系责任、正当性、最小干预、视角切换、知行合一、功用节用和制度激励。
-- `personas/literature/`：`caoxueqin`、`simaqian`、`sushi`、`hanyu`、`luxun`，分别对应复杂关系与细节伏笔、人物传记与历史因果、通达中文表达、立论去浮辞和遮蔽麻木检查。
-- `voices/`：只在表达气质稳定、可安全借用时提供 `cogv-*` 口吻工具，例如 `cogv-sushi`、`cogv-luxun`、`cogv-zhuangzi`。
-- `debates/`：`cogd-chinese-thought` 用于儒道墨法等思想传统的结构化分歧，`cogd-tradition-modernity` 用于传统与现代之间的继承、改造和舍弃判断。
+- `personas/philosophy/`：`confucius`、`mencius`、`xunzi`、`laozi`、`zhuangzi`、`wang-yangming`、`mozi`、`hanfeizi`，分别对应关系责任、正当性、制度化训练、最小干预、视角切换、知行合一、功用节用和制度激励。
+- `personas/history/`：`sunzi` 用于战略态势、虚实、胜前计算、成本和低损耗行动。
+- `personas/sociology/`：`fei-xiaotong` 用于差序格局、熟人网络、关系半径和中国组织传播分析。
+- `personas/literature/`：`caoxueqin`、`simaqian`、`sushi`、`hanyu`、`ouyang-xiu`、`qian-zhongshu`、`luxun`，分别对应复杂关系与细节伏笔、人物传记与历史因果、通达中文表达、立论去浮辞、平易文气、类比反讽和遮蔽麻木检查。
+- `voices/`：只在表达气质稳定、可安全借用时提供 `cogv-*` 口吻工具，例如 `cogv-sushi`、`cogv-luxun`、`cogv-zhuangzi`、`cogv-qian-zhongshu`。
+- `debates/`：`cogd-chinese-thought` 用于儒道墨法等思想传统的结构化分歧，`cogd-tradition-modernity` 用于传统与现代之间的继承、改造和舍弃判断，`cogd-technology-humanities` 用于技术与人文之间的效率、意义、判断力和责任边界。
 
 这些工具都不要求模型冒充历史人物本人，也不把传统文化当作事实权威。它们只提供可复核的思维压力和中文表达资源。
 
@@ -150,17 +164,19 @@ archsight-cognition/
 │   ├── claude-code/
 │   ├── codex/
 │   ├── hermes/
+│   ├── opencode/
 │   └── openclaw/
 └── templates/
 ```
 
 ## 快速开始
 
-推荐使用 npm / npx 安装：
+推荐使用 npm / npx 作为统一安装入口：
 
 ```powershell
 npx @archsight/cognition install codex
 npx @archsight/cognition install claude-code
+npx @archsight/cognition install opencode
 npx @archsight/cognition install antigravity --global
 ```
 
@@ -168,6 +184,7 @@ npx @archsight/cognition install antigravity --global
 
 ```powershell
 npm install -g @archsight/cognition
+archsight-cognition install opencode --global
 archsight-cognition install antigravity --global
 ```
 
@@ -176,6 +193,8 @@ archsight-cognition install antigravity --global
 ```powershell
 npm install -g .
 archsight-cognition install codex
+archsight-cognition install opencode --force
+archsight-cognition install antigravity --force
 ```
 
 如果不使用 npm，也可以直接克隆仓库后手动加载：
@@ -221,11 +240,13 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | `npx @archsight/cognition install codex --global` | 安装到 `CODEX_HOME` 或 `~/.codex`，创建或更新全局 `AGENTS.md`，并注册 Codex skills。 |
 | `npx @archsight/cognition install claude-code` | 把常用 skills 复制到当前项目 `.claude/skills/`。 |
 | `npx @archsight/cognition install claude-code --global` | 把常用 skills 复制到 `~/.claude/skills/`。 |
+| `npx @archsight/cognition install opencode` | 把常用 skills 复制到当前项目 `.opencode/skills/`。 |
+| `npx @archsight/cognition install opencode --global` | 把常用 skills 复制到 `~/.config/opencode/skills/`。 |
 | `npx @archsight/cognition install antigravity --global` | 推荐方式。一次性安装到 Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
 | `npx @archsight/cognition install antigravity` | IDE fallback。把常用 skills 复制到当前项目 `.agents/skills/`，同时安装 `.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
 | `npx @archsight/cognition install antigravity --workflow` | 兼容旧命令；现在 workflow 已随 `install antigravity` 默认安装。 |
-| `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code 和 Antigravity 入口。 |
-| `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code 和 Antigravity 的全局目录。 |
+| `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode 和 Antigravity 入口。 |
+| `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode 和 Antigravity 的全局目录。 |
 
 默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
 
@@ -234,6 +255,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 ```powershell
 npx @archsight/cognition install codex --all
 npx @archsight/cognition install claude-code --all
+npx @archsight/cognition install opencode --all
 npx @archsight/cognition install antigravity --global --all
 ```
 
@@ -256,22 +278,13 @@ npm install -g .
 archsight-cognition install antigravity --workflow
 ```
 
-### 与 archsight-aios 的关系
-
-这个 npm 分发形态和 `archsight-aios` 类似：都可以通过包管理器安装，并提供命令把能力装配到本地环境。
-
-但边界不同：
-
-- `archsight-aios` 可以承担更大的运行时、系统装配或 agent OS 职责。
-- `archsight-cognition` 只是认知 skills 内容包和安装器，不负责调度、记忆、工具权限、服务进程或 agent runtime。
-- 本仓库的核心资产仍然是可移植 Markdown：`personas/`、`teams/`、`debates/`、`templates/`。
-
 ### 手动安装
 
 | Host | 推荐方式 | 适合场景 |
 | --- | --- | --- |
 | Codex | 在 `AGENTS.md` 中加入本仓库路径和路由规则 | 适合把本仓库作为项目级或全局认知工具库。 |
 | Claude Code | 把需要的目录复制或链接到 `.claude/skills/<name>/SKILL.md` | 适合把 persona/team/voice/debate 注册成可直接 `/name` 调用的 skill。 |
+| OpenCode | 把需要的目录复制或链接到 `.opencode/skills/<name>/SKILL.md` | 适合让 OpenCode 通过原生 skill tool 按需加载认知工具。 |
 | Antigravity | 复制到 `.agents/skills/` 或写入 workspace rule / workflow | 适合在 Agent Manager / Editor 中作为规划、评审和写作工作流使用。 |
 
 ### 安装到 Codex
@@ -543,10 +556,29 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\technology .claude\s
 围绕“工作应该服务意义还是自由”展开强分歧分析，不要急着调和。
 ```
 
+### 安装到 OpenCode
+
+OpenCode 推荐安装到 `.opencode/skills/` 或全局 `~/.config/opencode/skills/`：
+
+```powershell
+npx @archsight/cognition install opencode
+```
+
+```powershell
+npx @archsight/cognition install opencode --global
+```
+
+OpenCode 的 skills 通过原生 skill tool 按需加载，不建议把它们理解成 slash command。调用时在任务里明确 skill 名称即可：
+
+```text
+使用 cogt-decide skill 对这个产品方向做一次跨学科决策评审。
+```
+
 详细说明见：
 
 - `adapters/codex/README.md`
 - `adapters/claude-code/README.md`
+- `adapters/opencode/README.md`
 - `adapters/antigravity/README.md`
 - `adapters/hermes/README.md`
 - `adapters/openclaw/README.md`

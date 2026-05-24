@@ -44,6 +44,8 @@ npx @archsight/cognition install antigravity --global --all
 
 已存在的 skill 默认不会被覆盖。需要更新时加 `--force`。
 
+本仓库维护时已验证安装器行为：workspace fallback 会写入 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`；global 安装会写入 `~/.gemini/config/plugins/archsight-cognition/`，仅当 `~/.gemini/antigravity/` 已存在时才兼容写入 legacy skills。
+
 ### 方式一：安装为全局 skills 和 plugin
 
 适合跨 workspace 复用，也是推荐方式：
@@ -143,7 +145,9 @@ npx @archsight/cognition install antigravity --force
 | 产品、体验、视觉、交互评审 | `cogt-design` |
 | 教育、学习路径、亲子成长 | `cogt-learn` |
 | 风格化口吻 | `cogv-kant`、`cogv-nietzsche` |
-| 长期议题、结构化分歧 | `cogd-general`、`cogd-life`、`cogd-technology` |
+| 中国思想、中文叙事和组织传播 | `cogp-confucius`、`cogp-xunzi`、`cogp-sunzi`、`cogp-fei-xiaotong`、`cogp-qian-zhongshu` |
+| 中文风格化口吻 | `cogv-sushi`、`cogv-qian-zhongshu`、`cogv-ouyang-xiu`、`cogv-luxun` |
+| 长期议题、结构化分歧 | `cogd-general`、`cogd-life`、`cogd-technology`、`cogd-technology-humanities` |
 
 ## 安全与权限
 

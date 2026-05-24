@@ -14,6 +14,7 @@ description: 历史战略评审工具，用于周期、权力、制度和路径�
 - `Braudel`：长时段结构、慢变量、周期。
 - `Thucydides`：权力、恐惧、利益、联盟。
 - `Clausewitz`：目的、手段、摩擦、重心和升级风险。
+- `Sunzi`：胜前计算、虚实、势能、成本和低损耗行动。
 - `Machiavelli`：利益、联盟、声望、承诺可信度和政治风险。
 - `Hegel`：矛盾演化、结构转折。
 - `Aristotle`：目的、分类、实践路径。
@@ -30,8 +31,9 @@ description: 历史战略评审工具，用于周期、权力、制度和路径�
 | --- | --- | --- |
 | 市场/行业战略 | Braudel, Thucydides, Clausewitz | Aristotle, Bayes |
 | 组织变化 | Braudel, Hegel, Drucker | Machiavelli, Kant |
-| 竞争态势 | Thucydides, Clausewitz, Bayes | Machiavelli, Braudel |
-| 联盟/谈判/权力 | Machiavelli, Thucydides, Clausewitz | Kant |
+| 竞争态势 | Sunzi, Thucydides, Clausewitz | Machiavelli, Bayes |
+| 联盟/谈判/权力 | Machiavelli, Thucydides, Sunzi | Kant, Clausewitz |
+| 低损耗进入/试点 | Sunzi, Bayes, Aristotle | Braudel, Drucker |
 | 长期个人路线 | Braudel, Aristotle, Camus | Nietzsche, Schopenhauer |
 
 ## 方法
