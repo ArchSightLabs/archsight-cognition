@@ -17,6 +17,14 @@ description: 跨学科写作评审工具，用于论证、叙事、清晰度、�
 - `Aristotle`：结构、目的、论证层次。
 - `Vignelli`：段落层级、版式秩序、节奏和读者视线。
 
+中文叙事扩展：
+
+- `Cao Xueqin`：复杂关系、细节伏笔、隐性权力和盛衰结构。
+- `Sima Qian`：人物传记、关键选择、时代压力和成败因果。
+- `Su Shi`：通达表达、困境中的开阔感和自然中文节奏。
+- `Han Yu`：立论骨架、去浮辞、概念名实和论证气势。
+- `Lu Xun`：遮蔽、麻木、伪善和尖锐但诚实的表达。
+
 ## 路由
 
 | 文本类型 | 必选 | 可选 |
@@ -26,6 +34,10 @@ description: 跨学科写作评审工具，用于论证、叙事、清晰度、�
 | 战略叙事 | Shakespeare, Braudel, Aristotle | Thucydides, Plato |
 | 研究/论证 | Aristotle, Euclid, Orwell | Bayes, Descartes |
 | 去 AI 味/空话 | Orwell, Wittgenstein, Aristotle | Shakespeare |
+| 中文长文/公众号 | Han Yu, Orwell, Su Shi | Cao Xueqin, Vignelli |
+| 人物/项目故事 | Sima Qian, Shakespeare, Cao Xueqin | Braudel, Aristotle |
+| 复杂组织叙事 | Cao Xueqin, Sima Qian, Orwell | Lu Xun, Weber |
+| 中文批判性表达 | Lu Xun, Orwell, Han Yu | Wittgenstein, Su Shi |
 
 ## 方法
 

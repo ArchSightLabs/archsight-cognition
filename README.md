@@ -69,7 +69,7 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 | 目标 | 典型用法 |
 | --- | --- |
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
-| 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美。 |
+| 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
 | 快速装配 | 给 Codex、Claude Code、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
 
@@ -77,8 +77,8 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
 | 领域 | 路径 | 主要问题 |
 | --- | --- | --- |
-| 哲学 | `personas/philosophy/` | 价值、概念、原则、意义、矛盾、怀疑 |
-| 文学 | `personas/literature/` | 叙事、人物、冲突、声音、节奏 |
+| 哲学 | `personas/philosophy/` | 价值、概念、原则、意义、矛盾、怀疑；包含儒、道、墨、法和心学等中国思想工具 |
+| 文学 | `personas/literature/` | 叙事、人物、冲突、声音、节奏；包含中文叙事、红学、史传、古文论辩和现代批判写作工具 |
 | 历史 | `personas/history/` | 周期、制度、权力、路径依赖、长时段结构 |
 | 信息 | `personas/information/` | 信号、噪声、编码、冗余、沟通失真 |
 | 计算 | `personas/computation/` | 自动化、可判定性、任务分解、人机分工 |
@@ -93,9 +93,20 @@ ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 | 科学 | `personas/science/` | 可证伪性、实验直觉、反证、解释和自欺检查 |
 | 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
-| 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论 |
+| 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
 | 模板 | `templates/` | 新增 persona 和 team 的标准结构 |
+
+## 中国思想与中文叙事
+
+本项目保留 `personas`、`teams`、`voices`、`debates` 四类结构，不按文化来源新增第五类。中国思想和中文叙事工具进入现有分类：
+
+- `personas/philosophy/`：`confucius`、`mencius`、`laozi`、`zhuangzi`、`wang-yangming`、`mozi`、`hanfeizi`，分别对应关系责任、正当性、最小干预、视角切换、知行合一、功用节用和制度激励。
+- `personas/literature/`：`caoxueqin`、`simaqian`、`sushi`、`hanyu`、`luxun`，分别对应复杂关系与细节伏笔、人物传记与历史因果、通达中文表达、立论去浮辞和遮蔽麻木检查。
+- `voices/`：只在表达气质稳定、可安全借用时提供 `cogv-*` 口吻工具，例如 `cogv-sushi`、`cogv-luxun`、`cogv-zhuangzi`。
+- `debates/`：`cogd-chinese-thought` 用于儒道墨法等思想传统的结构化分歧，`cogd-tradition-modernity` 用于传统与现代之间的继承、改造和舍弃判断。
+
+这些工具都不要求模型冒充历史人物本人，也不把传统文化当作事实权威。它们只提供可复核的思维压力和中文表达资源。
 
 ## 目录结构
 

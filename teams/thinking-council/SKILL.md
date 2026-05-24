@@ -27,6 +27,11 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 - `Nietzsche`：价值排序、自我证明和反从众冲动。
 - `Braudel`：长期结构、阶段和发展周期。
 - `Shakespeare`：人物动机、叙事张力和表达意图。
+- `Confucius`：关系责任、角色边界和信任秩序。
+- `Laozi`：过度干预、反作用和最小行动。
+- `Zhuangzi`：视角切换、伪问题和单一尺度松动。
+- `Mozi`：功用、节用、公共利益和反浪费。
+- `Cao Xueqin`：复杂关系、隐性权力和细节暗线。
 
 ## 路由
 
@@ -39,6 +44,9 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 | 抽象想法是否有问题 | Wittgenstein, Bayes, Socrates | Aristotle |
 | 不知道该用哪个工具 | Socrates, Simon, Aristotle | Bayes |
 | 选择太多/犹豫 | Simon, Kahneman, Aristotle | Bayes |
+| 关系/组织问题 | Confucius, Simon, Kahneman | Hanfeizi, Mencius |
+| 过度用力/过度设计 | Laozi, Zhuangzi, Meadows | Mozi, Rams |
+| 中文叙事和文化表达 | Cao Xueqin, Sima Qian, Han Yu | Su Shi, Lu Xun |
 
 ## 方法
 

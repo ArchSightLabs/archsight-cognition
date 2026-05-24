@@ -20,6 +20,8 @@ description: 跨学科决策委员会，用于价值、结构、不确定性、�
 - `Bayes` 或 `Euclid`：结构、不确定性和证据。
 - `Newton` 或 `Einstein`：变量、约束和参照系。
 - `Aristotle`：实践落地和行动排序。
+- `Confucius` 或 `Mozi`：关系责任、公共利益、节用和实际效用。
+- `Hanfeizi` 或 `Wang Yangming`：制度执行、激励漏洞、知行合一和现场验证。
 
 ## 路由
 
@@ -32,6 +34,9 @@ description: 跨学科决策委员会，用于价值、结构、不确定性、�
 | 组织/合作决策 | Drucker, Simon, Thucydides, Kahneman | Kant, Hegel |
 | 高风险取舍 | Kahneman, Simon, Bayes, Kant | Aristotle, Descartes |
 | 写作/品牌方向 | Shakespeare, Wittgenstein, Aristotle, Plato | Vignelli, Nietzsche |
+| 关系/治理取舍 | Confucius, Hanfeizi, Simon, Kahneman | Mencius, Weber |
+| 资源/公共价值取舍 | Mozi, Drucker, Bayes, Aristotle | Laozi, Rams |
+| 行动落地取舍 | Wang Yangming, Aristotle, Simon, Newton | Kahneman, Socrates |
 
 ## 方法
 

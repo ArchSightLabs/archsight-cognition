@@ -26,6 +26,8 @@ const curatedSkills = [
   { name: "cogd-learning", source: "debates/learning" },
   { name: "cogd-knowledge", source: "debates/knowledge" },
   { name: "cogd-governance", source: "debates/governance" },
+  { name: "cogd-chinese-thought", source: "debates/chinese-thought" },
+  { name: "cogd-tradition-modernity", source: "debates/tradition-modernity" },
   { name: "cogp-socrates", source: "personas/philosophy/socrates" },
   { name: "cogp-bayes", source: "personas/mathematics/bayes" },
   { name: "cogp-newton", source: "personas/physics/newton" },
@@ -40,6 +42,18 @@ const curatedSkills = [
   { name: "cogp-clausewitz", source: "personas/history/clausewitz" },
   { name: "cogp-machiavelli", source: "personas/history/machiavelli" },
   { name: "cogp-orwell", source: "personas/literature/orwell" },
+  { name: "cogp-confucius", source: "personas/philosophy/confucius" },
+  { name: "cogp-mencius", source: "personas/philosophy/mencius" },
+  { name: "cogp-laozi", source: "personas/philosophy/laozi" },
+  { name: "cogp-zhuangzi", source: "personas/philosophy/zhuangzi" },
+  { name: "cogp-wang-yangming", source: "personas/philosophy/wang-yangming" },
+  { name: "cogp-mozi", source: "personas/philosophy/mozi" },
+  { name: "cogp-hanfeizi", source: "personas/philosophy/hanfeizi" },
+  { name: "cogp-caoxueqin", source: "personas/literature/caoxueqin" },
+  { name: "cogp-simaqian", source: "personas/literature/simaqian" },
+  { name: "cogp-sushi", source: "personas/literature/sushi" },
+  { name: "cogp-hanyu", source: "personas/literature/hanyu" },
+  { name: "cogp-luxun", source: "personas/literature/luxun" },
   { name: "cogp-shannon", source: "personas/information/shannon" },
   { name: "cogp-turing", source: "personas/computation/turing" },
   { name: "cogp-darwin", source: "personas/biology/darwin" },
@@ -56,7 +70,16 @@ const curatedSkills = [
   { name: "cogv-descartes", source: "voices/philosophy/descartes" },
   { name: "cogv-orwell", source: "voices/literature/orwell" },
   { name: "cogv-feynman", source: "voices/science/feynman" },
-  { name: "cogv-machiavelli", source: "voices/history/machiavelli" }
+  { name: "cogv-machiavelli", source: "voices/history/machiavelli" },
+  { name: "cogv-confucius", source: "voices/philosophy/confucius" },
+  { name: "cogv-laozi", source: "voices/philosophy/laozi" },
+  { name: "cogv-zhuangzi", source: "voices/philosophy/zhuangzi" },
+  { name: "cogv-wang-yangming", source: "voices/philosophy/wang-yangming" },
+  { name: "cogv-caoxueqin", source: "voices/literature/caoxueqin" },
+  { name: "cogv-simaqian", source: "voices/literature/simaqian" },
+  { name: "cogv-sushi", source: "voices/literature/sushi" },
+  { name: "cogv-hanyu", source: "voices/literature/hanyu" },
+  { name: "cogv-luxun", source: "voices/literature/luxun" }
 ];
 
 const allSkills = [
@@ -451,7 +474,9 @@ function toSkillName(name, baseDir) {
       "work": "cogd-work",
       "learning": "cogd-learning",
       "knowledge": "cogd-knowledge",
-      "governance": "cogd-governance"
+      "governance": "cogd-governance",
+      "chinese-thought": "cogd-chinese-thought",
+      "tradition-modernity": "cogd-tradition-modernity"
     };
 
     if (aliases[name]) return aliases[name];

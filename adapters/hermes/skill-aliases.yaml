@@ -61,6 +61,41 @@ skills:
     path: personas/philosophy/schopenhauer/SKILL.md
     aliases: [叔本华, 欲望检查, 痛苦检查, 悲观风险, 预期纪律]
 
+  - name: cogp-confucius
+    command: /cogp-confucius
+    path: personas/philosophy/confucius/SKILL.md
+    aliases: [孔子, 儒家, 礼序, 关系责任, 名实一致, 信任修复]
+
+  - name: cogp-mencius
+    command: /cogp-mencius
+    path: personas/philosophy/mencius/SKILL.md
+    aliases: [孟子, 人心, 正当性, 义利, 民心, 领导责任]
+
+  - name: cogp-laozi
+    command: /cogp-laozi
+    path: personas/philosophy/laozi/SKILL.md
+    aliases: [老子, 无为, 最小干预, 反作用, 过度设计, 顺势]
+
+  - name: cogp-zhuangzi
+    command: /cogp-zhuangzi
+    path: personas/philosophy/zhuangzi/SKILL.md
+    aliases: [庄子, 视角切换, 伪问题, 逍遥, 分类松动, 换个角度]
+
+  - name: cogp-wang-yangming
+    command: /cogp-wang-yangming
+    path: personas/philosophy/wang-yangming/SKILL.md
+    aliases: [王阳明, 知行合一, 现场验证, 良知, 行动闭环, 责任内化]
+
+  - name: cogp-mozi
+    command: /cogp-mozi
+    path: personas/philosophy/mozi/SKILL.md
+    aliases: [墨子, 墨家, 功用, 节用, 公共利益, 反浪费, 工程伦理]
+
+  - name: cogp-hanfeizi
+    command: /cogp-hanfeizi
+    path: personas/philosophy/hanfeizi/SKILL.md
+    aliases: [韩非子, 法家, 制度激励, 规则漏洞, 执行约束, 治理漏洞]
+
   - name: cogp-braudel
     command: /cogp-braudel
     path: personas/history/braudel/SKILL.md
@@ -80,6 +115,31 @@ skills:
     command: /cogp-orwell
     path: personas/literature/orwell/SKILL.md
     aliases: [奥威尔, 清晰写作, 去空话, 反套话, 表达诚实, Orwell]
+
+  - name: cogp-caoxueqin
+    command: /cogp-caoxueqin
+    path: personas/literature/caoxueqin/SKILL.md
+    aliases: [曹雪芹, 红学, 红楼梦, 复杂关系, 隐性权力, 细节伏笔, 盛衰结构]
+
+  - name: cogp-simaqian
+    command: /cogp-simaqian
+    path: personas/literature/simaqian/SKILL.md
+    aliases: [司马迁, 史记, 人物传记, 历史叙事, 成败因果, 关键选择]
+
+  - name: cogp-sushi
+    command: /cogp-sushi
+    path: personas/literature/sushi/SKILL.md
+    aliases: [苏轼, 苏东坡, 通达表达, 中文节奏, 豁达, 困境表达]
+
+  - name: cogp-hanyu
+    command: /cogp-hanyu
+    path: personas/literature/hanyu/SKILL.md
+    aliases: [韩愈, 古文运动, 立论, 去浮辞, 论证骨架, 中文论辩]
+
+  - name: cogp-luxun
+    command: /cogp-luxun
+    path: personas/literature/luxun/SKILL.md
+    aliases: [鲁迅, 遮蔽检查, 麻木检查, 伪善, 尖锐表达, 批判写作]
 
   - name: cogp-bayes
     command: /cogp-bayes
@@ -281,6 +341,16 @@ skills:
     path: debates/governance/SKILL.md
     aliases: [治理辩论, 专业与民主, 专家治理, 公众参与, 权力责任, 组织治理]
 
+  - name: cogd-chinese-thought
+    command: /cogd-chinese-thought
+    path: debates/chinese-thought/SKILL.md
+    aliases: [中国思想分歧, 儒道墨法, 儒道法墨, 中国思想辩论, 儒家道家法家墨家]
+
+  - name: cogd-tradition-modernity
+    command: /cogd-tradition-modernity
+    path: debates/tradition-modernity/SKILL.md
+    aliases: [传统与现代, 传统现代, 传统现代化, 传统创新, 继承与改造]
+
   - name: cogv-socrates
     command: /cogv-socrates
     path: voices/philosophy/socrates/SKILL.md
@@ -331,6 +401,26 @@ skills:
     path: voices/philosophy/schopenhauer/SKILL.md
     aliases: [叔本华口吻, 叔本华风格, 叔本华voice, 悲观口吻]
 
+  - name: cogv-confucius
+    command: /cogv-confucius
+    path: voices/philosophy/confucius/SKILL.md
+    aliases: [孔子口吻, 孔子风格, 儒家口吻, 礼序口吻]
+
+  - name: cogv-laozi
+    command: /cogv-laozi
+    path: voices/philosophy/laozi/SKILL.md
+    aliases: [老子口吻, 老子风格, 道家口吻, 无为口吻, 留白口吻]
+
+  - name: cogv-zhuangzi
+    command: /cogv-zhuangzi
+    path: voices/philosophy/zhuangzi/SKILL.md
+    aliases: [庄子口吻, 庄子风格, 庄子voice, 视角切换口吻]
+
+  - name: cogv-wang-yangming
+    command: /cogv-wang-yangming
+    path: voices/philosophy/wang-yangming/SKILL.md
+    aliases: [王阳明口吻, 王阳明风格, 知行合一口吻, 行动口吻]
+
   - name: cogv-braudel
     command: /cogv-braudel
     path: voices/history/braudel/SKILL.md
@@ -355,6 +445,31 @@ skills:
     command: /cogv-orwell
     path: voices/literature/orwell/SKILL.md
     aliases: [奥威尔口吻, 奥威尔风格, 奥威尔voice, 反空话口吻]
+
+  - name: cogv-caoxueqin
+    command: /cogv-caoxueqin
+    path: voices/literature/caoxueqin/SKILL.md
+    aliases: [曹雪芹口吻, 曹雪芹风格, 红楼梦口吻, 红学口吻, 细腻叙事]
+
+  - name: cogv-simaqian
+    command: /cogv-simaqian
+    path: voices/literature/simaqian/SKILL.md
+    aliases: [司马迁口吻, 司马迁风格, 史记口吻, 传记口吻]
+
+  - name: cogv-sushi
+    command: /cogv-sushi
+    path: voices/literature/sushi/SKILL.md
+    aliases: [苏轼口吻, 苏东坡口吻, 苏轼风格, 通达口吻, 豁达口吻]
+
+  - name: cogv-hanyu
+    command: /cogv-hanyu
+    path: voices/literature/hanyu/SKILL.md
+    aliases: [韩愈口吻, 韩愈风格, 立论口吻, 古文运动口吻]
+
+  - name: cogv-luxun
+    command: /cogv-luxun
+    path: voices/literature/luxun/SKILL.md
+    aliases: [鲁迅口吻, 鲁迅风格, 鲁迅voice, 尖锐口吻, 反麻木口吻]
 
   - name: cogv-bayes
     command: /cogv-bayes

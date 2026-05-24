@@ -27,6 +27,15 @@ description: 哲学思维面板，用于概念、价值、原则、意义、矛�
 - `Hegel`：分析矛盾、历史过程和结构演化。
 - `Camus`：处理荒诞、不确定性和精神韧性。
 
+中国思想压力测试：
+
+- `Confucius`：检查角色、礼序、关系责任和名实一致。
+- `Laozi`：检查过度干预、反作用和最小有效行动。
+- `Zhuangzi`：切换视角，解除僵化分类和伪问题。
+- `Wang Yangming`：检查知行是否断裂，判断是否进入现场行动。
+- `Mozi`：检查公共利益、节用、反浪费和可验证收益。
+- `Hanfeizi`：检查制度漏洞、激励错配和执行约束。
+
 ## 路由
 
 根据任务选择 3 到 5 个 Agent，不要默认全员发言。
@@ -38,6 +47,9 @@ description: 哲学思维面板，用于概念、价值、原则、意义、矛�
 | 职业/人生决策 | Socrates, Aristotle, Camus | Nietzsche, Schopenhauer, Kant |
 | AI 与人类能动性 | Kant, Descartes, Hegel | Camus, Wittgenstein |
 | 组织/制度设计 | Aristotle, Kant, Hegel | Nietzsche, Socrates |
+| 关系/组织秩序 | Confucius, Hanfeizi, Aristotle | Mencius, Weber |
+| 过度设计/过度治理 | Laozi, Zhuangzi, Meadows | Mozi, Rams |
+| 从判断到行动 | Wang Yangming, Aristotle, Simon | Socrates, Kahneman |
 
 ## 方法
 

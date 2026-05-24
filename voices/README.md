@@ -18,3 +18,17 @@
 cogp-kant    康德式原则审查
 cogv-kant   康德式口吻表达
 ```
+
+## 中文口吻工具
+
+中文口吻工具同样只处理表达气质，不声称历史人物本人会这样说：
+
+- `cogv-confucius`：克制、重名分、重责任和关系修复。
+- `cogv-laozi`：克制、留白、反过度干预和柔性转折。
+- `cogv-zhuangzi`：视角切换、松动执念和轻盈反问。
+- `cogv-wang-yangming`：知行合一、当下行动和责任内化。
+- `cogv-caoxueqin`：细腻关系、暗线、盛衰感和含蓄叙事。
+- `cogv-simaqian`：人物、转折、成败因果和历史评判。
+- `cogv-sushi`：通达、开阔、亲近和中文节奏。
+- `cogv-hanyu`：立论清楚、去浮辞和论辩气势。
+- `cogv-luxun`：清醒、反遮蔽、反麻木和尖锐但不泄愤。
