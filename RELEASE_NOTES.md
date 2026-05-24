@@ -12,6 +12,7 @@
 - 精简 README 的 host 安装细节，删除主文档中的手动复制命令、Antigravity workflow 模板和 workspace rule 大段示例，把 host 细节收敛到 `adapters/*/README.md`。
 - 将 README 使用示例改为注册后的 `/cogp-*`、`/cogt-*`、`/cogv-*` 命令形式，和安装后的真实调用方式保持一致。
 - 移除公开文档中对 Antigravity 旧版 `--workflow` 参数的推荐说明；该参数仍保留为安装器内部兼容入口。
+- 明确 MIT License 覆盖范围和 `ArchSight`、`ArchSightLabs`、`ArchSight Cognition` 等名称的品牌使用边界。
 
 ### CLI 改进
 

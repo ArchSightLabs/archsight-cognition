@@ -393,9 +393,7 @@ archsight-cognition install all --force
 
 本仓库使用 MIT License 发布，适合复制、修改、分发和商用。发布前后的治理检查清单见 `OPEN_SOURCE.md`。
 
-当前仍建议明确的边界是：
-
-- 明确哪些名称、商标和品牌资产可被复用。
+MIT License 覆盖本仓库的软件、Markdown skills、文档和模板。`ArchSight`、`ArchSightLabs` 和 `ArchSight Cognition` 等名称用于标识项目来源和作者，不表示授权第三方用作衍生项目名称、品牌背书或误导性宣传。
 
 ## 运行契约
 

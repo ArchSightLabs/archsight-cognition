@@ -13,7 +13,7 @@ ArchSight Cognition 的内容形态适合开源：它是可读、可复制、可
 | npm 授权字段 | 已补 | `package.json` 使用 SPDX 标识 `MIT`。 |
 | 贡献规则 | 已补 | `CONTRIBUTING.md` 已说明新增 persona/team 的质量标准、命名规则和评审流程。 |
 | 安全边界 | 已补 | `SECURITY.md` 已说明 prompt injection、事实误用、医疗/法律/金融等高风险场景的处理方式。 |
-| 商标和品牌说明 | 待补 | 明确 `ArchSight`、`ArchSightLabs` 等名称是否允许第三方在衍生项目中使用。 |
+| 商标和品牌说明 | 已补 | README 已说明 `ArchSight`、`ArchSightLabs` 和 `ArchSight Cognition` 等名称仅用于标识项目来源和作者，不表示授权第三方用作衍生项目名称、品牌背书或误导性宣传。 |
 
 ## 建议补齐
 
@@ -55,8 +55,7 @@ ArchSight Cognition 的内容形态适合开源：它是可读、可复制、可
 
 ## 推荐的发布前最小闭环
 
-1. 明确 `ArchSight` / `ArchSightLabs` 品牌使用边界。
-2. 跑一次结构检查：所有 `SKILL.md` 都有 frontmatter，`name` 与目录名一致。
-3. 用 Codex、Claude Code、Antigravity 各完成一次真实调用，确认安装路径和示例输入有效。
+1. 跑一次结构检查：所有 `SKILL.md` 都有 frontmatter，`name` 与目录名一致。
+2. 用 Codex、Claude Code、Antigravity 各完成一次真实调用，确认安装路径和示例输入有效。
 
 完成以上项目后，本仓库就具备基础开源可读性、可安装性和可贡献性。
