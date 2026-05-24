@@ -1,5 +1,29 @@
 # ArchSight Cognition 发布说明
 
+## v1.0.4
+
+发布日期：2026-05-24
+
+这是一次文档和 CLI 可用性修正版，重点是让安装路径更清楚，减少新用户在“当前项目安装”和“全局安装”之间的混淆。
+
+### 文档改进
+
+- 重写 README 安装说明，把示例统一拆成“安装到当前项目”和“安装到全局”两条路径，避免在同一组命令中混用安装范围。
+- 精简 README 的 host 安装细节，删除主文档中的手动复制命令、Antigravity workflow 模板和 workspace rule 大段示例，把 host 细节收敛到 `adapters/*/README.md`。
+- 将 README 使用示例改为注册后的 `/cogp-*`、`/cogt-*`、`/cogv-*` 命令形式，和安装后的真实调用方式保持一致。
+- 移除公开文档中对 Antigravity 旧版 `--workflow` 参数的推荐说明；该参数仍保留为安装器内部兼容入口。
+
+### CLI 改进
+
+- 更新 CLI help 示例，不再展示旧版 `install antigravity --workflow`。
+- 修复 `archsight-cognition install --help` 被识别为未知安装目标的问题，现在会正常显示安装帮助。
+
+### 验证
+
+- 已验证 `archsight-cognition --help` 和 `archsight-cognition install --help` 输出。
+- 已执行 Markdown / JS diff whitespace 检查。
+- 未实际执行安装命令，以避免写入本机项目或全局 agent host 目录。
+
 ## v1.0.3
 
 发布日期：2026-05-24
