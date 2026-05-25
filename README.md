@@ -373,18 +373,26 @@ archsight-cognition install all --force
 
 新增 debate 时，从 `templates/debate-skill.md` 开始。
 
+新增或重构认知工具前，建议先阅读 [`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)，并通过 issue 说明失败模式、边界测试和验证逻辑。
+
 新增内容必须满足：
 
 - 有 `name` 与中文 `description` frontmatter。
-- 明确角色、适用场景、方法、输出契约、交接和护栏。
+- 明确角色、适用场景、方法、输出契约、失败模式、验证逻辑、边界测试和护栏。
 - 不要求模型扮演历史人物本人。
 - 输出服务现实任务，而不是只展示知识或风格模仿。
 
+提交前运行：
+
+```powershell
+npm run validate:skills
+```
+
 ## 开源状态
 
-本仓库使用 MIT License 发布，适合复制、修改、分发和商用。发布前后的治理检查清单见 `OPEN_SOURCE.md`。
+本仓库使用 Apache License 2.0 发布，适合复制、修改、分发和商用。发布前后的治理检查清单见 `OPEN_SOURCE.md`。
 
-MIT License 覆盖本仓库的软件、Markdown skills、文档和模板。`ArchSight`、`ArchSightLabs` 和 `ArchSight Cognition` 等名称用于标识项目来源和作者，不表示授权第三方用作衍生项目名称、品牌背书或误导性宣传。
+Apache License 2.0 覆盖本仓库的软件、Markdown skills、文档和模板。商用、复制、修改和分发必须遵守 Apache License 2.0 和 `NOTICE` 的保留要求。`ArchSight`、`ArchSightLabs` 和 `ArchSight Cognition` 等名称用于标识项目来源和作者，不表示授权第三方用作衍生项目名称、商标、品牌背书或误导性宣传。
 
 ## 运行契约
 

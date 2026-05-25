@@ -1,0 +1,67 @@
+name: Skill proposal
+description: 提议新增或重构一个 ArchSight Cognition 工具
+title: "[Skill proposal]: "
+labels:
+  - skill-proposal
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的失败模式
+      description: 说明当前大模型在这类任务中容易出现的空泛、误判、幻觉或逻辑缺陷。
+    validations:
+      required: true
+  - type: textarea
+    id: existing-gap
+    attributes:
+      label: 现有工具为什么不够
+      description: 请说明为什么已有 persona、team、voice 或 debate 不能覆盖该问题。
+    validations:
+      required: true
+  - type: input
+    id: proposed-kind
+    attributes:
+      label: 建议类型
+      description: persona / team / voice / debate / adapter / other
+      placeholder: persona
+    validations:
+      required: true
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: 适用场景和不适用场景
+      description: 给出最小适用场景，并明确哪些场景不应使用。
+    validations:
+      required: true
+  - type: textarea
+    id: output-contract
+    attributes:
+      label: 初步输出契约
+      description: 列出希望该工具稳定输出的字段。
+      placeholder: |
+        字段一:
+        字段二:
+        下一步:
+    validations:
+      required: true
+  - type: textarea
+    id: edge-case
+    attributes:
+      label: 边界测试
+      description: 提供一个不用该工具会输出平庸或错误、使用后应明显改善的输入样例。
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 验证逻辑
+      description: 如何判断这个工具确实改善了输出，而不是只让语言更华丽？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 事实和证据边界
+      description: 如果涉及外部事实、专业规范、法律、医疗、金融或安全问题，需要哪些来源或人工验证？
+    validations:
+      required: false

@@ -1,5 +1,34 @@
 # ArchSight Cognition 发布说明
 
+## v1.1.0
+
+发布日期：2026-05-25
+
+这是一次开源治理增强版本，重点是把外部贡献从“直接提交 prompt”升级为“先说明失败模式、边界测试和验证逻辑”的可审查流程。
+
+### 治理改进
+
+- 新增 `docs/GOVERNANCE.md`，明确维护者策展制、issue-first 流程、PR 接受标准和拒绝标准。
+- 新增 GitHub PR 模板，要求贡献者说明认知模型答辩、边界测试、失败模式和验证方式。
+- 新增 skill proposal issue 模板，引导新增工具先沉淀问题、适用场景、输出契约和证据边界。
+- 将项目许可证从 MIT 升级为 Apache License 2.0，并新增 `NOTICE` 明确商用、分发、商标和品牌背书边界。
+
+### 模板改进
+
+- 扩展 persona、team、voice 和 debate 模板，新增 `失败模式`、`验证逻辑` 和 `边界测试`。
+- 更新 `CONTRIBUTING.md`，把新增工具的质量要求从基础章节升级为可验证贡献标准。
+- 修正贡献指南中的命名说明，改为 `cogp-*`、`cogt-*`、`cogv-*`、`cogd-*` 前缀规则。
+
+### 校验改进
+
+- 新增 `scripts/validate-skills.mjs`。
+- 新增 `npm run validate:skills`，检查 frontmatter、命名前缀、必需章节和明显 persona cosplay 风险。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 未执行 host 安装 smoke test；本次变更不修改安装器行为。
+
 ## v1.0.4
 
 发布日期：2026-05-24
@@ -12,7 +41,7 @@
 - 精简 README 的 host 安装细节，删除主文档中的手动复制命令、Antigravity workflow 模板和 workspace rule 大段示例，把 host 细节收敛到 `adapters/*/README.md`。
 - 将 README 使用示例改为注册后的 `/cogp-*`、`/cogt-*`、`/cogv-*` 命令形式，和安装后的真实调用方式保持一致。
 - 移除公开文档中对 Antigravity 旧版 `--workflow` 参数的推荐说明；该参数仍保留为安装器内部兼容入口。
-- 明确 MIT License 覆盖范围和 `ArchSight`、`ArchSightLabs`、`ArchSight Cognition` 等名称的品牌使用边界。
+- 明确 Apache License 2.0 覆盖范围和 `ArchSight`、`ArchSightLabs`、`ArchSight Cognition` 等名称的品牌使用边界。
 
 ### CLI 改进
 
@@ -78,4 +107,4 @@
 ### 已知限制
 
 - 当前版本主要分发 Markdown skills 和安装器，没有独立测试框架或远程服务。
-- 品牌和商标资产规则仍需单独明确。
+- 当时品牌和商标资产规则仍需单独明确；已在 v1.1.0 通过 Apache License 2.0 和 `NOTICE` 补齐商用与品牌边界。
