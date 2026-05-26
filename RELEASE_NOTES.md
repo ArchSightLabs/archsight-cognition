@@ -1,5 +1,27 @@
 # ArchSight Cognition 发布说明
 
+## v1.1.1
+
+发布日期：2026-05-26
+
+这是一次 host 适配小版本，新增对 WorkBuddy skills 目录的 CLI 安装支持。
+
+### CLI 改进
+
+- 新增 `archsight-cognition install workbuddy`，默认把精选 skills 安装到 `~/.workbuddy/skills/`。
+- `install workbuddy --all` 支持安装完整 skills 集合。
+- `install all` 和 `install all --global` 会一并安装 WorkBuddy 目标。
+
+### 文档改进
+
+- README 新增 WorkBuddy 安装入口和写入位置。
+- 新增 `adapters/workbuddy/README.md`，说明安装路径、调用方式和维护建议。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 CLI smoke test，验证 `install workbuddy` 会写入临时 HOME 下的 `.workbuddy/skills/`。
+
 ## v1.1.0
 
 发布日期：2026-05-25

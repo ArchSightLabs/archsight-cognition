@@ -156,6 +156,11 @@ function install(args) {
     return;
   }
 
+  if (target === "workbuddy") {
+    installWorkBuddySkills(options, options.force);
+    return;
+  }
+
   if (target === "antigravity") {
     installAntigravitySkills(options, options.force);
 
@@ -188,6 +193,7 @@ function install(args) {
       skills: options.all ? allSkills : curatedSkills,
       force: options.force
     });
+    installWorkBuddySkills(options, options.force);
     installAntigravitySkills(options, options.force);
     if (!options.global) {
       installAntigravityWorkflow(options.cwd, options.force);
@@ -324,6 +330,15 @@ function installCodexSkills(options, force) {
   installSkills({
     host: "Codex skills",
     destination: path.join(getCodexHome(), "skills"),
+    skills: options.all ? allSkills : curatedSkills,
+    force
+  });
+}
+
+function installWorkBuddySkills(options, force) {
+  installSkills({
+    host: "WorkBuddy",
+    destination: path.join(os.homedir(), ".workbuddy", "skills"),
     skills: options.all ? allSkills : curatedSkills,
     force
   });
@@ -623,13 +638,15 @@ function printHelp() {
   codex          安装内容目录、注册 Codex skills，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
   opencode       安装 skills 到 .opencode/skills 或 ~/.config/opencode/skills
+  workbuddy      安装 skills 到 ~/.workbuddy/skills
   antigravity    安装 skills 到 .agents/skills 或 Antigravity 全局 skills 目录
-  all            安装 codex、claude-code、opencode 和 antigravity；--global 时安装到各自全局目录
+  all            安装 codex、claude-code、opencode、workbuddy 和 antigravity；--global 时安装到各自全局目录
 
 常用示例:
   npx @archsight/cognition install codex
   npx @archsight/cognition install claude-code
   npx @archsight/cognition install opencode
+  npx @archsight/cognition install workbuddy
   npx @archsight/cognition install antigravity --global
   npx @archsight/cognition install all --global
 `);
@@ -640,6 +657,7 @@ function printInstallHelp() {
   archsight-cognition install codex [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install opencode [--cwd <path>] [--global] [--all] [--force]
+  archsight-cognition install workbuddy [--all] [--force]
   archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
 
@@ -648,6 +666,7 @@ function printInstallHelp() {
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
   opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.config/opencode/skills。
+  workbuddy 会把 skills 写入 ~/.workbuddy/skills。
   antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
   antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md。
 `);

@@ -2,7 +2,7 @@
 
 ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
 
-它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
+它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、OpenCode、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
 
 一句话定位：
 
@@ -14,7 +14,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 
 它最适合这些位置：
 
-- 作为 Codex、Claude Code、OpenCode、Antigravity 等 agent host 的本地 skills 内容包。
+- 作为 Codex、Claude Code、OpenCode、WorkBuddy、Antigravity 等 agent host 的本地 skills 内容包。
 - 作为团队沉淀 prompt / skill 的可审查模板，而不是散落在聊天记录里的临时提示词。
 - 作为写作、产品、研究、教育、组织和战略判断的认知路由层。
 - 作为可被不同项目、不同团队和不同 agent host 组合使用的通用思维工具库。
@@ -54,7 +54,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 ## 它是什么
 
 - 可移植的 Markdown prompt / skill 仓库。
-- 面向 Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
+- 面向 Codex、Claude Code、OpenCode、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
 - 用 persona 表达单一学科视角，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
 - 用于真实工作中的思考、写作、判断、研究问题框定和自我复盘。
 
@@ -83,7 +83,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 快速装配 | 给 Codex、Claude Code、OpenCode、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
+| 快速装配 | 给 Codex、Claude Code、OpenCode、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
 
 ## 知识库地图
 
@@ -194,6 +194,7 @@ npx @archsight/cognition install all
 npx @archsight/cognition install codex --global
 npx @archsight/cognition install claude-code --global
 npx @archsight/cognition install opencode --global
+npx @archsight/cognition install workbuddy
 npx @archsight/cognition install antigravity --global
 ```
 
@@ -253,12 +254,13 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 当前项目 | `npx @archsight/cognition install claude-code` | 当前目录 `.claude/skills/`。 |
 | 当前项目 | `npx @archsight/cognition install opencode` | 当前目录 `.opencode/skills/`。 |
 | 当前项目 | `npx @archsight/cognition install antigravity` | 当前目录 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
-| 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode 和 Antigravity 入口。 |
+| 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode 和 Antigravity 入口，并安装 WorkBuddy 到个人目录。 |
 | 全局 | `npx @archsight/cognition install codex --global` | `CODEX_HOME` 或 `~/.codex`，并注册 Codex skills。 |
 | 全局 | `npx @archsight/cognition install claude-code --global` | `~/.claude/skills/`。 |
 | 全局 | `npx @archsight/cognition install opencode --global` | `~/.config/opencode/skills/`。 |
+| 个人全局 | `npx @archsight/cognition install workbuddy` | `~/.workbuddy/skills/`。 |
 | 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
-| 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode 和 Antigravity 的全局目录。 |
+| 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、WorkBuddy 和 Antigravity 的全局目录。 |
 
 默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
 
@@ -270,6 +272,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 npx @archsight/cognition install codex --all
 npx @archsight/cognition install claude-code --all
 npx @archsight/cognition install opencode --all
+npx @archsight/cognition install workbuddy --all
 npx @archsight/cognition install antigravity --all
 ```
 
@@ -279,6 +282,7 @@ npx @archsight/cognition install antigravity --all
 npx @archsight/cognition install codex --global --all
 npx @archsight/cognition install claude-code --global --all
 npx @archsight/cognition install opencode --global --all
+npx @archsight/cognition install workbuddy --all
 npx @archsight/cognition install antigravity --global --all
 ```
 
@@ -318,6 +322,7 @@ archsight-cognition install all --force
 | Codex | `npx @archsight/cognition install codex` | `npx @archsight/cognition install codex --global` | `/cogt-decide` |
 | Claude Code | `npx @archsight/cognition install claude-code` | `npx @archsight/cognition install claude-code --global` | `/cogt-decide` |
 | OpenCode | `npx @archsight/cognition install opencode` | `npx @archsight/cognition install opencode --global` | `使用 cogt-decide skill ...` |
+| WorkBuddy | `npx @archsight/cognition install workbuddy` | `npx @archsight/cognition install workbuddy` | `使用 cogt-decide skill ...` |
 | Antigravity | `npx @archsight/cognition install antigravity` | `npx @archsight/cognition install antigravity --global` | `使用 cogt-decide skill ...` |
 
 详细说明：
@@ -325,6 +330,7 @@ archsight-cognition install all --force
 - `adapters/codex/README.md`
 - `adapters/claude-code/README.md`
 - `adapters/opencode/README.md`
+- `adapters/workbuddy/README.md`
 - `adapters/antigravity/README.md`
 - `adapters/hermes/README.md`
 - `adapters/openclaw/README.md`
