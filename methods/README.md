@@ -12,7 +12,7 @@ method 用于承接仍在世人物、活跃企业家、个人品牌或跨来源�
 - `cogm-first-principles`：目标、惯性假设、底层约束、必要推导、数量级校验和最小实验。
 - `cogm-human-centered-interaction`：概念模型、可供性、指示符、映射、反馈、约束和错误恢复。
 - `cogm-management-hygiene`：会议、授权、边界、目标、反馈、团队节奏和管理者自我约束。
-- `cogm-mental-models-toolbox`：按任务在优先级、因果失败分析、简化过滤和决策启发式之间路由。
+- `cogm-auto`：不知道该选哪个 `cogm-*` 时，按任务在优先级、因果失败分析、简化过滤和决策启发式之间路由。
 - `cogm-operating-principles`：把经验、错误和组织判断沉淀为可检验、可更新、可执行的操作原则。
 - `cogm-parallel-thinking`：把讨论拆成事实、感受、风险、收益、创意和流程六个并行视角。
 - `cogm-priority-triage`：艾森豪威尔矩阵、帕累托法则、三七法则、史特金定律、不要做清单和阻力路径检查。

@@ -85,7 +85,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 快速装配 | 给 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、team、debate 和模板。 |
+| 快速装配 | 给 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、method、team、voice、debate 和模板。 |
 
 ## 知识库地图
 
@@ -110,7 +110,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
-| 模板 | `templates/` | 新增 persona 和 team 的标准结构 |
+| 模板 | `templates/` | 新增 persona、method、team、voice 和 debate 的标准结构 |
 
 ## 中国思想与中文叙事
 
@@ -146,7 +146,18 @@ archsight-cognition/
 │   ├── education/
 │   └── science/
 ├── methods/
+│   ├── auto/
+│   ├── causal-failure-analysis/
+│   ├── critical-thinking/
+│   ├── decision-heuristics/
+│   ├── first-principles/
 │   ├── human-centered-interaction/
+│   ├── management-hygiene/
+│   ├── operating-principles/
+│   ├── parallel-thinking/
+│   ├── priority-triage/
+│   ├── simplicity-filter/
+│   ├── structured-problem-solving/
 │   └── tail-risk/
 ├── teams/
 │   ├── thinking-council/
@@ -183,7 +194,7 @@ archsight-cognition/
 
 ## 快速开始
 
-推荐使用 npm / npx 作为统一安装入口。先选择安装范围：要么都安装到当前项目，要么都安装到全局，不要在同一组命令里混用。
+推荐使用 npm / npx 作为统一安装入口。除 WorkBuddy 固定写入个人目录外，先选择安装范围：要么都安装到当前项目，要么都安装到全局，不要在同一组命令里混用。
 
 安装到当前项目：
 
@@ -213,9 +224,16 @@ npx @archsight/cognition install opencode --global
 npx @archsight/cognition install qoder --global
 npx @archsight/cognition install trae --global
 npx @archsight/cognition install cline --global
-npx @archsight/cognition install workbuddy
 npx @archsight/cognition install antigravity --global
 ```
+
+安装到 WorkBuddy 个人目录：
+
+```powershell
+npx @archsight/cognition install workbuddy
+```
+
+WorkBuddy 不支持项目级 skills 目录，固定写入 `~/.workbuddy/skills/`，因此不需要 `--global`。
 
 也可以用一条命令安装到全局：
 
@@ -248,10 +266,10 @@ teams/product/SKILL.md               # 产品战略、定位和最小验证
 teams/lead/SKILL.md                  # 技术领导、研发组织和交付反馈
 personas/philosophy/socrates/SKILL.md # 概念澄清
 personas/mathematics/bayes/SKILL.md   # 证据和不确定性判断
-personas/mathematics/godel/SKILL.md   # 形式系统边界和自指风险
+personas/mathematics/godel/SKILL.md   # cogp-godel：形式系统边界和自指风险
 personas/physics/newton/SKILL.md      # 变量、约束和系统建模
 methods/critical-thinking/SKILL.md    # 主张、证据、谬误和结论强度审查
-methods/mental-models-toolbox/SKILL.md # 思维模型工具路由
+methods/auto/SKILL.md                 # 方法自动路由
 methods/priority-triage/SKILL.md      # 优先级取舍和不要做清单
 methods/causal-failure-analysis/SKILL.md # 鱼骨图、连锁失败和根因阻断
 methods/decision-heuristics/SKILL.md  # 遗憾最小化、信息窗口和伦理边界
@@ -263,9 +281,9 @@ methods/tail-risk/SKILL.md      # 尾部风险和反脆弱审查
 methods/human-centered-interaction/SKILL.md # 人本交互和错误恢复审查
 methods/operating-principles/SKILL.md # 原则化决策和复盘更新
 methods/management-hygiene/SKILL.md # 管理卫生、会议、授权和反馈检查
-personas/decision/munger/SKILL.md     # 多元模型和激励结构审查
-personas/decision/grove/SKILL.md      # 高输出技术管理和战略拐点审查
-personas/decision/christensen/SKILL.md # 颠覆式创新和市场进入审查
+personas/decision/munger/SKILL.md     # cogp-munger：多元模型和激励结构审查
+personas/decision/grove/SKILL.md      # cogp-grove：高输出技术管理和战略拐点审查
+personas/decision/christensen/SKILL.md # cogp-christensen：颠覆式创新和市场进入审查
 ```
 
 在你的 agent host 中加载对应文件，并给出真实任务。
@@ -296,18 +314,18 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 当前项目 | `npx @archsight/cognition install cline` | 当前目录 `.archsight-cognition/` 和 `.clinerules/archsight-cognition.md`。 |
 | 当前项目 | `npx @archsight/cognition install cursor` | 当前目录 `.archsight-cognition/` 和 `.cursor/rules/archsight-cognition.mdc`。 |
 | 当前项目 | `npx @archsight/cognition install antigravity` | 当前目录 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
-| 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor 和 Antigravity 入口，并安装 WorkBuddy 到个人目录。 |
+| 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor 和 Antigravity 入口；WorkBuddy 作为例外固定安装到个人目录。 |
 | 全局 | `npx @archsight/cognition install codex --global` | `CODEX_HOME` 或 `~/.codex`，并注册 Codex skills。 |
 | 全局 | `npx @archsight/cognition install claude-code --global` | `~/.claude/skills/`。 |
 | 全局 | `npx @archsight/cognition install opencode --global` | `~/.config/opencode/skills/`。 |
 | 全局 | `npx @archsight/cognition install qoder --global` | `~/.qoder/skills/`；如果已存在 `~/.qoderwork/`，同时写入 `~/.qoderwork/skills/`。 |
 | 全局 | `npx @archsight/cognition install trae --global` | `~/.trae/skills/`；如果已存在 `~/.trae-cn/`，同时写入 `~/.trae-cn/skills/`。 |
 | 全局 | `npx @archsight/cognition install cline --global` | `~/Documents/Cline/ArchSight-Cognition/` 和 `~/Documents/Cline/Rules/archsight-cognition.md`。 |
-| 个人全局 | `npx @archsight/cognition install workbuddy` | `~/.workbuddy/skills/`。 |
+| 个人目录 | `npx @archsight/cognition install workbuddy` | `~/.workbuddy/skills/`；WorkBuddy 不区分项目级和 `--global`。 |
 | 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
-| 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、WorkBuddy 和 Antigravity 的全局目录；Cursor 仅提供项目级 CLI 安装。 |
+| 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、Qoder、Trae、Cline 和 Antigravity 的全局目录；WorkBuddy 作为例外固定安装到个人目录；Cursor 仅提供项目级 CLI 安装。 |
 
-默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
+默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。不知道该选哪个方法时，从 `cogm-auto` 开始。
 
 如需安装全部 `SKILL.md`，同样先选择安装范围。
 
@@ -319,7 +337,6 @@ npx @archsight/cognition install claude-code --all
 npx @archsight/cognition install opencode --all
 npx @archsight/cognition install qoder --all
 npx @archsight/cognition install trae --all
-npx @archsight/cognition install workbuddy --all
 npx @archsight/cognition install antigravity --all
 ```
 
@@ -331,8 +348,13 @@ npx @archsight/cognition install claude-code --global --all
 npx @archsight/cognition install opencode --global --all
 npx @archsight/cognition install qoder --global --all
 npx @archsight/cognition install trae --global --all
-npx @archsight/cognition install workbuddy --all
 npx @archsight/cognition install antigravity --global --all
+```
+
+安装到 WorkBuddy 个人目录：
+
+```powershell
+npx @archsight/cognition install workbuddy --all
 ```
 
 已存在的 skill 默认不会被覆盖。需要更新时在同一安装范围内加 `--force`：
@@ -375,7 +397,7 @@ archsight-cognition install all --force
 | Trae | `npx @archsight/cognition install trae` | `npx @archsight/cognition install trae --global` | `使用 cogt-decide skill ...` |
 | Cline | `npx @archsight/cognition install cline` | `npx @archsight/cognition install cline --global` | `使用 cogt-decide ...` |
 | Cursor | `npx @archsight/cognition install cursor` | 在 Cursor 设置中维护 User Rules | `使用 cogt-decide ...` |
-| WorkBuddy | `npx @archsight/cognition install workbuddy` | `npx @archsight/cognition install workbuddy` | `使用 cogt-decide skill ...` |
+| WorkBuddy | 不适用，固定个人目录 | `npx @archsight/cognition install workbuddy` | `使用 cogt-decide skill ...` |
 | Antigravity | `npx @archsight/cognition install antigravity` | `npx @archsight/cognition install antigravity --global` | `使用 cogt-decide skill ...` |
 
 详细说明：
@@ -415,6 +437,30 @@ archsight-cognition install all --force
 ```text
 /cogt-decide
 对这个战略做一次跨学科决策评审：
+...
+```
+
+方法自动路由：
+
+```text
+/cogm-auto
+我想用方法分析这个问题，但不知道应该选优先级、因果、简化还是决策工具：
+...
+```
+
+产品战略评审：
+
+```text
+/cogt-product
+评审这个产品方向的用户问题、定位、最小验证和市场进入风险：
+...
+```
+
+技术领导评审：
+
+```text
+/cogt-lead
+检查这个研发组织问题里的交付反馈、质量债、激励和管理杠杆：
 ...
 ```
 

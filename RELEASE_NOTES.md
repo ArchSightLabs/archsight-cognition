@@ -1,28 +1,38 @@
 # ArchSight Cognition 发布说明
 
+## v2.0.1
+
+发布日期：2026-05-27
+
+这是一次命名可理解性修正版，重点是让 `methods/` 的自动路由入口更直观。
+
+### 命名改进
+
+- 将方法自动路由入口命名为 `cogm-auto`。
+- 将目录 `methods/mental-models-toolbox/` 改为 `methods/auto/`。
+- `cogm-auto` 表示不知道该选哪个 `cogm-*` 方法时，先按任务自动路由到 1 到 3 个合适方法。
+
+### 文档和适配
+
+- README、Hermes alias、demo 文档和 `cogt-think` 的方法工具说明统一改用 `cogm-auto`。
+- 保持 `cogp-*` 和 `cogv-*` 只作为具体 persona / voice 叶子工具，不新增 `auto` 或 `general` 入口。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 CLI list smoke test，确认精选 skills 中暴露 `cogm-auto`，不再暴露 `cogm-mental-models-toolbox`。
+- 已执行临时 `CODEX_HOME` 安装 smoke test，确认旧 skill 会被清理，新 `cogm-auto` 会被安装。
+
+### 兼容性
+
+- `cogm-mental-models-toolbox` 不再作为公开入口暴露，请改用 `cogm-auto`。
+- 安装器会把旧的 `cogm-mental-models-toolbox` 作为 legacy skill 删除，避免命令面板继续显示旧入口。
+
 ## v2.0.0
 
 发布日期：2026-05-27
 
 这是一次架构级大版本。相比当前对外公开的 v1.0.4，ArchSight Cognition 从“persona / team / voice / debate 工具包”升级为“persona / method / team / voice / debate 五类认知工具包”，并把仍在世人物、活跃个人品牌和可操作方法论统一收敛到 `methods/`，避免把方法误包装成 `cogp-*` persona 或 `cogv-*` 口吻。
-
-### 破坏性变更
-
-- `persona` 和 `voice` 的治理规则收紧：`cogp-*` 与 `cogv-*` 只用于已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能作为 `cogm-*` method 的来源之一。
-- 移除公开入口 `cogp-norman`；人本设计、可供性、概念模型和交互反馈能力迁移为 `cogm-human-centered-interaction`。
-- 默认团队说明拆分“团队成员”和“方法工具”：`cogm-*` 不再被写成 team 成员，而是作为按任务加入的独立方法论工具。
-- 包结构新增 `methods/`，`package.json`、CLI、安装器和 Codex 指针都会复制并暴露 method skills。依赖旧版本只扫描 `personas/`、`teams/`、`voices/`、`debates/` 的自定义集成需要同步加入 `methods/`。
-
-### 从 v1.0.4 升级
-
-- 继续使用 `cogp-rams`、`cogp-vignelli`、`cogp-albers`、`cogp-klee` 处理产品克制、视觉系统、色彩和构成。
-- 将原 `/cogp-norman` 替换为 `/cogm-human-centered-interaction`。
-- 需要“马斯克式第一性原理”时，使用 `/cogm-first-principles`，不要新增活人 persona 或 voice。
-- 需要“达利欧原则”时，使用 `/cogm-operating-principles`，把它作为原则化决策和复盘工具。
-- 需要“麦肯锡思维”时，使用 `/cogm-structured-problem-solving`，把它作为议题树、MECE 和假设驱动问题解决工具。
-- 需要“六顶思考帽”时，使用 `/cogm-parallel-thinking`，把它作为平行思考、会议发散和多视角审查工具。
-- 需要“纳瓦尔宝典”或个人经验法则时，按主题拆入 method，不提供 `cogp-naval` 或 `cogv-naval`。
-- 如果使用 `install all` 或 `--all` 做完整安装，升级后会多出 `cogm-*` method 目录；如果使用精选安装，也会包含核心 method。
 
 ### 新增 method 工具
 
@@ -33,7 +43,7 @@
 - `cogm-parallel-thinking`：事实、感受、风险、收益、创意和流程六个并行视角，用于会议讨论、方案评审和头脑风暴。
 - `cogm-operating-principles`：原则化决策、反馈回路、例外处理和复盘沉淀。
 - `cogm-management-hygiene`：极简管理、授权边界、会议卫生、反馈周期和管理噪音。
-- `cogm-mental-models-toolbox`：按任务选择合适思维模型，避免堆砌模型名。
+- `cogm-auto`：不知道该选哪个方法时，按任务选择合适 `cogm-*`，避免堆砌模型名。
 - `cogm-priority-triage`：艾森豪威尔矩阵、帕累托法则、三七法则、避免待办清单和阻力最小路径检查。
 - `cogm-causal-failure-analysis`：鱼骨图、多米诺骨牌、墨菲定律、从结果反推原因和反向思考。
 - `cogm-simplicity-filter`：奥卡姆剃刀、史特金过滤、黑天鹅边界和系统 2 慢思考。
@@ -63,7 +73,7 @@
 - 新增 `archsight-cognition install trae`，支持项目级 `.agents/skills/`；`--global` 写入 `~/.trae/skills/`，检测到 `~/.trae-cn/` 时兼容写入 Trae CN skills。
 - 新增 `archsight-cognition install cline`，写入 `.clinerules/archsight-cognition.md` 指针和内容目录；`--global` 写入 Cline 用户级 Rules。
 - 新增 `archsight-cognition install cursor`，写入 `.cursor/rules/archsight-cognition.mdc` 指针和内容目录。
-- `install all` 会一并安装 Qoder、Trae、Cline 和 Cursor 项目级入口；`install all --global` 会安装 Qoder、Trae 和 Cline，Cursor 保持项目级安装。
+- `install all` 会一并安装 Qoder、Trae、Cline 和 Cursor 项目级入口；`install all --global` 会安装 Qoder、Trae 和 Cline，Cursor 保持项目级安装；WorkBuddy 固定写入个人目录。
 - 新增 `adapters/qoder/README.md`、`adapters/trae/README.md`、`adapters/cline/README.md`、`adapters/cursor/README.md` 和 `adapters/workbuddy/README.md`。
 
 ### 验证
@@ -73,6 +83,24 @@
 - 已执行 CLI list smoke test，确认 `cogm-*` 已进入精选和全量 skills 列表，且 `cogp-norman` 不再出现。
 - 已执行 `git diff --check`。
 - 未逐一执行所有 host 的真实安装 smoke test；本次验证以打包内容、校验脚本和 CLI 列表为主。
+
+### 兼容性
+
+- `persona` 和 `voice` 的治理规则收紧：`cogp-*` 与 `cogv-*` 只用于已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能作为 `cogm-*` method 的来源之一。
+- `cogp-norman` 不再作为公开入口暴露；人本设计、可供性、概念模型和交互反馈能力迁移为 `cogm-human-centered-interaction`。
+- 默认团队说明拆分“团队成员”和“方法工具”：`cogm-*` 不再被写成 team 成员，而是作为按任务加入的独立方法论工具。
+- 包结构新增 `methods/`，`package.json`、CLI、安装器和 Codex 指针都会复制并暴露 method skills。依赖旧版本只扫描 `personas/`、`teams/`、`voices/`、`debates/` 的自定义集成需要同步加入 `methods/`。
+
+### 从 v1.0.4 升级
+
+- 继续使用 `cogp-rams`、`cogp-vignelli`、`cogp-albers`、`cogp-klee` 处理产品克制、视觉系统、色彩和构成。
+- 将原 `/cogp-norman` 替换为 `/cogm-human-centered-interaction`。
+- 需要“马斯克式第一性原理”时，使用 `/cogm-first-principles`，不要新增活人 persona 或 voice。
+- 需要“达利欧原则”时，使用 `/cogm-operating-principles`，把它作为原则化决策和复盘工具。
+- 需要“麦肯锡思维”时，使用 `/cogm-structured-problem-solving`，把它作为议题树、MECE 和假设驱动问题解决工具。
+- 需要“六顶思考帽”时，使用 `/cogm-parallel-thinking`，把它作为平行思考、会议发散和多视角审查工具。
+- 需要“纳瓦尔宝典”或个人经验法则时，按主题拆入 method，不提供 `cogp-naval` 或 `cogv-naval`。
+- 如果使用 `install all` 或 `--all` 做完整安装，升级后会多出 `cogm-*` method 目录；如果使用精选安装，也会包含核心 method。
 
 ## v1.1.1
 
@@ -84,11 +112,11 @@
 
 - 新增 `archsight-cognition install workbuddy`，默认把精选 skills 安装到 `~/.workbuddy/skills/`。
 - `install workbuddy --all` 支持安装完整 skills 集合。
-- `install all` 和 `install all --global` 会一并安装 WorkBuddy 目标。
+- `install all` 和 `install all --global` 会一并安装 WorkBuddy 目标；WorkBuddy 固定写入个人目录，不区分项目级和 `--global`。
 
 ### 文档改进
 
-- README 新增 WorkBuddy 安装入口和写入位置。
+- README 新增 WorkBuddy 安装入口和写入位置，并说明它固定使用个人目录。
 - 新增 `adapters/workbuddy/README.md`，说明安装路径、调用方式和维护建议。
 
 ### 验证

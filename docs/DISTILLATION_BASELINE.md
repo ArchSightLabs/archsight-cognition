@@ -51,7 +51,7 @@ references/research/
 | `cogt-product` | `teams/product/` | 已新增产品战略、定位、最小验证和取舍综合工具，并补充 team 组合依据与典型任务样例 |
 | `cogt-lead` | `teams/lead/` | 已新增技术领导、研发组织、交付反馈和责任边界综合工具，并补充 team 组合依据与典型任务样例 |
 | `cogm-critical-thinking` | `methods/critical-thinking/` | 已新增主张、前提、证据、推理漏洞、替代解释和结论强度审查工具 |
-| `cogm-mental-models-toolbox` | `methods/mental-models-toolbox/` | 已新增思维模型路由工具，按任务选择优先级、因果、简化或决策方法 |
+| `cogm-auto` | `methods/auto/` | 已新增方法自动路由工具，按任务选择优先级、因果、简化或决策方法 |
 | `cogm-priority-triage` | `methods/priority-triage/` | 已新增艾森豪威尔矩阵、帕累托、三七法则、史特金过滤、不要做清单和阻力路径检查 |
 | `cogm-causal-failure-analysis` | `methods/causal-failure-analysis/` | 已新增鱼骨图、从结果反推原因、多米诺链条、墨菲检查和反向思考工具 |
 | `cogm-simplicity-filter` | `methods/simplicity-filter/` | 已新增奥卡姆剃刀、史特金过滤、帕累托、黑天鹅边界和系统 2 慢思考工具 |

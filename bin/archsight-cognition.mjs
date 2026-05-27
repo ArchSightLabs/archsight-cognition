@@ -44,7 +44,7 @@ const curatedSkills = [
   { name: "cogm-first-principles", source: "methods/first-principles" },
   { name: "cogm-structured-problem-solving", source: "methods/structured-problem-solving" },
   { name: "cogm-parallel-thinking", source: "methods/parallel-thinking" },
-  { name: "cogm-mental-models-toolbox", source: "methods/mental-models-toolbox" },
+  { name: "cogm-auto", source: "methods/auto" },
   { name: "cogm-priority-triage", source: "methods/priority-triage" },
   { name: "cogm-causal-failure-analysis", source: "methods/causal-failure-analysis" },
   { name: "cogm-simplicity-filter", source: "methods/simplicity-filter" },
@@ -651,7 +651,7 @@ function buildRuleBody(contentLocation) {
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
-方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`、\`cogm-first-principles\`。
+方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-auto\`、\`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
 
@@ -681,7 +681,7 @@ function buildCodexBlock(contentRoot) {
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
-方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`、\`cogm-first-principles\`。
+方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-auto\`、\`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
 
@@ -783,6 +783,7 @@ function legacySkillNames() {
     "cog-philosophy",
     "cog-design",
     "cog-learn",
+    "cogm-mental-models-toolbox",
     "cog-decision-council",
     "cog-history-strategy",
     "cog-philosophy-cavalry",
@@ -852,9 +853,9 @@ function printHelp() {
   trae           安装 skills 到 .agents/skills，供 Trae 项目级 skills 使用
   cline          安装 .clinerules 指针和内容目录；--global 写入 Documents/Cline/Rules
   cursor         安装 .cursor/rules 指针和内容目录
-  workbuddy      安装 skills 到 ~/.workbuddy/skills
+  workbuddy      安装 skills 到 ~/.workbuddy/skills（固定个人目录）
   antigravity    安装 skills 到 .agents/skills 或 Antigravity 全局 skills 目录
-  all            安装所有支持的 host；--global 时跳过暂无稳定全局规则文件入口的 cursor
+  all            安装所有支持的 host；WorkBuddy 固定个人目录；--global 时跳过暂无稳定全局规则文件入口的 cursor
 
 常用示例:
   npx @archsight/cognition install codex
@@ -892,7 +893,7 @@ function printInstallHelp() {
   trae 会把 skills 写入 .agents/skills；--global 时写入 ~/.trae/skills，并在发现 ~/.trae-cn 时兼容写入 ~/.trae-cn/skills。
   cline 会写入 .clinerules/archsight-cognition.md 和 .archsight-cognition/；--global 时写入 ~/Documents/Cline/Rules。
   cursor 会写入 .cursor/rules/archsight-cognition.mdc 和 .archsight-cognition/；Cursor 全局规则请在应用设置中维护。
-  workbuddy 会把 skills 写入 ~/.workbuddy/skills。
+  workbuddy 会把 skills 写入 ~/.workbuddy/skills；WorkBuddy 不支持项目级 skills 目录，也不需要 --global。
   antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
   antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md。
 `);

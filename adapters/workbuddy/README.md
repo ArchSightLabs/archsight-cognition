@@ -22,7 +22,7 @@ npx @archsight/cognition install workbuddy --all
 
 | 模式 | 位置 |
 | --- | --- |
-| 个人全局 | `~/.workbuddy/skills/<skill-name>/SKILL.md` |
+| 个人目录 | `~/.workbuddy/skills/<skill-name>/SKILL.md` |
 
 ## 使用
 
@@ -43,5 +43,5 @@ npx @archsight/cognition install workbuddy --all
 ## 维护建议
 
 - 优先安装默认精选集，避免 WorkBuddy skill 列表过长。
-- WorkBuddy 目标固定写入个人目录；不区分项目级和全局安装。
+- WorkBuddy 目标固定写入个人目录；不区分项目级和 `--global`。
 - 这些 skills 主要提供判断框架，不需要额外放宽工具权限。

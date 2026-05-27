@@ -39,7 +39,7 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 
 ## 方法工具
 
-- `cogm-mental-models-toolbox`：不知道该选哪个思维模型时，先做模型路由。
+- `cogm-auto`：不知道该选哪个方法时，先做 `cogm-*` 路由。
 - `cogm-priority-triage`：处理选择太多、任务太多和不要做清单。
 - `cogm-simplicity-filter`：处理问题太复杂、解释太多和噪音太大。
 - `cogm-decision-heuristics`：处理信息不足但必须行动的轻量决策。

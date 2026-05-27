@@ -276,10 +276,10 @@ skills:
     path: methods/parallel-thinking/SKILL.md
     aliases: [平行思考, 六顶思考帽, 六顶帽子, 多视角审查, 会议发散, 方案共创, 头脑风暴]
 
-  - name: cogm-mental-models-toolbox
-    command: /cogm-mental-models-toolbox
-    path: methods/mental-models-toolbox/SKILL.md
-    aliases: [思维模型, 思维模型工具箱, 模型选择, 认知模型, thinking models, mental models]
+  - name: cogm-auto
+    command: /cogm-auto
+    path: methods/auto/SKILL.md
+    aliases: [方法自动路由, 自动选择方法, 思维模型, 模型选择, 认知模型, thinking models, mental models]
 
   - name: cogm-priority-triage
     command: /cogm-priority-triage
