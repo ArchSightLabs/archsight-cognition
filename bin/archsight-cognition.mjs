@@ -43,6 +43,7 @@ const curatedSkills = [
   { name: "cogm-critical-thinking", source: "methods/critical-thinking" },
   { name: "cogm-first-principles", source: "methods/first-principles" },
   { name: "cogm-structured-problem-solving", source: "methods/structured-problem-solving" },
+  { name: "cogm-parallel-thinking", source: "methods/parallel-thinking" },
   { name: "cogm-mental-models-toolbox", source: "methods/mental-models-toolbox" },
   { name: "cogm-priority-triage", source: "methods/priority-triage" },
   { name: "cogm-causal-failure-analysis", source: "methods/causal-failure-analysis" },

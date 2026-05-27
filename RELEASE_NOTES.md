@@ -20,6 +20,7 @@
 - 需要“马斯克式第一性原理”时，使用 `/cogm-first-principles`，不要新增活人 persona 或 voice。
 - 需要“达利欧原则”时，使用 `/cogm-operating-principles`，把它作为原则化决策和复盘工具。
 - 需要“麦肯锡思维”时，使用 `/cogm-structured-problem-solving`，把它作为议题树、MECE 和假设驱动问题解决工具。
+- 需要“六顶思考帽”时，使用 `/cogm-parallel-thinking`，把它作为平行思考、会议发散和多视角审查工具。
 - 需要“纳瓦尔宝典”或个人经验法则时，按主题拆入 method，不提供 `cogp-naval` 或 `cogv-naval`。
 - 如果使用 `install all` 或 `--all` 做完整安装，升级后会多出 `cogm-*` method 目录；如果使用精选安装，也会包含核心 method。
 
@@ -29,6 +30,7 @@
 - `cogm-first-principles`：真实目标、惯性假设、底层约束和必要推导。
 - `cogm-critical-thinking`：前提、论证、证据、反例、谬误和结论强度。
 - `cogm-structured-problem-solving`：问题定义、议题树、MECE、假设驱动和行动闭环。
+- `cogm-parallel-thinking`：事实、感受、风险、收益、创意和流程六个并行视角，用于会议讨论、方案评审和头脑风暴。
 - `cogm-operating-principles`：原则化决策、反馈回路、例外处理和复盘沉淀。
 - `cogm-management-hygiene`：极简管理、授权边界、会议卫生、反馈周期和管理噪音。
 - `cogm-mental-models-toolbox`：按任务选择合适思维模型，避免堆砌模型名。

@@ -256,6 +256,7 @@ methods/priority-triage/SKILL.md      # 优先级取舍和不要做清单
 methods/causal-failure-analysis/SKILL.md # 鱼骨图、连锁失败和根因阻断
 methods/decision-heuristics/SKILL.md  # 遗憾最小化、信息窗口和伦理边界
 methods/first-principles/SKILL.md     # 第一性约束拆解和必要推导
+methods/parallel-thinking/SKILL.md    # 平行思考、会议发散和多视角审查
 methods/simplicity-filter/SKILL.md    # 奥卡姆剃刀、噪音过滤和慢思考
 methods/structured-problem-solving/SKILL.md # 议题树、MECE 和假设驱动拆解
 methods/tail-risk/SKILL.md      # 尾部风险和反脆弱审查

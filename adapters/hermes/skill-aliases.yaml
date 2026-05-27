@@ -271,6 +271,11 @@ skills:
     path: methods/structured-problem-solving/SKILL.md
     aliases: [结构化问题解决, 议题树, MECE, 假设驱动, so-what, 咨询式问题拆解, 麦肯锡思维]
 
+  - name: cogm-parallel-thinking
+    command: /cogm-parallel-thinking
+    path: methods/parallel-thinking/SKILL.md
+    aliases: [平行思考, 六顶思考帽, 六顶帽子, 多视角审查, 会议发散, 方案共创, 头脑风暴]
+
   - name: cogm-mental-models-toolbox
     command: /cogm-mental-models-toolbox
     path: methods/mental-models-toolbox/SKILL.md

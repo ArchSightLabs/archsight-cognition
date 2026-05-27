@@ -306,7 +306,7 @@ gateway 跑起来后，飞书里发送 `/cogt-think ...`、`/cogt-decide ...`、
 | 贝叶斯、不确定性、证据更新 | `/cogp-bayes` | 信息不足下的概率判断 |
 | 牛顿、系统建模、约束分析 | `/cogp-newton` | 变量、约束、惯性和系统建模 |
 | 维特根斯坦、语言澄清、概念澄清 | `/cogp-wittgenstein` | 概念误用和表达混乱 |
-| 批判性思维、结构化拆解、第一性原理 | `/cogm-critical-thinking`、`/cogm-structured-problem-solving`、`/cogm-first-principles` | 论证评估、议题树、底层约束和必要推导 |
+| 批判性思维、结构化拆解、第一性原理、六顶思考帽 | `/cogm-critical-thinking`、`/cogm-structured-problem-solving`、`/cogm-first-principles`、`/cogm-parallel-thinking` | 论证评估、议题树、底层约束、必要推导和平行思考 |
 | 拉姆斯、人本交互、维涅利 | `/cogp-rams`、`/cogm-human-centered-interaction`、`/cogp-vignelli` | 产品克制、人本交互和视觉系统 |
 | 阿尔伯斯、克利 | `/cogp-albers`、`/cogp-klee` | 色彩关系、绘画构成和视觉节奏 |
 | 西蒙、卡尼曼、德鲁克 | `/cogp-simon`、`/cogp-kahneman`、`/cogp-drucker` | 有限理性、判断偏差和管理有效性 |

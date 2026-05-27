@@ -58,6 +58,7 @@ references/research/
 | `cogm-decision-heuristics` | `methods/decision-heuristics/` | 已新增遗憾最小化、鲍威尔信息窗口、黄金法则、贝叶斯更新和系统 2 检查工具 |
 | `cogm-first-principles` | `methods/first-principles/` | 已新增第一性约束拆解、惯性假设清理、必要推导和最小实验方法工具 |
 | `cogm-human-centered-interaction` | `methods/human-centered-interaction/` | 已迁移为人本交互方法工具，聚焦概念模型、指示符、映射、反馈、约束和错误恢复 |
+| `cogm-parallel-thinking` | `methods/parallel-thinking/` | 已新增平行思考工具，按事实、感受、风险、收益、创意和流程分离讨论视角 |
 | `cogm-structured-problem-solving` | `methods/structured-problem-solving/` | 已新增问题定义、议题树、MECE、假设驱动、so-what 和工作计划工具 |
 | `cogm-operating-principles` | `methods/operating-principles/` | 已新增原则化决策、复盘更新、适用边界和例外条件工具 |
 | `cogm-management-hygiene` | `methods/management-hygiene/` | 已新增会议、授权、责任、目标、反馈和管理者噪音检查工具 |
