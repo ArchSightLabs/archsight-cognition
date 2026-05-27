@@ -3,7 +3,7 @@ name: cogm-first-principles
 description: 第一性原理方法工具，用于拆掉类比、口号和惯性方案，回到目标、物理/信息/经济约束、可验证事实和必要推导。
 ---
 
-# First Principles
+# 第一性原理
 
 ## 角色
 

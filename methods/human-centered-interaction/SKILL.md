@@ -3,7 +3,7 @@ name: cogm-human-centered-interaction
 description: 人本交互方法工具，用于概念模型、可供性、指示符、映射、反馈、约束、错误恢复和用户理解。
 ---
 
-# Human-Centered Interaction
+# 人本交互
 
 ## 角色
 

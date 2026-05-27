@@ -1,4 +1,4 @@
-# Methods
+# 方法
 
 `methods/` 存放不绑定具体人物身份的可执行方法工具，命名前缀为 `cogm-*`。
 
@@ -25,4 +25,5 @@ method 用于承接仍在世人物、活跃企业家、个人品牌或跨来源�
 - 不提供口吻模仿。
 - 不把商业成功、个人品牌或公开语录当成事实证明。
 - 每个方法都要能被多个来源或可复现任务支撑。
+- 每个方法默认补充 `references/sources.md`、`references/usage-notes.md`、`references/validation-cases.md`。
 - 涉及事实性、金融、法律、医疗或现实公司判断时，必须提示外部验证。

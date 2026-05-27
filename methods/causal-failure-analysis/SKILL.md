@@ -3,7 +3,7 @@ name: cogm-causal-failure-analysis
 description: 因果与失败分析方法工具，用于鱼骨图、从结果反推原因、多米诺骨牌、墨菲定律和反向思考。
 ---
 
-# Causal Failure Analysis
+# 因果与失败分析
 
 ## 角色
 

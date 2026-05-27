@@ -60,6 +60,17 @@ description: <面向具体认知任务的方法工具>
 - 交给 `cogp-<agent>` <交接理由>。
 - 交给 `cogt-<team>` <交接理由>。
 
+## 参考材料
+
+每个 `cogm-*` 必须补充轻量方法参考，不套用人物六维研究模板：
+
+```text
+references/
+├── sources.md
+├── usage-notes.md
+└── validation-cases.md
+```
+
 ## 护栏
 
 - 不要人格 cosplay。

@@ -3,7 +3,7 @@ name: cogm-decision-heuristics
 description: 决策启发式方法工具，用于遗憾最小化、鲍威尔信息窗口、黄金法则、贝叶斯更新和系统 2 检查。
 ---
 
-# Decision Heuristics
+# 决策启发式
 
 ## 角色
 

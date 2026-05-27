@@ -3,7 +3,7 @@ name: cogm-critical-thinking
 description: 批判性思维方法工具，用于识别主张、前提、证据、推理漏洞、谬误、替代解释和结论强度。
 ---
 
-# Critical Thinking
+# 批判性思维
 
 ## 角色
 

@@ -51,6 +51,21 @@ issue 应说明：
 
 `persona` 和 `voice` 只接收已离世人物或稳定历史传统。仍在世人物、活跃企业家、投资人、创作者和个人品牌材料如果确有方法价值，只能作为 `methods/` 的来源之一，重写为去人物中心的 `cogm-*` 方法工具。
 
+`method` 不强制套用人物六维 research 目录。每个 `cogm-*` 默认使用轻量方法参考三件套：
+
+```text
+references/
+├── sources.md
+├── usage-notes.md
+└── validation-cases.md
+```
+
+- `sources.md` 记录来源类别、适配依据和不迁移的内容。
+- `usage-notes.md` 记录适用场景、常见误用和与其他工具的边界。
+- `validation-cases.md` 记录典型输入、预期改善和失败输出特征。
+
+如果某个 method 来自复杂学派、专业领域或高风险实践，可以额外补充 `references/research/`，但不得把人物六维模板当成 method 的默认要求。
+
 ## PR 接受标准
 
 PR 不以“内容看起来有趣”为接受标准，而以以下问题为准：

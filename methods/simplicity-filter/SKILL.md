@@ -3,7 +3,7 @@ name: cogm-simplicity-filter
 description: 简化过滤方法工具，用于奥卡姆剃刀、史特金定律、帕累托法则、黑天鹅边界和系统 2 慢思考。
 ---
 
-# Simplicity Filter
+# 简化过滤
 
 ## 角色
 

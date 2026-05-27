@@ -3,7 +3,7 @@ name: cogm-structured-problem-solving
 description: 结构化问题解决方法工具，用于问题定义、议题树、MECE 拆解、假设驱动、事实包、80/20、so-what 和行动建议。
 ---
 
-# Structured Problem Solving
+# 结构化问题解决
 
 ## 角色
 

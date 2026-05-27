@@ -1,19 +1,76 @@
 # ArchSight Cognition 发布说明
 
-## 未发布
+## v2.0.0
 
-### CLI 改进
+发布日期：2026-05-27
+
+这是一次架构级大版本。相比当前对外公开的 v1.0.4，ArchSight Cognition 从“persona / team / voice / debate 工具包”升级为“persona / method / team / voice / debate 五类认知工具包”，并把仍在世人物、活跃个人品牌和可操作方法论统一收敛到 `methods/`，避免把方法误包装成 `cogp-*` persona 或 `cogv-*` 口吻。
+
+### 破坏性变更
+
+- `persona` 和 `voice` 的治理规则收紧：`cogp-*` 与 `cogv-*` 只用于已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能作为 `cogm-*` method 的来源之一。
+- 移除公开入口 `cogp-norman`；人本设计、可供性、概念模型和交互反馈能力迁移为 `cogm-human-centered-interaction`。
+- 默认团队说明拆分“团队成员”和“方法工具”：`cogm-*` 不再被写成 team 成员，而是作为按任务加入的独立方法论工具。
+- 包结构新增 `methods/`，`package.json`、CLI、安装器和 Codex 指针都会复制并暴露 method skills。依赖旧版本只扫描 `personas/`、`teams/`、`voices/`、`debates/` 的自定义集成需要同步加入 `methods/`。
+
+### 从 v1.0.4 升级
+
+- 继续使用 `cogp-rams`、`cogp-vignelli`、`cogp-albers`、`cogp-klee` 处理产品克制、视觉系统、色彩和构成。
+- 将原 `/cogp-norman` 替换为 `/cogm-human-centered-interaction`。
+- 需要“马斯克式第一性原理”时，使用 `/cogm-first-principles`，不要新增活人 persona 或 voice。
+- 需要“达利欧原则”时，使用 `/cogm-operating-principles`，把它作为原则化决策和复盘工具。
+- 需要“麦肯锡思维”时，使用 `/cogm-structured-problem-solving`，把它作为议题树、MECE 和假设驱动问题解决工具。
+- 需要“纳瓦尔宝典”或个人经验法则时，按主题拆入 method，不提供 `cogp-naval` 或 `cogv-naval`。
+- 如果使用 `install all` 或 `--all` 做完整安装，升级后会多出 `cogm-*` method 目录；如果使用精选安装，也会包含核心 method。
+
+### 新增 method 工具
+
+- `cogm-human-centered-interaction`：用户目标、概念模型、可供性、反馈和错误恢复。
+- `cogm-first-principles`：真实目标、惯性假设、底层约束和必要推导。
+- `cogm-critical-thinking`：前提、论证、证据、反例、谬误和结论强度。
+- `cogm-structured-problem-solving`：问题定义、议题树、MECE、假设驱动和行动闭环。
+- `cogm-operating-principles`：原则化决策、反馈回路、例外处理和复盘沉淀。
+- `cogm-management-hygiene`：极简管理、授权边界、会议卫生、反馈周期和管理噪音。
+- `cogm-mental-models-toolbox`：按任务选择合适思维模型，避免堆砌模型名。
+- `cogm-priority-triage`：艾森豪威尔矩阵、帕累托法则、三七法则、避免待办清单和阻力最小路径检查。
+- `cogm-causal-failure-analysis`：鱼骨图、多米诺骨牌、墨菲定律、从结果反推原因和反向思考。
+- `cogm-simplicity-filter`：奥卡姆剃刀、史特金过滤、黑天鹅边界和系统 2 慢思考。
+- `cogm-decision-heuristics`：遗憾最小化、鲍威尔法则、黄金法则、40/70 法则和贝叶斯更新。
+- `cogm-tail-risk`：尾部风险、反脆弱、吸收壁、遍历性和小额可失败试验。
+
+### 新增 persona 和 team
+
+- 新增 `cogp-grove`：高输出管理、战略拐点、十倍力、管理杠杆、OKR 和任务成熟度。
+- 新增 `cogp-christensen`：颠覆式创新、非消费、低端进入、价值网络、商业模式和 JTBD。
+- 新增 `cogp-munger`：多元模型、逆向思考、激励结构、能力圈和商业判断。
+- 新增 `cogp-godel`：形式系统边界、不完备性、自指、元层级和证明限制。
+- 新增 `cogt-product`：产品定位、用户价值、MVP、市场进入、体验和商业约束综合评审。
+- 新增 `cogt-lead`：技术领导、研发管理、技术路线、交付反馈和组织杠杆综合评审。
+
+### 研究材料和治理
+
+- persona 继续使用六维 research 目录沉淀材料：著作、访谈、表达 DNA、外部评价、关键决策和时间线。
+- method 改用轻量三件套：`references/sources.md`、`references/usage-notes.md`、`references/validation-cases.md`。
+- `methods/` 下给人读的标题、参考材料、用法说明和验证案例统一使用中文；目录名和命令名继续使用英文 slug，保证跨 host 稳定。
+- `npm run validate:skills` 现在会检查 `cogm-*` 的三件套参考材料，防止只有口号、没有来源和边界。
+- `docs/DISTILLATION_BASELINE.md` 和 `docs/GOVERNANCE.md` 已补充 persona / method / team / voice / debate 的边界规则。
+
+### CLI 和 host 改进
 
 - 新增 `archsight-cognition install qoder`，支持项目级 `.qoder/skills/` 和用户级 `~/.qoder/skills/`；检测到 `~/.qoderwork/` 时兼容写入 QoderWork skills。
 - 新增 `archsight-cognition install trae`，支持项目级 `.agents/skills/`；`--global` 写入 `~/.trae/skills/`，检测到 `~/.trae-cn/` 时兼容写入 Trae CN skills。
 - 新增 `archsight-cognition install cline`，写入 `.clinerules/archsight-cognition.md` 指针和内容目录；`--global` 写入 Cline 用户级 Rules。
 - 新增 `archsight-cognition install cursor`，写入 `.cursor/rules/archsight-cognition.mdc` 指针和内容目录。
 - `install all` 会一并安装 Qoder、Trae、Cline 和 Cursor 项目级入口；`install all --global` 会安装 Qoder、Trae 和 Cline，Cursor 保持项目级安装。
+- 新增 `adapters/qoder/README.md`、`adapters/trae/README.md`、`adapters/cline/README.md`、`adapters/cursor/README.md` 和 `adapters/workbuddy/README.md`。
 
-### 文档改进
+### 验证
 
-- 新增 `adapters/qoder/README.md`、`adapters/trae/README.md`、`adapters/cline/README.md` 和 `adapters/cursor/README.md`。
-- README 新增四个 host 的安装命令、写入位置和调用说明。
+- 已执行 `npm run validate:skills`。
+- 已执行 `npm pack --dry-run`，确认 `methods/`、`docs/`、`scripts/` 和新 adapter 文档会进入 npm 包。
+- 已执行 CLI list smoke test，确认 `cogm-*` 已进入精选和全量 skills 列表，且 `cogp-norman` 不再出现。
+- 已执行 `git diff --check`。
+- 未逐一执行所有 host 的真实安装 smoke test；本次验证以打包内容、校验脚本和 CLI 列表为主。
 
 ## v1.1.1
 

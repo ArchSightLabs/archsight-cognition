@@ -3,7 +3,7 @@ name: cogm-tail-risk
 description: 尾部风险与反脆弱方法工具，用于厚尾分布、吸收壁、遍历性、凸性、减法改进、时间检验和风险承担不对称。
 ---
 
-# Tail Risk
+# 尾部风险
 
 ## 角色
 

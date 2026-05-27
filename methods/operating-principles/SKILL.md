@@ -3,7 +3,7 @@ name: cogm-operating-principles
 description: 原则化决策方法工具，用于把经验、错误和组织判断沉淀为可检验、可更新、可执行的操作原则。
 ---
 
-# Operating Principles
+# 操作原则
 
 ## 角色
 

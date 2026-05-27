@@ -21,13 +21,11 @@
 | `cogp-simon` | `personas/decision/simon/` | 有限理性、满意解、搜索成本、注意力约束、组织程序和 AI 边界 |
 | `cogp-meadows` | `personas/systems/meadows/` | 库存/流量、反馈回路、延迟、杠杆点、系统目标和小实验 |
 | `cogp-turing` | `personas/computation/turing/` | 可计算性、可判定性、状态机、停机条件、人机分工和自动化边界 |
-| `cogm-tail-risk` | `methods/tail-risk/` | 尾部风险、反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
 | `cogp-munger` | `personas/decision/munger/` | 多元模型、逆向思考、激励机制、能力圈和误判清单 |
 | `cogp-godel` | `personas/mathematics/godel/` | 形式系统边界、不完备性、自指、元层级和证明限制 |
 | `cogp-shannon` | `personas/information/shannon/` | 信号、噪声、编码、信道容量、冗余、压缩和沟通失真 |
 | `cogp-feynman` | `personas/science/feynman/` | 简单解释、反自欺、具体例子、量纲直觉和实验手感 |
 | `cogp-popper` | `personas/science/popper/` | 可证伪性、严厉测试、反证条件、事后逃逸和科学边界 |
-| `cogm-human-centered-interaction` | `methods/human-centered-interaction/` | 概念模型、指示符、映射、反馈、约束和错误恢复 |
 | `cogp-rams` | `personas/art/rams/` | 有用性、诚实性、克制、可理解性、耐久性和少而精 |
 | `cogp-weber` | `personas/sociology/weber/` | 合法性、官僚制、权威类型、理性化、责任伦理和制度责任 |
 | `cogp-hanfeizi` | `personas/philosophy/hanfeizi/` | 法、术、势、名实、赏罚、规则漏洞、执行约束和反德性依赖 |
@@ -59,22 +57,26 @@ references/research/
 | `cogm-simplicity-filter` | `methods/simplicity-filter/` | 已新增奥卡姆剃刀、史特金过滤、帕累托、黑天鹅边界和系统 2 慢思考工具 |
 | `cogm-decision-heuristics` | `methods/decision-heuristics/` | 已新增遗憾最小化、鲍威尔信息窗口、黄金法则、贝叶斯更新和系统 2 检查工具 |
 | `cogm-first-principles` | `methods/first-principles/` | 已新增第一性约束拆解、惯性假设清理、必要推导和最小实验方法工具 |
+| `cogm-human-centered-interaction` | `methods/human-centered-interaction/` | 已迁移为人本交互方法工具，聚焦概念模型、指示符、映射、反馈、约束和错误恢复 |
 | `cogm-structured-problem-solving` | `methods/structured-problem-solving/` | 已新增问题定义、议题树、MECE、假设驱动、so-what 和工作计划工具 |
 | `cogm-operating-principles` | `methods/operating-principles/` | 已新增原则化决策、复盘更新、适用边界和例外条件工具 |
 | `cogm-management-hygiene` | `methods/management-hygiene/` | 已新增会议、授权、责任、目标、反馈和管理者噪音检查工具 |
+| `cogm-tail-risk` | `methods/tail-risk/` | 已迁移为尾部风险方法工具，聚焦反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
 
-这些工具已经能作为工作入口使用，但后续如果要追求与第一批相同的证据密度，应补齐六维研究目录。
+这些工具已经能作为工作入口使用。`cogm-*` 不默认补人物六维研究目录，而是使用方法参考三件套：`references/sources.md`、`references/usage-notes.md`、`references/validation-cases.md`。如果某个 method 来自复杂学派、专业领域或高风险实践，可以额外补充 `references/research/`。
 
 ## 后续强化流程
 
 1. **选择目标**
    - 优先选择当前项目短板明显、且能改善真实工作判断的工具。
    - 人物 persona 优先补 `references/research/01-06`。
+   - 方法工具优先补 `references/sources.md`、`references/usage-notes.md`、`references/validation-cases.md`。
    - team 工具优先补成员边界、输出契约和交接逻辑。
 
 2. **女娲式调研前处理**
    - 收集一手材料和高质量二手材料。
-   - 按六维研究文件拆分：著作、访谈/公共表达、表达 DNA、外部评价、关键决策、时间线。
+   - persona 按六维研究文件拆分：著作、访谈/公共表达、表达 DNA、外部评价、关键决策、时间线。
+   - method 按轻量三件套拆分：来源和适配依据、使用边界、验证案例。
    - 对每个候选模型做三重验证：跨域复现、生成力、排他性。
 
 3. **回到 ArchSight 模板**
@@ -85,6 +87,7 @@ references/research/
 4. **验证**
    - 运行 `npm run validate:skills`。
    - 检查新增 persona 是否有 `SKILL.md` 和完整研究目录。
+   - 检查新增 method 是否有 `SKILL.md` 和三件套参考材料。
    - 检查 README、adapter alias 和默认安装列表是否需要同步。
 
 ## 下一批建议
@@ -94,7 +97,7 @@ references/research/
 1. `cogp-engelbart`、`cogp-licklider`：人机协同、增强智能、交互式计算、网络化知识工作和工具扩展心智。
 2. `cogp-wiener`、`cogp-ashby`：控制论、反馈、通信、调节、必要变异度和复杂系统治理。
 3. `cogt-product`、`cogt-lead`：后续可继续增加真实项目样例、反例库和 host 调用示例。
-4. 继续补齐更多现代技术管理、组织执行和创新战略工具时，优先保持六维研究目录完整。
+4. 继续补齐更多现代技术管理、组织执行和创新战略工具时，人物 persona 保持六维研究目录完整；method 保持三件套参考材料完整。
 
 ## 活人材料筛查
 

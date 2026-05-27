@@ -3,7 +3,7 @@ name: cogm-management-hygiene
 description: 管理卫生方法工具，用于检查会议、授权、边界、目标、反馈、团队节奏和管理者自我约束中的基础失误。
 ---
 
-# Management Hygiene
+# 管理卫生
 
 ## 角色
 

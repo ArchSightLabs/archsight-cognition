@@ -57,6 +57,12 @@ const templateRules = [
   },
 ];
 
+const methodReferenceFiles = [
+  path.join("references", "sources.md"),
+  path.join("references", "usage-notes.md"),
+  path.join("references", "validation-cases.md"),
+];
+
 const ignoredDirs = new Set([".git", ".omx", "node_modules"]);
 
 function walk(dir, predicate, files = []) {
@@ -136,6 +142,16 @@ function validateSkill(filePath, rule) {
   }
   assertSections(raw, file, rule.sections);
   assertNoCosplay(raw, file);
+  if (rule.dir === "methods") validateMethodReferences(path.dirname(filePath), file);
+}
+
+function validateMethodReferences(skillDir, file) {
+  for (const reference of methodReferenceFiles) {
+    const fullPath = path.join(skillDir, reference);
+    if (!fs.existsSync(fullPath)) {
+      errors.push(`${file}: missing method reference ${reference.replaceAll(path.sep, "/")}`);
+    }
+  }
 }
 
 function validateTemplate(template) {

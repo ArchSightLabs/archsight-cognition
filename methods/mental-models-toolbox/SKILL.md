@@ -3,7 +3,7 @@ name: cogm-mental-models-toolbox
 description: 思维模型工具箱路由器，用于在优先级、因果失败分析、简化过滤和决策启发式之间选择合适方法。
 ---
 
-# Mental Models Toolbox
+# 思维模型工具箱
 
 ## 角色
 
