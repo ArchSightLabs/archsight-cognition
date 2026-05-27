@@ -29,7 +29,10 @@ cogt-think -> cogt-product -> cogp-bayes
 “知识工作者”太宽，“第二大脑”是解决方案隐喻，不是用户任务；市场大不能证明切入点成立。
 
 本轮视角:
-Socrates 澄清概念；Simon 降低搜索成本；Bayes 检查证据；Norman 看真实任务；Drucker 看外部结果。
+Socrates 澄清概念；Simon 降低搜索成本；Bayes 检查证据；Drucker 看外部结果。
+
+方法工具:
+`cogm-human-centered-interaction` 看真实任务。
 
 初步判断:
 先不要做通用知识库。优先选择一个高频、痛感清晰、已有替代方案但体验差的场景，例如咨询顾问整理客户访谈、研发负责人复盘决策记录，或销售团队沉淀客户异议。
@@ -52,7 +55,7 @@ Socrates 澄清概念；Simon 降低搜索成本；Bayes 检查证据；Norman �
 触发流程：
 
 ```text
-cogd-engineering -> cogt-decide -> cogp-taleb
+cogd-engineering -> cogt-decide -> cogm-tail-risk
 ```
 
 结果：
@@ -193,7 +196,6 @@ cogp-fei-xiaotong -> cogp-confucius -> cogp-hanfeizi -> cogd-governance
 
 ## 验证说明
 
-- 本文档中的流程按当前仓库命名体系触发：`cogp-*` 为单视角，`cogv-*` 为口吻，`cogt-*` 为综合团队，`cogd-*` 为结构化分歧。
+- 本文档中的流程按当前仓库命名体系触发：`cogp-*` 为 persona 单视角，`cogm-*` 为方法工具，`cogv-*` 为口吻，`cogt-*` 为综合团队，`cogd-*` 为结构化分歧。
 - 示例结果遵守对应 `SKILL.md` 的输出契约，但不是唯一答案；它们用于演示工具的典型产出形态。
 - 高风险事实、法律、医疗、金融和公共政策问题仍需要外部专业验证。
-

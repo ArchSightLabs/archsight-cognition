@@ -31,7 +31,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 - 产品体验需要评审时，加载 `cogt-design`，从可用性、交互模型、版式、色彩和系统一致性给反馈。
 - 议题本身有强分歧时，加载 `cogd-*`，保留不同立场的张力，而不是急着调和。
 
-你可以把它理解成一套“思维镜头”：每个 persona 是一个学科视角，team 是多个视角的组合，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
+你可以把它理解成一套“思维镜头”：每个 persona 是一个学科视角，method 是去人物中心的可执行方法，team 是多个视角的组合，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
 
 ## 适合谁
 
@@ -55,7 +55,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 
 - 可移植的 Markdown prompt / skill 仓库。
 - 面向 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
-- 用 persona 表达单一学科视角，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
+- 用 persona 表达单一学科视角，用 method 表达去人物中心的可执行方法，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
 - 用于真实工作中的思考、写作、判断、研究问题框定和自我复盘。
 
 ## 它不是什么
@@ -74,7 +74,9 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 - `Newton` 不是“牛顿人格”，而是力、约束、变量和系统建模视角。
 - `Einstein` 不是“名人角色”，而是相对性、观察者、假设变换和尺度转换思维工具。
 
-每个 persona、team、voice 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
+`persona` 和 `voice` 只使用已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能作为 `methods/` 的来源之一，不能作为 `cogp-*` 或 `cogv-*` 入口。
+
+每个 persona、method、team、voice 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
 
 ## 能力价值
 
@@ -100,9 +102,10 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 数学 | `personas/mathematics/` | 定义、结构、证明、不确定性、形式系统边界、模型 |
 | 物理 | `personas/physics/` | 约束、变量、观察者、尺度、系统动态 |
 | 艺术/设计 | `personas/art/` | 构图、感知、色彩、版式、产品设计、视觉系统 |
-| 决策 | `personas/decision/` | 有限理性、判断偏差、管理有效性、技术管理、创新战略、尾部风险、激励结构、责任和反馈 |
+| 决策 | `personas/decision/` | 有限理性、判断偏差、管理有效性、技术管理、创新战略、激励结构、责任和反馈 |
 | 教育 | `personas/education/` | 认知发展、最近发展区、学习支架、自主环境 |
 | 科学 | `personas/science/` | 可证伪性、实验直觉、反证、解释和自欺检查 |
+| 方法 | `methods/` | 不绑定人物的可执行方法；可吸收活人公开材料，但必须去人物中心化 |
 | 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理、产品战略、技术领导 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
@@ -111,7 +114,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 
 ## 中国思想与中文叙事
 
-本项目保留 `personas`、`teams`、`voices`、`debates` 四类结构，不按文化来源新增第五类。中国思想和中文叙事工具进入现有分类：
+本项目保留 `personas`、`methods`、`teams`、`voices`、`debates` 五类结构，不按文化来源新增第六类。中国思想和中文叙事工具进入现有分类：
 
 - `personas/philosophy/`：`confucius`、`mencius`、`xunzi`、`laozi`、`zhuangzi`、`wang-yangming`、`mozi`、`hanfeizi`，分别对应关系责任、正当性、制度化训练、最小干预、视角切换、知行合一、功用节用和制度激励。
 - `personas/history/`：`sunzi` 用于战略态势、虚实、胜前计算、成本和低损耗行动。
@@ -142,6 +145,9 @@ archsight-cognition/
 │   ├── decision/
 │   ├── education/
 │   └── science/
+├── methods/
+│   ├── human-centered-interaction/
+│   └── tail-risk/
 ├── teams/
 │   ├── thinking-council/
 │   ├── philosophy-cavalry/
@@ -244,9 +250,19 @@ personas/philosophy/socrates/SKILL.md # 概念澄清
 personas/mathematics/bayes/SKILL.md   # 证据和不确定性判断
 personas/mathematics/godel/SKILL.md   # 形式系统边界和自指风险
 personas/physics/newton/SKILL.md      # 变量、约束和系统建模
-personas/decision/taleb/SKILL.md      # 尾部风险和反脆弱审查
+methods/critical-thinking/SKILL.md    # 主张、证据、谬误和结论强度审查
+methods/mental-models-toolbox/SKILL.md # 思维模型工具路由
+methods/priority-triage/SKILL.md      # 优先级取舍和不要做清单
+methods/causal-failure-analysis/SKILL.md # 鱼骨图、连锁失败和根因阻断
+methods/decision-heuristics/SKILL.md  # 遗憾最小化、信息窗口和伦理边界
+methods/first-principles/SKILL.md     # 第一性约束拆解和必要推导
+methods/simplicity-filter/SKILL.md    # 奥卡姆剃刀、噪音过滤和慢思考
+methods/structured-problem-solving/SKILL.md # 议题树、MECE 和假设驱动拆解
+methods/tail-risk/SKILL.md      # 尾部风险和反脆弱审查
+methods/human-centered-interaction/SKILL.md # 人本交互和错误恢复审查
+methods/operating-principles/SKILL.md # 原则化决策和复盘更新
+methods/management-hygiene/SKILL.md # 管理卫生、会议、授权和反馈检查
 personas/decision/munger/SKILL.md     # 多元模型和激励结构审查
-personas/decision/naval/SKILL.md      # 特定知识、杠杆和个人策略审查
 personas/decision/grove/SKILL.md      # 高输出技术管理和战略拐点审查
 personas/decision/christensen/SKILL.md # 颠覆式创新和市场进入审查
 ```
@@ -290,7 +306,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
 | 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、WorkBuddy 和 Antigravity 的全局目录；Cursor 仅提供项目级 CLI 安装。 |
 
-默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
+默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-learn`，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。
 
 如需安装全部 `SKILL.md`，同样先选择安装范围。
 
@@ -413,6 +429,8 @@ archsight-cognition install all --force
 
 新增 persona 时，从 `templates/persona-skill.md` 开始。
 
+新增 method 时，从 `templates/method-skill.md` 开始。method 不以活人命名，可以引用活人公开材料作为来源，但必须改写为去人物中心的可执行方法。
+
 新增 team 时，从 `templates/team-skill.md` 开始。
 
 新增 voice 时，从 `templates/voice-skill.md` 开始。
@@ -429,6 +447,7 @@ archsight-cognition install all --force
 
 - 有 `name` 与中文 `description` frontmatter。
 - 明确角色、适用场景、方法、输出契约、失败模式、验证逻辑、边界测试和护栏。
+- `persona` 和 `voice` 不得使用仍在世人物；活人材料应进入 `methods/` 或 team 参考材料。
 - 不要求模型扮演历史人物本人。
 - 输出服务现实任务，而不是只展示知识或风格模仿。
 

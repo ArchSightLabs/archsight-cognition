@@ -22,6 +22,7 @@
 期望输出:
 - 用 Shannon 提炼核心信号。
 - 用 Rams 删除泛化卖点。
+- 调用 `cogm-critical-thinking` 检查差异化论证是否被证据支持。
 - 用 Munger 逆向检查差异化是否只是形容词。
 - 输出用户选择理由，而不是品牌口号。
 ```
@@ -35,7 +36,8 @@
 期望输出:
 - 用 Simon 判断资源约束和满意解。
 - 用 Bayes 选信息量最大的实验。
-- 用 Norman 检查最短任务路径。
+- 调用 `cogm-structured-problem-solving` 拆出候选路径、关键事实和优先验证。
+- 调用 `cogm-human-centered-interaction` 检查最短任务路径。
 - 明确通过标准和停止条件。
 ```
 
@@ -47,7 +49,7 @@
 
 期望输出:
 - 用 Meadows 区分留存库存和拉活流量。
-- 用 Taleb 检查提醒疲劳和信任损耗。
+- 调用 `cogm-tail-risk` 检查提醒疲劳和信任损耗。
 - 用 Drucker 回到外部结果。
 - 给小实验，而不是增长动作列表。
 ```

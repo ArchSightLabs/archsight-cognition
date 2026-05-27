@@ -306,9 +306,11 @@ gateway 跑起来后，飞书里发送 `/cogt-think ...`、`/cogt-decide ...`、
 | 贝叶斯、不确定性、证据更新 | `/cogp-bayes` | 信息不足下的概率判断 |
 | 牛顿、系统建模、约束分析 | `/cogp-newton` | 变量、约束、惯性和系统建模 |
 | 维特根斯坦、语言澄清、概念澄清 | `/cogp-wittgenstein` | 概念误用和表达混乱 |
-| 拉姆斯、诺曼、维涅利 | `/cogp-rams`、`/cogp-norman`、`/cogp-vignelli` | 产品克制、人本交互和视觉系统 |
+| 批判性思维、结构化拆解、第一性原理 | `/cogm-critical-thinking`、`/cogm-structured-problem-solving`、`/cogm-first-principles` | 论证评估、议题树、底层约束和必要推导 |
+| 拉姆斯、人本交互、维涅利 | `/cogp-rams`、`/cogm-human-centered-interaction`、`/cogp-vignelli` | 产品克制、人本交互和视觉系统 |
 | 阿尔伯斯、克利 | `/cogp-albers`、`/cogp-klee` | 色彩关系、绘画构成和视觉节奏 |
 | 西蒙、卡尼曼、德鲁克 | `/cogp-simon`、`/cogp-kahneman`、`/cogp-drucker` | 有限理性、判断偏差和管理有效性 |
+| Grove、Christensen | `/cogp-grove`、`/cogp-christensen` | 高输出技术管理、战略拐点和颠覆式创新 |
 | 波普尔、费曼 | `/cogp-popper`、`/cogp-feynman` | 可证伪性、实验直觉和自欺检查 |
 | 皮亚杰、维果茨基、蒙台梭利 | `/cogp-piaget`、`/cogp-vygotsky`、`/cogp-montessori` | 认知发展、学习支架和自主环境 |
 | 克劳塞维茨、马基雅维利 | `/cogp-clausewitz`、`/cogp-machiavelli` | 战略摩擦、联盟和权力现实 |

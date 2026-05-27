@@ -1,8 +1,8 @@
 # Claude Code 适配说明
 
-Claude Code 适合把 ArchSight Cognition 作为 Markdown skills 使用。常用 persona、team、voice 和 debate 可以安装到 `.claude/skills/<skill-name>/SKILL.md`，然后用 `/skill-name` 直接调用。
+Claude Code 适合把 ArchSight Cognition 作为 Markdown skills 使用。常用 persona、method、team、voice 和 debate 可以安装到 `.claude/skills/<skill-name>/SKILL.md`，然后用 `/skill-name` 直接调用。
 
-Claude Code 的 skill 机制会读取 `SKILL.md` 的 frontmatter 和正文。本仓库的 persona/team/voice/debate 已按这种形态组织，因此可以直接复制或链接使用。
+Claude Code 的 skill 机制会读取 `SKILL.md` 的 frontmatter 和正文。本仓库的 persona/method/team/voice/debate 已按这种形态组织，因此可以直接复制或链接使用。
 
 ## 安装
 
@@ -42,6 +42,13 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path .claude\
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates .claude\skills\cogp-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes .claude\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton .claude\skills\cogp-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\critical-thinking .claude\skills\cogm-critical-thinking -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\first-principles .claude\skills\cogm-first-principles -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\structured-problem-solving .claude\skills\cogm-structured-problem-solving -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\operating-principles .claude\skills\cogm-operating-principles -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\management-hygiene .claude\skills\cogm-management-hygiene -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\tail-risk .claude\skills\cogm-tail-risk -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\human-centered-interaction .claude\skills\cogm-human-centered-interaction -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant .claude\skills\cogv-kant -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general .claude\skills\cogd-general -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life .claude\skills\cogd-life -Recurse
@@ -62,6 +69,13 @@ Copy-Item C:\Work\ArchSightLabs\archsight-cognition\teams\learning-path $HOME\.c
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\philosophy\socrates $HOME\.claude\skills\cogp-socrates -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\mathematics\bayes $HOME\.claude\skills\cogp-bayes -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\personas\physics\newton $HOME\.claude\skills\cogp-newton -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\critical-thinking $HOME\.claude\skills\cogm-critical-thinking -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\first-principles $HOME\.claude\skills\cogm-first-principles -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\structured-problem-solving $HOME\.claude\skills\cogm-structured-problem-solving -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\operating-principles $HOME\.claude\skills\cogm-operating-principles -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\management-hygiene $HOME\.claude\skills\cogm-management-hygiene -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\tail-risk $HOME\.claude\skills\cogm-tail-risk -Recurse
+Copy-Item C:\Work\ArchSightLabs\archsight-cognition\methods\human-centered-interaction $HOME\.claude\skills\cogm-human-centered-interaction -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\voices\philosophy\kant $HOME\.claude\skills\cogv-kant -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\general $HOME\.claude\skills\cogd-general -Recurse
 Copy-Item C:\Work\ArchSightLabs\archsight-cognition\debates\life $HOME\.claude\skills\cogd-life -Recurse
@@ -80,6 +94,13 @@ cp -R ~/work/archsight-cognition/teams/learning-path ~/.claude/skills/cogt-learn
 cp -R ~/work/archsight-cognition/personas/philosophy/socrates ~/.claude/skills/cogp-socrates
 cp -R ~/work/archsight-cognition/personas/mathematics/bayes ~/.claude/skills/cogp-bayes
 cp -R ~/work/archsight-cognition/personas/physics/newton ~/.claude/skills/cogp-newton
+cp -R ~/work/archsight-cognition/methods/critical-thinking ~/.claude/skills/cogm-critical-thinking
+cp -R ~/work/archsight-cognition/methods/first-principles ~/.claude/skills/cogm-first-principles
+cp -R ~/work/archsight-cognition/methods/structured-problem-solving ~/.claude/skills/cogm-structured-problem-solving
+cp -R ~/work/archsight-cognition/methods/operating-principles ~/.claude/skills/cogm-operating-principles
+cp -R ~/work/archsight-cognition/methods/management-hygiene ~/.claude/skills/cogm-management-hygiene
+cp -R ~/work/archsight-cognition/methods/tail-risk ~/.claude/skills/cogm-tail-risk
+cp -R ~/work/archsight-cognition/methods/human-centered-interaction ~/.claude/skills/cogm-human-centered-interaction
 cp -R ~/work/archsight-cognition/voices/philosophy/kant ~/.claude/skills/cogv-kant
 cp -R ~/work/archsight-cognition/debates/general ~/.claude/skills/cogd-general
 cp -R ~/work/archsight-cognition/debates/life ~/.claude/skills/cogd-life
@@ -121,6 +142,26 @@ cp -R ~/work/archsight-cognition/debates/technology ~/.claude/skills/cogd-techno
 ```
 
 ```text
+/cogm-critical-thinking
+检查这段方案论证的主张、前提、证据、推理漏洞和结论强度。
+```
+
+```text
+/cogm-first-principles
+把这个方案从竞品类比和行业惯例里拆出来，回到底层约束重新推导。
+```
+
+```text
+/cogm-structured-problem-solving
+把这个增长问题拆成议题树、关键事实、优先验证和工作计划。
+```
+
+```text
+/cogm-tail-risk
+检查这个迁移方案的尾部风险、吸收壁和不可恢复损失。
+```
+
+```text
 /cogv-kant
 用康德式克制、原则优先的口吻回应这段话。
 ```
@@ -137,8 +178,15 @@ cp -R ~/work/archsight-cognition/debates/technology ~/.claude/skills/cogd-techno
 | 不知道该用哪个工具 | `/cogt-think` |
 | 需求含混 | `/cogp-socrates` |
 | 论证混乱 | `/cogp-euclid` |
+| 批判性思维、论证和谬误检查 | `/cogm-critical-thinking` |
 | 概率、证据和不确定性 | `/cogp-bayes` |
 | 约束不明 | `/cogp-newton` |
+| 第一性约束拆解和必要推导 | `/cogm-first-principles` |
+| 结构化问题拆解和工作计划 | `/cogm-structured-problem-solving` |
+| 原则化决策和复盘更新 | `/cogm-operating-principles` |
+| 管理卫生、会议、授权和反馈 | `/cogm-management-hygiene` |
+| 尾部风险和不可恢复损失 | `/cogm-tail-risk` |
+| 人本交互、反馈和错误恢复 | `/cogm-human-centered-interaction` |
 | 方案高风险 | `/cogt-decide` |
 | 文档质量 | `/cogt-write` |
 | 研究和验证路径 | `/cogt-science` |
@@ -158,6 +206,7 @@ cp -R ~/work/archsight-cognition/debates/technology ~/.claude/skills/cogd-techno
 
 - 不要让 persona 输出覆盖用户明确需求。
 - 不要把历史人物当作权威来源。
+- `persona` 和 `voice` 只使用已离世人物或稳定历史传统；仍在世人物材料应去人物中心化后进入 `methods/`。
 - 每次调用都应输出可执行判断、风险或下一步。
 - 对事实性、法律、医疗、金融和安全问题，必须要求来源和验证。
 

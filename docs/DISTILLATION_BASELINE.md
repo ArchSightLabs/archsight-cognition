@@ -21,17 +21,18 @@
 | `cogp-simon` | `personas/decision/simon/` | 有限理性、满意解、搜索成本、注意力约束、组织程序和 AI 边界 |
 | `cogp-meadows` | `personas/systems/meadows/` | 库存/流量、反馈回路、延迟、杠杆点、系统目标和小实验 |
 | `cogp-turing` | `personas/computation/turing/` | 可计算性、可判定性、状态机、停机条件、人机分工和自动化边界 |
-| `cogp-taleb` | `personas/decision/taleb/` | 尾部风险、反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
+| `cogm-tail-risk` | `methods/tail-risk/` | 尾部风险、反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
 | `cogp-munger` | `personas/decision/munger/` | 多元模型、逆向思考、激励机制、能力圈和误判清单 |
 | `cogp-godel` | `personas/mathematics/godel/` | 形式系统边界、不完备性、自指、元层级和证明限制 |
 | `cogp-shannon` | `personas/information/shannon/` | 信号、噪声、编码、信道容量、冗余、压缩和沟通失真 |
 | `cogp-feynman` | `personas/science/feynman/` | 简单解释、反自欺、具体例子、量纲直觉和实验手感 |
 | `cogp-popper` | `personas/science/popper/` | 可证伪性、严厉测试、反证条件、事后逃逸和科学边界 |
-| `cogp-norman` | `personas/art/norman/` | 概念模型、指示符、映射、反馈、约束和错误恢复 |
+| `cogm-human-centered-interaction` | `methods/human-centered-interaction/` | 概念模型、指示符、映射、反馈、约束和错误恢复 |
 | `cogp-rams` | `personas/art/rams/` | 有用性、诚实性、克制、可理解性、耐久性和少而精 |
 | `cogp-weber` | `personas/sociology/weber/` | 合法性、官僚制、权威类型、理性化、责任伦理和制度责任 |
 | `cogp-hanfeizi` | `personas/philosophy/hanfeizi/` | 法、术、势、名实、赏罚、规则漏洞、执行约束和反德性依赖 |
-| `cogp-naval` | `personas/decision/naval/` | 特定知识、长期游戏、责任承担、股权、代码/媒体杠杆和个人策略 |
+| `cogp-grove` | `personas/decision/grove/` | 高输出管理、战略拐点、十倍力、管理杠杆、OKR、任务成熟度和事实辩论 |
+| `cogp-christensen` | `personas/decision/christensen/` | 颠覆式创新、非消费、低端进入、价值网络、商业模式、模块化和 JTBD |
 
 每个完成项必须包含：
 
@@ -51,6 +52,16 @@ references/research/
 | --- | --- | --- |
 | `cogt-product` | `teams/product/` | 已新增产品战略、定位、最小验证和取舍综合工具，并补充 team 组合依据与典型任务样例 |
 | `cogt-lead` | `teams/lead/` | 已新增技术领导、研发组织、交付反馈和责任边界综合工具，并补充 team 组合依据与典型任务样例 |
+| `cogm-critical-thinking` | `methods/critical-thinking/` | 已新增主张、前提、证据、推理漏洞、替代解释和结论强度审查工具 |
+| `cogm-mental-models-toolbox` | `methods/mental-models-toolbox/` | 已新增思维模型路由工具，按任务选择优先级、因果、简化或决策方法 |
+| `cogm-priority-triage` | `methods/priority-triage/` | 已新增艾森豪威尔矩阵、帕累托、三七法则、史特金过滤、不要做清单和阻力路径检查 |
+| `cogm-causal-failure-analysis` | `methods/causal-failure-analysis/` | 已新增鱼骨图、从结果反推原因、多米诺链条、墨菲检查和反向思考工具 |
+| `cogm-simplicity-filter` | `methods/simplicity-filter/` | 已新增奥卡姆剃刀、史特金过滤、帕累托、黑天鹅边界和系统 2 慢思考工具 |
+| `cogm-decision-heuristics` | `methods/decision-heuristics/` | 已新增遗憾最小化、鲍威尔信息窗口、黄金法则、贝叶斯更新和系统 2 检查工具 |
+| `cogm-first-principles` | `methods/first-principles/` | 已新增第一性约束拆解、惯性假设清理、必要推导和最小实验方法工具 |
+| `cogm-structured-problem-solving` | `methods/structured-problem-solving/` | 已新增问题定义、议题树、MECE、假设驱动、so-what 和工作计划工具 |
+| `cogm-operating-principles` | `methods/operating-principles/` | 已新增原则化决策、复盘更新、适用边界和例外条件工具 |
+| `cogm-management-hygiene` | `methods/management-hygiene/` | 已新增会议、授权、责任、目标、反馈和管理者噪音检查工具 |
 
 这些工具已经能作为工作入口使用，但后续如果要追求与第一批相同的证据密度，应补齐六维研究目录。
 
@@ -80,9 +91,35 @@ references/research/
 
 优先级建议：
 
-1. `cogp-grove`、`cogp-christensen`：现代技术管理、战略转型、组织执行和创新者困境。
-2. `cogp-zhang-yiming`：现代互联网产品、组织算法、延迟满足和信息效率；需要更严格处理活人资料时效性。
+1. `cogp-engelbart`、`cogp-licklider`：人机协同、增强智能、交互式计算、网络化知识工作和工具扩展心智。
+2. `cogp-wiener`、`cogp-ashby`：控制论、反馈、通信、调节、必要变异度和复杂系统治理。
 3. `cogt-product`、`cogt-lead`：后续可继续增加真实项目样例、反例库和 host 调用示例。
+4. 继续补齐更多现代技术管理、组织执行和创新战略工具时，优先保持六维研究目录完整。
+
+## 活人材料筛查
+
+后续新增 `cogp-*` 和 `cogv-*` 时，必须只使用已离世人物或稳定历史传统。仍在世、职业活动仍在进行、历史评价尚未稳定的人物，尤其是仍和具体公司、投资、政治监管或商业利益绑定的企业家，不进入 persona 或 voice；若确有方法价值，只能去人物中心化后进入 `methods/`。原因：
+
+- 资料时效性强，公开叙事容易被新闻、监管和公司 PR 反复改写。
+- 未形成足够稳定的外部评价，容易把阶段性成功误写成通用心智模型。
+- 活人 persona 容易滑向崇拜、模仿、站队或未经验证的内部管理传闻。
+- 对仍在运营的公司或创始人，事实判断需要持续检索，不适合沉淀为稳定离线 skill。
+
+当前基线中的处理分级：
+
+| 候选 | 状态 | 判断 | 处理 |
+| --- | --- | --- | --- |
+| `cogp-zhang-yiming` | 在世，且仍与 ByteDance、TikTok、监管和商业竞争叙事强绑定 | 不适合作为 persona 蒸馏对象 | 不纳入下一批；相关问题交给 `cogp-grove`、`cogp-simon`、`cogp-shannon`、`cogp-christensen` 或 team 工具综合 |
+| `cogm-tail-risk` | 来源人物在世，但方法已有成体系著作和外部风险管理讨论 | 可作为 method 保留 | 使用尾部风险、凸性、遍历性和风险承担不对称，不迁移公共争论和投资结论 |
+| `cogm-human-centered-interaction` | 来源人物在世，但方法已高度制度化 | 可作为 method 保留 | 作为人本交互方法工具，不写成人物崇拜或最新观点追踪 |
+
+张一鸣相关主题的替代路径：
+
+- 组织算法、OKR 和管理杠杆：优先 `cogp-grove`。
+- 注意力、有限理性和组织程序：优先 `cogp-simon`。
+- 信息效率、推荐、信号噪声和反馈：优先 `cogp-shannon`、`cogp-meadows`。
+- 产品战略、非消费和市场进入：优先 `cogp-christensen`、`cogt-product`。
+- 人机协同和工具增强心智：优先新增 `cogp-engelbart` 或 `cogp-licklider`。
 
 ## 提交前检查
 

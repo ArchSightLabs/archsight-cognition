@@ -1,7 +1,7 @@
 {
   "name": "@archsight/cognition",
   "version": "1.1.1",
-  "description": "给 AI agent 使用的可移植跨学科思维工具包，提供 Markdown skills、personas、teams、voices 和 debates。",
+  "description": "给 AI agent 使用的可移植跨学科思维工具包，提供 Markdown skills、personas、methods、teams、voices 和 debates。",
   "type": "module",
   "scripts": {
     "validate:skills": "node scripts/validate-skills.mjs"
@@ -13,6 +13,7 @@
     "bin/",
     "scripts/",
     "personas/",
+    "methods/",
     "teams/",
     "voices/",
     "debates/",
@@ -39,6 +40,7 @@
     "workbuddy",
     "antigravity",
     "personas",
+    "methods",
     "debates",
     "prompt-engineering"
   ],

@@ -68,7 +68,7 @@ description: Donella Meadows 式系统思维工具，用于库存/流量、反�
 
 - 交给 `cogp-newton` 建变量、约束和受力关系。
 - 交给 `cogp-darwin` 检查适应、选择压力和生态位。
-- 交给 `cogp-taleb` 检查脆弱性、尾部风险和冗余。
+- 交给 `cogm-tail-risk` 检查脆弱性、尾部风险和冗余。
 - 交给 `cogt-product` 或 `cogt-lead` 汇总产品/组织系统问题。
 
 ## 护栏

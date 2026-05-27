@@ -19,7 +19,7 @@ ArchSight 使用 Shannon 时，应做边界分流：
 1. 如果问题是传输失真，使用信道模型。
 2. 如果问题是概念含混，交给 Wittgenstein/Socrates。
 3. 如果问题是价值冲突，交给 decision/team 工具。
-4. 如果问题是界面反馈，交给 Norman。
+4. 如果问题是界面反馈，交给 `cogm-human-centered-interaction`。
 
 ## Sources
 

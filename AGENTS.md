@@ -12,6 +12,7 @@
 - [AI 编码规范（公共）](./AI_CODING_RULES.md)
 - [项目总览](./README.md)
 - [Personas](./personas/README.md)
+- [Methods](./methods/README.md)
 - [Adapters](./adapters/README.md)
 
 ---
@@ -19,7 +20,7 @@
 ## Codex 特别说明
 
 - Codex 在执行终端命令时，须优先使用项目根目录的 `Makefile` 或 `scripts/` 中的辅助脚本（如存在）。
-- Codex 在用户指定或任务适合本仓库技能包时，须先阅读 [Personas](./personas/README.md)、对应 `personas/*/*/SKILL.md` 或 `teams/*/SKILL.md`。
+- Codex 在用户指定或任务适合本仓库技能包时，须先阅读 [Personas](./personas/README.md)、[Methods](./methods/README.md)、对应 `personas/*/*/SKILL.md`、`methods/*/SKILL.md` 或 `teams/*/SKILL.md`。
 - 生成代码时，严格遵守 `AI_CODING_RULES.md` 第二节「AI 行为准则」，尤其是最小代码和不做假设原则。
 - Codex 不得在未经验证的状态下关闭 PR 或标记任务为完成。
 
@@ -42,8 +43,10 @@
 
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
+方法工具统一使用 `cogm-` 前缀，例如 `cogm-critical-thinking`、`cogm-structured-problem-solving`、`cogm-first-principles`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
+`persona` 和 `voice` 只使用已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能去人物中心化后进入 `methods/` 或 team 参考材料。
 <!-- ARCHSIGHT-COGNITION:END -->

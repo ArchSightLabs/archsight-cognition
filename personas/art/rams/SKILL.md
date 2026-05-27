@@ -89,7 +89,7 @@ description: Dieter Rams 式产品设计审查工具，用于有用性、诚实�
 
 ## 交接
 
-- 交给 `cogp-norman` 检查可理解性、反馈和交互模型。
+- 交给 `cogm-human-centered-interaction` 检查可理解性、反馈和交互模型。
 - 交给 `cogp-vignelli` 检查版式、网格和视觉系统。
 - 交给 `cogp-shannon` 检查信号、噪声和压缩。
 - 交给 `cogt-design` 汇总产品体验和设计取舍。

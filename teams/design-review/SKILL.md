@@ -13,7 +13,6 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 
 ## 默认团队
 
-- `Norman`：概念模型、可供性、指示符、反馈和错误恢复。
 - `Rams`：有用性、诚实性、克制、耐久性和少而精。
 - `Vignelli`：网格、版式、信息层级和视觉系统纪律。
 - `Albers`：色彩关系、对比、可读性和感知稳定性。
@@ -29,22 +28,26 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 - `Plato`：理想型、范式和产品形态边界。
 - `Nietzsche`：差异化、强度和反平庸判断。
 
+## 方法工具
+
+- `cogm-human-centered-interaction`：概念模型、可供性、指示符、反馈和错误恢复。
+
 ## 路由
 
-| 问题类型 | 必选 | 可选 |
-| --- | --- | --- |
-| 产品体验评审 | Norman, Rams, Aristotle | Newton, Bayes |
-| 信息架构和导航 | Norman, Vignelli, Wittgenstein | Euclid |
-| UI/视觉层级 | Vignelli, Albers, Klee | Norman |
-| 色彩和审美判断 | Albers, Klee, Vignelli | Rams |
-| 交互流程和转化 | Norman, Newton, Bayes | Wittgenstein |
-| 品牌/落地页 | Vignelli, Klee, Shakespeare | Nietzsche |
-| 设计方案取舍 | Rams, Aristotle, Bayes | Plato |
+| 问题类型 | 核心视角 | 方法工具 | 补充视角 |
+| --- | --- | --- | --- |
+| 产品体验评审 | Rams, Aristotle | `cogm-human-centered-interaction` | Newton, Bayes |
+| 信息架构和导航 | Vignelli, Wittgenstein | `cogm-human-centered-interaction` | Euclid |
+| UI/视觉层级 | Vignelli, Albers, Klee | `cogm-human-centered-interaction` | - |
+| 色彩和审美判断 | Albers, Klee, Vignelli | - | Rams |
+| 交互流程和转化 | Newton, Bayes | `cogm-human-centered-interaction` | Wittgenstein |
+| 品牌/落地页 | Vignelli, Klee, Shakespeare | - | Nietzsche |
+| 设计方案取舍 | Rams, Aristotle, Bayes | - | Plato |
 
 ## 方法
 
 1. 用一句话说明这个界面或方案要帮助谁完成什么任务。
-2. 选择 3 到 5 个视角，不默认全员发言。
+2. 选择 3 到 5 个 persona 视角，不默认全员发言，并按需调用方法工具。
 3. 先检查用户目标、概念模型和信息层级，再用版式、色彩、构成和注意力路径检查视觉细节。
 4. 把问题分成理解、信任、行动、反馈、美学五类。
 5. 给出最小改动优先级，而不是一次性重设计。
@@ -56,6 +59,7 @@ description: 产品、体验、视觉和交互评审工具，用于发现用户�
 目标用户:
 核心任务:
 本轮视角:
+方法工具:
 设计/美学视角:
 主要摩擦:
 信息架构:

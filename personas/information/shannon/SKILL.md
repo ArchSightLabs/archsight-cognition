@@ -68,7 +68,7 @@ description: Claude Shannon 式信息工具，用于信号、噪声、编码、�
 
 - 交给 `cogp-orwell` 清理空话、委婉遮蔽和政治化语言。
 - 交给 `cogp-wittgenstein` 检查概念边界和语言误用。
-- 交给 `cogp-norman` 检查界面信号和用户反馈。
+- 交给 `cogm-human-centered-interaction` 检查界面信号和用户反馈。
 - 交给 `cogt-write` 或 `cogt-product` 汇总表达和定位风险。
 
 ## 护栏

@@ -67,6 +67,7 @@ description: Richard Feynman 式理解和实验工具，用于简单解释、反
 
 - 交给 `cogp-popper` 写反证条件和风险暴露。
 - 交给 `cogp-newton` 建变量、约束和数量关系。
+- 交给 `cogm-first-principles` 回到底层约束、必要推导和可改变变量。
 - 交给 `cogp-bayes` 评估证据强度和替代解释。
 - 交给 `cogt-science` 汇总实验路径。
 

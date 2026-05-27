@@ -40,9 +40,18 @@ const curatedSkills = [
   { name: "cogp-drucker", source: "personas/decision/drucker" },
   { name: "cogp-grove", source: "personas/decision/grove" },
   { name: "cogp-christensen", source: "personas/decision/christensen" },
-  { name: "cogp-taleb", source: "personas/decision/taleb" },
+  { name: "cogm-critical-thinking", source: "methods/critical-thinking" },
+  { name: "cogm-first-principles", source: "methods/first-principles" },
+  { name: "cogm-structured-problem-solving", source: "methods/structured-problem-solving" },
+  { name: "cogm-mental-models-toolbox", source: "methods/mental-models-toolbox" },
+  { name: "cogm-priority-triage", source: "methods/priority-triage" },
+  { name: "cogm-causal-failure-analysis", source: "methods/causal-failure-analysis" },
+  { name: "cogm-simplicity-filter", source: "methods/simplicity-filter" },
+  { name: "cogm-decision-heuristics", source: "methods/decision-heuristics" },
+  { name: "cogm-operating-principles", source: "methods/operating-principles" },
+  { name: "cogm-management-hygiene", source: "methods/management-hygiene" },
+  { name: "cogm-tail-risk", source: "methods/tail-risk" },
   { name: "cogp-munger", source: "personas/decision/munger" },
-  { name: "cogp-naval", source: "personas/decision/naval" },
   { name: "cogp-popper", source: "personas/science/popper" },
   { name: "cogp-feynman", source: "personas/science/feynman" },
   { name: "cogp-piaget", source: "personas/education/piaget" },
@@ -74,7 +83,7 @@ const curatedSkills = [
   { name: "cogp-fei-xiaotong", source: "personas/sociology/fei-xiaotong" },
   { name: "cogp-meadows", source: "personas/systems/meadows" },
   { name: "cogp-rams", source: "personas/art/rams" },
-  { name: "cogp-norman", source: "personas/art/norman" },
+  { name: "cogm-human-centered-interaction", source: "methods/human-centered-interaction" },
   { name: "cogp-vignelli", source: "personas/art/vignelli" },
   { name: "cogp-albers", source: "personas/art/albers" },
   { name: "cogp-klee", source: "personas/art/klee" },
@@ -102,6 +111,7 @@ const curatedSkills = [
 const allSkills = [
   ...findSkillDirs("teams"),
   ...findSkillDirs("personas"),
+  ...findSkillDirs("methods"),
   ...findSkillDirs("voices"),
   ...findSkillDirs("debates")
 ];
@@ -342,6 +352,7 @@ function installContentRoot({ host, root, directoryName, force }) {
   const contentRoot = path.join(root, directoryName);
   const entries = [
     "personas",
+    "methods",
     "teams",
     "voices",
     "debates",
@@ -639,10 +650,12 @@ function buildRuleBody(contentLocation) {
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
-风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
+方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`、\`cogm-first-principles\`。
+风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
 
-不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。`;
+不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
+\`persona\` 和 \`voice\` 只使用已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能去人物中心化后进入 \`methods/\` 或 team 参考材料。`;
 }
 
 function buildCodexBlock(contentRoot) {
@@ -667,10 +680,12 @@ function buildCodexBlock(contentRoot) {
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
-风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
+方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`、\`cogm-first-principles\`。
+风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
 
 不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。
+\`persona\` 和 \`voice\` 只使用已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能去人物中心化后进入 \`methods/\` 或 team 参考材料。
 <!-- ARCHSIGHT-COGNITION:END -->`;
 }
 
@@ -725,6 +740,10 @@ function toSkillName(name, baseDir) {
 
   if (baseDir === "personas") {
     return name.startsWith("cogp-") ? name : `cogp-${name}`;
+  }
+
+  if (baseDir === "methods") {
+    return name.startsWith("cogm-") ? name : `cogm-${name}`;
   }
 
   const aliases = {

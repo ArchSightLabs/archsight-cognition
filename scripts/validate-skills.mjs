@@ -13,6 +13,11 @@ const skillRules = [
     sections: ["角色", "适用场景", "方法", "输出契约", "交接", "护栏"],
   },
   {
+    dir: "methods",
+    prefix: "cogm-",
+    sections: ["角色", "适用场景", "方法", "输出契约", "交接", "护栏"],
+  },
+  {
     dir: "teams",
     prefix: "cogt-",
     sections: ["角色", "默认团队", "路由", "方法", "输出契约", "护栏"],
@@ -32,6 +37,10 @@ const skillRules = [
 const templateRules = [
   {
     file: path.join("templates", "persona-skill.md"),
+    sections: ["角色", "适用场景", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "交接", "护栏"],
+  },
+  {
+    file: path.join("templates", "method-skill.md"),
     sections: ["角色", "适用场景", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "交接", "护栏"],
   },
   {

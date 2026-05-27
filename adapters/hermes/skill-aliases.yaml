@@ -201,10 +201,15 @@ skills:
     path: personas/decision/drucker/SKILL.md
     aliases: [德鲁克, Peter Drucker, 管理有效性, 责任边界, 组织贡献, 反馈周期]
 
-  - name: cogp-naval
-    command: /cogp-naval
-    path: personas/decision/naval/SKILL.md
-    aliases: [Naval, 纳瓦尔, 个人策略, 特定知识, 杠杆, 长期游戏, 独立产品]
+  - name: cogp-grove
+    command: /cogp-grove
+    path: personas/decision/grove/SKILL.md
+    aliases: [Grove, Andy Grove, 格鲁夫, 高输出管理, 战略拐点, 十倍力, OKR, 技术管理]
+
+  - name: cogp-christensen
+    command: /cogp-christensen
+    path: personas/decision/christensen/SKILL.md
+    aliases: [Christensen, Clayton Christensen, 克里斯坦森, 颠覆式创新, 创新者困境, 非消费, 价值网络, JTBD]
 
   - name: cogp-popper
     command: /cogp-popper
@@ -246,10 +251,65 @@ skills:
     path: personas/art/rams/SKILL.md
     aliases: [拉姆斯, Dieter Rams, 产品克制, 少而精, 工业设计, 设计十诫]
 
-  - name: cogp-norman
-    command: /cogp-norman
-    path: personas/art/norman/SKILL.md
-    aliases: [诺曼, Don Norman, 人本设计, 可供性, 交互反馈, 用户理解]
+  - name: cogm-human-centered-interaction
+    command: /cogm-human-centered-interaction
+    path: methods/human-centered-interaction/SKILL.md
+    aliases: [人本设计, 人本交互, 可供性, 概念模型, 交互反馈, 用户理解]
+
+  - name: cogm-critical-thinking
+    command: /cogm-critical-thinking
+    path: methods/critical-thinking/SKILL.md
+    aliases: [批判性思维, 论证评估, 谬误识别, 证据检验, 前提检查, 结论强度]
+
+  - name: cogm-first-principles
+    command: /cogm-first-principles
+    path: methods/first-principles/SKILL.md
+    aliases: [第一性原理, 从零推导, 底层约束, 必要推导, 惯性假设, 物理约束]
+
+  - name: cogm-structured-problem-solving
+    command: /cogm-structured-problem-solving
+    path: methods/structured-problem-solving/SKILL.md
+    aliases: [结构化问题解决, 议题树, MECE, 假设驱动, so-what, 咨询式问题拆解, 麦肯锡思维]
+
+  - name: cogm-mental-models-toolbox
+    command: /cogm-mental-models-toolbox
+    path: methods/mental-models-toolbox/SKILL.md
+    aliases: [思维模型, 思维模型工具箱, 模型选择, 认知模型, thinking models, mental models]
+
+  - name: cogm-priority-triage
+    command: /cogm-priority-triage
+    path: methods/priority-triage/SKILL.md
+    aliases: [优先级取舍, 艾森豪威尔矩阵, 帕累托法则, 三七法则, 史特金定律, 不要做清单, 阻力最小路径]
+
+  - name: cogm-causal-failure-analysis
+    command: /cogm-causal-failure-analysis
+    path: methods/causal-failure-analysis/SKILL.md
+    aliases: [因果分析, 失败分析, 鱼骨图, 多米诺骨牌, 墨菲定律, 从结果反推原因, 反向思考]
+
+  - name: cogm-simplicity-filter
+    command: /cogm-simplicity-filter
+    path: methods/simplicity-filter/SKILL.md
+    aliases: [简化过滤, 奥卡姆剃刀, 史特金过滤, 黑天鹅边界, 系统2思维, 慢思考]
+
+  - name: cogm-decision-heuristics
+    command: /cogm-decision-heuristics
+    path: methods/decision-heuristics/SKILL.md
+    aliases: [决策启发式, 遗憾最小化, 鲍威尔法则, 黄金法则, 40/70法则, 贝叶斯更新, 系统2检查]
+
+  - name: cogm-operating-principles
+    command: /cogm-operating-principles
+    path: methods/operating-principles/SKILL.md
+    aliases: [原则化决策, 工作原则, 操作原则, 决策原则, 复盘原则, 达利欧原则]
+
+  - name: cogm-management-hygiene
+    command: /cogm-management-hygiene
+    path: methods/management-hygiene/SKILL.md
+    aliases: [管理卫生, 极简管理, 管理法则, 会议卫生, 授权边界, 管理噪音]
+
+  - name: cogm-tail-risk
+    command: /cogm-tail-risk
+    path: methods/tail-risk/SKILL.md
+    aliases: [尾部风险, 反脆弱, 黑天鹅, 吸收壁, 遍历性, 风险承担]
 
   - name: cogp-vignelli
     command: /cogp-vignelli

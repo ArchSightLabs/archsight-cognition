@@ -68,7 +68,7 @@ description: Daniel Kahneman 式判断偏差审查工具，用于系统1/系统2
 
 - 交给 `cogp-simon` 检查有限理性、搜索成本和满意解。
 - 交给 `cogp-bayes` 校准证据强度和替代解释。
-- 交给 `cogp-taleb` 检查尾部风险和不可恢复损失。
+- 交给 `cogm-tail-risk` 检查尾部风险和不可恢复损失。
 - 交给 `cogt-decide` 汇总推荐选择和反对条件。
 
 ## 护栏

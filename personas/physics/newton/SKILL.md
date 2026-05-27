@@ -40,6 +40,7 @@ description: 物理建模工具，用于力、约束、变量、平衡、惯性�
 
 - 交给 `cogp-einstein` 检查观察者和尺度变化。
 - 交给 `cogp-euclid` 形式化关键关系。
+- 交给 `cogm-first-principles` 拆掉惯性假设，回到底层约束和必要推导。
 - 交给 `cogt-decide` 汇总行动。
 
 ## 护栏

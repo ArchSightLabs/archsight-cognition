@@ -19,7 +19,7 @@ npx @archsight/cognition install codex
 这会创建或更新当前目录的 `AGENTS.md`，写入一个带 marker 的 ArchSight Cognition 指针区块。
 
 同时会把本包内容复制到当前项目的 `.archsight-cognition/`，让 Codex 指向稳定的本地目录，而不是临时 npm cache 路径。
-常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 也会注册到 `CODEX_HOME\skills`；未设置 `CODEX_HOME` 时使用 `~\.codex\skills`。
+常用 `cogt-*` / `cogp-*` / `cogm-*` / `cogv-*` / `cogd-*` 也会注册到 `CODEX_HOME\skills`；未设置 `CODEX_HOME` 时使用 `~\.codex\skills`。
 
 安装到全局 Codex 指令：
 
@@ -27,9 +27,9 @@ npx @archsight/cognition install codex
 npx @archsight/cognition install codex --global
 ```
 
-这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，把常用 `cogt-*` / `cogp-*` / `cogv-*` / `cogd-*` 注册到 Codex skills，并更新对应的全局 `AGENTS.md`。
+这会把内容复制到 `CODEX_HOME\archsight-cognition` 或 `~\.codex\archsight-cognition`，把常用 `cogt-*` / `cogp-*` / `cogm-*` / `cogv-*` / `cogd-*` 注册到 Codex skills，并更新对应的全局 `AGENTS.md`。
 
-如果要注册全部 persona、team、voice 和 debate：
+如果要注册全部 persona、method、team、voice 和 debate：
 
 ```powershell
 npx @archsight/cognition install codex --global --all --force
@@ -74,6 +74,7 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
+方法工具统一使用 `cogm-` 前缀，例如 `cogm-critical-thinking`、`cogm-structured-problem-solving`、`cogm-first-principles`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。
 
@@ -157,6 +158,8 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 | 产品、体验、视觉、交互评审 | `cogt-design` | `teams/design-review/SKILL.md` |
 | 产品战略、定位、最小验证 | `cogt-product` | `teams/product/SKILL.md` |
 | 技术领导、研发组织、交付反馈 | `cogt-lead` | `teams/lead/SKILL.md` |
+| 高输出技术管理、战略拐点 | `cogp-grove` | `personas/decision/grove/SKILL.md` |
+| 颠覆式创新、市场进入、JTBD | `cogp-christensen` | `personas/decision/christensen/SKILL.md` |
 | 教育、学习路径、亲子成长 | `cogt-learn` | `teams/learning-path/SKILL.md` |
 | 风格化口吻 | `cogv-kant` / `cogv-nietzsche` / `cogv-orwell` | `voices/philosophy/kant/SKILL.md` |
 | 中文风格化口吻 | `cogv-sushi` / `cogv-zhuangzi` / `cogv-qian-zhongshu` / `cogv-luxun` | `voices/literature/sushi/SKILL.md` |

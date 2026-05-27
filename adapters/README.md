@@ -13,7 +13,7 @@
 | Cursor | `cursor/README.md` | 用 `npx @archsight/cognition install cursor` 写入 `.cursor/rules/archsight-cognition.mdc` 指针并复制内容目录。 |
 | WorkBuddy | `workbuddy/README.md` | 用 `npx @archsight/cognition install workbuddy` 复制到 `~/.workbuddy/skills/<name>/SKILL.md`，让 WorkBuddy 按需加载。 |
 | Antigravity | `antigravity/README.md` | 推荐用 `npx @archsight/cognition install antigravity --global` 安装到 2.x 官方 plugin 目录；检测到 1.x legacy 目录时才额外写入 legacy skills。 |
-| Hermes | `hermes/README.md` | 作为系统侧 persona/team/voice/debate 工具库装配。 |
+| Hermes | `hermes/README.md` | 作为系统侧 persona/method/team/voice/debate 工具库装配。 |
 | OpenClaw | `openclaw/README.md` | 作为多 agent / 多频道跨学科评审面板。 |
 
 新增 host adapter 时，请说明三件事：

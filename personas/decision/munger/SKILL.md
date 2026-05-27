@@ -63,7 +63,7 @@ description: Charlie Munger 式多元模型决策工具，用于逆向思考、�
 
 ## 交接
 
-- 交给 `cogp-taleb` 检查尾部风险、杠杆和不可恢复损失。
+- 交给 `cogm-tail-risk` 检查尾部风险、杠杆和不可恢复损失。
 - 交给 `cogp-kahneman` 检查心理偏差和框架效应。
 - 交给 `cogp-drucker` 检查组织贡献、责任和反馈周期。
 - 交给 `cogt-decide` 汇总商业和投资决策。
