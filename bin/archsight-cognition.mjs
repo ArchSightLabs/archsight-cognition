@@ -40,6 +40,7 @@ const curatedSkills = [
   { name: "cogp-drucker", source: "personas/decision/drucker" },
   { name: "cogp-taleb", source: "personas/decision/taleb" },
   { name: "cogp-munger", source: "personas/decision/munger" },
+  { name: "cogp-naval", source: "personas/decision/naval" },
   { name: "cogp-popper", source: "personas/science/popper" },
   { name: "cogp-feynman", source: "personas/science/feynman" },
   { name: "cogp-piaget", source: "personas/education/piaget" },

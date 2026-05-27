@@ -201,6 +201,11 @@ skills:
     path: personas/decision/drucker/SKILL.md
     aliases: [德鲁克, Peter Drucker, 管理有效性, 责任边界, 组织贡献, 反馈周期]
 
+  - name: cogp-naval
+    command: /cogp-naval
+    path: personas/decision/naval/SKILL.md
+    aliases: [Naval, 纳瓦尔, 个人策略, 特定知识, 杠杆, 长期游戏, 独立产品]
+
   - name: cogp-popper
     command: /cogp-popper
     path: personas/science/popper/SKILL.md

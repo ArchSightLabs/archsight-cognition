@@ -235,6 +235,7 @@ personas/mathematics/godel/SKILL.md   # 形式系统边界和自指风险
 personas/physics/newton/SKILL.md      # 变量、约束和系统建模
 personas/decision/taleb/SKILL.md      # 尾部风险和反脆弱审查
 personas/decision/munger/SKILL.md     # 多元模型和激励结构审查
+personas/decision/naval/SKILL.md      # 特定知识、杠杆和个人策略审查
 ```
 
 在你的 agent host 中加载对应文件，并给出真实任务。

@@ -29,6 +29,9 @@
 | `cogp-popper` | `personas/science/popper/` | 可证伪性、严厉测试、反证条件、事后逃逸和科学边界 |
 | `cogp-norman` | `personas/art/norman/` | 概念模型、指示符、映射、反馈、约束和错误恢复 |
 | `cogp-rams` | `personas/art/rams/` | 有用性、诚实性、克制、可理解性、耐久性和少而精 |
+| `cogp-weber` | `personas/sociology/weber/` | 合法性、官僚制、权威类型、理性化、责任伦理和制度责任 |
+| `cogp-hanfeizi` | `personas/philosophy/hanfeizi/` | 法、术、势、名实、赏罚、规则漏洞、执行约束和反德性依赖 |
+| `cogp-naval` | `personas/decision/naval/` | 特定知识、长期游戏、责任承担、股权、代码/媒体杠杆和个人策略 |
 
 每个完成项必须包含：
 
@@ -77,8 +80,8 @@ references/research/
 
 优先级建议：
 
-1. `cogp-weber`、`cogp-hanfeizi`：组织、制度、合法性、规则漏洞和执行约束，是 `cogt-lead` 的下一层支撑。
-2. `cogp-naval`：个人策略、杠杆、特定知识和独立产品路径，可后置补入人生/创业策略层。
+1. `cogp-grove`、`cogp-christensen`：现代技术管理、战略转型、组织执行和创新者困境。
+2. `cogp-zhang-yiming`：现代互联网产品、组织算法、延迟满足和信息效率；需要更严格处理活人资料时效性。
 3. `cogt-product`、`cogt-lead`：后续可继续增加真实项目样例、反例库和 host 调用示例。
 
 ## 提交前检查
