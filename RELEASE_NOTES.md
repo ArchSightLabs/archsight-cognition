@@ -4,7 +4,13 @@
 
 发布日期：2026-05-27
 
-这是一次方法工具扩展版本，新增三个去人物中心化的 `cogm-*` 入口，用于商业判断、冲突协同和原则化效能。
+这是一次方法工具扩展和命名可理解性修正版，新增三个去人物中心化的 `cogm-*` 入口，用于商业判断、冲突协同和原则化效能，并让方法自动路由入口更直观。
+
+### 命名改进
+
+- 将方法自动路由入口命名为 `cogm-auto`。
+- 将目录 `methods/mental-models-toolbox/` 改为 `methods/auto/`。
+- `cogm-auto` 表示不知道该选哪个 `cogm-*` 方法时，先按任务自动路由到 1 到 3 个合适方法。
 
 ### 新增 method 工具
 
@@ -14,49 +20,26 @@
 
 ### 文档和适配
 
+- README、Hermes alias、demo 文档和 `cogt-think` 的方法工具说明统一改用 `cogm-auto`。
+- 保持 `cogp-*` 和 `cogv-*` 只作为具体 persona / voice 叶子工具，不新增 `auto` 或 `general` 入口。
 - `cogm-auto` 已补充新方法路由，能把商业逻辑、第三选择和原则化效能场景分流到对应工具。
 - README、Hermes alias、baseline 和 demo 文档已补充三个新入口。
 - 三个新方法都补齐 `references/sources.md`、`references/usage-notes.md` 和 `references/validation-cases.md`。
 
 ### 兼容性
 
-- 这是新增入口版本，不移除 v2.0.1 已有公开入口。
+- `cogm-mental-models-toolbox` 不再作为公开入口暴露，请改用 `cogm-auto`。
+- 安装器会把旧的 `cogm-mental-models-toolbox` 作为 legacy skill 删除，避免命令面板继续显示旧入口。
 - 相关书籍和作者只作为来源影响，不新增 `cogp-*` 或 `cogv-*` 人物/口吻入口。
 
 ### 验证
 
 - 已执行 `npm run validate:skills`。
+- 已执行 CLI list smoke test，确认精选 skills 中暴露 `cogm-auto`，不再暴露 `cogm-mental-models-toolbox`。
 - 已执行 CLI list smoke test，确认三个新 `cogm-*` 入口已暴露。
+- 已执行临时 `CODEX_HOME` 安装 smoke test，确认旧 skill 会被清理，新 `cogm-auto` 会被安装。
 - 已执行 `git diff --check`。
 - 已执行 `npm pack --dry-run --json`，确认三个新 method 目录和参考材料会进入 npm 包。
-
-## v2.0.1
-
-发布日期：2026-05-27
-
-这是一次命名可理解性修正版，重点是让 `methods/` 的自动路由入口更直观。
-
-### 命名改进
-
-- 将方法自动路由入口命名为 `cogm-auto`。
-- 将目录 `methods/mental-models-toolbox/` 改为 `methods/auto/`。
-- `cogm-auto` 表示不知道该选哪个 `cogm-*` 方法时，先按任务自动路由到 1 到 3 个合适方法。
-
-### 文档和适配
-
-- README、Hermes alias、demo 文档和 `cogt-think` 的方法工具说明统一改用 `cogm-auto`。
-- 保持 `cogp-*` 和 `cogv-*` 只作为具体 persona / voice 叶子工具，不新增 `auto` 或 `general` 入口。
-
-### 验证
-
-- 已执行 `npm run validate:skills`。
-- 已执行 CLI list smoke test，确认精选 skills 中暴露 `cogm-auto`，不再暴露 `cogm-mental-models-toolbox`。
-- 已执行临时 `CODEX_HOME` 安装 smoke test，确认旧 skill 会被清理，新 `cogm-auto` 会被安装。
-
-### 兼容性
-
-- `cogm-mental-models-toolbox` 不再作为公开入口暴露，请改用 `cogm-auto`。
-- 安装器会把旧的 `cogm-mental-models-toolbox` 作为 legacy skill 删除，避免命令面板继续显示旧入口。
 
 ## v2.0.0
 
