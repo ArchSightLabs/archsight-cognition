@@ -21,6 +21,14 @@
 | `cogp-simon` | `personas/decision/simon/` | 有限理性、满意解、搜索成本、注意力约束、组织程序和 AI 边界 |
 | `cogp-meadows` | `personas/systems/meadows/` | 库存/流量、反馈回路、延迟、杠杆点、系统目标和小实验 |
 | `cogp-turing` | `personas/computation/turing/` | 可计算性、可判定性、状态机、停机条件、人机分工和自动化边界 |
+| `cogp-taleb` | `personas/decision/taleb/` | 尾部风险、反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
+| `cogp-munger` | `personas/decision/munger/` | 多元模型、逆向思考、激励机制、能力圈和误判清单 |
+| `cogp-godel` | `personas/mathematics/godel/` | 形式系统边界、不完备性、自指、元层级和证明限制 |
+| `cogp-shannon` | `personas/information/shannon/` | 信号、噪声、编码、信道容量、冗余、压缩和沟通失真 |
+| `cogp-feynman` | `personas/science/feynman/` | 简单解释、反自欺、具体例子、量纲直觉和实验手感 |
+| `cogp-popper` | `personas/science/popper/` | 可证伪性、严厉测试、反证条件、事后逃逸和科学边界 |
+| `cogp-norman` | `personas/art/norman/` | 概念模型、指示符、映射、反馈、约束和错误恢复 |
+| `cogp-rams` | `personas/art/rams/` | 有用性、诚实性、克制、可理解性、耐久性和少而精 |
 
 每个完成项必须包含：
 
@@ -38,16 +46,8 @@ references/research/
 
 | 工具 | 路径 | 当前状态 |
 | --- | --- | --- |
-| `cogp-taleb` | `personas/decision/taleb/` | 已新增为尾部风险、反脆弱、凸性和吸收壁审查工具 |
-| `cogp-munger` | `personas/decision/munger/` | 已新增为多元模型、逆向思考、激励和能力圈审查工具 |
-| `cogp-godel` | `personas/mathematics/godel/` | 已新增为形式系统边界、自指、元层级和不完备性审查工具 |
-| `cogp-shannon` | `personas/information/shannon/` | 已补强信号、噪声、编码、冗余、压缩和沟通失真 |
-| `cogp-feynman` | `personas/science/feynman/` | 已补强简单解释、反自欺、具体例子、量纲直觉和实验手感 |
-| `cogp-popper` | `personas/science/popper/` | 已补强可证伪性、严厉测试、事后逃逸和科学边界 |
-| `cogp-norman` | `personas/art/norman/` | 已补强人本交互、概念模型、可供性、反馈和错误恢复 |
-| `cogp-rams` | `personas/art/rams/` | 已补强产品有用性、诚实性、克制、可理解性和耐久性 |
-| `cogt-product` | `teams/product/` | 已新增产品战略、定位、最小验证和取舍综合工具 |
-| `cogt-lead` | `teams/lead/` | 已新增技术领导、研发组织、交付反馈和责任边界综合工具 |
+| `cogt-product` | `teams/product/` | 已新增产品战略、定位、最小验证和取舍综合工具，并补充 team 组合依据与典型任务样例 |
+| `cogt-lead` | `teams/lead/` | 已新增技术领导、研发组织、交付反馈和责任边界综合工具，并补充 team 组合依据与典型任务样例 |
 
 这些工具已经能作为工作入口使用，但后续如果要追求与第一批相同的证据密度，应补齐六维研究目录。
 
@@ -77,10 +77,9 @@ references/research/
 
 优先级建议：
 
-1. `cogp-taleb`、`cogp-munger`、`cogp-godel`：已经新增且价值高，适合先补六维研究，形成第二批完整蒸馏样板。
-2. `cogp-shannon`、`cogp-feynman`、`cogp-popper`：科学与信息判断底座，适合补证据链和边界案例。
-3. `cogp-norman`、`cogp-rams`：设计和产品体验工具，适合补案例、反例和可视化评审标准。
-4. `cogt-product`、`cogt-lead`：不一定需要人物六维研究，但需要补 team 组合依据、默认成员和典型任务样例。
+1. `cogp-weber`、`cogp-hanfeizi`：组织、制度、合法性、规则漏洞和执行约束，是 `cogt-lead` 的下一层支撑。
+2. `cogp-naval`：个人策略、杠杆、特定知识和独立产品路径，可后置补入人生/创业策略层。
+3. `cogt-product`、`cogt-lead`：后续可继续增加真实项目样例、反例库和 host 调用示例。
 
 ## 提交前检查
 
