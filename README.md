@@ -147,14 +147,17 @@ archsight-cognition/
 │   └── science/
 ├── methods/
 │   ├── auto/
+│   ├── business-logic/
 │   ├── causal-failure-analysis/
 │   ├── critical-thinking/
 │   ├── decision-heuristics/
 │   ├── first-principles/
 │   ├── human-centered-interaction/
+│   ├── integrative-options/
 │   ├── management-hygiene/
 │   ├── operating-principles/
 │   ├── parallel-thinking/
+│   ├── principled-effectiveness/
 │   ├── priority-triage/
 │   ├── simplicity-filter/
 │   ├── structured-problem-solving/
@@ -281,6 +284,9 @@ methods/tail-risk/SKILL.md      # 尾部风险和反脆弱审查
 methods/human-centered-interaction/SKILL.md # 人本交互和错误恢复审查
 methods/operating-principles/SKILL.md # 原则化决策和复盘更新
 methods/management-hygiene/SKILL.md # 管理卫生、会议、授权和反馈检查
+methods/business-logic/SKILL.md # 商业底层逻辑、交易结构和关键变量
+methods/integrative-options/SKILL.md # 冲突协同、谈判分歧和第三选择
+methods/principled-effectiveness/SKILL.md # 原则化效能、角色目标和习惯系统
 personas/decision/munger/SKILL.md     # cogp-munger：多元模型和激励结构审查
 personas/decision/grove/SKILL.md      # cogp-grove：高输出技术管理和战略拐点审查
 personas/decision/christensen/SKILL.md # cogp-christensen：颠覆式创新和市场进入审查
@@ -461,6 +467,30 @@ archsight-cognition install all --force
 ```text
 /cogt-lead
 检查这个研发组织问题里的交付反馈、质量债、激励和管理杠杆：
+...
+```
+
+商业底层逻辑：
+
+```text
+/cogm-business-logic
+拆解这个合作方案的交易结构、利益关系、关键变量和最小验证：
+...
+```
+
+第三选择：
+
+```text
+/cogm-integrative-options
+两方方案都卡住了，帮我找一个不是简单妥协的第三选择：
+...
+```
+
+原则化效能：
+
+```text
+/cogm-principled-effectiveness
+我一直在救火，关键项目推进不动，帮我重整角色、优先级和习惯系统：
 ...
 ```
 

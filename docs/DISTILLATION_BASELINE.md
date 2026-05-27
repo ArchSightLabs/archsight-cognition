@@ -62,6 +62,9 @@ references/research/
 | `cogm-structured-problem-solving` | `methods/structured-problem-solving/` | 已新增问题定义、议题树、MECE、假设驱动、so-what 和工作计划工具 |
 | `cogm-operating-principles` | `methods/operating-principles/` | 已新增原则化决策、复盘更新、适用边界和例外条件工具 |
 | `cogm-management-hygiene` | `methods/management-hygiene/` | 已新增会议、授权、责任、目标、反馈和管理者噪音检查工具 |
+| `cogm-business-logic` | `methods/business-logic/` | 已新增商业底层逻辑、交易结构、利益关系、关键变量和假设验证工具 |
+| `cogm-integrative-options` | `methods/integrative-options/` | 已新增冲突、谈判、分歧和第三选择方法工具 |
+| `cogm-principled-effectiveness` | `methods/principled-effectiveness/` | 已新增原则化效能、角色目标、优先级、互信协作和持续更新工具 |
 | `cogm-tail-risk` | `methods/tail-risk/` | 已迁移为尾部风险方法工具，聚焦反脆弱、凸性、吸收壁、遍历性和风险承担不对称 |
 
 这些工具已经能作为工作入口使用。`cogm-*` 不默认补人物六维研究目录，而是使用方法参考三件套：`references/sources.md`、`references/usage-notes.md`、`references/validation-cases.md`。如果某个 method 来自复杂学派、专业领域或高风险实践，可以额外补充 `references/research/`。

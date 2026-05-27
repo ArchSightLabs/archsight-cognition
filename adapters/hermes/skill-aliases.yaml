@@ -311,6 +311,21 @@ skills:
     path: methods/management-hygiene/SKILL.md
     aliases: [管理卫生, 极简管理, 管理法则, 会议卫生, 授权边界, 管理噪音]
 
+  - name: cogm-business-logic
+    command: /cogm-business-logic
+    path: methods/business-logic/SKILL.md
+    aliases: [商业底层逻辑, 底层逻辑, 商业逻辑, 交易结构, 利益结构, 关键变量, 商业假设]
+
+  - name: cogm-integrative-options
+    command: /cogm-integrative-options
+    path: methods/integrative-options/SKILL.md
+    aliases: [第三选择, 整合式选项, 冲突协同, 谈判分歧, 创造性协同, 双赢方案]
+
+  - name: cogm-principled-effectiveness
+    command: /cogm-principled-effectiveness
+    path: methods/principled-effectiveness/SKILL.md
+    aliases: [高效能人士, 七个习惯, 原则化效能, 个人效能, 重要不紧急, 习惯系统]
+
   - name: cogm-tail-risk
     command: /cogm-tail-risk
     path: methods/tail-risk/SKILL.md

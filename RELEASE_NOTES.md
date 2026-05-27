@@ -1,5 +1,35 @@
 # ArchSight Cognition 发布说明
 
+## v2.1.0
+
+发布日期：2026-05-27
+
+这是一次方法工具扩展版本，新增三个去人物中心化的 `cogm-*` 入口，用于商业判断、冲突协同和原则化效能。
+
+### 新增 method 工具
+
+- `cogm-business-logic`：拆解交易结构、利益关系、关键变量、商业约束和可验证假设。
+- `cogm-integrative-options`：在冲突、谈判和分歧中创造第三选择，而不是简单妥协。
+- `cogm-principled-effectiveness`：把个人、团队和组织目标转成角色、优先级、协作和持续更新习惯。
+
+### 文档和适配
+
+- `cogm-auto` 已补充新方法路由，能把商业逻辑、第三选择和原则化效能场景分流到对应工具。
+- README、Hermes alias、baseline 和 demo 文档已补充三个新入口。
+- 三个新方法都补齐 `references/sources.md`、`references/usage-notes.md` 和 `references/validation-cases.md`。
+
+### 兼容性
+
+- 这是新增入口版本，不移除 v2.0.1 已有公开入口。
+- 相关书籍和作者只作为来源影响，不新增 `cogp-*` 或 `cogv-*` 人物/口吻入口。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 CLI list smoke test，确认三个新 `cogm-*` 入口已暴露。
+- 已执行 `git diff --check`。
+- 已执行 `npm pack --dry-run --json`，确认三个新 method 目录和参考材料会进入 npm 包。
+
 ## v2.0.1
 
 发布日期：2026-05-27

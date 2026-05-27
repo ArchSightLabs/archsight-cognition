@@ -43,6 +43,9 @@ description: 通用思考入口，用于问题尚未成型、不知道该用哪�
 - `cogm-priority-triage`：处理选择太多、任务太多和不要做清单。
 - `cogm-simplicity-filter`：处理问题太复杂、解释太多和噪音太大。
 - `cogm-decision-heuristics`：处理信息不足但必须行动的轻量决策。
+- `cogm-business-logic`：处理商业判断、交易结构和关键变量。
+- `cogm-integrative-options`：处理冲突、谈判和第三选择。
+- `cogm-principled-effectiveness`：处理个人效能、角色目标和习惯系统。
 
 ## 路由
 
