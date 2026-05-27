@@ -97,13 +97,13 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 生物/演化 | `personas/biology/` | 选择压力、适应、生态位、长期演化 |
 | 社会制度 | `personas/sociology/` | 合法性、权威、官僚制、制度责任 |
 | 系统 | `personas/systems/` | 反馈回路、延迟、库存流量、杠杆点 |
-| 数学 | `personas/mathematics/` | 定义、结构、证明、不确定性、模型 |
+| 数学 | `personas/mathematics/` | 定义、结构、证明、不确定性、形式系统边界、模型 |
 | 物理 | `personas/physics/` | 约束、变量、观察者、尺度、系统动态 |
 | 艺术/设计 | `personas/art/` | 构图、感知、色彩、版式、产品设计、视觉系统 |
-| 决策 | `personas/decision/` | 有限理性、判断偏差、管理有效性、责任和反馈 |
+| 决策 | `personas/decision/` | 有限理性、判断偏差、管理有效性、尾部风险、激励结构、责任和反馈 |
 | 教育 | `personas/education/` | 认知发展、最近发展区、学习支架、自主环境 |
 | 科学 | `personas/science/` | 可证伪性、实验直觉、反证、解释和自欺检查 |
-| 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理 |
+| 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理、产品战略、技术领导 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
@@ -150,6 +150,8 @@ archsight-cognition/
 │   ├── scientific-reasoning/
 │   ├── decision-council/
 │   ├── design-review/
+│   ├── product/
+│   ├── lead/
 │   └── learning-path/
 ├── voices/
 │   ├── philosophy/
@@ -225,9 +227,14 @@ teams/thinking-council/SKILL.md      # 不知道该从哪个视角切入
 teams/decision-council/SKILL.md      # 重要决策评审
 teams/writing-review/SKILL.md        # 写作、文案、叙事评审
 teams/design-review/SKILL.md         # 产品、体验、视觉评审
+teams/product/SKILL.md               # 产品战略、定位和最小验证
+teams/lead/SKILL.md                  # 技术领导、研发组织和交付反馈
 personas/philosophy/socrates/SKILL.md # 概念澄清
 personas/mathematics/bayes/SKILL.md   # 证据和不确定性判断
+personas/mathematics/godel/SKILL.md   # 形式系统边界和自指风险
 personas/physics/newton/SKILL.md      # 变量、约束和系统建模
+personas/decision/taleb/SKILL.md      # 尾部风险和反脆弱审查
+personas/decision/munger/SKILL.md     # 多元模型和激励结构审查
 ```
 
 在你的 agent host 中加载对应文件，并给出真实任务。
@@ -380,6 +387,10 @@ archsight-cognition install all --force
 新增 debate 时，从 `templates/debate-skill.md` 开始。
 
 新增或重构认知工具前，建议先阅读 [`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)，并通过 issue 说明失败模式、边界测试和验证逻辑。
+
+如果是延续当前“女娲式蒸馏 / 技能强化”批次，先对齐 [`docs/DISTILLATION_BASELINE.md`](./docs/DISTILLATION_BASELINE.md) 中的状态定义、六维研究结构和验收标准。
+
+如果新增工具来自人物或流派蒸馏，可以先做“调研前处理”：收集一手和高质量二手材料，用跨域复现、生成力和排他性筛选心智模型，再回到本项目模板重写为非角色扮演的认知工具。前处理只提供证据和候选模型，最终 `SKILL.md` 仍必须服从本项目治理边界。
 
 新增内容必须满足：
 

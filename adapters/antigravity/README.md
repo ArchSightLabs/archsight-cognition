@@ -98,9 +98,11 @@ npx @archsight/cognition install antigravity --force
 - 长期议题、立场压力测试和结构化分歧：`debates/README.md` 或 `debates/<topic>/SKILL.md`
 - 写作和表达评审：`teams/writing-review/SKILL.md`
 - 产品、体验、视觉和交互：`teams/design-review/SKILL.md`
+- 产品战略、定位和最小验证：`teams/product/SKILL.md`
+- 技术领导、研发组织和交付反馈：`teams/lead/SKILL.md`
 - 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
 
-综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
+综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
 结构化分歧和长期议题工具统一使用 `cogd-` 前缀，例如 `cogd-general`、`cogd-life`、`cogd-technology`。

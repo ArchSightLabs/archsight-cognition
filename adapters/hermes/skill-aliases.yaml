@@ -311,6 +311,16 @@ skills:
     path: teams/design-review/SKILL.md
     aliases: [产品设计, 体验评审, 交互评审, 视觉评审, 设计评审, UX]
 
+  - name: cogt-product
+    command: /cogt-product
+    path: teams/product/SKILL.md
+    aliases: [产品战略, 产品定位, MVP, 最小验证, 产品方向, 市场进入]
+
+  - name: cogt-lead
+    command: /cogt-lead
+    path: teams/lead/SKILL.md
+    aliases: [技术领导, 技术管理, 研发管理, 研发组织, 技术路线, 交付反馈]
+
   - name: cogt-learn
     command: /cogt-learn
     path: teams/learning-path/SKILL.md

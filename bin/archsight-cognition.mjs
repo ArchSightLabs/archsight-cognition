@@ -17,6 +17,8 @@ const curatedSkills = [
   { name: "cogt-history", source: "teams/history-strategy" },
   { name: "cogt-philosophy", source: "teams/philosophy-cavalry" },
   { name: "cogt-design", source: "teams/design-review" },
+  { name: "cogt-product", source: "teams/product" },
+  { name: "cogt-lead", source: "teams/lead" },
   { name: "cogt-learn", source: "teams/learning-path" },
   { name: "cogd-general", source: "debates/general" },
   { name: "cogd-life", source: "debates/life" },
@@ -31,10 +33,13 @@ const curatedSkills = [
   { name: "cogd-technology-humanities", source: "debates/technology-humanities" },
   { name: "cogp-socrates", source: "personas/philosophy/socrates" },
   { name: "cogp-bayes", source: "personas/mathematics/bayes" },
+  { name: "cogp-godel", source: "personas/mathematics/godel" },
   { name: "cogp-newton", source: "personas/physics/newton" },
   { name: "cogp-simon", source: "personas/decision/simon" },
   { name: "cogp-kahneman", source: "personas/decision/kahneman" },
   { name: "cogp-drucker", source: "personas/decision/drucker" },
+  { name: "cogp-taleb", source: "personas/decision/taleb" },
+  { name: "cogp-munger", source: "personas/decision/munger" },
   { name: "cogp-popper", source: "personas/science/popper" },
   { name: "cogp-feynman", source: "personas/science/feynman" },
   { name: "cogp-piaget", source: "personas/education/piaget" },
@@ -473,9 +478,11 @@ function buildCodexBlock(contentRoot) {
 - 长期议题、立场压力测试和结构化分歧：\`debates/README.md\` 或 \`debates/<topic>/SKILL.md\`
 - 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
 - 产品、体验、视觉和交互：\`teams/design-review/SKILL.md\`
+- 产品战略、定位和最小验证：\`teams/product/SKILL.md\`
+- 技术领导、研发组织和交付反馈：\`teams/lead/SKILL.md\`
 - 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
 
-综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-learn\`。
+综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
 结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。

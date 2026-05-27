@@ -10,7 +10,7 @@ OpenClaw 适合把 ArchSight Cognition 作为多 Agent / 多频道的跨学科�
 | --- | --- | --- |
 | Simple | 单个概念澄清 | 加载 `personas/philosophy/wittgenstein/SKILL.md` |
 | Default | 不知道该用哪个工具 | 加载 `teams/thinking-council/SKILL.md` |
-| Medium | 决策、文章、架构、设计、教育评审 | 加载 `teams/decision-council/SKILL.md` 或任务专用 team |
+| Medium | 决策、文章、架构、设计、产品、技术领导、教育评审 | 加载 `teams/decision-council/SKILL.md` 或任务专用 team |
 | Heavy | 多主题辩论或长期计划 | 加载 `cogd-*` debate skill 和选定 persona |
 
 ## 可直接粘贴的频道指令
