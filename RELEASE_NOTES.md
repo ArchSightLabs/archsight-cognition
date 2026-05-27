@@ -1,5 +1,20 @@
 # ArchSight Cognition 发布说明
 
+## 未发布
+
+### CLI 改进
+
+- 新增 `archsight-cognition install qoder`，支持项目级 `.qoder/skills/` 和用户级 `~/.qoder/skills/`；检测到 `~/.qoderwork/` 时兼容写入 QoderWork skills。
+- 新增 `archsight-cognition install trae`，支持项目级 `.agents/skills/`；`--global` 写入 `~/.trae/skills/`，检测到 `~/.trae-cn/` 时兼容写入 Trae CN skills。
+- 新增 `archsight-cognition install cline`，写入 `.clinerules/archsight-cognition.md` 指针和内容目录；`--global` 写入 Cline 用户级 Rules。
+- 新增 `archsight-cognition install cursor`，写入 `.cursor/rules/archsight-cognition.mdc` 指针和内容目录。
+- `install all` 会一并安装 Qoder、Trae、Cline 和 Cursor 项目级入口；`install all --global` 会安装 Qoder、Trae 和 Cline，Cursor 保持项目级安装。
+
+### 文档改进
+
+- 新增 `adapters/qoder/README.md`、`adapters/trae/README.md`、`adapters/cline/README.md` 和 `adapters/cursor/README.md`。
+- README 新增四个 host 的安装命令、写入位置和调用说明。
+
 ## v1.1.1
 
 发布日期：2026-05-26

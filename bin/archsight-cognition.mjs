@@ -38,6 +38,8 @@ const curatedSkills = [
   { name: "cogp-simon", source: "personas/decision/simon" },
   { name: "cogp-kahneman", source: "personas/decision/kahneman" },
   { name: "cogp-drucker", source: "personas/decision/drucker" },
+  { name: "cogp-grove", source: "personas/decision/grove" },
+  { name: "cogp-christensen", source: "personas/decision/christensen" },
   { name: "cogp-taleb", source: "personas/decision/taleb" },
   { name: "cogp-munger", source: "personas/decision/munger" },
   { name: "cogp-naval", source: "personas/decision/naval" },
@@ -162,6 +164,26 @@ function install(args) {
     return;
   }
 
+  if (target === "qoder") {
+    installQoderSkills(options, options.force);
+    return;
+  }
+
+  if (target === "trae") {
+    installTraeSkills(options, options.force);
+    return;
+  }
+
+  if (target === "cline") {
+    installCline(options, options.force);
+    return;
+  }
+
+  if (target === "cursor") {
+    installCursor(options, options.force);
+    return;
+  }
+
   if (target === "workbuddy") {
     installWorkBuddySkills(options, options.force);
     return;
@@ -200,6 +222,12 @@ function install(args) {
       force: options.force
     });
     installWorkBuddySkills(options, options.force);
+    installQoderSkills(options, options.force);
+    installCline(options, options.force);
+    installTraeSkills(options, options.force);
+    if (!options.global) {
+      installCursor(options, options.force);
+    }
     installAntigravitySkills(options, options.force);
     if (!options.global) {
       installAntigravityWorkflow(options.cwd, options.force);
@@ -302,9 +330,16 @@ function installCodex(options, force) {
 }
 
 function installCodexContent(root, force, globalInstall) {
-  const contentRoot = globalInstall
-    ? path.join(root, "archsight-cognition")
-    : path.join(root, ".archsight-cognition");
+  return installContentRoot({
+    host: "Codex",
+    root,
+    directoryName: globalInstall ? "archsight-cognition" : ".archsight-cognition",
+    force
+  });
+}
+
+function installContentRoot({ host, root, directoryName, force }) {
+  const contentRoot = path.join(root, directoryName);
   const entries = [
     "personas",
     "teams",
@@ -328,7 +363,7 @@ function installCodexContent(root, force, globalInstall) {
     fs.cpSync(source, target, { recursive: true });
   }
 
-  console.log(`Codex: 已安装内容到 ${contentRoot}`);
+  console.log(`${host}: 已安装内容到 ${contentRoot}`);
   return contentRoot;
 }
 
@@ -346,6 +381,102 @@ function installWorkBuddySkills(options, force) {
     host: "WorkBuddy",
     destination: path.join(os.homedir(), ".workbuddy", "skills"),
     skills: options.all ? allSkills : curatedSkills,
+    force
+  });
+}
+
+function installQoderSkills(options, force) {
+  installSkills({
+    host: "Qoder",
+    destination: options.global
+      ? path.join(os.homedir(), ".qoder", "skills")
+      : path.join(options.cwd, ".qoder", "skills"),
+    skills: options.all ? allSkills : curatedSkills,
+    force
+  });
+
+  const qoderWorkRoot = path.join(os.homedir(), ".qoderwork");
+  if (options.global && fs.existsSync(qoderWorkRoot)) {
+    installSkills({
+      host: "QoderWork",
+      destination: path.join(qoderWorkRoot, "skills"),
+      skills: options.all ? allSkills : curatedSkills,
+      force
+    });
+  }
+}
+
+function installTraeSkills(options, force) {
+  const skills = options.all ? allSkills : curatedSkills;
+
+  if (!options.global) {
+    installSkills({
+      host: "Trae",
+      destination: path.join(options.cwd, ".agents", "skills"),
+      skills,
+      force
+    });
+    return;
+  }
+
+  installSkills({
+    host: "Trae",
+    destination: path.join(os.homedir(), ".trae", "skills"),
+    skills,
+    force
+  });
+
+  const traeCnRoot = path.join(os.homedir(), ".trae-cn");
+  if (fs.existsSync(traeCnRoot)) {
+    installSkills({
+      host: "Trae CN",
+      destination: path.join(traeCnRoot, "skills"),
+      skills,
+      force
+    });
+  }
+}
+
+function installCline(options, force) {
+  const root = options.global
+    ? path.join(os.homedir(), "Documents", "Cline")
+    : options.cwd;
+  const contentRoot = installContentRoot({
+    host: "Cline",
+    root,
+    directoryName: options.global ? "ArchSight-Cognition" : ".archsight-cognition",
+    force
+  });
+  const rulePath = options.global
+    ? path.join(os.homedir(), "Documents", "Cline", "Rules", "archsight-cognition.md")
+    : path.join(options.cwd, ".clinerules", "archsight-cognition.md");
+  const contentLocation = options.global
+    ? contentRoot
+    : "项目根目录 `.archsight-cognition`";
+
+  writeTextFileOnce({
+    host: "Cline",
+    filePath: rulePath,
+    content: buildPlainRule(contentLocation),
+    force
+  });
+}
+
+function installCursor(options, force) {
+  if (options.global) {
+    fail("Cursor 全局规则需要在 Cursor 设置中维护；CLI 仅支持项目级 .cursor/rules 安装。");
+  }
+
+  installContentRoot({
+    host: "Cursor",
+    root: options.cwd,
+    directoryName: ".archsight-cognition",
+    force
+  });
+  writeTextFileOnce({
+    host: "Cursor",
+    filePath: path.join(options.cwd, ".cursor", "rules", "archsight-cognition.mdc"),
+    content: buildCursorRule("项目根目录 `.archsight-cognition`"),
     force
   });
 }
@@ -461,6 +592,57 @@ function installAntigravityWorkflow(cwd, force) {
     "utf8"
   );
   console.log(`Antigravity: 已安装 workflow ${workflowPath}`);
+}
+
+function writeTextFileOnce({ host, filePath, content, force }) {
+  if (fs.existsSync(filePath) && !force) {
+    console.log(`${host}: 跳过 ${filePath}，已存在，使用 --force 覆盖`);
+    return;
+  }
+
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, `${content.trimEnd()}\n`, "utf8");
+  console.log(`${host}: 已写入 ${filePath}`);
+}
+
+function buildCursorRule(contentLocation) {
+  return `---
+description: ArchSight Cognition 跨学科认知工具路由
+globs:
+alwaysApply: false
+---
+
+${buildRuleBody(contentLocation)}`;
+}
+
+function buildPlainRule(contentLocation) {
+  return buildRuleBody(contentLocation);
+}
+
+function buildRuleBody(contentLocation) {
+  return `# ArchSight Cognition
+
+当任务需要问题澄清、写作评审、研究设计、战略判断或跨学科决策复盘时，从 ${contentLocation} 加载最相关的认知工具。
+
+默认路由：
+- 需求和概念不清：\`personas/philosophy/socrates/SKILL.md\`
+- 不确定性和证据判断：\`personas/mathematics/bayes/SKILL.md\`
+- 变量、约束和系统建模：\`personas/physics/newton/SKILL.md\`
+- 不知道该用哪个工具：\`teams/thinking-council/SKILL.md\`
+- 高风险决策：\`teams/decision-council/SKILL.md\`
+- 长期议题、立场压力测试和结构化分歧：\`debates/README.md\` 或 \`debates/<topic>/SKILL.md\`
+- 文章、叙事和表达：\`teams/writing-review/SKILL.md\`
+- 产品、体验、视觉和交互：\`teams/design-review/SKILL.md\`
+- 产品战略、定位和最小验证：\`teams/product/SKILL.md\`
+- 技术领导、研发组织和交付反馈：\`teams/lead/SKILL.md\`
+- 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
+
+综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
+单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
+风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。
+结构化分歧和长期议题工具统一使用 \`cogd-\` 前缀，例如 \`cogd-general\`、\`cogd-life\`、\`cogd-technology\`。
+
+不要人格 cosplay。把 persona 当作学科思维工具，而不是历史人物模拟。`;
 }
 
 function buildCodexBlock(contentRoot) {
@@ -646,14 +828,22 @@ function printHelp() {
   codex          安装内容目录、注册 Codex skills，并写入项目或全局 AGENTS.md 指针
   claude-code    安装 skills 到 .claude/skills 或 ~/.claude/skills
   opencode       安装 skills 到 .opencode/skills 或 ~/.config/opencode/skills
+  qoder          安装 skills 到 .qoder/skills 或 ~/.qoder/skills
+  trae           安装 skills 到 .agents/skills，供 Trae 项目级 skills 使用
+  cline          安装 .clinerules 指针和内容目录；--global 写入 Documents/Cline/Rules
+  cursor         安装 .cursor/rules 指针和内容目录
   workbuddy      安装 skills 到 ~/.workbuddy/skills
   antigravity    安装 skills 到 .agents/skills 或 Antigravity 全局 skills 目录
-  all            安装 codex、claude-code、opencode、workbuddy 和 antigravity；--global 时安装到各自全局目录
+  all            安装所有支持的 host；--global 时跳过暂无稳定全局规则文件入口的 cursor
 
 常用示例:
   npx @archsight/cognition install codex
   npx @archsight/cognition install claude-code
   npx @archsight/cognition install opencode
+  npx @archsight/cognition install qoder
+  npx @archsight/cognition install trae
+  npx @archsight/cognition install cline
+  npx @archsight/cognition install cursor
   npx @archsight/cognition install workbuddy
   npx @archsight/cognition install antigravity --global
   npx @archsight/cognition install all --global
@@ -665,6 +855,10 @@ function printInstallHelp() {
   archsight-cognition install codex [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install claude-code [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install opencode [--cwd <path>] [--global] [--all] [--force]
+  archsight-cognition install qoder [--cwd <path>] [--global] [--all] [--force]
+  archsight-cognition install trae [--cwd <path>] [--global] [--all] [--force]
+  archsight-cognition install cline [--cwd <path>] [--global] [--force]
+  archsight-cognition install cursor [--cwd <path>] [--force]
   archsight-cognition install workbuddy [--all] [--force]
   archsight-cognition install antigravity [--cwd <path>] [--global] [--all] [--force]
   archsight-cognition install all [--cwd <path>] [--global] [--all] [--force]
@@ -674,6 +868,10 @@ function printInstallHelp() {
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
   opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.config/opencode/skills。
+  qoder 会把 skills 写入 .qoder/skills；--global 时写入 ~/.qoder/skills，并在发现 ~/.qoderwork 时兼容写入 ~/.qoderwork/skills。
+  trae 会把 skills 写入 .agents/skills；--global 时写入 ~/.trae/skills，并在发现 ~/.trae-cn 时兼容写入 ~/.trae-cn/skills。
+  cline 会写入 .clinerules/archsight-cognition.md 和 .archsight-cognition/；--global 时写入 ~/Documents/Cline/Rules。
+  cursor 会写入 .cursor/rules/archsight-cognition.mdc 和 .archsight-cognition/；Cursor 全局规则请在应用设置中维护。
   workbuddy 会把 skills 写入 ~/.workbuddy/skills。
   antigravity --global 会写入 2.x plugin 目录 ~/.gemini/config/plugins/archsight-cognition；仅当 ~/.gemini/antigravity 已存在时，额外写入 1.x legacy skills 目录。
   antigravity 非全局安装会同时写入 .agents/skills、.agents/plugins/archsight-cognition，并创建 .agents/workflows/decision-review.md。

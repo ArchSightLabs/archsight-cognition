@@ -52,6 +52,12 @@ ArchSight Cognition 的内容形态适合开源：它是可读、可复制、可
 
 - `adapters/codex/README.md`：用 `AGENTS.md` 指针加载具体工具。
 - `adapters/claude-code/README.md`：复制到 `.claude/skills/<name>/SKILL.md` 后用 `/name` 调用。
+- `adapters/opencode/README.md`：复制到 `.opencode/skills/<name>/SKILL.md` 后按需加载。
+- `adapters/qoder/README.md`：复制到 `.qoder/skills/<name>/SKILL.md` 或 `~/.qoder/skills/<name>/SKILL.md`。
+- `adapters/trae/README.md`：复制到 `.agents/skills/<name>/SKILL.md` 或 `~/.trae/skills/<name>/SKILL.md` 供 Trae skills 使用。
+- `adapters/cline/README.md`：写入 `.clinerules/archsight-cognition.md` 指针并复制内容目录。
+- `adapters/cursor/README.md`：写入 `.cursor/rules/archsight-cognition.mdc` 指针并复制内容目录。
+- `adapters/workbuddy/README.md`：复制到 `~/.workbuddy/skills/<name>/SKILL.md` 后按需加载。
 - `adapters/antigravity/README.md`：复制到 `.agents/skills/` 或 `~/.gemini/antigravity/skills/`，也可保存 workflow。
 - `adapters/hermes/README.md`：作为系统侧认知工具库接入。
 - `adapters/openclaw/README.md`：作为多 agent / 多频道评审面板接入。
