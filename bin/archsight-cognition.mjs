@@ -167,14 +167,7 @@ function install(args) {
   }
 
   if (target === "opencode") {
-    installSkills({
-      host: "OpenCode",
-      destination: options.global
-        ? path.join(os.homedir(), ".config", "opencode", "skills")
-        : path.join(options.cwd, ".opencode", "skills"),
-      skills: options.all ? allSkills : curatedSkills,
-      force: options.force
-    });
+    installOpenCodeSkills(options, options.force);
     return;
   }
 
@@ -227,14 +220,7 @@ function install(args) {
       skills: options.all ? allSkills : curatedSkills,
       force: options.force
     });
-    installSkills({
-      host: "OpenCode",
-      destination: options.global
-        ? path.join(os.homedir(), ".config", "opencode", "skills")
-        : path.join(options.cwd, ".opencode", "skills"),
-      skills: options.all ? allSkills : curatedSkills,
-      force: options.force
-    });
+    installOpenCodeSkills(options, options.force);
     installWorkBuddySkills(options, options.force);
     installQoderSkills(options, options.force);
     installCline(options, options.force);
@@ -348,6 +334,39 @@ function installCodexContent(root, force, globalInstall) {
     host: "Codex",
     root,
     directoryName: globalInstall ? "archsight-cognition" : ".archsight-cognition",
+    force
+  });
+}
+
+function installOpenCodeSkills(options, force) {
+  const skills = options.all ? allSkills : curatedSkills;
+
+  if (!options.global) {
+    installSkills({
+      host: "OpenCode",
+      destination: path.join(options.cwd, ".opencode", "skills"),
+      skills,
+      force
+    });
+    return;
+  }
+
+  installSkills({
+    host: "OpenCode",
+    destination: path.join(os.homedir(), ".opencode", "skills"),
+    skills,
+    force
+  });
+
+  const xdgOpenCodeRoot = path.join(os.homedir(), ".config", "opencode");
+  if (!fs.existsSync(xdgOpenCodeRoot)) {
+    return;
+  }
+
+  installSkills({
+    host: "OpenCode XDG compatibility",
+    destination: path.join(xdgOpenCodeRoot, "skills"),
+    skills,
     force
   });
 }
@@ -891,7 +910,7 @@ function printInstallHelp() {
   codex 会把 skills 注册到 CODEX_HOME/skills；未设置 CODEX_HOME 时使用 ~/.codex/skills。
   codex --global 会写入 CODEX_HOME/AGENTS.md；未设置 CODEX_HOME 时使用 ~/.codex/AGENTS.md。
   codex 非全局安装会写入目标项目 AGENTS.md，并把内容复制到 .archsight-cognition/。
-  opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.config/opencode/skills。
+  opencode 会把 skills 写入 .opencode/skills；--global 时写入 ~/.opencode/skills，并在发现 ~/.config/opencode 时兼容写入 ~/.config/opencode/skills。
   qoder 会把 skills 写入 .qoder/skills；--global 时写入 ~/.qoder/skills，并在发现 ~/.qoderwork 时兼容写入 ~/.qoderwork/skills。
   trae 会把 skills 写入 .agents/skills；--global 时写入 ~/.trae/skills，并在发现 ~/.trae-cn 时兼容写入 ~/.trae-cn/skills。
   cline 会写入 .clinerules/archsight-cognition.md 和 .archsight-cognition/；--global 时写入 ~/Documents/Cline/Rules。

@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Codex | `codex/README.md` | 用 `npx @archsight/cognition install codex` 安装 `.archsight-cognition/` 并写入 `AGENTS.md` 指针。 |
 | Claude Code | `claude-code/README.md` | 用 `npx @archsight/cognition install claude-code` 复制到 `.claude/skills/<name>/SKILL.md` 后用 `/name` 调用。 |
-| OpenCode | `opencode/README.md` | 用 `npx @archsight/cognition install opencode` 复制到 `.opencode/skills/<name>/SKILL.md`，让 OpenCode 按需加载。 |
+| OpenCode | `opencode/README.md` | 用 `npx @archsight/cognition install opencode` 复制到 `.opencode/skills/<name>/SKILL.md`；`--global` 写入 `~/.opencode/skills/` 并兼容已有 XDG 目录。 |
 | Qoder | `qoder/README.md` | 用 `npx @archsight/cognition install qoder` 复制到 `.qoder/skills/<name>/SKILL.md` 或 `~/.qoder/skills/<name>/SKILL.md`。 |
 | Trae | `trae/README.md` | 用 `npx @archsight/cognition install trae` 复制到 `.agents/skills/<name>/SKILL.md`；`--global` 写入 `~/.trae/skills/`。 |
 | Cline | `cline/README.md` | 用 `npx @archsight/cognition install cline` 写入 `.clinerules/archsight-cognition.md` 指针并复制内容目录。 |

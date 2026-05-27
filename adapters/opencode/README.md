@@ -1,8 +1,10 @@
 # OpenCode 适配说明
 
-OpenCode 支持从 `.opencode/skills/<name>/SKILL.md` 和 `~/.config/opencode/skills/<name>/SKILL.md` 发现 agent skills。ArchSight Cognition 可以直接安装到这两个位置，作为可按需加载的认知工具库。
+OpenCode 支持从 `.opencode/skills/<name>/SKILL.md` 发现 agent skills；官方文档也列出 `~/.config/opencode/skills/<name>/SKILL.md` 作为全局目录。ArchSight Cognition 默认安装到 `.opencode/skills/` 形态，作为可按需加载的认知工具库。
 
 OpenCode 也会兼容读取 `.claude/skills/` 和 `.agents/skills/`，但本仓库建议优先使用 `.opencode/skills/`，这样来源和职责更清楚。
+
+`--global` 会写入 `~/.opencode/skills/`。如果用户主目录下已经存在 `~/.config/opencode/`，安装器会额外同步到 `~/.config/opencode/skills/`，用于兼容仍按 XDG 配置目录发现 skills 的 OpenCode 版本或包装器。
 
 ## 安装
 
@@ -33,7 +35,8 @@ npx @archsight/cognition install opencode --all
 | 模式 | 位置 |
 | --- | --- |
 | 项目级 | `.opencode/skills/<skill-name>/SKILL.md` |
-| 全局 | `~/.config/opencode/skills/<skill-name>/SKILL.md` |
+| 全局 | `~/.opencode/skills/<skill-name>/SKILL.md` |
+| XDG 兼容 | 如果已存在 `~/.config/opencode/`，`--global` 会同时写入 `~/.config/opencode/skills/<skill-name>/SKILL.md` |
 
 ## 使用
 

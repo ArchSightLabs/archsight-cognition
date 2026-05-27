@@ -323,7 +323,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor 和 Antigravity 入口；WorkBuddy 作为例外固定安装到个人目录。 |
 | 全局 | `npx @archsight/cognition install codex --global` | `CODEX_HOME` 或 `~/.codex`，并注册 Codex skills。 |
 | 全局 | `npx @archsight/cognition install claude-code --global` | `~/.claude/skills/`。 |
-| 全局 | `npx @archsight/cognition install opencode --global` | `~/.config/opencode/skills/`。 |
+| 全局 | `npx @archsight/cognition install opencode --global` | `~/.opencode/skills/`；如果已存在 `~/.config/opencode/`，同时写入 `~/.config/opencode/skills/`。 |
 | 全局 | `npx @archsight/cognition install qoder --global` | `~/.qoder/skills/`；如果已存在 `~/.qoderwork/`，同时写入 `~/.qoderwork/skills/`。 |
 | 全局 | `npx @archsight/cognition install trae --global` | `~/.trae/skills/`；如果已存在 `~/.trae-cn/`，同时写入 `~/.trae-cn/skills/`。 |
 | 全局 | `npx @archsight/cognition install cline --global` | `~/Documents/Cline/ArchSight-Cognition/` 和 `~/Documents/Cline/Rules/archsight-cognition.md`。 |
