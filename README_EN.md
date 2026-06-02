@@ -2,7 +2,7 @@
 
 ArchSight Cognition is a portable cognitive skill pack for AI agents.
 
-It gives Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Antigravity, Hermes, OpenClaw, and other agent hosts reusable Markdown `SKILL.md` modules for architecture review, decision analysis, PRD writing, research synthesis, strategy review, critical thinking, writing review, design review, structured debate, and long-form reasoning.
+It gives Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Antigravity, Hermes, OpenClaw, and other agent hosts reusable Markdown `SKILL.md` modules for structured thinking, multi-perspective review, decision analysis, PRD writing, research synthesis, strategy review, critical thinking, writing review, design review, product strategy, engineering leadership, structured debate, Chinese thinking, and long-form reasoning.
 
 The default Chinese README is intentional. ArchSight Cognition has strong Chinese-language use cases, including Chinese writing review, Chinese intellectual traditions, product and organization judgment in Chinese contexts, and cross-disciplinary reasoning expressed in clear Chinese. This English README is the public discovery and onboarding layer for non-Chinese readers.
 
@@ -35,16 +35,24 @@ Add the Claude Code marketplace:
 
 ## Public Skills
 
-The `skills/` directory exposes task-oriented public entry points for GitHub-based skill indexers, `skills.sh`, Gemini CLI, and Claude Code marketplace discovery:
+The `skills/` directory exposes task-oriented public entry points for GitHub-based skill indexers, `skills.sh`, Gemini CLI, and Claude Code marketplace discovery. These entries are discovery and onboarding wrappers, not the full capability set:
 
 | Skill | Use Case |
 | --- | --- |
 | `architecture-review` | Software architecture review, technical design review, system boundaries, trade-offs, reliability, maintainability, technical debt, and long-term evolution. |
+| `structured-thinking` | Problem clarification, cognitive routing, concept boundaries, assumptions, constraints, and next-step judgment. |
+| `multi-perspective-review` | Cross-disciplinary review, team panels, multiple lenses, tension mapping, and synthesized recommendations. |
+| `structured-debate` | Structured disagreement, long-term issues, value conflicts, position pressure testing, and debate summaries. |
 | `decision-review` | Decision analysis, risk review, uncertainty, evidence strength, irreversible choices, decision memos, and next-step validation. |
+| `writing-review` | Writing review, argument structure, narrative quality, tone, clarity, and expression integrity. |
+| `design-review` | Product experience, visual hierarchy, UI/UX critique, interaction design, information architecture, and usability. |
+| `product-strategy` | Product positioning, user problems, differentiation, market entry, validation, and minimum viable action. |
+| `engineering-leadership` | Engineering leadership, technical direction, delivery feedback, quality debt, team incentives, and organizational review. |
 | `prd-writing` | Product requirements, user problems, scope, acceptance criteria, metrics, release risks, and implementation handoff. |
 | `research-synthesis` | Source-based research briefs, evidence quality, competing claims, uncertainty, and next research steps. |
 | `strategy-review` | Market entry, positioning, differentiation, resource allocation, competitive risk, strategic trade-offs, and minimum viable action. |
 | `critical-thinking` | Claims, assumptions, evidence, logical gaps, alternative explanations, conclusion strength, and red-team critique. |
+| `chinese-thinking` | Chinese intellectual traditions, Chinese writing context, Chinese organization context, tradition-modernity tensions, and bilingual reasoning. |
 
 These public entries are wrappers for discovery. The richer canonical tools live under `personas/`, `methods/`, `teams/`, `deliverables/`, `voices/`, and `debates/`.
 

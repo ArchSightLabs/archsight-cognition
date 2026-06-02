@@ -21,15 +21,17 @@ description: 调研综合 / Research synthesis。用于资料整理、来源质�
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Research question:
-Sources used:
-Key findings:
-Evidence strength:
-Disagreements:
-Uncertainties:
-Implications:
-Next research steps:
+研究问题:
+使用来源:
+关键发现:
+证据强度:
+分歧:
+不确定性:
+影响:
+下一步研究:
 ```
 
 ## Guardrails

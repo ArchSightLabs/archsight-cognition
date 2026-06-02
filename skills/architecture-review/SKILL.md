@@ -21,16 +21,18 @@ description: 架构评审 / Architecture review。用于技术方案审查、系
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Architecture goal:
-Key constraints:
-Boundary review:
-Trade-offs:
-Risks:
-Technical debt:
-Decision recommendation:
-Rejection conditions:
-Next validation:
+架构目标:
+关键约束:
+边界评审:
+取舍判断:
+主要风险:
+技术债:
+决策建议:
+反对条件:
+下一步验证:
 ```
 
 ## Guardrails

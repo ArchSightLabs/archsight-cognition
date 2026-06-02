@@ -2,7 +2,7 @@
   "name": "archsight-cognition",
   "displayName": "ArchSight Cognition",
   "version": "2.3.0",
-  "description": "面向 AI Agent 的可移植认知技能包 / portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
+  "description": "认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Gemini CLI",
   "author": {
     "name": "ArchSightLabs",
     "url": "https://github.com/ArchSightLabs"
@@ -16,9 +16,16 @@
     "codex",
     "gemini-cli",
     "architecture-review",
+    "structured-thinking",
+    "structured-debate",
     "decision-making",
     "critical-thinking",
     "product-management",
+    "product-strategy",
+    "design-review",
+    "writing-review",
+    "engineering-leadership",
+    "chinese-thinking",
     "research",
     "strategy"
   ],

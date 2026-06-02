@@ -20,16 +20,18 @@ description: 战略评审 / Strategy review。用于市场进入、定位、差�
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Strategic goal:
-Context:
-Assumptions:
-Differentiation:
-Risks:
-Trade-offs:
-Minimum viable action:
-Rejection conditions:
-Review cadence:
+战略目标:
+背景:
+假设:
+差异化:
+风险:
+取舍:
+最小可行动作:
+否决条件:
+复盘节奏:
 ```
 
 ## Guardrails

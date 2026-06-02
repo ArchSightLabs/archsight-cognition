@@ -166,11 +166,19 @@ archsight-cognition/
 │   └── plugin.json
 ├── skills/
 │   ├── architecture-review/
+│   ├── structured-thinking/
+│   ├── multi-perspective-review/
+│   ├── structured-debate/
 │   ├── decision-review/
+│   ├── writing-review/
+│   ├── design-review/
+│   ├── product-strategy/
+│   ├── engineering-leadership/
 │   ├── prd-writing/
 │   ├── research-synthesis/
 │   ├── strategy-review/
-│   └── critical-thinking/
+│   ├── critical-thinking/
+│   └── chinese-thinking/
 ├── personas/
 │   ├── README.md
 │   ├── philosophy/

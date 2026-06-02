@@ -20,15 +20,17 @@ description: 批判性思维 / Critical thinking。用于主张、前提、证�
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Claim:
-Assumptions:
-Evidence:
-Reasoning gaps:
-Alternative explanations:
-Conclusion strength:
-Fixes:
-Validation:
+主张:
+假设:
+证据:
+推理缺口:
+替代解释:
+结论强度:
+修正建议:
+验证方式:
 ```
 
 ## Guardrails

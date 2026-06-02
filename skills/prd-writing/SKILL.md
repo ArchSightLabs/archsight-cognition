@@ -20,17 +20,19 @@ description: PRD 写作 / PRD writing。用于产品需求、用户问题、范�
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Product problem:
-Target users:
-Scope:
-User flow:
-Requirements:
-Acceptance criteria:
-Metrics:
-Risks:
-Open questions:
-Implementation handoff:
+产品问题:
+目标用户:
+范围:
+用户流程:
+需求:
+验收标准:
+指标:
+风险:
+开放问题:
+研发交接:
 ```
 
 ## Guardrails

@@ -25,7 +25,7 @@
 Description：
 
 ```text
-面向 AI Agent 的可移植认知技能包 / portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.
+认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Gemini CLI
 ```
 
 Website：
@@ -39,21 +39,24 @@ Topics：
 ```text
 agent-skills
 ai-agent
+ai-skills
 claude-code
 codex
 gemini-cli
 gemini-cli-extension
-cursor
-cline
 prompt-engineering
 critical-thinking
 decision-making
+structured-thinking
+structured-debate
+multi-perspective-review
 software-architecture
 product-management
-prd
-research
-markdown
-npx
+product-strategy
+design-review
+writing-review
+engineering-leadership
+chinese-thinking
 ```
 
 `gemini-cli-extension` 应在根目录已有 `gemini-extension.json` 后再添加。
@@ -104,6 +107,9 @@ Codex skills
 Gemini CLI extension
 architecture review
 technical design review
+structured thinking
+multi-perspective review
+structured debate
 decision analysis
 decision memo
 PRD writing
@@ -111,6 +117,11 @@ research synthesis
 strategy review
 critical thinking
 red team review
+writing review
+design review
+product strategy
+engineering leadership
+Chinese thinking
 software architecture
 product management
 ```
@@ -127,8 +138,8 @@ Supported agents: Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenCode, Qoder
 Canonical skill path: skills/
 Install command: npx skills add ArchSightLabs/archsight-cognition --list
 NPM install command: npx @archsight/cognition install all --global
-Representative skills: architecture-review, decision-review, prd-writing, research-synthesis, strategy-review, critical-thinking
-Keywords: agent skills, architecture review, decision analysis, PRD writing, research synthesis, strategy review, critical thinking
+Representative skills: architecture-review, structured-thinking, multi-perspective-review, structured-debate, decision-review, writing-review, design-review, product-strategy, engineering-leadership, prd-writing, research-synthesis, strategy-review, critical-thinking, chinese-thinking
+Keywords: agent skills, cognitive skills, structured thinking, multi-perspective review, structured debate, decision analysis, PRD writing, research synthesis, strategy review, critical thinking, writing review, design review, product strategy, engineering leadership, Chinese thinking
 ```
 
 ## 发布前检查

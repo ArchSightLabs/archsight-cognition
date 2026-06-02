@@ -21,16 +21,18 @@ description: 决策评审 / Decision review。用于重要选择、取舍分析�
 
 ## Output
 
+默认使用用户的主要语言输出；中文请求使用下面的中文标题，英文请求可自然翻译为英文标题。
+
 ```text
-Decision:
-Options:
-Irreversibility:
-Evidence:
-Risks:
-Bias checks:
-Recommendation:
-Rejection conditions:
-Next validation:
+决策事项:
+可选方案:
+不可逆性:
+证据:
+风险:
+偏差检查:
+建议:
+反对条件:
+下一步验证:
 ```
 
 ## Guardrails
