@@ -1,6 +1,6 @@
 ---
 name: cogt-decide
-description: 跨学科决策委员会，用于价值、结构、不确定性、约束、历史和执行。
+description: 决策委员会 / Decision council。用于重要选择、价值、结构、不确定性、约束、历史、执行风险和下一步验证。
 ---
 
 # Decision Council

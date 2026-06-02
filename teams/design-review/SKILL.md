@@ -1,6 +1,6 @@
 ---
 name: cogt-design
-description: 产品、体验、视觉和交互评审工具，用于发现用户目标、信息架构、界面层级、交互风险和可执行改进。
+description: 设计评审 / Design review。用于产品体验、视觉、交互、用户目标、信息架构、界面层级、交互风险和可执行改进。
 ---
 
 # Design Review

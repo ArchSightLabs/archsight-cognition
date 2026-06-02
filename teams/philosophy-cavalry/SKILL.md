@@ -1,6 +1,6 @@
 ---
 name: cogt-philosophy
-description: 哲学思维面板，用于概念、价值、原则、意义、矛盾和自我复盘。
+description: 哲学思维面板 / Philosophy thinking panel。用于概念、价值、原则、意义、矛盾、自我复盘和问题澄清。
 ---
 
 # Philosophy Cavalry

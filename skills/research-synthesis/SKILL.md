@@ -1,6 +1,6 @@
 ---
 name: research-synthesis
-description: Use this skill for research synthesis, source-based briefs, literature review, market research, evidence quality, competing claims, citation planning, uncertainty, and next research steps.
+description: 调研综合 / Research synthesis。用于资料整理、来源质量、证据强度、分歧观点、不确定性和下一步研究计划。
 ---
 
 # Research Synthesis

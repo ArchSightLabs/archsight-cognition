@@ -1,6 +1,6 @@
 ---
 name: cogt-lead
-description: 技术领导和现代技术管理评审团队，用于研发组织、技术路线、执行节奏、质量债、激励和交付反馈。
+description: 技术领导评审 / Engineering leadership review。用于研发组织、技术路线、执行节奏、质量债、激励、交付反馈和管理杠杆。
 ---
 
 # Tech Lead

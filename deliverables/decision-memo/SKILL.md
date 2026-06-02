@@ -1,6 +1,6 @@
 ---
 name: cogx-decision-memo
-description: 生成决策备忘录，用于把复杂选择转成背景、选项、证据、风险、推荐选择、反对条件和下一步验证。
+description: 决策备忘录 / Decision memo。用于把复杂选择转成背景、选项、证据、风险、推荐选择、反对条件和下一步验证。
 ---
 
 # Decision Memo Deliverable

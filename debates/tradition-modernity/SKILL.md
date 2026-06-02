@@ -1,6 +1,6 @@
 ---
 name: cogd-tradition-modernity
-description: 传统与现代之间的结构化分歧入口，用于审查继承、创新、制度迁移、身份认同和现实适配。
+description: 传统与现代分歧 / Tradition and modernity debate。用于继承、创新、制度迁移、身份认同和现实适配。
 ---
 
 # Debate: 传统与现代
@@ -56,4 +56,3 @@ description: 传统与现代之间的结构化分歧入口，用于审查继承�
 - 不要把现代当作天然进步。
 - 不要用文化符号替代现实功能验证。
 - 涉及史实和政策时要求来源核验。
-

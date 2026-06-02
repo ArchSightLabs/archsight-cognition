@@ -25,7 +25,7 @@
 Description：
 
 ```text
-Portable cognitive skills for AI agents: architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking for Claude Code, Codex, Gemini CLI, Cursor, Cline, and more.
+面向 AI Agent 的可移植认知技能包 / portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.
 ```
 
 Website：

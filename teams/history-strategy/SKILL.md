@@ -1,6 +1,6 @@
 ---
 name: cogt-history
-description: 历史战略评审工具，用于周期、权力、制度和路径依赖。
+description: 历史战略评审 / Historical strategy review。用于周期、权力、制度、路径依赖、长期结构和战略判断。
 ---
 
 # History Strategy

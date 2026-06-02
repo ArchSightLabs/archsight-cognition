@@ -1,6 +1,6 @@
 ---
 name: cogx-research-brief
-description: 生成带来源的调研简报，用于在宿主支持检索时把研究问题转成已检索来源、关键发现、证据强度、分歧和下一步验证。
+description: 调研简报 / Research brief。生成带来源的研究综合，用于来源、关键发现、证据强度、分歧、不确定性和下一步验证。
 ---
 
 # Research Brief Deliverable

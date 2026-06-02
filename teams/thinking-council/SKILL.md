@@ -1,6 +1,6 @@
 ---
 name: cogt-think
-description: 通用思考入口，用于问题尚未成型、不知道该用哪个认知工具、或需要先澄清再判断的场景。
+description: 通用思考入口 / Thinking council。用于问题尚未成型、不知道该用哪个认知工具、需求澄清、问题框定和先判断再行动。
 ---
 
 # Thinking Council

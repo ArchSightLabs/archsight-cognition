@@ -1,6 +1,6 @@
 ---
 name: critical-thinking
-description: Use this skill for critical thinking, argument review, claims, assumptions, evidence, logical fallacies, alternative explanations, conclusion strength, and red-team critique.
+description: 批判性思维 / Critical thinking。用于主张、前提、证据、逻辑漏洞、替代解释、结论强度和红队质询。
 ---
 
 # Critical Thinking

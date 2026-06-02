@@ -4,12 +4,12 @@
     "name": "ArchSightLabs"
   },
   "metadata": {
-    "description": "Public marketplace for ArchSight Cognition agent skills."
+    "description": "ArchSight Cognition 公共 skill marketplace / public marketplace for portable cognitive agent skills."
   },
   "plugins": [
     {
       "name": "archsight-cognition",
-      "description": "Portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
+      "description": "面向 AI Agent 的可移植认知技能包 / portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
       "source": "./",
       "category": "AI & Agent Building",
       "tags": [

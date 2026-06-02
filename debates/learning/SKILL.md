@@ -1,6 +1,6 @@
 ---
 name: cogd-learning
-description: 教育、学习、自主、塑造、保护、训练和筛选之间的结构化分歧入口。
+description: 学习分歧 / Learning debate。用于教育、学习、自主、塑造、保护、训练和筛选之间的结构化分歧。
 ---
 
 # Debate: 教育与学习

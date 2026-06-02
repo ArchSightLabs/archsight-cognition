@@ -1,6 +1,6 @@
 ---
 name: strategy-review
-description: Use this skill for strategy review, market entry, positioning, differentiation, resource allocation, competitive risk, strategic trade-offs, operating constraints, and minimum viable action.
+description: 战略评审 / Strategy review。用于市场进入、定位、差异化、资源配置、竞争风险、战略取舍和最小行动。
 ---
 
 # Strategy Review

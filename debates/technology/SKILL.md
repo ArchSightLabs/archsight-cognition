@@ -1,6 +1,6 @@
 ---
 name: cogd-technology
-description: 技术、自动化、AI、工具、进步和人的能力之间的结构化分歧入口。
+description: 技术分歧 / Technology debate。用于技术、自动化、AI、工具、进步和人的能力之间的结构化分歧。
 ---
 
 # Debate: 技术与人

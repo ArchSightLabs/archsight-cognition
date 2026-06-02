@@ -1,6 +1,6 @@
 ---
 name: architecture-review
-description: Use this skill for software architecture review, technical design review, system boundaries, trade-offs, scalability, reliability, maintainability, security risks, integration complexity, technical debt, and long-term evolution.
+description: 架构评审 / Architecture review。用于技术方案审查、系统边界、取舍、可扩展性、可靠性、可维护性、技术债和长期演化判断。
 ---
 
 # Architecture Review

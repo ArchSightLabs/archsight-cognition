@@ -1,6 +1,6 @@
 ---
 name: cogt-product
-description: 产品战略评审团队，用于用户问题、市场进入、产品定位、差异化、增长假设和最小验证。
+description: 产品战略评审 / Product strategy review。用于用户问题、市场进入、产品定位、差异化、增长假设和最小验证。
 ---
 
 # Product Strategy

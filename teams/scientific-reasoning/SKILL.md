@@ -1,6 +1,6 @@
 ---
 name: cogt-science
-description: 科学推理工具，用于假设、变量、证据、不确定性、约束和实验设计。
+description: 科学推理 / Scientific reasoning。用于假设、变量、证据、不确定性、约束、实验设计和验证路径。
 ---
 
 # Scientific Reasoning

@@ -1,6 +1,6 @@
 ---
 name: cogd-general
-description: 通用结构化分歧入口，用于把任意长期议题或价值冲突转成对立立场、分歧地图和行动分叉。
+description: 通用结构化分歧 / General debate。用于把长期议题或价值冲突转成对立立场、分歧地图和行动分叉。
 ---
 
 # Debate: 通用结构化分歧

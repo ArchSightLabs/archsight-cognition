@@ -1,6 +1,6 @@
 ---
 name: cogx-research-plan
-description: 生成调研计划，用于把研究问题转成假设、信息源、访谈问题、验证路径、时间安排和交付物。
+description: 调研计划 / Research plan。用于把研究问题转成假设、信息源、访谈问题、验证路径、时间安排和交付物。
 ---
 
 # Research Plan Deliverable

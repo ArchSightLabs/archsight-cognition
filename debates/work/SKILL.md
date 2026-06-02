@@ -1,6 +1,6 @@
 ---
 name: cogd-work
-description: 工作、职业、财富、能力、安全感、自由和组织责任之间的结构化分歧入口。
+description: 工作分歧 / Work debate。用于工作、职业、财富、能力、安全感、自由和组织责任之间的结构化分歧。
 ---
 
 # Debate: 工作与职业

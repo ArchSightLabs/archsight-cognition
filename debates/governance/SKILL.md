@@ -1,6 +1,6 @@
 ---
 name: cogd-governance
-description: 专业、民主、权力、责任、组织治理和合法性之间的结构化分歧入口。
+description: 治理分歧 / Governance debate。用于专业、民主、权力、责任、组织治理和合法性之间的结构化分歧。
 ---
 
 # Debate: 治理与权力

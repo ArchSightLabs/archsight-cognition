@@ -1,6 +1,6 @@
 ---
 name: cogx-draft
-description: 生成文章或长文草稿，用于把观点、素材和表达目标转成结构清楚、有反对意见、有叙事力度的初稿。
+description: 文章草稿 / Draft writing。生成文章或长文草稿，用于把观点、素材和表达目标转成结构清楚、有反对意见、有叙事力度的初稿。
 ---
 
 # Writing Draft Deliverable

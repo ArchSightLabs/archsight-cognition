@@ -1,6 +1,6 @@
 ---
 name: decision-review
-description: Use this skill for decision review, decision analysis, trade-off analysis, risk review, uncertainty, evidence strength, irreversible choices, decision memo preparation, and next-step validation.
+description: 决策评审 / Decision review。用于重要选择、取舍分析、风险审查、不确定性、证据强度、反对条件和下一步验证。
 ---
 
 # Decision Review

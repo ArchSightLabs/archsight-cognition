@@ -1,6 +1,6 @@
 ---
 name: cogd-technology-humanities
-description: 技术与人文之间的结构化分歧入口，用于审查效率、意义、判断力、文化表达和人的不可替代任务。
+description: 技术与人文分歧 / Technology and humanities debate。用于效率、意义、判断力、文化表达和人的不可替代任务。
 ---
 
 # Debate: 技术与人文

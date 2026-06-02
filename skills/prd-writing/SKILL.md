@@ -1,6 +1,6 @@
 ---
 name: prd-writing
-description: Use this skill to write or review PRDs, product requirements, user problems, jobs-to-be-done, scope, acceptance criteria, metrics, release risks, and implementation handoff.
+description: PRD 写作 / PRD writing。用于产品需求、用户问题、范围、验收标准、指标、发布风险和研发交接。
 ---
 
 # PRD Writing

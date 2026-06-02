@@ -1,6 +1,6 @@
 ---
 name: cogd-knowledge
-description: 真实、证据、叙事、有效性、模型和自欺之间的结构化分歧入口。
+description: 知识分歧 / Knowledge debate。用于真实、证据、叙事、有效性、模型和自欺之间的结构化分歧。
 ---
 
 # Debate: 知识与真实

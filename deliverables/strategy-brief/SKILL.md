@@ -1,6 +1,6 @@
 ---
 name: cogx-strategy-brief
-description: 生成战略简报，用于把方向判断转成目标、态势、选项、关键取舍、最小行动和验证标准。
+description: 战略简报 / Strategy brief。用于把方向判断转成目标、态势、选项、关键取舍、最小行动和验证标准。
 ---
 
 # Strategy Brief Deliverable

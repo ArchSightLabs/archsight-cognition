@@ -1,6 +1,6 @@
 ---
 name: cogx-prd
-description: 生成最小产品 PRD，用于把模糊产品想法转成目标用户、核心假设、MVP 范围、验证实验和停止条件。
+description: PRD 生成 / PRD writing。生成最小产品需求文档，用于目标用户、核心假设、MVP 范围、验证实验和停止条件。
 ---
 
 # Product PRD Deliverable

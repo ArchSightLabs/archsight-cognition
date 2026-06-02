@@ -1,6 +1,6 @@
 ---
 name: cogt-learn
-description: 教育、学习路径和亲子成长分析工具，用于判断学习动机、阶段、路径、反馈和引导方式。
+description: 学习路径评审 / Learning path review。用于教育、学习路径、亲子成长、学习动机、阶段、反馈和引导方式。
 ---
 
 # Learning Path

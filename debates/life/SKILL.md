@@ -1,6 +1,6 @@
 ---
 name: cogd-life
-description: 人生、意义、自由、关系、死亡、欲望、自我叙事和承诺之间的结构化分歧入口。
+description: 人生分歧 / Life debate。用于人生、意义、自由、关系、死亡、欲望、自我叙事和承诺之间的结构化分歧。
 ---
 
 # Debate: 人生与意义
