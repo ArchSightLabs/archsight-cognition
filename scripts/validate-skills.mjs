@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// codeql[js/path-injection]
 const root = fs.realpathSync(process.cwd());
 const errors = [];
 
@@ -17,23 +18,44 @@ function assertInsideRoot(targetPath) {
   }
 }
 
-function resolveCandidatePath(targetPath) {
-  const resolved = path.resolve(targetPath);
-  assertInsideRoot(resolved);
-  return resolved;
+function assertSafeRepoPath(repoPath) {
+  if (typeof repoPath !== "string" || repoPath.length === 0) {
+    throw new Error("Repository path must be a non-empty string");
+  }
+  if (path.isAbsolute(repoPath)) {
+    throw new Error(`Absolute path is not allowed: ${repoPath}`);
+  }
+
+  const normalized = path.normalize(repoPath);
+  const parts = normalized.split(/[\\/]+/);
+  if (parts.some((part) => part === "..")) {
+    throw new Error(`Path traversal detected: ${repoPath}`);
+  }
+  return normalized;
 }
 
-function resolveExistingPath(targetPath) {
-  const resolved = resolveCandidatePath(targetPath);
-  const realPath = fs.realpathSync(resolved);
+function resolveRepoPath(repoPath) {
+  const normalized = assertSafeRepoPath(repoPath);
+  const absolutePath = path.join(root, normalized);
+  assertInsideRoot(absolutePath);
+  return absolutePath;
+}
+
+function resolveExistingRepoPath(repoPath) {
+  const absolutePath = resolveRepoPath(repoPath);
+
+  // codeql[js/path-injection]
+  const realPath = fs.realpathSync(absolutePath);
   assertInsideRoot(realPath);
   return realPath;
 }
 
-function safeExistsSync(targetPath) {
-  const resolved = resolveCandidatePath(targetPath);
+function safeExistsRepoPath(repoPath) {
+  const absolutePath = resolveRepoPath(repoPath);
   try {
-    const realPath = fs.realpathSync(resolved);
+
+    // codeql[js/path-injection]
+    const realPath = fs.realpathSync(absolutePath);
     assertInsideRoot(realPath);
     return true;
   } catch (error) {
@@ -44,13 +66,17 @@ function safeExistsSync(targetPath) {
   }
 }
 
-function safeReadFileSync(targetPath, encoding) {
-  const filePath = resolveExistingPath(targetPath);
+function safeReadRepoFile(repoPath, encoding) {
+  const filePath = resolveExistingRepoPath(repoPath);
+
+  // codeql[js/path-injection]
   return fs.readFileSync(filePath, encoding);
 }
 
-function safeReaddirSync(targetPath, options) {
-  const dirPath = resolveExistingPath(targetPath);
+function safeReadRepoDir(repoPath, options) {
+  const dirPath = resolveExistingRepoPath(repoPath);
+
+  // codeql[js/path-injection]
   return fs.readdirSync(dirPath, options);
 }
 
@@ -128,8 +154,8 @@ const methodReferenceFiles = [
 const ignoredDirs = new Set([".git", ".omx", "node_modules"]);
 
 function walk(dir, predicate, files = []) {
-  if (!safeExistsSync(dir)) return files;
-  for (const entry of safeReaddirSync(dir, { withFileTypes: true })) {
+  if (!safeExistsRepoPath(dir)) return files;
+  for (const entry of safeReadRepoDir(dir, { withFileTypes: true })) {
     if (ignoredDirs.has(entry.name)) continue;
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
@@ -142,7 +168,7 @@ function walk(dir, predicate, files = []) {
 }
 
 function rel(file) {
-  return path.relative(root, file).replaceAll(path.sep, "/");
+  return assertSafeRepoPath(file).replaceAll(path.sep, "/");
 }
 
 function parseFrontmatter(raw, file) {
@@ -196,7 +222,7 @@ function assertNoCosplay(raw, file) {
 
 function validateSkill(filePath, rule) {
   const file = rel(filePath);
-  const raw = safeReadFileSync(filePath, "utf8");
+  const raw = safeReadRepoFile(filePath, "utf8");
   const frontmatter = parseFrontmatter(raw, file);
   if (frontmatter) {
     if (!frontmatter.name) errors.push(`${file}: missing name`);
@@ -222,7 +248,7 @@ function validatePublicSkillName(file, skillName) {
 function validateMethodReferences(skillDir, file) {
   for (const reference of methodReferenceFiles) {
     const fullPath = path.join(skillDir, reference);
-    if (!safeExistsSync(fullPath)) {
+    if (!safeExistsRepoPath(fullPath)) {
       errors.push(`${file}: missing method reference ${reference.replaceAll(path.sep, "/")}`);
     }
   }
@@ -230,11 +256,11 @@ function validateMethodReferences(skillDir, file) {
 
 function validateOptionalEvals(skillDir, file, skillName) {
   const evalsPath = path.join(skillDir, "evals", "evals.json");
-  if (!safeExistsSync(evalsPath)) return;
+  if (!safeExistsRepoPath(evalsPath)) return;
 
   let evals;
   try {
-    evals = JSON.parse(safeReadFileSync(evalsPath, "utf8"));
+    evals = JSON.parse(safeReadRepoFile(evalsPath, "utf8"));
   } catch (error) {
     errors.push(`${rel(evalsPath)}: invalid JSON (${error.message})`);
     return;
@@ -258,20 +284,18 @@ function validateOptionalEvals(skillDir, file, skillName) {
 }
 
 function validateTemplate(template) {
-  const fullPath = path.join(root, template.file);
-  const file = rel(fullPath);
-  if (!safeExistsSync(fullPath)) {
+  const file = rel(template.file);
+  if (!safeExistsRepoPath(template.file)) {
     errors.push(`${file}: missing template`);
     return;
   }
-  const raw = safeReadFileSync(fullPath, "utf8");
+  const raw = safeReadRepoFile(template.file, "utf8");
   assertSections(raw, file, template.sections);
   assertNoCosplay(raw, file);
 }
 
 for (const rule of skillRules) {
-  const base = path.join(root, rule.dir);
-  const files = walk(base, (file) => path.basename(file) === "SKILL.md");
+  const files = walk(rule.dir, (file) => path.basename(file) === "SKILL.md");
   files.forEach((file) => validateSkill(file, rule));
 }
 
