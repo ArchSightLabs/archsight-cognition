@@ -8,7 +8,7 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 
 维护者强审以下内容：
 
-- 命名体系：`cogp-*`、`cogm-*`、`cogt-*`、`cogv-*`、`cogd-*` 的含义和边界。
+- 命名体系：`cogp-*`、`cogm-*`、`cogt-*`、`cogx-*`、`cogv-*`、`cogd-*` 的含义和边界。
 - 模板结构：frontmatter、角色、适用场景、方法、输出契约、交接、护栏、失败模式和验证逻辑。
 - 安全边界：不人格 cosplay，不伪造事实，不把隐喻、修辞或学科视角当作事实证明。
 - 默认安装集合：各 host 默认暴露哪些高频工具。
@@ -16,14 +16,14 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 
 可以通过提案扩展的内容：
 
-- 新 persona、method、team、voice 和 debate。
+- 新 persona、method、team、deliverable、voice 和 debate。
 - 新 host adapter 文档。
 - 示例任务、边界测试和质量检查规则。
 - 对现有工具的澄清、删减和护栏加强。
 
 ## 公开入口命名门禁
 
-公开入口包括 `cogp-*`、`cogm-*`、`cogt-*`、`cogv-*`、`cogd-*`、CLI 命令、安装参数和 README 快速开始命令。大版本、默认安装集合变更或新增公开入口前，必须单独做命名门禁。
+公开入口包括 `cogp-*`、`cogm-*`、`cogt-*`、`cogx-*`、`cogv-*`、`cogd-*`、CLI 命令、安装参数和 README 快速开始命令。大版本、默认安装集合变更或新增公开入口前，必须单独做命名门禁。
 
 ### 1. API / 命令名 review
 
@@ -43,7 +43,7 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 
 ### 3. 命令面板走查
 
-发布前模拟用户只输入 `/cogm`、`/cogt`、`/cogd`、`/cogp`、`/cogv` 时看到的列表。列表里如果出现“看名字不知道干什么”的入口，先改名或移出默认安装集合，再发布。
+发布前模拟用户只输入 `/cogm`、`/cogt`、`/cogx`、`/cogd`、`/cogp`、`/cogv` 时看到的列表。列表里如果出现“看名字不知道干什么”的入口，先改名或移出默认安装集合，再发布。
 
 ### 4. 陌生用户 5 秒测试
 
@@ -65,6 +65,7 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 - `auto` / `general` 只允许用于有路由职责的类别，例如 `cogt-*`、`cogm-*`、`cogd-*`。
 - `cogp-*` 和 `cogv-*` 是具体 persona / voice 叶子工具，不使用 `auto` 或 `general`。
 - `cogm-*` 方法名应表达用户要做的动作或判断，例如 `auto`、`priority-triage`、`critical-thinking`。
+- `cogx-*` deliverable 名应表达要生成的产物，例如 `prd`、`decision-memo`、`draft`；不能只表达抽象能力。
 - 长名称只有在不可替代时才使用；能用短、直观、可猜的名称时，不使用内部术语。
 - 目录名可以是稳定 slug，但公开命令名必须优先可理解。
 
@@ -75,7 +76,7 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 issue 应说明：
 
 - 想解决的大模型典型失败模式。
-- 为什么现有 persona、method、team、voice 或 debate 不能覆盖。
+- 为什么现有 persona、method、team、deliverable、voice 或 debate 不能覆盖。
 - 该工具的最小适用场景和明确不适用场景。
 - 一个边界测试：不用该工具时输出会如何空泛、误判或幻觉；使用后应如何改善。
 - 涉及事实、规范、专业领域时，需要哪些外部来源或人工验证。

@@ -1,5 +1,48 @@
 # ArchSight Cognition 发布说明
 
+## v2.2.0
+
+发布日期：2026-06-02
+
+这是一次生成层扩展版本，新增 `deliverables/` 顶层目录和 `cogx-*` 生成型交付物入口，用于把现有认知判断转成 PRD、决策备忘录、文章草稿、调研计划、团队复盘和战略简报。
+
+### 新增 deliverable 入口
+
+- `cogx-prd`：生成最小产品 PRD，用于目标用户、核心假设、MVP 范围、验证实验和停止条件。
+- `cogx-decision-memo`：生成决策备忘录，用于复杂选择的背景、选项、证据、风险、推荐选择和反对条件。
+- `cogx-draft`：生成文章或长文草稿，用于把观点、素材和表达目标转成可继续编辑的初稿。
+- `cogx-research-plan`：生成调研计划，用于假设、信息源、访谈问题、验证路径和交付物。
+- `cogx-retro`：生成团队复盘与行动清单，用于事实、根因、责任边界、改进动作和复盘指标。
+- `cogx-strategy-brief`：生成战略简报，用于方向判断、关键取舍、最小行动和验证标准。
+
+### 命名和结构
+
+- 新增 `deliverables/` 作为生成型交付物定义目录。
+- 新增 `templates/deliverable-skill.md`，用于创建新的 `cogx-*` 交付物入口。
+- `cogx-*` 命令名按产物命名，避免使用内部 prompt 工程术语。
+- 保持所有 deliverable 继续使用 `SKILL.md`，不引入运行时框架或单独的 `PATTERN.md` 文件。
+
+### 文档和适配
+
+- README、AGENTS、CLAUDE、GEMINI、Codex adapter、Antigravity adapter 和 Hermes aliases 已更新为 `deliverables/` 和新的 `cogx-*` 命令。
+- CLI 默认安装集合已加入六个 `cogx-*` deliverable。
+- package 发布内容已包含 `deliverables/`，不再包含未发布的旧 `patterns/` 目录。
+- 治理文档、贡献指南、issue 模板和 PR 模板已补充 deliverable 的命名门禁和质量要求。
+
+### 兼容性
+
+- 这是 minor 版本新增能力层，不要求已有 `cogp-*`、`cogm-*`、`cogt-*`、`cogv-*` 或 `cogd-*` 用户迁移。
+- `patterns/`、`cogx-product-prd`、`cogx-writing-draft` 和 `cogx-team-retro` 未作为正式版本发布；本次不保留这些旧实验入口的兼容别名。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 `node --check bin\archsight-cognition.mjs`。
+- 已执行 `node --check scripts\validate-skills.mjs`。
+- 已执行 CLI list smoke test，确认精选和全量列表暴露 `cogx-prd`、`cogx-decision-memo`、`cogx-draft`、`cogx-research-plan`、`cogx-retro` 和 `cogx-strategy-brief`。
+- 已执行 `npm pack --dry-run`，确认 npm 包包含 `deliverables/*` 和 `templates/deliverable-skill.md`。
+- 已执行 Codex 全局安装 smoke test，确认 `~/.codex/skills` 下可以安装新的 `cogx-*` 入口。
+
 ## v2.1.0
 
 发布日期：2026-05-27

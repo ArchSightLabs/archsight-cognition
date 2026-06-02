@@ -23,6 +23,11 @@ const skillRules = [
     sections: ["角色", "默认团队", "路由", "方法", "输出契约", "护栏"],
   },
   {
+    dir: "deliverables",
+    prefix: "cogx-",
+    sections: ["角色", "适用场景", "输入要求", "调用工具", "方法", "输出契约", "交接", "护栏"],
+  },
+  {
     dir: "voices",
     prefix: "cogv-",
     sections: ["角色", "方法", "输出契约", "护栏"],
@@ -46,6 +51,10 @@ const templateRules = [
   {
     file: path.join("templates", "team-skill.md"),
     sections: ["角色", "默认团队", "路由", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "护栏"],
+  },
+  {
+    file: path.join("templates", "deliverable-skill.md"),
+    sections: ["角色", "适用场景", "输入要求", "调用工具", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "交接", "护栏"],
   },
   {
     file: path.join("templates", "voice-skill.md"),
@@ -99,8 +108,8 @@ function parseFrontmatter(raw, file) {
 }
 
 function hasSection(raw, section) {
-  const pattern = new RegExp(`^##\\s+${escapeRegExp(section)}\\s*$`, "m");
-  return pattern.test(raw);
+  const sectionPattern = new RegExp(`^##\\s+${escapeRegExp(section)}\\s*$`, "m");
+  return sectionPattern.test(raw);
 }
 
 function escapeRegExp(value) {

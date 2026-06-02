@@ -12,6 +12,7 @@
 - [AI 编码规范（公共）](./AI_CODING_RULES.md)
 - [项目总览](./README.md)
 - [Personas](./personas/README.md)
+- [Deliverables](./deliverables/README.md)
 - [Adapters](./adapters/README.md)
 
 ---

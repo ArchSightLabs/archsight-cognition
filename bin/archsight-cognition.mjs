@@ -20,6 +20,12 @@ const curatedSkills = [
   { name: "cogt-product", source: "teams/product" },
   { name: "cogt-lead", source: "teams/lead" },
   { name: "cogt-learn", source: "teams/learning-path" },
+  { name: "cogx-prd", source: "deliverables/prd" },
+  { name: "cogx-decision-memo", source: "deliverables/decision-memo" },
+  { name: "cogx-draft", source: "deliverables/draft" },
+  { name: "cogx-research-plan", source: "deliverables/research-plan" },
+  { name: "cogx-retro", source: "deliverables/retro" },
+  { name: "cogx-strategy-brief", source: "deliverables/strategy-brief" },
   { name: "cogd-general", source: "debates/general" },
   { name: "cogd-life", source: "debates/life" },
   { name: "cogd-technology", source: "debates/technology" },
@@ -114,6 +120,7 @@ const curatedSkills = [
 
 const allSkills = [
   ...findSkillDirs("teams"),
+  ...findSkillDirs("deliverables"),
   ...findSkillDirs("personas"),
   ...findSkillDirs("methods"),
   ...findSkillDirs("voices"),
@@ -312,14 +319,14 @@ function installCodex(options, force) {
   }
 
   const current = fs.readFileSync(agentsPath, "utf8");
-  const pattern = /<!-- ARCHSIGHT-COGNITION:START -->[\s\S]*?<!-- ARCHSIGHT-COGNITION:END -->/;
+  const archSightBlock = /<!-- ARCHSIGHT-COGNITION:START -->[\s\S]*?<!-- ARCHSIGHT-COGNITION:END -->/;
 
-  if (pattern.test(current)) {
+  if (archSightBlock.test(current)) {
     if (!force) {
       console.log(`Codex: ${agentsPath} 已包含 ArchSight Cognition 区块，使用 --force 更新`);
       return;
     }
-    fs.writeFileSync(agentsPath, current.replace(pattern, block), "utf8");
+    fs.writeFileSync(agentsPath, current.replace(archSightBlock, block), "utf8");
     console.log(`Codex: 已更新 ${agentsPath}`);
     return;
   }
@@ -377,6 +384,7 @@ function installContentRoot({ host, root, directoryName, force }) {
     "personas",
     "methods",
     "teams",
+    "deliverables",
     "voices",
     "debates",
     "templates",
@@ -670,8 +678,10 @@ function buildRuleBody(contentLocation) {
 - 产品战略、定位和最小验证：\`teams/product/SKILL.md\`
 - 技术领导、研发组织和交付反馈：\`teams/lead/SKILL.md\`
 - 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
+- 需要生成明确产物：\`deliverables/README.md\` 或 \`deliverables/<task>/SKILL.md\`
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
+生成型交付物统一使用 \`cogx-\` 前缀，例如 \`cogx-prd\`、\`cogx-decision-memo\`、\`cogx-draft\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
 方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-auto\`、\`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
@@ -700,8 +710,10 @@ function buildCodexBlock(contentRoot) {
 - 产品战略、定位和最小验证：\`teams/product/SKILL.md\`
 - 技术领导、研发组织和交付反馈：\`teams/lead/SKILL.md\`
 - 教育、学习路径和亲子成长：\`teams/learning-path/SKILL.md\`
+- 需要生成明确产物：\`deliverables/README.md\` 或 \`deliverables/<task>/SKILL.md\`
 
 综合 team 工具统一使用短命令，例如 \`cogt-think\`、\`cogt-decide\`、\`cogt-write\`、\`cogt-design\`、\`cogt-product\`、\`cogt-lead\`、\`cogt-learn\`。
+生成型交付物统一使用 \`cogx-\` 前缀，例如 \`cogx-prd\`、\`cogx-decision-memo\`、\`cogx-draft\`。
 单个 persona 工具统一使用 \`cogp-\` 前缀，例如 \`cogp-socrates\`、\`cogp-bayes\`、\`cogp-newton\`。
 方法工具统一使用 \`cogm-\` 前缀，例如 \`cogm-auto\`、\`cogm-critical-thinking\`、\`cogm-structured-problem-solving\`。
 风格化口吻工具统一使用 \`cogv-\` 前缀，例如 \`cogv-kant\`、\`cogv-nietzsche\`。\`cogv-*\` 只用于口吻和表达风格，不声称历史人物本人在说话。
@@ -767,6 +779,10 @@ function toSkillName(name, baseDir) {
 
   if (baseDir === "methods") {
     return name.startsWith("cogm-") ? name : `cogm-${name}`;
+  }
+
+  if (baseDir === "deliverables") {
+    return name.startsWith("cogx-") ? name : `cogx-${name}`;
   }
 
   const aliases = {

@@ -7,7 +7,9 @@
 ## 可以贡献什么
 
 - 新的 persona：放在 `personas/<discipline>/<name>/SKILL.md`。
+- 新的 method：放在 `methods/<name>/SKILL.md`。
 - 新的 team：放在 `teams/<name>/SKILL.md`。
+- 新的 deliverable：放在 `deliverables/<task>/SKILL.md`。
 - 新的 debate：放在 `debates/<topic>/SKILL.md`。
 - 新的 host 适配说明：放在 `adapters/<host>/README.md`。
 - 模板、README、示例任务和质量检查规则。
@@ -60,6 +62,30 @@
 
 team 应调度 persona，而不是覆盖 persona。主持人必须综合最终答案，并指出主要分歧、共识、盲点和下一步。
 
+## 新增 deliverable 的要求
+
+从 `templates/deliverable-skill.md` 开始。
+
+必须包含：
+
+- `name` frontmatter，使用 `cogx-<short-name>`。
+- 中文 `description` frontmatter。
+- `角色`
+- `适用场景`
+- `输入要求`
+- `调用工具`
+- `方法`
+- `输出契约`
+- `失败模式`
+- `验证逻辑`
+- `边界测试`
+- `交接`
+- `护栏`
+
+deliverable 应面向真实任务产物，例如 PRD、决策备忘录、文章草稿、调研计划、团队复盘或战略简报。它应组合现有 persona、method、team 或 debate，而不是新增一套理论。
+
+新增 deliverable 必须能稳定生成可继续讨论、修改或执行的产物，并明确假设、限制、验证标准和下一步动作。
+
 ## 新增 voice 的要求
 
 从 `templates/voice-skill.md` 开始。
@@ -104,7 +130,7 @@ debate 应围绕长期议题和真实冲突展开。它不同于 team：team 要
 
 ## 贡献流程
 
-新增 persona、team、voice、debate 或重要模板变更时，默认先开 issue，再提交 PR。
+新增 persona、team、deliverable、voice、debate 或重要模板变更时，默认先开 issue，再提交 PR。
 
 issue 应说明：
 
@@ -115,11 +141,11 @@ issue 应说明：
 - 一个边界测试输入和期望改善。
 - 涉及事实或专业领域时的来源和验证边界。
 
-PR 应尽量小，围绕一个认知工具、一个模板变更或一个 adapter 变更展开。不要在同一个 PR 里混入无关格式化、批量改写或运行时扩展。
+PR 应尽量小，围绕一个认知工具、一个生成型交付物、一个模板变更或一个 adapter 变更展开。不要在同一个 PR 里混入无关格式化、批量改写或运行时扩展。
 
 ## 语言规则
 
-- README、adapter 文档、模板文档、persona/team/debate 文档默认使用中文。
+- README、adapter 文档、模板文档、persona/team/deliverable/debate 文档默认使用中文。
 - 英文只用于稳定标识符、目录名、文件名、frontmatter `name`、工具名、产品名和必要 host 指令片段。
 - frontmatter `description` 默认使用中文。
 

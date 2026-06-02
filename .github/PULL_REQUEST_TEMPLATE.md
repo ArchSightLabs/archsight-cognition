@@ -8,6 +8,7 @@
 
 - [ ] 新增 persona
 - [ ] 新增 team
+- [ ] 新增 deliverable
 - [ ] 新增 voice
 - [ ] 新增 debate
 - [ ] 修改现有 skill

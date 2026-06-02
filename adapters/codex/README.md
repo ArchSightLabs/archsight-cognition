@@ -71,8 +71,10 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 - 产品战略、定位和最小验证：`teams/product/SKILL.md`
 - 技术领导、研发组织和交付反馈：`teams/lead/SKILL.md`
 - 教育、学习路径和亲子成长：`teams/learning-path/SKILL.md`
+- 需要生成明确产物：`deliverables/README.md` 或 `deliverables/<task>/SKILL.md`
 
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`。
+生成型交付物统一使用 `cogx-` 前缀，例如 `cogx-prd`、`cogx-decision-memo`、`cogx-draft`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 方法工具统一使用 `cogm-` 前缀，例如 `cogm-critical-thinking`、`cogm-structured-problem-solving`、`cogm-first-principles`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。
@@ -157,6 +159,9 @@ git clone <repo-url> C:\Work\ArchSightLabs\archsight-cognition
 | 科学推理和验证设计 | `cogt-science` | `teams/scientific-reasoning/SKILL.md` |
 | 产品、体验、视觉、交互评审 | `cogt-design` | `teams/design-review/SKILL.md` |
 | 产品战略、定位、最小验证 | `cogt-product` | `teams/product/SKILL.md` |
+| 生成最小 PRD | `cogx-prd` | `deliverables/prd/SKILL.md` |
+| 生成决策备忘录 | `cogx-decision-memo` | `deliverables/decision-memo/SKILL.md` |
+| 生成文章草稿 | `cogx-draft` | `deliverables/draft/SKILL.md` |
 | 技术领导、研发组织、交付反馈 | `cogt-lead` | `teams/lead/SKILL.md` |
 | 高输出技术管理、战略拐点 | `cogp-grove` | `personas/decision/grove/SKILL.md` |
 | 颠覆式创新、市场进入、JTBD | `cogp-christensen` | `personas/decision/christensen/SKILL.md` |

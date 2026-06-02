@@ -1,22 +1,23 @@
 # ArchSight Cognition
 
-ArchSight Cognition 是一个给 AI agent 使用的跨学科思维工具包。
+ArchSight Cognition 是一个给 AI agent 使用的跨学科思维与生成工具包。
 
-它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成更有辨识度的表达。
+它把哲学、文学、历史、数学、物理、艺术、系统科学和决策科学中的思维方法，整理成可复制、可审查、可组合的 Markdown `SKILL.md`。Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 可以直接加载这些文件，用它们来澄清问题、评审写作、设计研究、审查战略、压力测试决策，或生成 PRD、决策备忘录、文章草稿、调研计划等可交付产物。
 
 一句话定位：
 
-> ArchSight Cognition 不是运行时框架，也不是历史人物角色扮演库，而是一组可复制、可审查、可组合的学科思维工具。
+> ArchSight Cognition 不是运行时框架，也不是历史人物角色扮演库，而是一组可复制、可审查、可组合的学科思维工具和生成型交付物。
 
 ## 项目定位
 
-ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生在写代码、改文章、做设计或给结论之前，用来决定该从什么视角看问题、应该输出什么结构、哪些结论还不能直接下。
+ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成层”：它发生在写代码、改文章、做设计或给结论之前，用来决定该从什么视角看问题、应该输出什么结构、哪些结论还不能直接下；当任务已经明确时，也可以用 `cogx-*` deliverable 把判断转成可交付产物。
 
 它最适合这些位置：
 
 - 作为 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity 等 agent host 的本地 skills 内容包。
 - 作为团队沉淀 prompt / skill 的可审查模板，而不是散落在聊天记录里的临时提示词。
 - 作为写作、产品、研究、教育、组织和战略判断的认知路由层。
+- 作为面向真实任务的生成型交付物库，把认知判断转成 PRD、备忘录、草稿、调研计划和复盘材料。
 - 作为可被不同项目、不同团队和不同 agent host 组合使用的通用思维工具库。
 
 ## 更直白地说
@@ -29,9 +30,10 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 - 决策风险高时，加载 `cogt-decide`，从价值、证据、约束、历史和执行风险审查方案。
 - 文案像 AI 套话时，加载 `cogt-write`，检查论证、叙事、清晰度、节奏和表达诚实性。
 - 产品体验需要评审时，加载 `cogt-design`，从可用性、交互模型、版式、色彩和系统一致性给反馈。
+- 需要直接产出材料时，加载 `cogx-*`，生成最小 PRD、决策备忘录、文章草稿、调研计划、团队复盘或战略简报。
 - 议题本身有强分歧时，加载 `cogd-*`，保留不同立场的张力，而不是急着调和。
 
-你可以把它理解成一套“思维镜头”：每个 persona 是一个学科视角，method 是去人物中心的可执行方法，team 是多个视角的组合，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
+你可以把它理解成一套“思维镜头”和“产物模具”：persona 是单一学科视角，method 是去人物中心的可执行方法，team 是多个视角的组合，deliverable 把视角和方法转成真实任务产物，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
 
 ## 适合谁
 
@@ -46,6 +48,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | --- | --- | --- |
 | 不知道问题到底是什么 | `cogt-think` 或 `cogp-socrates` | 澄清目标、概念、边界和关键矛盾 |
 | 要做重要选择 | `cogt-decide` | 输出风险、反对条件、信息缺口和下一步验证 |
+| 要生成明确产物 | `cogx-prd`、`cogx-decision-memo`、`cogx-draft` | 输出 PRD、备忘录、草稿、调研计划、复盘或战略简报 |
 | 要改文章、文案或叙事 | `cogt-write` | 找出空话、结构问题、论证漏洞和更清楚的改法 |
 | 要评审产品、体验或视觉 | `cogt-design` | 审查可用性、交互模型、版式、色彩和系统一致性 |
 | 要处理中文表达、传统资源或中国组织语境 | `cogp-*`、`cogv-*` 或 `cogd-chinese-thought` | 区分文化符号、真实功能、关系结构和表达风格 |
@@ -55,7 +58,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 
 - 可移植的 Markdown prompt / skill 仓库。
 - 面向 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 等 agent host 的认知工具包。
-- 用 persona 表达单一学科视角，用 method 表达去人物中心的可执行方法，用 team 表达多视角综合，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
+- 用 persona 表达单一学科视角，用 method 表达去人物中心的可执行方法，用 team 表达多视角综合，用 deliverable 表达生成型任务产物，用 voice 表达风格化口吻，用 debate 表达结构化分歧。
 - 用于真实工作中的思考、写作、判断、研究问题框定和自我复盘。
 
 ## 它不是什么
@@ -76,7 +79,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 
 `persona` 和 `voice` 只使用已离世人物或稳定历史传统；仍在世人物、活跃企业家和个人品牌材料只能作为 `methods/` 的来源之一，不能作为 `cogp-*` 或 `cogv-*` 入口。
 
-每个 persona、method、team、voice 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束。
+每个 persona、method、team、deliverable、voice 和 debate 都应服务真实任务：让问题更清楚，让论证更可靠，让表达更有力度，让决策更能承受现实约束，并在需要时生成可继续编辑和执行的产物。
 
 ## 能力价值
 
@@ -85,7 +88,8 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 快速装配 | 给 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、method、team、voice、debate 和模板。 |
+| 生成增强 | 用 `cogx-*` deliverable 生成 PRD、决策备忘录、文章草稿、调研计划、团队复盘和战略简报。 |
+| 快速装配 | 给 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、method、team、deliverable、voice、debate 和模板。 |
 
 ## 知识库地图
 
@@ -107,14 +111,15 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”：它发生�
 | 科学 | `personas/science/` | 可证伪性、实验直觉、反证、解释和自欺检查 |
 | 方法 | `methods/` | 不绑定人物的可执行方法；可吸收活人公开材料，但必须去人物中心化 |
 | 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理、产品战略、技术领导 |
+| Deliverables | `deliverables/` | 面向真实任务的生成型入口，产出 PRD、备忘录、草稿、调研计划、复盘和战略简报 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
-| 模板 | `templates/` | 新增 persona、method、team、voice 和 debate 的标准结构 |
+| 模板 | `templates/` | 新增 persona、method、team、deliverable、voice 和 debate 的标准结构 |
 
 ## 中国思想与中文叙事
 
-本项目保留 `personas`、`methods`、`teams`、`voices`、`debates` 五类结构，不按文化来源新增第六类。中国思想和中文叙事工具进入现有分类：
+本项目保留 `personas`、`methods`、`teams`、`deliverables`、`voices`、`debates` 等结构，不按文化来源新增单独分类。中国思想和中文叙事工具进入现有分类：
 
 - `personas/philosophy/`：`confucius`、`mencius`、`xunzi`、`laozi`、`zhuangzi`、`wang-yangming`、`mozi`、`hanfeizi`，分别对应关系责任、正当性、制度化训练、最小干预、视角切换、知行合一、功用节用和制度激励。
 - `personas/history/`：`sunzi` 用于战略态势、虚实、胜前计算、成本和低损耗行动。
@@ -173,6 +178,13 @@ archsight-cognition/
 │   ├── product/
 │   ├── lead/
 │   └── learning-path/
+├── deliverables/
+│   ├── prd/
+│   ├── decision-memo/
+│   ├── draft/
+│   ├── research-plan/
+│   ├── retro/
+│   └── strategy-brief/
 ├── voices/
 │   ├── philosophy/
 │   ├── literature/
@@ -267,6 +279,12 @@ teams/writing-review/SKILL.md        # 写作、文案、叙事评审
 teams/design-review/SKILL.md         # 产品、体验、视觉评审
 teams/product/SKILL.md               # 产品战略、定位和最小验证
 teams/lead/SKILL.md                  # 技术领导、研发组织和交付反馈
+deliverables/prd/SKILL.md        # cogx-prd：生成最小产品 PRD
+deliverables/decision-memo/SKILL.md      # cogx-decision-memo：生成决策备忘录
+deliverables/draft/SKILL.md      # cogx-draft：生成文章或长文草稿
+deliverables/research-plan/SKILL.md      # cogx-research-plan：生成调研计划
+deliverables/retro/SKILL.md         # cogx-retro：生成团队复盘与行动清单
+deliverables/strategy-brief/SKILL.md     # cogx-strategy-brief：生成战略简报
 personas/philosophy/socrates/SKILL.md # 概念澄清
 personas/mathematics/bayes/SKILL.md   # 证据和不确定性判断
 personas/mathematics/godel/SKILL.md   # cogp-godel：形式系统边界和自指风险
@@ -331,7 +349,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
 | 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、Qoder、Trae、Cline 和 Antigravity 的全局目录；WorkBuddy 作为例外固定安装到个人目录；Cursor 仅提供项目级 CLI 安装。 |
 
-默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。不知道该选哪个方法时，从 `cogm-auto` 开始。
+默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`，生成型 `cogx-*` deliverables，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。不知道该选哪个方法时，从 `cogm-auto` 开始；需要直接生成产物时，从 `cogx-prd`、`cogx-decision-memo` 或 `cogx-draft` 开始。
 
 如需安装全部 `SKILL.md`，同样先选择安装范围。
 
@@ -462,6 +480,23 @@ archsight-cognition install all --force
 ...
 ```
 
+生成型交付物：
+
+```text
+/cogx-prd
+我们想做一个给远程研发团队用的 AI 复盘工具，请生成一版最小 PRD。
+```
+
+```text
+/cogx-decision-memo
+我们在纠结要不要重写老系统，请生成一份决策备忘录。
+```
+
+```text
+/cogx-draft
+我想写一篇关于 AI 编程助手改变工程师判断力的文章，帮我生成草稿。
+```
+
 技术领导评审：
 
 ```text
@@ -510,6 +545,8 @@ archsight-cognition install all --force
 
 新增 team 时，从 `templates/team-skill.md` 开始。
 
+新增 deliverable 时，从 `templates/deliverable-skill.md` 开始。deliverable 使用 `cogx-*` 前缀，用于把现有认知工具组合成可交付产物。
+
 新增 voice 时，从 `templates/voice-skill.md` 开始。
 
 新增 debate 时，从 `templates/debate-skill.md` 开始。
@@ -526,7 +563,7 @@ archsight-cognition install all --force
 - 明确角色、适用场景、方法、输出契约、失败模式、验证逻辑、边界测试和护栏。
 - `persona` 和 `voice` 不得使用仍在世人物；活人材料应进入 `methods/` 或 team 参考材料。
 - 不要求模型扮演历史人物本人。
-- 输出服务现实任务，而不是只展示知识或风格模仿。
+- 输出服务现实任务，而不是只展示知识或风格模仿；`deliverable` 必须生成可继续讨论、修改或执行的产物。
 
 提交前运行：
 
@@ -545,5 +582,6 @@ Apache License 2.0 覆盖本仓库的软件、Markdown skills、文档和模板�
 - 输出优先使用清晰中文，工具名、目录名和 persona / team name 保持英文稳定。
 - 不要冒充历史人物、艺术家或科学家本人。
 - 不要生成空泛评论；每次输出都要服务一个可执行判断。
+- 使用 `cogx-*` deliverable 时，必须生成明确产物，并标出假设、限制、验证标准和下一步动作。
 - 不要默认全员上场；按任务选择 3 到 5 个视角。
 - 事实性问题需要区分已知事实、推断和需要外部检索的内容。

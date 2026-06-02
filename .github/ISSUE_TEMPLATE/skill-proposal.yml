@@ -15,14 +15,14 @@ body:
     id: existing-gap
     attributes:
       label: 现有工具为什么不够
-      description: 请说明为什么已有 persona、team、voice 或 debate 不能覆盖该问题。
+      description: 请说明为什么已有 persona、method、team、deliverable、voice 或 debate 不能覆盖该问题。
     validations:
       required: true
   - type: input
     id: proposed-kind
     attributes:
       label: 建议类型
-      description: persona / team / voice / debate / adapter / other
+      description: persona / method / team / deliverable / voice / debate / adapter / other
       placeholder: persona
     validations:
       required: true

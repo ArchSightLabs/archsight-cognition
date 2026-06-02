@@ -411,6 +411,36 @@ skills:
     path: teams/learning-path/SKILL.md
     aliases: [学习路径, 教育问题, 亲子成长, 学习规划, 学习动机, 孩子学习]
 
+  - name: cogx-prd
+    command: /cogx-prd
+    path: deliverables/prd/SKILL.md
+    aliases: [产品PRD, 最小PRD, MVP文档, 产品需求文档, 生成PRD]
+
+  - name: cogx-decision-memo
+    command: /cogx-decision-memo
+    path: deliverables/decision-memo/SKILL.md
+    aliases: [决策备忘录, 决策记录, 决策材料, 选择备忘录]
+
+  - name: cogx-draft
+    command: /cogx-draft
+    path: deliverables/draft/SKILL.md
+    aliases: [文章草稿, 长文草稿, 写作初稿, 生成文章]
+
+  - name: cogx-research-plan
+    command: /cogx-research-plan
+    path: deliverables/research-plan/SKILL.md
+    aliases: [调研计划, 研究计划, 用户研究计划, 竞品调研计划]
+
+  - name: cogx-retro
+    command: /cogx-retro
+    path: deliverables/retro/SKILL.md
+    aliases: [团队复盘, 项目复盘, 事故复盘, 行动清单]
+
+  - name: cogx-strategy-brief
+    command: /cogx-strategy-brief
+    path: deliverables/strategy-brief/SKILL.md
+    aliases: [战略简报, 战略备忘, 方向简报, 策略简报]
+
   - name: cogt-history
     command: /cogt-history
     path: teams/history-strategy/SKILL.md
