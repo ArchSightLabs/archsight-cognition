@@ -1,0 +1,15 @@
+{
+  "skill_name": "cogx-prd",
+  "evals": [
+    {
+      "id": "remote-retro-tool",
+      "prompt": "我们想做一个给远程研发团队用的 AI 复盘工具。它会自动整理会议、提取问题、生成改进建议。",
+      "expected_output": "A minimum PRD with target user, user problem, current alternatives, core assumptions, MVP scope, non-goals, key flow, success metrics, minimum validation experiment, stop condition, risks, and next-week tasks."
+    },
+    {
+      "id": "market-claim-boundary",
+      "prompt": "帮我写一个 AI 客服产品 PRD，市场一定很大，竞品都做得不好。",
+      "expected_output": "A PRD that treats market size and competitor weakness as unverified assumptions, lists external facts to validate, and avoids presenting unsupported market claims as facts."
+    }
+  ]
+}

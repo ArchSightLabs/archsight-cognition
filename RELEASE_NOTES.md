@@ -1,5 +1,53 @@
 # ArchSight Cognition 发布说明
 
+## v2.3.0
+
+发布日期：2026-06-02
+
+这是一次认知工具可信度增强版本，重点是把 `cogx-*` 生成型交付物、`cogt-*` 综合团队和 `cogd-*` 结构化分歧入口统一纳入外部事实边界，避免把未检索内容包装成确定事实、团队共识或立场证据。
+
+### 新增 tool-assisted deliverable
+
+- 新增 `cogx-research-brief`：生成带来源的调研简报，用于在宿主支持检索时把研究问题转成来源清单、关键发现、证据强度、主要分歧、仍不确定事项和下一步验证。
+- `cogx-research-brief` 明确要求宿主有联网检索或浏览工具时先检索再输出；没有相关工具时只输出待检索问题、推荐来源类型和降级版调研计划。
+- 新增 `deliverables/research-brief/references/source-quality.md`，用于区分一手材料、主要证据、二手解释和弱信号。
+
+### 外部事实边界
+
+- 所有 `cogx-*` deliverable 增加 `工具与外部事实边界`，明确当前事实、竞品、市场、政策、论文、版本、价格、新闻或引用依赖下的检索和降级规则。
+- 所有 `cogt-*` team 增加 `外部事实边界`，要求外部事实不足时标注待验证事实和信息缺口，不把未检索内容写成确定判断。
+- 所有 `cogd-*` debate 增加 `外部事实边界`，要求分歧依赖外部事实时先检索或要求来源，不把未检索内容包装成某一方的强证据。
+- `templates/team-skill.md`、`templates/debate-skill.md` 和 `templates/deliverable-skill.md` 已同步更新。
+
+### Examples 和 evals
+
+- `cogx-prd` 新增 `examples/` 和 `evals/evals.json`，覆盖远程团队 AI 复盘工具 PRD 和市场假设边界。
+- `cogx-draft` 新增 `examples/` 和 `evals/evals.json`，覆盖 AI 编程助手与工程师判断力文章草稿和引用边界。
+- `cogx-research-plan` 新增 `examples/` 和 `evals/evals.json`，覆盖中文 agent skills 开源项目调研计划和不要联网的降级输出。
+- `cogx-research-brief` 自带 `examples/`、`evals/` 和 `references/`，作为多文件 deliverable skill 的首个示例。
+
+### 校验和安装
+
+- `scripts/validate-skills.mjs` 现在会校验 `cogx-*`、`cogt-*` 和 `cogd-*` 的外部事实边界章节。
+- `scripts/validate-skills.mjs` 现在会校验可选 `evals/evals.json` 的 JSON 结构、`skill_name` 和最小字段。
+- CLI 默认安装集合新增 `cogx-research-brief`。
+- README、AGENTS、Codex adapter、Antigravity adapter、Hermes aliases、贡献指南和治理文档已同步更新。
+
+### 兼容性
+
+- 这是 minor 版本新增能力和质量门禁，不要求已有 `cogp-*`、`cogm-*`、`cogt-*`、`cogx-*`、`cogv-*` 或 `cogd-*` 用户迁移。
+- `cogx-research-plan` 继续定位为调研计划；需要带来源的快速研究简报时使用 `cogx-research-brief`。
+- 本项目仍然不自带联网、浏览、数据库或文件访问运行时；是否能实际检索取决于宿主 agent 的工具和权限。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 `node --check bin\archsight-cognition.mjs`。
+- 已执行 `node --check scripts\validate-skills.mjs`。
+- 已执行 `git diff --check`。
+- 已执行 `npm pack --dry-run --json`，确认新 deliverable、examples、evals 和 references 会进入 npm 包。
+- 已执行 Codex 全局安装 smoke test，确认 `~/.codex/skills` 下可以安装 `cogx-research-brief` 和更新后的 team/debate 外部事实边界。
+
 ## v2.2.0
 
 发布日期：2026-06-02

@@ -65,7 +65,7 @@ ArchSight Cognition 采用维护者策展制。项目欢迎外部贡献，但核
 - `auto` / `general` 只允许用于有路由职责的类别，例如 `cogt-*`、`cogm-*`、`cogd-*`。
 - `cogp-*` 和 `cogv-*` 是具体 persona / voice 叶子工具，不使用 `auto` 或 `general`。
 - `cogm-*` 方法名应表达用户要做的动作或判断，例如 `auto`、`priority-triage`、`critical-thinking`。
-- `cogx-*` deliverable 名应表达要生成的产物，例如 `prd`、`decision-memo`、`draft`；不能只表达抽象能力。
+- `cogx-*` deliverable 名应表达要生成的产物，例如 `prd`、`decision-memo`、`draft`、`research-brief`；不能只表达抽象能力。
 - 长名称只有在不可替代时才使用；能用短、直观、可猜的名称时，不使用内部术语。
 - 目录名可以是稳定 slug，但公开命令名必须优先可理解。
 
@@ -80,6 +80,8 @@ issue 应说明：
 - 该工具的最小适用场景和明确不适用场景。
 - 一个边界测试：不用该工具时输出会如何空泛、误判或幻觉；使用后应如何改善。
 - 涉及事实、规范、专业领域时，需要哪些外部来源或人工验证。
+- 高频 deliverable 是否需要 `examples/`、`evals/`、`references/`、`scripts/` 或 `assets/`。
+- team 和 debate 如何标注外部事实边界，避免把未检索事实包装成综合判断或立场证据。
 
 维护者确认方向后，再提交 `SKILL.md`、模板修改或 adapter 文档。
 
@@ -123,6 +125,7 @@ PR 不以“内容看起来有趣”为接受标准，而以以下问题为准�
 - 护栏是否覆盖主要误用方式？
 - 是否给出了失败模式、验证逻辑和边界测试？
 - 是否避免把历史人物、文化传统或学科隐喻包装成权威事实？
+- 是否明确区分用户提供事实、外部检索事实、推断、价值判断和待验证信息？
 - 是否保持最小改动，没有顺手扩大项目范围？
 
 ## 拒绝标准

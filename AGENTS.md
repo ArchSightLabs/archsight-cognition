@@ -45,7 +45,7 @@
 - 需要生成明确产物：`deliverables/README.md` 或 `deliverables/<task>/SKILL.md`
 
 综合 team 工具统一使用短命令，例如 `cogt-think`、`cogt-decide`、`cogt-write`、`cogt-design`、`cogt-learn`。
-生成型交付物统一使用 `cogx-` 前缀，例如 `cogx-prd`、`cogx-decision-memo`、`cogx-draft`。
+生成型交付物统一使用 `cogx-` 前缀，例如 `cogx-prd`、`cogx-decision-memo`、`cogx-draft`、`cogx-research-brief`。
 单个 persona 工具统一使用 `cogp-` 前缀，例如 `cogp-socrates`、`cogp-bayes`、`cogp-newton`。
 方法工具统一使用 `cogm-` 前缀，例如 `cogm-critical-thinking`、`cogm-structured-problem-solving`、`cogm-first-principles`。
 风格化口吻工具统一使用 `cogv-` 前缀，例如 `cogv-kant`、`cogv-nietzsche`。`cogv-*` 只用于口吻和表达风格，不声称历史人物本人在说话。

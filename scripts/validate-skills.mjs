@@ -20,12 +20,12 @@ const skillRules = [
   {
     dir: "teams",
     prefix: "cogt-",
-    sections: ["角色", "默认团队", "路由", "方法", "输出契约", "护栏"],
+    sections: ["角色", "默认团队", "路由", "外部事实边界", "方法", "输出契约", "护栏"],
   },
   {
     dir: "deliverables",
     prefix: "cogx-",
-    sections: ["角色", "适用场景", "输入要求", "调用工具", "方法", "输出契约", "交接", "护栏"],
+    sections: ["角色", "适用场景", "输入要求", "工具与外部事实边界", "调用工具", "方法", "输出契约", "交接", "护栏"],
   },
   {
     dir: "voices",
@@ -35,7 +35,7 @@ const skillRules = [
   {
     dir: "debates",
     prefix: "cogd-",
-    sections: ["角色", "适用场景", "推荐视角", "方法", "输出契约", "护栏"],
+    sections: ["角色", "适用场景", "推荐视角", "外部事实边界", "方法", "输出契约", "护栏"],
   },
 ];
 
@@ -50,11 +50,11 @@ const templateRules = [
   },
   {
     file: path.join("templates", "team-skill.md"),
-    sections: ["角色", "默认团队", "路由", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "护栏"],
+    sections: ["角色", "默认团队", "路由", "外部事实边界", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "护栏"],
   },
   {
     file: path.join("templates", "deliverable-skill.md"),
-    sections: ["角色", "适用场景", "输入要求", "调用工具", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "交接", "护栏"],
+    sections: ["角色", "适用场景", "输入要求", "可选目录结构", "工具与外部事实边界", "调用工具", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "交接", "护栏"],
   },
   {
     file: path.join("templates", "voice-skill.md"),
@@ -62,7 +62,7 @@ const templateRules = [
   },
   {
     file: path.join("templates", "debate-skill.md"),
-    sections: ["角色", "适用场景", "推荐视角", "开场问题", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "护栏"],
+    sections: ["角色", "适用场景", "推荐视角", "开场问题", "外部事实边界", "方法", "输出契约", "失败模式", "验证逻辑", "边界测试", "护栏"],
   },
 ];
 
@@ -152,6 +152,7 @@ function validateSkill(filePath, rule) {
   assertSections(raw, file, rule.sections);
   assertNoCosplay(raw, file);
   if (rule.dir === "methods") validateMethodReferences(path.dirname(filePath), file);
+  validateOptionalEvals(path.dirname(filePath), file, frontmatter?.name);
 }
 
 function validateMethodReferences(skillDir, file) {
@@ -161,6 +162,35 @@ function validateMethodReferences(skillDir, file) {
       errors.push(`${file}: missing method reference ${reference.replaceAll(path.sep, "/")}`);
     }
   }
+}
+
+function validateOptionalEvals(skillDir, file, skillName) {
+  const evalsPath = path.join(skillDir, "evals", "evals.json");
+  if (!fs.existsSync(evalsPath)) return;
+
+  let evals;
+  try {
+    evals = JSON.parse(fs.readFileSync(evalsPath, "utf8"));
+  } catch (error) {
+    errors.push(`${rel(evalsPath)}: invalid JSON (${error.message})`);
+    return;
+  }
+
+  if (evals.skill_name !== skillName) {
+    errors.push(`${rel(evalsPath)}: skill_name must match ${skillName}`);
+  }
+
+  if (!Array.isArray(evals.evals) || evals.evals.length === 0) {
+    errors.push(`${rel(evalsPath)}: evals must be a non-empty array`);
+    return;
+  }
+
+  evals.evals.forEach((entry, index) => {
+    const prefix = `${rel(evalsPath)}: evals[${index}]`;
+    if (!entry.id) errors.push(`${prefix}: missing id`);
+    if (!entry.prompt) errors.push(`${prefix}: missing prompt`);
+    if (!entry.expected_output) errors.push(`${prefix}: missing expected_output`);
+  });
 }
 
 function validateTemplate(template) {

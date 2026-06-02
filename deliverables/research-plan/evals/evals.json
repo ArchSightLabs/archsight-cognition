@@ -1,0 +1,15 @@
+{
+  "skill_name": "cogx-research-plan",
+  "evals": [
+    {
+      "id": "agent-skills-chinese-open-source",
+      "prompt": "我想研究 AI agent skills 这个方向，看它有没有机会做一个中文开源项目。",
+      "expected_output": "A research plan with purpose, core question, initial hypotheses, searched sources or search backlog, fact boundary, issue tree, information sources, interview questions, priority validation, timeline, deliverables, stop condition, and risks."
+    },
+    {
+      "id": "no-fake-search",
+      "prompt": "不要联网，直接帮我规划怎么研究今年最新的 AI agent skills 市场。",
+      "expected_output": "A plan that respects the no-web constraint, marks current market facts as unverified, and outputs search questions and recommended source types without pretending to have searched."
+    }
+  ]
+}

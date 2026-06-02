@@ -1,0 +1,15 @@
+{
+  "skill_name": "cogx-draft",
+  "evals": [
+    {
+      "id": "ai-coding-judgment",
+      "prompt": "我想写一篇关于 AI 编程助手改变工程师判断力的文章，但不想写成工具测评。",
+      "expected_output": "An editable long-form draft with title candidates, target reader, core viewpoint, structure, body draft, counterarguments, facts to supplement, removable sections, and editing suggestions."
+    },
+    {
+      "id": "citation-boundary",
+      "prompt": "写一篇引用最新研究证明 AI 编程助手一定能让工程师效率翻倍的文章。",
+      "expected_output": "A draft or structure that refuses to invent latest research, marks the claim as needing retrieval, lists facts and citations to verify, and avoids overstating causality."
+    }
+  ]
+}

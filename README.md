@@ -17,7 +17,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 - 作为 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity 等 agent host 的本地 skills 内容包。
 - 作为团队沉淀 prompt / skill 的可审查模板，而不是散落在聊天记录里的临时提示词。
 - 作为写作、产品、研究、教育、组织和战略判断的认知路由层。
-- 作为面向真实任务的生成型交付物库，把认知判断转成 PRD、备忘录、草稿、调研计划和复盘材料。
+- 作为面向真实任务的生成型交付物库，把认知判断转成 PRD、备忘录、草稿、调研计划、带来源调研简报和复盘材料。
 - 作为可被不同项目、不同团队和不同 agent host 组合使用的通用思维工具库。
 
 ## 更直白地说
@@ -30,7 +30,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 - 决策风险高时，加载 `cogt-decide`，从价值、证据、约束、历史和执行风险审查方案。
 - 文案像 AI 套话时，加载 `cogt-write`，检查论证、叙事、清晰度、节奏和表达诚实性。
 - 产品体验需要评审时，加载 `cogt-design`，从可用性、交互模型、版式、色彩和系统一致性给反馈。
-- 需要直接产出材料时，加载 `cogx-*`，生成最小 PRD、决策备忘录、文章草稿、调研计划、团队复盘或战略简报。
+- 需要直接产出材料时，加载 `cogx-*`，生成最小 PRD、决策备忘录、文章草稿、调研计划、带来源调研简报、团队复盘或战略简报。
 - 议题本身有强分歧时，加载 `cogd-*`，保留不同立场的张力，而不是急着调和。
 
 你可以把它理解成一套“思维镜头”和“产物模具”：persona 是单一学科视角，method 是去人物中心的可执行方法，team 是多个视角的组合，deliverable 把视角和方法转成真实任务产物，voice 只负责明确标注的表达风格，debate 用来保留结构化分歧。
@@ -48,7 +48,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 | --- | --- | --- |
 | 不知道问题到底是什么 | `cogt-think` 或 `cogp-socrates` | 澄清目标、概念、边界和关键矛盾 |
 | 要做重要选择 | `cogt-decide` | 输出风险、反对条件、信息缺口和下一步验证 |
-| 要生成明确产物 | `cogx-prd`、`cogx-decision-memo`、`cogx-draft` | 输出 PRD、备忘录、草稿、调研计划、复盘或战略简报 |
+| 要生成明确产物 | `cogx-prd`、`cogx-decision-memo`、`cogx-draft`、`cogx-research-brief` | 输出 PRD、备忘录、草稿、调研计划、调研简报、复盘或战略简报 |
 | 要改文章、文案或叙事 | `cogt-write` | 找出空话、结构问题、论证漏洞和更清楚的改法 |
 | 要评审产品、体验或视觉 | `cogt-design` | 审查可用性、交互模型、版式、色彩和系统一致性 |
 | 要处理中文表达、传统资源或中国组织语境 | `cogp-*`、`cogv-*` 或 `cogd-chinese-thought` | 区分文化符号、真实功能、关系结构和表达风格 |
@@ -67,6 +67,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 - 不是 agent 框架，不负责调度、记忆、工具调用或权限管理。
 - 不是名人模拟器，不要求模型冒充历史人物本人；`cogv-*` 只做明确标注的风格化表达。
 - 不是事实权威库，事实性问题仍需要检索、引用和验证。
+- 不自带联网检索能力；能否检索、浏览、读取文件或调用外部系统，取决于宿主 agent 提供的工具和权限。
 
 ## 核心原则
 
@@ -88,7 +89,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 | 思考增强 | 用不同学科视角审查同一个问题，避免只靠单一工程、商业或情绪视角下判断。 |
 | 写作增强 | 用文学、历史、哲学和批评视角提升表达、叙事、论证和审美；中文场景可使用曹雪芹、司马迁、苏轼、韩愈和鲁迅等叙事工具。 |
 | 决策增强 | 哲学看价值，历史看周期，数学看结构，物理看约束，工程看落地。 |
-| 生成增强 | 用 `cogx-*` deliverable 生成 PRD、决策备忘录、文章草稿、调研计划、团队复盘和战略简报。 |
+| 生成增强 | 用 `cogx-*` deliverable 生成 PRD、决策备忘录、文章草稿、调研计划、带来源调研简报、团队复盘和战略简报。 |
 | 快速装配 | 给 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor、WorkBuddy、Antigravity、Hermes、OpenClaw 直接提供 persona、method、team、deliverable、voice、debate 和模板。 |
 
 ## 知识库地图
@@ -111,7 +112,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 | 科学 | `personas/science/` | 可证伪性、实验直觉、反证、解释和自欺检查 |
 | 方法 | `methods/` | 不绑定人物的可执行方法；可吸收活人公开材料，但必须去人物中心化 |
 | 团队 | `teams/` | 多视角评审、决策综合、写作评审、科学推理、产品战略、技术领导 |
-| Deliverables | `deliverables/` | 面向真实任务的生成型入口，产出 PRD、备忘录、草稿、调研计划、复盘和战略简报 |
+| Deliverables | `deliverables/` | 面向真实任务的生成型入口，产出 PRD、备忘录、草稿、调研计划、调研简报、复盘和战略简报 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
@@ -183,6 +184,7 @@ archsight-cognition/
 │   ├── decision-memo/
 │   ├── draft/
 │   ├── research-plan/
+│   ├── research-brief/
 │   ├── retro/
 │   └── strategy-brief/
 ├── voices/
@@ -283,6 +285,7 @@ deliverables/prd/SKILL.md        # cogx-prd：生成最小产品 PRD
 deliverables/decision-memo/SKILL.md      # cogx-decision-memo：生成决策备忘录
 deliverables/draft/SKILL.md      # cogx-draft：生成文章或长文草稿
 deliverables/research-plan/SKILL.md      # cogx-research-plan：生成调研计划
+deliverables/research-brief/SKILL.md     # cogx-research-brief：生成带来源的调研简报
 deliverables/retro/SKILL.md         # cogx-retro：生成团队复盘与行动清单
 deliverables/strategy-brief/SKILL.md     # cogx-strategy-brief：生成战略简报
 personas/philosophy/socrates/SKILL.md # 概念澄清
@@ -349,7 +352,7 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 全局 | `npx @archsight/cognition install antigravity --global` | Antigravity 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`；仅当 `~/.gemini/antigravity/` 已存在时，额外写入 1.x legacy skills 目录。 |
 | 全局 | `npx @archsight/cognition install all --global` | 安装到 Codex、Claude Code、OpenCode、Qoder、Trae、Cline 和 Antigravity 的全局目录；WorkBuddy 作为例外固定安装到个人目录；Cursor 仅提供项目级 CLI 安装。 |
 
-默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`，生成型 `cogx-*` deliverables，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。不知道该选哪个方法时，从 `cogm-auto` 开始；需要直接生成产物时，从 `cogx-prd`、`cogx-decision-memo` 或 `cogx-draft` 开始。
+默认只安装高频工具：`cogt-think`、`cogt-decide`、`cogt-write`、`cogt-science`、`cogt-history`、`cogt-philosophy`、`cogt-design`、`cogt-product`、`cogt-lead`、`cogt-learn`，生成型 `cogx-*` deliverables，最常用的底层 `cogp-*`、`cogm-*` 和 `cogv-*`，以及核心结构化分歧入口 `cogd-*`。不知道该选哪个方法时，从 `cogm-auto` 开始；需要直接生成产物时，从 `cogx-prd`、`cogx-decision-memo`、`cogx-draft` 或 `cogx-research-brief` 开始。
 
 如需安装全部 `SKILL.md`，同样先选择安装范围。
 
@@ -497,6 +500,11 @@ archsight-cognition install all --force
 我想写一篇关于 AI 编程助手改变工程师判断力的文章，帮我生成草稿。
 ```
 
+```text
+/cogx-research-brief
+调研 Agent Skills 生态，判断 ArchSight Cognition 下一步应该补脚本、eval 还是市场分发。
+```
+
 技术领导评审：
 
 ```text
@@ -545,7 +553,7 @@ archsight-cognition install all --force
 
 新增 team 时，从 `templates/team-skill.md` 开始。
 
-新增 deliverable 时，从 `templates/deliverable-skill.md` 开始。deliverable 使用 `cogx-*` 前缀，用于把现有认知工具组合成可交付产物。
+新增 deliverable 时，从 `templates/deliverable-skill.md` 开始。deliverable 使用 `cogx-*` 前缀，用于把现有认知工具组合成可交付产物。高频 deliverable 应补充 `examples/` 和 `evals/`；需要稳定解析、核验或生成资源时，再加入非交互式 `scripts/`。
 
 新增 voice 时，从 `templates/voice-skill.md` 开始。
 
@@ -585,3 +593,4 @@ Apache License 2.0 覆盖本仓库的软件、Markdown skills、文档和模板�
 - 使用 `cogx-*` deliverable 时，必须生成明确产物，并标出假设、限制、验证标准和下一步动作。
 - 不要默认全员上场；按任务选择 3 到 5 个视角。
 - 事实性问题需要区分已知事实、推断和需要外部检索的内容。
+- 当任务依赖当前事实、竞品、市场、政策、论文、版本、价格、新闻或引用时，如果宿主提供检索或浏览工具，必须先检索并列出来源；如果没有相关工具，只输出待验证假设和检索清单。

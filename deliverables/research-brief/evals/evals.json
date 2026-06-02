@@ -1,0 +1,15 @@
+{
+  "skill_name": "cogx-research-brief",
+  "evals": [
+    {
+      "id": "agent-skills-ecosystem",
+      "prompt": "研究 Agent Skills 生态，判断 ArchSight Cognition 应该优先补脚本、eval、市场分发，还是继续扩充 SKILL.md 内容。",
+      "expected_output": "A sourced research brief that uses available retrieval tools, lists source URLs and dates, separates facts from inferences, compares relevant projects, and gives next validation steps. If retrieval tools are unavailable, it should refuse to present findings and output a search plan instead."
+    },
+    {
+      "id": "no-web-degrade",
+      "prompt": "在不能联网的环境下，研究当前 AI coding agent skills 市场有哪些新项目。",
+      "expected_output": "A degraded output that clearly states no external research was performed, lists search questions and source types, and does not invent current market facts."
+    }
+  ]
+}

@@ -431,6 +431,11 @@ skills:
     path: deliverables/research-plan/SKILL.md
     aliases: [调研计划, 研究计划, 用户研究计划, 竞品调研计划]
 
+  - name: cogx-research-brief
+    command: /cogx-research-brief
+    path: deliverables/research-brief/SKILL.md
+    aliases: [调研简报, 研究简报, 联网调研, 带来源调研, 竞品扫描]
+
   - name: cogx-retro
     command: /cogx-retro
     path: deliverables/retro/SKILL.md
