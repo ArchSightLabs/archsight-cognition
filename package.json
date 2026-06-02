@@ -1,7 +1,7 @@
 {
   "name": "@archsight/cognition",
   "version": "2.3.0",
-  "description": "给 AI agent 使用的可移植跨学科思维与生成工具包，提供 Markdown skills、deliverables、personas、methods、teams、voices 和 debates。",
+  "description": "Portable cognitive skills for AI agents: architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
   "type": "module",
   "scripts": {
     "validate:skills": "node scripts/validate-skills.mjs"
@@ -21,6 +21,12 @@
     "adapters/",
     "docs/",
     "templates/",
+    "skills/",
+    ".claude-plugin/",
+    "gemini-extension.json",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
     "README.md",
     "LICENSE",
     "NOTICE",
@@ -33,6 +39,9 @@
     "agent-skills",
     "codex",
     "claude-code",
+    "gemini-cli",
+    "skills-sh",
+    "ai-agent",
     "opencode",
     "qoder",
     "trae",
@@ -40,11 +49,27 @@
     "cursor",
     "workbuddy",
     "antigravity",
+    "architecture-review",
+    "decision-making",
+    "critical-thinking",
+    "software-architecture",
+    "product-management",
+    "prd",
+    "research",
+    "strategy",
     "deliverables",
     "personas",
     "methods",
     "debates",
     "prompt-engineering"
   ],
+  "homepage": "https://github.com/ArchSightLabs/archsight-cognition",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArchSightLabs/archsight-cognition.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArchSightLabs/archsight-cognition/issues"
+  },
   "license": "Apache-2.0"
 }

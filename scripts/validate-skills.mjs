@@ -37,6 +37,11 @@ const skillRules = [
     prefix: "cogd-",
     sections: ["角色", "适用场景", "推荐视角", "外部事实边界", "方法", "输出契约", "护栏"],
   },
+  {
+    dir: "skills",
+    prefix: "",
+    sections: ["When To Use", "Method", "Output", "Guardrails"],
+  },
 ];
 
 const templateRules = [
@@ -145,14 +150,22 @@ function validateSkill(filePath, rule) {
   if (frontmatter) {
     if (!frontmatter.name) errors.push(`${file}: missing name`);
     if (!frontmatter.description) errors.push(`${file}: missing description`);
-    if (frontmatter.name && !frontmatter.name.startsWith(rule.prefix)) {
+    if (rule.prefix && frontmatter.name && !frontmatter.name.startsWith(rule.prefix)) {
       errors.push(`${file}: name must start with ${rule.prefix}`);
     }
   }
   assertSections(raw, file, rule.sections);
   assertNoCosplay(raw, file);
   if (rule.dir === "methods") validateMethodReferences(path.dirname(filePath), file);
+  if (rule.dir === "skills") validatePublicSkillName(file, frontmatter?.name);
   validateOptionalEvals(path.dirname(filePath), file, frontmatter?.name);
+}
+
+function validatePublicSkillName(file, skillName) {
+  if (!skillName) return;
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(skillName)) {
+    errors.push(`${file}: public skill name must be kebab-case`);
+  }
 }
 
 function validateMethodReferences(skillDir, file) {

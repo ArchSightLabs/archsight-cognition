@@ -1,0 +1,6 @@
+{
+  "name": "archsight-cognition",
+  "version": "2.3.0",
+  "description": "Portable cognitive skills for AI agents: architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
+  "contextFileName": "GEMINI.md"
+}

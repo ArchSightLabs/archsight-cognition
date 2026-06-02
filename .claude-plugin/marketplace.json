@@ -1,0 +1,42 @@
+{
+  "name": "archsight",
+  "owner": {
+    "name": "ArchSightLabs"
+  },
+  "metadata": {
+    "description": "Public marketplace for ArchSight Cognition agent skills."
+  },
+  "plugins": [
+    {
+      "name": "archsight-cognition",
+      "description": "Portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
+      "source": "./",
+      "category": "AI & Agent Building",
+      "tags": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "architecture-review",
+        "decision-making",
+        "critical-thinking",
+        "product-management",
+        "research",
+        "strategy"
+      ],
+      "repository": "https://github.com/ArchSightLabs/archsight-cognition",
+      "homepage": "https://github.com/ArchSightLabs/archsight-cognition",
+      "license": "Apache-2.0",
+      "keywords": [
+        "agent-skills",
+        "architecture-review",
+        "decision-analysis",
+        "prd-writing",
+        "research-synthesis",
+        "strategy-review",
+        "critical-thinking"
+      ],
+      "skills": "./skills/"
+    }
+  ]
+}

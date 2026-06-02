@@ -1,0 +1,26 @@
+{
+  "name": "archsight-cognition",
+  "displayName": "ArchSight Cognition",
+  "version": "2.3.0",
+  "description": "Portable cognitive skills for architecture review, decision analysis, PRD writing, research synthesis, strategy review, and critical thinking.",
+  "author": {
+    "name": "ArchSightLabs",
+    "url": "https://github.com/ArchSightLabs"
+  },
+  "homepage": "https://github.com/ArchSightLabs/archsight-cognition",
+  "repository": "https://github.com/ArchSightLabs/archsight-cognition",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "architecture-review",
+    "decision-making",
+    "critical-thinking",
+    "product-management",
+    "research",
+    "strategy"
+  ],
+  "skills": "./skills/"
+}
