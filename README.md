@@ -2,15 +2,17 @@
 
 [English README](./README_EN.md)
 
-面向 AI Agent 的可移植认知技能包 / portable cognitive skills for AI agents：用于架构评审、决策分析、PRD 写作、调研综合、战略评审和批判性思维，支持 Claude Code、Codex、Gemini CLI、Cursor、Cline、OpenCode 等宿主。
+面向 AI Agent 的可移植认知技能包 / portable cognitive skills for AI agents：用于架构评审、决策分析、PRD 写作、调研综合、战略评审和批判性思维，支持 Claude Code、Codex、Antigravity/agy、Gemini CLI、Cursor、Cline、OpenCode 等宿主。
 
 公共发现入口：
 
 ```powershell
 npx skills add ArchSightLabs/archsight-cognition --list
-gemini extensions install https://github.com/ArchSightLabs/archsight-cognition
+npx @archsight/cognition install antigravity --global
 npx @archsight/cognition install all --global
 ```
+
+`gemini-extension.json` 仍作为 Gemini CLI 兼容入口保留。Google 已把个人用户侧的 CLI 主线迁移到 Antigravity CLI（`agy`），本项目已验证支持 Antigravity 2.0 安装，因此新用户优先使用 Antigravity adapter；仍在使用 Gemini CLI 或企业/Cloud API key 路线的用户，可继续使用 `gemini extensions install https://github.com/ArchSightLabs/archsight-cognition`。
 
 Claude Code marketplace：
 
@@ -134,7 +136,7 @@ ArchSight Cognition 可以放在 agent 工作流的“判断层”和“生成�
 | Deliverables | `deliverables/` | 面向真实任务的生成型入口，产出 PRD、备忘录、草稿、调研计划、调研简报、复盘和战略简报 |
 | 口吻 | `voices/` | 风格化表达、人物口吻、修辞节奏 |
 | 辩论 | `debates/` | 有结构的分歧、立场压力测试、长期议题讨论；包含中国思想分歧与传统/现代议题 |
-| 公共发现入口 | `skills/` | 面向 `skills.sh`、`npx skills add --list`、Gemini CLI extension、Claude Code marketplace 和第三方索引器的任务型 `SKILL.md` |
+| 公共发现入口 | `skills/` | 面向 `skills.sh`、`npx skills add --list`、Antigravity/agy、Gemini CLI extension、Claude Code marketplace 和第三方索引器的任务型 `SKILL.md` |
 | 适配 | `adapters/` | 不同 agent host 的安装和使用方式 |
 | 模板 | `templates/` | 新增 persona、method、team、deliverable、voice 和 debate 的标准结构 |
 
@@ -385,7 +387,8 @@ ArchSight Cognition 可以作为 npm 内容包安装。npm 只负责分发 Markd
 | 当前项目 | `npx @archsight/cognition install antigravity` | 当前目录 `.agents/skills/`、`.agents/plugins/archsight-cognition/` 和 `.agents/workflows/decision-review.md`。 |
 | 当前项目 | `npx @archsight/cognition install all` | 在当前项目安装 Codex、Claude Code、OpenCode、Qoder、Trae、Cline、Cursor 和 Antigravity 入口；WorkBuddy 作为例外固定安装到个人目录。 |
 | 公共发现 | `npx skills add ArchSightLabs/archsight-cognition --list` | 通过标准 `skills/` 目录列出任务型 skill。 |
-| Gemini extension | `gemini extensions install https://github.com/ArchSightLabs/archsight-cognition` | 通过根目录 `gemini-extension.json` 安装 Gemini CLI extension。 |
+| Antigravity / agy | `npx @archsight/cognition install antigravity --global` | 已验证支持 Antigravity 2.0；安装到 2.x 官方 plugin 目录 `~/.gemini/config/plugins/archsight-cognition/`。 |
+| Gemini CLI 兼容 | `gemini extensions install https://github.com/ArchSightLabs/archsight-cognition` | 通过根目录 `gemini-extension.json` 安装 Gemini CLI extension；适合仍在使用 Gemini CLI 的环境。 |
 | 全局 | `npx @archsight/cognition install codex --global` | `CODEX_HOME` 或 `~/.codex`，并注册 Codex skills。 |
 | 全局 | `npx @archsight/cognition install claude-code --global` | `~/.claude/skills/`。 |
 | 全局 | `npx @archsight/cognition install opencode --global` | `~/.opencode/skills/`；如果已存在 `~/.config/opencode/`，同时写入 `~/.config/opencode/skills/`。 |
@@ -468,9 +471,9 @@ archsight-cognition install all --force
 | Trae | `npx @archsight/cognition install trae` | `npx @archsight/cognition install trae --global` | `使用 cogt-decide skill ...` |
 | Cline | `npx @archsight/cognition install cline` | `npx @archsight/cognition install cline --global` | `使用 cogt-decide ...` |
 | Cursor | `npx @archsight/cognition install cursor` | 在 Cursor 设置中维护 User Rules | `使用 cogt-decide ...` |
+| Antigravity | `npx @archsight/cognition install antigravity` | `npx @archsight/cognition install antigravity --global` | `使用 cogt-decide skill ...` |
 | Gemini CLI | `gemini extensions install https://github.com/ArchSightLabs/archsight-cognition` | `gemini skills install https://github.com/ArchSightLabs/archsight-cognition` | `decision-review` |
 | WorkBuddy | 不适用，固定个人目录 | `npx @archsight/cognition install workbuddy` | `使用 cogt-decide skill ...` |
-| Antigravity | `npx @archsight/cognition install antigravity` | `npx @archsight/cognition install antigravity --global` | `使用 cogt-decide skill ...` |
 
 详细说明：
 

@@ -1,6 +1,6 @@
 {
   "name": "archsight-cognition",
   "version": "2.3.0",
-  "description": "认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Gemini CLI",
+  "description": "认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Antigravity/agy / Gemini CLI",
   "contextFileName": "GEMINI.md"
 }

@@ -9,14 +9,16 @@
   "plugins": [
     {
       "name": "archsight-cognition",
-      "description": "认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Gemini CLI",
+      "description": "认知增强 AI Skills：结构化思考、决策复盘、辩论、写作、产品、设计与工程领导，支持 Codex / Claude Code / Antigravity/agy / Gemini CLI",
       "source": "./",
       "category": "AI & Agent Building",
       "tags": [
         "agent-skills",
+        "cognition",
         "claude-code",
         "codex",
         "gemini-cli",
+        "antigravity",
         "architecture-review",
         "structured-thinking",
         "structured-debate",
@@ -32,6 +34,7 @@
       "license": "Apache-2.0",
       "keywords": [
         "agent-skills",
+        "cognition",
         "architecture-review",
         "structured-thinking",
         "multi-perspective-review",

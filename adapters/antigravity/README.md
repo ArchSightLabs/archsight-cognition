@@ -1,6 +1,6 @@
 # Antigravity 适配说明
 
-Antigravity 适合把 ArchSight Cognition 作为全局 skills / plugins 使用；workspace skills 和 workflows 主要作为 IDE 不识别全局安装时的 fallback。
+Antigravity 适合把 ArchSight Cognition 作为全局 skills / plugins 使用；workspace skills 和 workflows 主要作为 IDE 不识别全局安装时的 fallback。本项目已验证支持 Antigravity 2.0 安装。
 
 推荐方式：
 

@@ -5,15 +5,16 @@
 结论：公共发现不是单一市场自动收录。更现实的路径是同时满足三类机制：
 
 1. 本地自动发现：宿主扫描 `SKILL.md`、`skills/`、`.agents/skills/`、`.claude/skills/` 或 extension/plugin 目录。
-2. 可分发安装：通过 GitHub、npm/npx、Gemini extension、Claude marketplace、`skills.sh` / `npx skills` 安装。
+2. 可分发安装：通过 GitHub、npm/npx、Antigravity/agy、Gemini extension 兼容入口、Claude marketplace、`skills.sh` / `npx skills` 安装。
 3. 公共检索：依赖 GitHub topics、manifest、标准目录、README 关键词、release、安装量、star 和主动提交。
 
 ## 已补充的项目内入口
 
 | 入口 | 文件 | 目的 |
 | --- | --- | --- |
-| 标准 skills 目录 | `skills/` | 让 `skills.sh`、`npx skills`、Gemini extension 和其他标准 skill 索引器直接看到任务型 `SKILL.md`。 |
-| Gemini extension manifest | `gemini-extension.json` | 满足 Gemini CLI extension 安装和 Gallery 校验的根目录 manifest。 |
+| 标准 skills 目录 | `skills/` | 让 `skills.sh`、`npx skills`、Antigravity/agy、Gemini extension 和其他标准 skill 索引器直接看到任务型 `SKILL.md`。 |
+| Antigravity adapter | `adapters/antigravity/README.md` | 已验证支持 Antigravity 2.0，面向 Google 新主线 Antigravity CLI（`agy`）和 Antigravity 2.x plugin 目录。 |
+| Gemini extension manifest | `gemini-extension.json` | 保留 Gemini CLI extension 兼容入口和 Gallery / 第三方索引 manifest。 |
 | Claude marketplace manifest | `.claude-plugin/marketplace.json` | 允许 Claude Code 用户通过 `/plugin marketplace add ArchSightLabs/archsight-cognition` 添加 marketplace。 |
 | Claude plugin manifest | `.claude-plugin/plugin.json` | 描述插件元数据，并把插件 skills 指向 `./skills/`。 |
 | npm metadata | `package.json` | 增加英文 description、repository、homepage、bugs 和搜索关键词。 |
@@ -39,12 +40,12 @@ Topics：
 ```text
 agent-skills
 ai-agent
-ai-skills
+cognition
 claude-code
 codex
-gemini-cli
 gemini-cli-extension
 prompt-engineering
+architecture-review
 critical-thinking
 decision-making
 structured-thinking
@@ -53,13 +54,13 @@ multi-perspective-review
 software-architecture
 product-management
 product-strategy
-design-review
+prd
 writing-review
 engineering-leadership
 chinese-thinking
 ```
 
-`gemini-cli-extension` 应在根目录已有 `gemini-extension.json` 后再添加。
+以上 topics 控制为 20 个，并按当前 GitHub About 实际设置同步。`cognition` 是项目身份词；Antigravity 2.0 / agy 已验证支持，但暂不放入 topics，以免挤掉更能代表能力版图的认知和任务关键词。
 
 ## 公共安装命令
 
@@ -70,13 +71,19 @@ npx skills add ArchSightLabs/archsight-cognition --list
 npx skills add ArchSightLabs/archsight-cognition --skill decision-review --global
 ```
 
-Gemini CLI extension：
+Antigravity / agy：
+
+```powershell
+npx @archsight/cognition install antigravity --global
+```
+
+Gemini CLI extension 兼容入口：
 
 ```powershell
 gemini extensions install https://github.com/ArchSightLabs/archsight-cognition
 ```
 
-Gemini CLI skills：
+Gemini CLI skills 兼容入口：
 
 ```powershell
 gemini skills install https://github.com/ArchSightLabs/archsight-cognition
@@ -105,6 +112,8 @@ AI agent skills
 Claude Code skills
 Codex skills
 Gemini CLI extension
+Antigravity CLI
+agy
 architecture review
 technical design review
 structured thinking
@@ -134,7 +143,7 @@ product management
 Repository: https://github.com/ArchSightLabs/archsight-cognition
 Package: @archsight/cognition
 License: Apache-2.0
-Supported agents: Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Antigravity, Hermes, OpenClaw
+Supported agents: Claude Code, Codex, Antigravity/agy, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Hermes, OpenClaw
 Canonical skill path: skills/
 Install command: npx skills add ArchSightLabs/archsight-cognition --list
 NPM install command: npx @archsight/cognition install all --global
@@ -151,7 +160,7 @@ npm run validate:skills
 npx skills add . --list
 ```
 
-如果本机安装了对应 CLI，再验证：
+如果本机安装了对应 CLI，再验证。注意：Google 正在把个人用户侧 Gemini CLI 迁移到 Antigravity CLI（`agy`），不同版本的 `gemini` 命令可能不再支持旧的 `extensions validate` 子命令；该失败不一定表示本项目 manifest 有问题。
 
 ```powershell
 gemini extensions validate .
@@ -164,5 +173,6 @@ claude plugin validate .
 - OpenAI skills catalog: https://github.com/openai/skills
 - Claude Code plugin marketplace: https://code.claude.com/docs/en/plugin-marketplaces
 - Claude Code plugin reference: https://code.claude.com/docs/en/plugins-reference
+- Google transition to Antigravity CLI: https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/
 - Gemini CLI extension releasing: https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/releasing.md
 - Vercel skills CLI discovery: https://github.com/vercel-labs/skills

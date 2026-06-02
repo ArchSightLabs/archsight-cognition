@@ -2,7 +2,7 @@
 
 ArchSight Cognition is a portable cognitive skill pack for AI agents.
 
-It gives Claude Code, Codex, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Antigravity, Hermes, OpenClaw, and other agent hosts reusable Markdown `SKILL.md` modules for structured thinking, multi-perspective review, decision analysis, PRD writing, research synthesis, strategy review, critical thinking, writing review, design review, product strategy, engineering leadership, structured debate, Chinese thinking, and long-form reasoning.
+It gives Claude Code, Codex, Antigravity/agy, Gemini CLI, Cursor, Cline, OpenCode, Qoder, Trae, WorkBuddy, Hermes, OpenClaw, and other agent hosts reusable Markdown `SKILL.md` modules for structured thinking, multi-perspective review, decision analysis, PRD writing, research synthesis, strategy review, critical thinking, writing review, design review, product strategy, engineering leadership, structured debate, Chinese thinking, and long-form reasoning.
 
 The default Chinese README is intentional. ArchSight Cognition has strong Chinese-language use cases, including Chinese writing review, Chinese intellectual traditions, product and organization judgment in Chinese contexts, and cross-disciplinary reasoning expressed in clear Chinese. This English README is the public discovery and onboarding layer for non-Chinese readers.
 
@@ -20,11 +20,19 @@ Install all supported local host entries through npm:
 npx @archsight/cognition install all --global
 ```
 
-Install as a Gemini CLI extension:
+Install for Antigravity CLI (`agy`) and Antigravity 2.x:
+
+```powershell
+npx @archsight/cognition install antigravity --global
+```
+
+Install as a Gemini CLI extension in environments that still support Gemini CLI:
 
 ```powershell
 gemini extensions install https://github.com/ArchSightLabs/archsight-cognition
 ```
+
+Google is moving the consumer CLI path from Gemini CLI to Antigravity CLI (`agy`). This repository has verified Antigravity 2.0 installation support, keeps `gemini-extension.json` for compatibility and public indexing, and treats the Antigravity adapter as the preferred path for new Google CLI users.
 
 Add the Claude Code marketplace:
 
@@ -35,7 +43,7 @@ Add the Claude Code marketplace:
 
 ## Public Skills
 
-The `skills/` directory exposes task-oriented public entry points for GitHub-based skill indexers, `skills.sh`, Gemini CLI, and Claude Code marketplace discovery. These entries are discovery and onboarding wrappers, not the full capability set:
+The `skills/` directory exposes task-oriented public entry points for GitHub-based skill indexers, `skills.sh`, Antigravity/agy, Gemini CLI compatibility, and Claude Code marketplace discovery. These entries are discovery and onboarding wrappers, not the full capability set:
 
 | Skill | Use Case |
 | --- | --- |
