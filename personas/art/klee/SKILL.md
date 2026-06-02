@@ -1,6 +1,6 @@
 ---
 name: cogp-klee
-description: Paul Klee 式绘画构成工具，用于形态、节奏、动势、象征、留白和视觉诗性。
+description: 绘画构成 / Visual composition。用于形态、节奏、动势、象征、留白和视觉诗性。
 ---
 
 # Klee

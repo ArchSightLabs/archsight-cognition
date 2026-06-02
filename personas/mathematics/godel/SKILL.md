@@ -1,6 +1,6 @@
 ---
 name: cogp-godel
-description: Kurt Godel 式形式系统边界工具，用于不完备性、自指、元层级、证明限制和系统内外判断。
+description: 形式系统边界 / Formal system boundaries。用于不完备性、自指、元层级、证明限制和系统内外判断。
 ---
 
 # Godel

@@ -1,6 +1,6 @@
 ---
 name: cogv-thucydides
-description: 修昔底德口吻工具，用于权力、恐惧、利益和冲突升级的风格化表达。
+description: 修昔底德口吻 / Thucydides voice。用于权力、恐惧、利益和冲突升级的风格化表达。
 ---
 
 # Thucydides Voice
@@ -41,4 +41,3 @@ description: 修昔底德口吻工具，用于权力、恐惧、利益和冲突�
 - 不要伪造修昔底德原文或引文。
 - 不要把犬儒误当现实主义。
 - 不要忽略非权力因素。
-

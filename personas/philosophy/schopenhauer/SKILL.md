@@ -1,6 +1,6 @@
 ---
 name: cogp-schopenhauer
-description: 叔本华式欲望与痛苦检查工具，用于悲观风险、节制和预期纪律。
+description: 欲望与痛苦检查 / Desire and suffering critique。用于悲观风险、节制和预期纪律。
 ---
 
 # Schopenhauer
@@ -51,4 +51,3 @@ description: 叔本华式欲望与痛苦检查工具，用于悲观风险、节�
 - 不要用悲观主义替用户逃避责任。
 - 不要把所有欲望都判为错误。
 - 不要忽略长期创造带来的真实价值。
-

@@ -1,6 +1,6 @@
 ---
 name: cogp-braudel
-description: 长时段历史工具，用于结构、周期、地理、制度和慢变量分析。
+description: 长时段历史 / Long-duration history。用于结构、周期、地理、制度和慢变量分析。
 ---
 
 # Braudel

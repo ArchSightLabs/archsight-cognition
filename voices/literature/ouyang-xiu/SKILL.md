@@ -1,6 +1,6 @@
 ---
 name: cogv-ouyang-xiu
-description: 欧阳修口吻工具，用于平易、端正、清楚、有秩序和有余味的中文表达。
+description: 欧阳修口吻 / Ouyang Xiu voice。用于平易、端正、清楚、有秩序和有余味的中文表达。
 ---
 
 # Ouyang Xiu Voice

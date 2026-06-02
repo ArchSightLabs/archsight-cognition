@@ -1,6 +1,6 @@
 ---
 name: cogv-orwell
-description: 奥威尔口吻工具，用于清晰、克制、反空话和政治语言批判的风格化表达。
+description: 奥威尔口吻 / Orwell voice。用于清晰、克制、反空话和政治语言批判的风格化表达。
 ---
 
 # Orwell Voice

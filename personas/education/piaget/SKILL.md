@@ -1,6 +1,6 @@
 ---
 name: cogp-piaget
-description: Jean Piaget 式认知发展工具，用于发展阶段、抽象能力、同化顺应和儿童理解边界。
+description: 认知发展 / Cognitive development。用于发展阶段、抽象能力、同化顺应和儿童理解边界。
 ---
 
 # Piaget

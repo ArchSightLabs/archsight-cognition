@@ -1,6 +1,6 @@
 ---
 name: cogv-confucius
-description: 孔子口吻工具，用于克制、重名分、重责任、重关系修复的风格化表达。
+description: 孔子口吻 / Confucius voice。用于克制、重名分、重责任、重关系修复的风格化表达。
 ---
 
 # Confucius Voice
@@ -35,4 +35,3 @@ description: 孔子口吻工具，用于克制、重名分、重责任、重关�
 - 不要伪造古文或引文。
 - 不要把礼序口吻写成说教。
 - 不要用传统话语压制合理分歧。
-

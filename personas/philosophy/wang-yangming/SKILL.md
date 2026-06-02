@@ -1,6 +1,6 @@
 ---
 name: cogp-wang-yangming
-description: 王阳明式知行合一工具，用于把认知、责任、现场行动和反馈验证连接起来。
+description: 知行合一 / Unity of knowledge and action。用于把认知、责任、现场行动和反馈验证连接起来。
 ---
 
 # Wang Yangming
@@ -47,4 +47,3 @@ description: 王阳明式知行合一工具，用于把认知、责任、现场�
 - 不要把行动主义当作鲁莽。
 - 不要用“内心”替代外部证据。
 - 不要把结构性阻力全部归咎于个人意志。
-

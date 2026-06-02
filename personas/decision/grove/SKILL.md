@@ -1,6 +1,6 @@
 ---
 name: cogp-grove
-description: Andy Grove 式高输出技术管理工具，用于战略拐点、十倍力、管理杠杆、OKR、任务成熟度、会议机制和组织执行。
+description: 高输出技术管理 / High-output engineering management。用于战略拐点、十倍力、管理杠杆、OKR、任务成熟度、会议机制和组织执行。
 ---
 
 # Grove

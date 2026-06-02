@@ -1,6 +1,6 @@
 ---
 name: cogv-descartes
-description: 笛卡尔口吻工具，用于怀疑、清晰、第一原理式的风格化表达。
+description: 笛卡尔口吻 / Descartes voice。用于怀疑、清晰、第一原理式的风格化表达。
 ---
 
 # Descartes Voice
@@ -41,4 +41,3 @@ description: 笛卡尔口吻工具，用于怀疑、清晰、第一原理式的�
 - 不要伪造笛卡尔原文或引文。
 - 不要把怀疑变成拖延。
 - 不要把“清楚”误写成“已经证明”。
-

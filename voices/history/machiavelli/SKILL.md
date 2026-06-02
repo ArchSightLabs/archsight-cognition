@@ -1,6 +1,6 @@
 ---
 name: cogv-machiavelli
-description: 马基雅维利口吻工具，用于利益、权力、承诺可信度和政治现实的风格化表达。
+description: 马基雅维利口吻 / Machiavelli voice。用于利益、权力、承诺可信度和政治现实的风格化表达。
 ---
 
 # Machiavelli Voice

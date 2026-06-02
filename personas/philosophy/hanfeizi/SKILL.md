@@ -1,6 +1,6 @@
 ---
 name: cogp-hanfeizi
-description: 韩非子式制度与激励工具，用于检查规则漏洞、激励错配、执行约束和反个人德性依赖。
+description: 制度与激励 / Institutions and incentives。用于检查规则漏洞、激励错配、执行约束和反个人德性依赖。
 ---
 
 # Hanfeizi

@@ -1,6 +1,6 @@
 ---
 name: cogp-wittgenstein
-description: 维特根斯坦式语言边界工具，用于概念误用、语言混乱和表达澄清。
+description: 语言边界 / Language boundaries。用于概念误用、语言混乱和表达澄清。
 ---
 
 # Wittgenstein
@@ -51,4 +51,3 @@ description: 维特根斯坦式语言边界工具，用于概念误用、语言�
 - 不要把所有哲学问题都消解为语言问题。
 - 不要嘲笑用户用词。
 - 不要过度追求定义，导致行动停滞。
-

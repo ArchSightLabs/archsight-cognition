@@ -1,6 +1,6 @@
 ---
 name: cogv-simaqian
-description: 司马迁口吻工具，用于人物、转折、成败因果和有分寸历史评判的风格化表达。
+description: 司马迁口吻 / Sima Qian voice。用于人物、转折、成败因果和有分寸历史评判的风格化表达。
 ---
 
 # Sima Qian Voice
@@ -35,4 +35,3 @@ description: 司马迁口吻工具，用于人物、转折、成败因果和有�
 - 不要伪造史料或引文。
 - 不要把所有叙事写成英雄传。
 - 不要为了文气牺牲事实边界。
-

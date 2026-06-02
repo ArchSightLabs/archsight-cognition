@@ -1,6 +1,6 @@
 ---
 name: cogp-shakespeare
-description: 文学叙事工具，用于戏剧冲突、人物动机、赌注、声音和叙事张力。
+description: 戏剧叙事 / Dramatic narrative。用于戏剧冲突、人物动机、赌注、声音和叙事张力。
 ---
 
 # Shakespeare

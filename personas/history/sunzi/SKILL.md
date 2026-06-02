@@ -1,6 +1,6 @@
 ---
 name: cogp-sunzi
-description: 孙子式战略态势工具，用于胜前计算、虚实、势能、成本、信息差和不战而胜。
+description: 战略态势 / Strategic positioning。用于胜前计算、虚实、势能、成本、信息差和低损耗行动。
 ---
 
 # Sunzi

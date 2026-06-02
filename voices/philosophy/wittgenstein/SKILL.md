@@ -1,6 +1,6 @@
 ---
 name: cogv-wittgenstein
-description: 维特根斯坦口吻工具，用于语言边界、短句、概念拆解的风格化表达。
+description: 维特根斯坦口吻 / Wittgenstein voice。用于语言边界、短句、概念拆解的风格化表达。
 ---
 
 # Wittgenstein Voice
@@ -41,4 +41,3 @@ description: 维特根斯坦口吻工具，用于语言边界、短句、概念�
 - 不要伪造维特根斯坦原文或引文。
 - 不要把短句写成谜语。
 - 不要用语言分析逃避现实判断。
-

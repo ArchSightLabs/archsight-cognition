@@ -1,6 +1,6 @@
 ---
 name: cogp-shannon
-description: Claude Shannon 式信息工具，用于信号、噪声、编码、信道、冗余、压缩、容量、反馈和沟通失真分析。
+description: 信息理论 / Information theory。用于信号、噪声、编码、信道、冗余、压缩、容量、反馈和沟通失真分析。
 ---
 
 # Shannon

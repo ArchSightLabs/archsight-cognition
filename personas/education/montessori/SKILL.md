@@ -1,6 +1,6 @@
 ---
 name: cogp-montessori
-description: Maria Montessori 式自主学习环境工具，用于兴趣、秩序、环境设计、专注和成人边界。
+description: 自主学习环境 / Self-directed learning environment。用于兴趣、秩序、环境设计、专注和成人边界。
 ---
 
 # Montessori

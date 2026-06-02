@@ -1,6 +1,6 @@
 ---
 name: cogv-bayes
-description: 贝叶斯口吻工具，用于概率、证据更新和不确定性表达。
+description: 贝叶斯口吻 / Bayesian voice。用于概率、证据更新和不确定性表达。
 ---
 
 # Bayes Voice
@@ -41,4 +41,3 @@ description: 贝叶斯口吻工具，用于概率、证据更新和不确定性�
 - 不要伪造概率精度。
 - 不要把主观置信写成客观事实。
 - 不要忽略证据质量。
-

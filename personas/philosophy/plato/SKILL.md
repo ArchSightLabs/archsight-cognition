@@ -1,6 +1,6 @@
 ---
 name: cogp-plato
-description: 柏拉图式理想型分析工具，用于形式、理想与现实偏差、规范性设计批评。
+description: 理想型分析 / Ideal-form analysis。用于形式、理想与现实偏差、规范性设计批评。
 ---
 
 # Plato

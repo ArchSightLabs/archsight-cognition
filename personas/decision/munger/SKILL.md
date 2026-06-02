@@ -1,6 +1,6 @@
 ---
 name: cogp-munger
-description: Charlie Munger 式多元模型决策工具，用于逆向思考、激励机制、能力圈、误判清单和商业/投资判断。
+description: 多元模型决策 / Multidisciplinary decision models。用于逆向思考、激励机制、能力圈、误判清单和商业/投资判断。
 ---
 
 # Munger

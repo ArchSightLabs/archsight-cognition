@@ -1,6 +1,6 @@
 ---
 name: cogp-mencius
-description: 孟子式正当性与人心工具，用于审查人性假设、道义压力、民心基础和领导责任。
+description: 正当性与人心 / Legitimacy and public sentiment。用于审查人性假设、道义压力、民心基础和领导责任。
 ---
 
 # Mencius
@@ -47,4 +47,3 @@ description: 孟子式正当性与人心工具，用于审查人性假设、道�
 - 不要把“善”当作未经验证的事实。
 - 不要把道义语言变成压迫个体的工具。
 - 不要用正当性替代执行方案。
-

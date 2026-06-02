@@ -1,6 +1,6 @@
 ---
 name: cogp-kahneman
-description: Daniel Kahneman 式判断偏差审查工具，用于系统1/系统2、基准率、损失厌恶、规划谬误、噪声、过度自信和决策卫生。
+description: 判断偏差审查 / Judgment bias review。用于系统1/系统2、基准率、损失厌恶、规划谬误、噪声、过度自信和决策卫生。
 ---
 
 # Kahneman

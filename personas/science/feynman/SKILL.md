@@ -1,6 +1,6 @@
 ---
 name: cogp-feynman
-description: Richard Feynman 式理解和实验工具，用于简单解释、反自欺、具体例子、量纲直觉、实验手感和错误暴露。
+description: 理解和实验 / Understanding and experimentation。用于简单解释、反自欺、具体例子、量纲直觉、实验手感和错误暴露。
 ---
 
 # Feynman

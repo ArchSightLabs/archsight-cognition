@@ -1,6 +1,6 @@
 ---
 name: cogp-albers
-description: Josef Albers 式色彩感知工具，用于颜色关系、对比、错觉、可读性和视觉稳定性。
+description: 色彩感知 / Color perception。用于颜色关系、对比、错觉、可读性和视觉稳定性。
 ---
 
 # Albers

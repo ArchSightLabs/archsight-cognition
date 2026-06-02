@@ -1,6 +1,6 @@
 ---
 name: cogv-qian-zhongshu
-description: 钱钟书口吻工具，用于机智、反讽、类比和知识分辨的风格化表达。
+description: 钱钟书口吻 / Qian Zhongshu voice。用于机智、反讽、类比和知识分辨的风格化表达。
 ---
 
 # Qian Zhongshu Voice

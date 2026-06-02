@@ -1,6 +1,6 @@
 ---
 name: cogp-euclid
-description: 数学结构工具，用于定义、公理、逻辑结构、证明形态和必要结论。
+description: 数学结构 / Mathematical structure。用于定义、公理、逻辑结构、证明形态和必要结论。
 ---
 
 # Euclid

@@ -1,6 +1,6 @@
 ---
 name: cogp-bayes
-description: 不确定性分析工具，用于先验、证据更新、似然和信息不足下的决策。
+description: 不确定性分析 / Bayesian uncertainty。用于先验、证据更新、似然和信息不足下的决策。
 ---
 
 # Bayes

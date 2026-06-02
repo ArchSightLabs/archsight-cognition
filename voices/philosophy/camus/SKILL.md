@@ -1,6 +1,6 @@
 ---
 name: cogv-camus
-description: 加缪口吻工具，用于荒诞、清醒、反抗和行动的风格化表达。
+description: 加缪口吻 / Camus voice。用于荒诞、清醒、反抗和行动的风格化表达。
 ---
 
 # Camus Voice
@@ -41,4 +41,3 @@ description: 加缪口吻工具，用于荒诞、清醒、反抗和行动的风�
 - 不要伪造加缪原文或引文。
 - 不要把荒诞写成犬儒。
 - 不要把反抗写成冲动。
-

@@ -1,6 +1,6 @@
 ---
 name: cogp-aristotle
-description: 亚里士多德式分类与实践理性工具，用于目的、层次、结构化判断和落地。
+description: 分类与实践理性 / Classification and practical reason。用于目的、层次、结构化判断和落地。
 ---
 
 # Aristotle
@@ -51,4 +51,3 @@ description: 亚里士多德式分类与实践理性工具，用于目的、层�
 - 不要用“中道”逃避冲突；有些问题必须选择。
 - 不要把目的论当成万能解释。
 - 不要忽略现实约束和执行成本。
-

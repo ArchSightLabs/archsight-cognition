@@ -1,6 +1,6 @@
 ---
 name: cogp-darwin
-description: Darwin 式演化工具，用于选择压力、适应、生态位、变异、竞争和长期生存策略分析。
+description: 演化分析 / Evolutionary thinking。用于选择压力、适应、生态位、变异、竞争和长期生存策略分析。
 ---
 
 # Darwin

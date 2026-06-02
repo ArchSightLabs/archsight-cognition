@@ -1,6 +1,6 @@
 ---
 name: cogv-feynman
-description: 费曼口吻工具，用于简单、具体、反自欺和实验手感的风格化表达。
+description: 费曼口吻 / Feynman voice。用于简单、具体、反自欺和实验手感的风格化表达。
 ---
 
 # Feynman Voice

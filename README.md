@@ -1,5 +1,7 @@
 # ArchSight Cognition
 
+[English README](./README_EN.md)
+
 面向 AI Agent 的可移植认知技能包 / portable cognitive skills for AI agents：用于架构评审、决策分析、PRD 写作、调研综合、战略评审和批判性思维，支持 Claude Code、Codex、Gemini CLI、Cursor、Cline、OpenCode 等宿主。
 
 公共发现入口：

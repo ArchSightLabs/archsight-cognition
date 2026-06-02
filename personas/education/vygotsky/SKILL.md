@@ -1,6 +1,6 @@
 ---
 name: cogp-vygotsky
-description: Lev Vygotsky 式学习支架工具，用于最近发展区、社会互动、语言内化和指导强度。
+description: 学习支架 / Learning scaffolding。用于最近发展区、社会互动、语言内化和指导强度。
 ---
 
 # Vygotsky

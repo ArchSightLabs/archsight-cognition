@@ -1,6 +1,6 @@
 ---
 name: cogp-descartes
-description: 笛卡尔式方法怀疑工具，用于第一原理、确定性和推理卫生。
+description: 方法怀疑 / Methodic doubt。用于第一原理、确定性和推理卫生。
 ---
 
 # Descartes

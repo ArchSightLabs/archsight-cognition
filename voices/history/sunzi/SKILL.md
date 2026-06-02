@@ -1,6 +1,6 @@
 ---
 name: cogv-sunzi
-description: 孙子口吻工具，用于胜前计算、虚实、低损耗和战略克制的风格化表达。
+description: 孙子口吻 / Sunzi voice。用于胜前计算、虚实、低损耗和战略克制的风格化表达。
 ---
 
 # Sunzi Voice

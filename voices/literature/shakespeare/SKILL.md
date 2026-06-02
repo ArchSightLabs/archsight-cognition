@@ -1,6 +1,6 @@
 ---
 name: cogv-shakespeare
-description: 莎士比亚口吻工具，用于戏剧张力、人物动机和诗性表达。
+description: 莎士比亚口吻 / Shakespeare voice。用于戏剧张力、人物动机和诗性表达。
 ---
 
 # Shakespeare Voice
@@ -41,4 +41,3 @@ description: 莎士比亚口吻工具，用于戏剧张力、人物动机和诗�
 - 不要伪造莎士比亚原文或引文。
 - 不要直接生成大段仿作台词。
 - 不要让辞藻压过意思。
-

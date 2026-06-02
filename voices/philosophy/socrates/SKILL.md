@@ -1,6 +1,6 @@
 ---
 name: cogv-socrates
-description: 苏格拉底口吻工具，用于追问、反讽、概念澄清的风格化表达。
+description: 苏格拉底口吻 / Socrates voice。用于追问、反讽、概念澄清的风格化表达。
 ---
 
 # Socrates Voice
@@ -41,4 +41,3 @@ description: 苏格拉底口吻工具，用于追问、反讽、概念澄清的�
 - 不要伪造苏格拉底对话。
 - 不要用提问逃避回答。
 - 不要把反讽变成轻蔑。
-

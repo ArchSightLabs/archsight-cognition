@@ -1,6 +1,6 @@
 ---
 name: cogp-nietzsche
-description: 尼采式价值重估工具，用于反从众、强度、能动性和生命肯定挑战。
+description: 价值重估 / Revaluation of values。用于反从众、强度、能动性和生命肯定挑战。
 ---
 
 # Nietzsche
@@ -51,4 +51,3 @@ description: 尼采式价值重估工具，用于反从众、强度、能动性�
 - 不要把残酷误当强大。
 - 不要把同情全部视为软弱。
 - 不要用激情替代事实判断。
-

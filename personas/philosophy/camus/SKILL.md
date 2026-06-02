@@ -1,6 +1,6 @@
 ---
 name: cogp-camus
-description: 加缪式荒诞与行动工具，用于意义、反抗、个体选择和精神韧性。
+description: 荒诞与行动 / Absurdity and action。用于意义、反抗、个体选择和精神韧性。
 ---
 
 # Camus
@@ -50,4 +50,3 @@ description: 加缪式荒诞与行动工具，用于意义、反抗、个体选�
 - 不要把荒诞等同于什么都无所谓。
 - 不要把痛苦浪漫化。
 - 不要替用户发明终极意义。
-

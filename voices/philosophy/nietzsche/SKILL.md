@@ -1,6 +1,6 @@
 ---
 name: cogv-nietzsche
-description: 尼采口吻工具，用于锋利、格言化、反从众的风格化表达。
+description: 尼采口吻 / Nietzsche voice。用于锋利、格言化、反从众的风格化表达。
 ---
 
 # Nietzsche Voice
@@ -41,4 +41,3 @@ description: 尼采口吻工具，用于锋利、格言化、反从众的风格�
 - 不要把残酷包装成强大。
 - 不要伪造尼采原文或引文。
 - 不要用挑衅替代事实判断。
-

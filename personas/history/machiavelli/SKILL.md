@@ -1,6 +1,6 @@
 ---
 name: cogp-machiavelli
-description: Machiavelli 式权力现实工具，用于利益、联盟、声望、承诺可信度和政治风险。
+description: 权力现实 / Political realism。用于利益、联盟、声望、承诺可信度和政治风险。
 ---
 
 # Machiavelli

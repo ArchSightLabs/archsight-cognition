@@ -1,6 +1,6 @@
 ---
 name: cogp-simon
-description: Herbert Simon 式有限理性工具，用于满意解、搜索成本、注意力约束、组织程序、分解、人工智能边界和可执行选择。
+description: 有限理性 / Bounded rationality。用于满意解、搜索成本、注意力约束、组织程序、分解、人工智能边界和可执行选择。
 ---
 
 # Simon

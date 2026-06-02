@@ -1,6 +1,6 @@
 ---
 name: cogp-caoxueqin
-description: 曹雪芹式复杂关系与细节伏笔工具，用于分析关系网络、隐性权力、盛衰结构和叙事暗线。
+description: 复杂关系与细节伏笔 / Complex relationships and narrative foreshadowing。用于分析关系网络、隐性权力、盛衰结构和叙事暗线。
 ---
 
 # Cao Xueqin
@@ -47,4 +47,3 @@ description: 曹雪芹式复杂关系与细节伏笔工具，用于分析关系�
 - 不要把所有细节都过度解释成隐喻。
 - 不要用阴谋论替代证据。
 - 不要为了“红学味”牺牲文本清晰度。
-

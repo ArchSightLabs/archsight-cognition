@@ -1,6 +1,6 @@
 ---
 name: cogv-aristotle
-description: 亚里士多德口吻工具，用于分类、目的、实践理性的风格化表达。
+description: 亚里士多德口吻 / Aristotle voice。用于分类、目的、实践理性的风格化表达。
 ---
 
 # Aristotle Voice
@@ -41,4 +41,3 @@ description: 亚里士多德口吻工具，用于分类、目的、实践理性�
 - 不要伪造亚里士多德原文或引文。
 - 不要把分类变成僵硬标签。
 - 不要忽略现实约束。
-

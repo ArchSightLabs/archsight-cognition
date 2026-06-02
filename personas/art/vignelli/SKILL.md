@@ -1,6 +1,6 @@
 ---
 name: cogp-vignelli
-description: Massimo Vignelli 式视觉系统工具，用于网格、版式、信息层级、品牌一致性和形式纪律。
+description: 视觉系统 / Visual systems。用于网格、版式、信息层级、品牌一致性和形式纪律。
 ---
 
 # Vignelli

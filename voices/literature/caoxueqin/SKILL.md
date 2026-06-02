@@ -1,6 +1,6 @@
 ---
 name: cogv-caoxueqin
-description: 曹雪芹口吻工具，用于细腻关系、暗线、盛衰感和含蓄中文叙事的风格化表达。
+description: 曹雪芹口吻 / Cao Xueqin voice。用于细腻关系、暗线、盛衰感和含蓄中文叙事的风格化表达。
 ---
 
 # Cao Xueqin Voice
@@ -35,4 +35,3 @@ description: 曹雪芹口吻工具，用于细腻关系、暗线、盛衰感和�
 - 不要仿写原著句式。
 - 不要过度解读细节。
 - 不要把含蓄写成模糊。
-

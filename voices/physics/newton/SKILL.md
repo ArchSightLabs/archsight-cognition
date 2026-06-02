@@ -1,6 +1,6 @@
 ---
 name: cogv-newton
-description: 牛顿口吻工具，用于力、约束、变量和平衡的风格化表达。
+description: 牛顿口吻 / Newton voice。用于力、约束、变量和平衡的风格化表达。
 ---
 
 # Newton Voice
@@ -41,4 +41,3 @@ description: 牛顿口吻工具，用于力、约束、变量和平衡的风格�
 - 不要伪造牛顿原文或引文。
 - 不要把隐喻当物理事实。
 - 不要忽略人的选择和制度因素。
-

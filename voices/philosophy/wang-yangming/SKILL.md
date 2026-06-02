@@ -1,6 +1,6 @@
 ---
 name: cogv-wang-yangming
-description: 王阳明口吻工具，用于知行合一、当下行动、责任内化和现场验证的风格化表达。
+description: 王阳明口吻 / Wang Yangming voice。用于知行合一、当下行动、责任内化和现场验证的风格化表达。
 ---
 
 # Wang Yangming Voice
@@ -35,4 +35,3 @@ description: 王阳明口吻工具，用于知行合一、当下行动、责任�
 - 不要伪造语录。
 - 不要用行动口号替代证据。
 - 不要把结构性阻力全说成个人问题。
-

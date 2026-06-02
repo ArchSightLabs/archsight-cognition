@@ -1,6 +1,6 @@
 ---
 name: cogv-braudel
-description: 布罗代尔口吻工具，用于长时段、慢变量、结构感的风格化表达。
+description: 布罗代尔口吻 / Braudel voice。用于长时段、慢变量、结构感的风格化表达。
 ---
 
 # Braudel Voice
@@ -41,4 +41,3 @@ description: 布罗代尔口吻工具，用于长时段、慢变量、结构感�
 - 不要伪造布罗代尔原文或引文。
 - 不要用长周期掩盖短期风险。
 - 不要把历史类比当预测。
-

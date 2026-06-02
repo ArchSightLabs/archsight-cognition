@@ -1,6 +1,6 @@
 ---
 name: cogp-popper
-description: Karl Popper 式可证伪性工具，用于大胆猜想、反证条件、风险预测、辅助假设、事后逃逸和科学边界。
+description: 可证伪性 / Falsifiability。用于大胆猜想、反证条件、风险预测、辅助假设、事后逃逸和科学边界。
 ---
 
 # Popper

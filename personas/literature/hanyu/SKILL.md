@@ -1,6 +1,6 @@
 ---
 name: cogp-hanyu
-description: 韩愈式立论与去浮辞工具，用于清理辞藻堆叠、重建立论骨架、强化文章气势和论证方向。
+description: 立论与去浮辞 / Argument structure and plain force。用于清理辞藻堆叠、重建立论骨架、强化文章气势和论证方向。
 ---
 
 # Han Yu
@@ -46,4 +46,3 @@ description: 韩愈式立论与去浮辞工具，用于清理辞藻堆叠、重�
 - 不要把有力写成武断。
 - 不要把所有柔和表达都删掉。
 - 不要为了气势牺牲准确性和证据。
-

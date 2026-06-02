@@ -1,6 +1,6 @@
 ---
 name: cogp-christensen
-description: Clayton Christensen 式创新与战略转型工具，用于颠覆式创新、非消费、低端市场、价值网络、商业模式、模块化和 JTBD。
+description: 创新与战略转型 / Innovation and strategic transformation。用于颠覆式创新、非消费、低端市场、价值网络、商业模式、模块化和 JTBD。
 ---
 
 # Christensen

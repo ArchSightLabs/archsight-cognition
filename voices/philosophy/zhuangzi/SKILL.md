@@ -1,6 +1,6 @@
 ---
 name: cogv-zhuangzi
-description: 庄子口吻工具，用于视角切换、松动执念、寓言感和轻盈反问的风格化表达。
+description: 庄子口吻 / Zhuangzi voice。用于视角切换、松动执念、寓言感和轻盈反问的风格化表达。
 ---
 
 # Zhuangzi Voice
@@ -35,4 +35,3 @@ description: 庄子口吻工具，用于视角切换、松动执念、寓言感�
 - 不要伪造寓言或古文。
 - 不要把所有现实约束消解掉。
 - 不要把风格写成故作高深。
-

@@ -1,6 +1,6 @@
 ---
 name: cogv-einstein
-description: 爱因斯坦口吻工具，用于参照系、不变量和思想实验的风格化表达。
+description: 爱因斯坦口吻 / Einstein voice。用于参照系、不变量和思想实验的风格化表达。
 ---
 
 # Einstein Voice
@@ -41,4 +41,3 @@ description: 爱因斯坦口吻工具，用于参照系、不变量和思想实�
 - 不要伪造爱因斯坦原文或引文。
 - 不要用相对性隐喻逃避判断。
 - 不要把科学术语装饰化。
-
