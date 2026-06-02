@@ -1,6 +1,6 @@
 ---
 name: cogp-drucker
-description: 管理有效性 / Management effectiveness。用于外部结果、贡献、目标、责任、知识工作者、反馈分析和最小管理动作。
+description: 管理有效性（德鲁克） / Management effectiveness (Drucker)。用于外部结果、贡献、目标、责任、知识工作者、反馈分析和最小管理动作。
 ---
 
 # Drucker

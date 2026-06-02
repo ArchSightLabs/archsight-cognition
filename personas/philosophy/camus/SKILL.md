@@ -1,6 +1,6 @@
 ---
 name: cogp-camus
-description: 荒诞与行动 / Absurdity and action。用于意义、反抗、个体选择和精神韧性。
+description: 荒诞与行动（加缪） / Absurdity and action (Camus)。用于意义、反抗、个体选择和精神韧性。
 ---
 
 # Camus

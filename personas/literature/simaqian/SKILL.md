@@ -1,6 +1,6 @@
 ---
 name: cogp-simaqian
-description: 人物传记与历史因果 / Biographical historical causality。用于分析人物选择、成败结构、时代压力和叙事取舍。
+description: 人物传记与历史因果（司马迁） / Biographical historical causality (Sima Qian)。用于分析人物选择、成败结构、时代压力和叙事取舍。
 ---
 
 # Sima Qian

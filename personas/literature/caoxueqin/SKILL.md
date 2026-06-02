@@ -1,6 +1,6 @@
 ---
 name: cogp-caoxueqin
-description: 复杂关系与细节伏笔 / Complex relationships and narrative foreshadowing。用于分析关系网络、隐性权力、盛衰结构和叙事暗线。
+description: 复杂关系与细节伏笔（曹雪芹） / Complex relationships and narrative foreshadowing (Cao Xueqin)。用于分析关系网络、隐性权力、盛衰结构和叙事暗线。
 ---
 
 # Cao Xueqin

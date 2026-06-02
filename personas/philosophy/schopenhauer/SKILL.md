@@ -1,6 +1,6 @@
 ---
 name: cogp-schopenhauer
-description: 欲望与痛苦检查 / Desire and suffering critique。用于悲观风险、节制和预期纪律。
+description: 欲望与痛苦检查（叔本华） / Desire and suffering critique (Schopenhauer)。用于悲观风险、节制和预期纪律。
 ---
 
 # Schopenhauer

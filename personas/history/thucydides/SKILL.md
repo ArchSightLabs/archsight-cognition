@@ -1,6 +1,6 @@
 ---
 name: cogp-thucydides
-description: 历史战略 / Historical strategy。用于权力、恐惧、利益、联盟动态和冲突升级分析。
+description: 历史战略（修昔底德） / Historical strategy (Thucydides)。用于权力、恐惧、利益、联盟动态和冲突升级分析。
 ---
 
 # Thucydides

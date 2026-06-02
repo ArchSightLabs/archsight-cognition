@@ -1,6 +1,6 @@
 ---
 name: cogp-albers
-description: 色彩感知 / Color perception。用于颜色关系、对比、错觉、可读性和视觉稳定性。
+description: 色彩感知（阿尔伯斯） / Color perception (Albers)。用于颜色关系、对比、错觉、可读性和视觉稳定性。
 ---
 
 # Albers

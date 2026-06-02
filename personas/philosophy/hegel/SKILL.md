@@ -1,6 +1,6 @@
 ---
 name: cogp-hegel
-description: 辩证分析 / Dialectical analysis。用于矛盾、历史运动、结构演化和综合。
+description: 辩证分析（黑格尔） / Dialectical analysis (Hegel)。用于矛盾、历史运动、结构演化和综合。
 ---
 
 # Hegel

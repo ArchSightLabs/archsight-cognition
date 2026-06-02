@@ -1,6 +1,6 @@
 ---
 name: cogp-laozi
-description: 最小干预 / Minimal intervention。用于检查过度设计、强控制、反作用和柔性约束。
+description: 最小干预（老子） / Minimal intervention (Laozi)。用于检查过度设计、强控制、反作用和柔性约束。
 ---
 
 # Laozi

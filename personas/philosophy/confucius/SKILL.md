@@ -1,6 +1,6 @@
 ---
 name: cogp-confucius
-description: 礼序与关系责任 / Relational responsibility。用于审查角色边界、协作秩序、责任名分和组织伦理。
+description: 礼序与关系责任（孔子） / Relational responsibility (Confucius)。用于审查角色边界、协作秩序、责任名分和组织伦理。
 ---
 
 # Confucius

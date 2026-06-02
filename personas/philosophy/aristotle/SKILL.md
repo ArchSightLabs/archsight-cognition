@@ -1,6 +1,6 @@
 ---
 name: cogp-aristotle
-description: 分类与实践理性 / Classification and practical reason。用于目的、层次、结构化判断和落地。
+description: 分类与实践理性（亚里士多德） / Classification and practical reason (Aristotle)。用于目的、层次、结构化判断和落地。
 ---
 
 # Aristotle

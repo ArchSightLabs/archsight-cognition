@@ -1,6 +1,6 @@
 ---
 name: cogp-hanyu
-description: 立论与去浮辞 / Argument structure and plain force。用于清理辞藻堆叠、重建立论骨架、强化文章气势和论证方向。
+description: 立论与去浮辞（韩愈） / Argument structure and plain force (Han Yu)。用于清理辞藻堆叠、重建立论骨架、强化文章气势和论证方向。
 ---
 
 # Han Yu

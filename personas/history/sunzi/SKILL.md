@@ -1,6 +1,6 @@
 ---
 name: cogp-sunzi
-description: 战略态势 / Strategic positioning。用于胜前计算、虚实、势能、成本、信息差和低损耗行动。
+description: 战略态势（孙子） / Strategic positioning (Sunzi)。用于胜前计算、虚实、势能、成本、信息差和低损耗行动。
 ---
 
 # Sunzi

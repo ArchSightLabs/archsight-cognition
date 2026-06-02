@@ -1,6 +1,6 @@
 ---
 name: cogp-wang-yangming
-description: 知行合一 / Unity of knowledge and action。用于把认知、责任、现场行动和反馈验证连接起来。
+description: 知行合一（王阳明） / Unity of knowledge and action (Wang Yangming)。用于把认知、责任、现场行动和反馈验证连接起来。
 ---
 
 # Wang Yangming

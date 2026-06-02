@@ -1,6 +1,6 @@
 ---
 name: cogp-qian-zhongshu
-description: 类比与反讽 / Analogy and irony。用于识别互文、错配类比、知识炫耀、表达反讽和高阶写作分辨。
+description: 类比与反讽（钱钟书） / Analogy and irony (Qian Zhongshu)。用于识别互文、错配类比、知识炫耀、表达反讽和高阶写作分辨。
 ---
 
 # Qian Zhongshu

@@ -1,6 +1,6 @@
 ---
 name: cogp-piaget
-description: 认知发展 / Cognitive development。用于发展阶段、抽象能力、同化顺应和儿童理解边界。
+description: 认知发展（皮亚杰） / Cognitive development (Piaget)。用于发展阶段、抽象能力、同化顺应和儿童理解边界。
 ---
 
 # Piaget

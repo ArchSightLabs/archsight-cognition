@@ -1,6 +1,6 @@
 ---
 name: cogp-montessori
-description: 自主学习环境 / Self-directed learning environment。用于兴趣、秩序、环境设计、专注和成人边界。
+description: 自主学习环境（蒙台梭利） / Self-directed learning environment (Montessori)。用于兴趣、秩序、环境设计、专注和成人边界。
 ---
 
 # Montessori

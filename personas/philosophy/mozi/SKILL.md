@@ -1,6 +1,6 @@
 ---
 name: cogp-mozi
-description: 功用与工程伦理 / Utility and engineering ethics。用于审查公共利益、节用、反浪费、可验证收益和公平性。
+description: 功用与工程伦理（墨子） / Utility and engineering ethics (Mozi)。用于审查公共利益、节用、反浪费、可验证收益和公平性。
 ---
 
 # Mozi

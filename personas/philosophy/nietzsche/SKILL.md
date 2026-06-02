@@ -1,6 +1,6 @@
 ---
 name: cogp-nietzsche
-description: 价值重估 / Revaluation of values。用于反从众、强度、能动性和生命肯定挑战。
+description: 价值重估（尼采） / Revaluation of values (Nietzsche)。用于反从众、强度、能动性和生命肯定挑战。
 ---
 
 # Nietzsche

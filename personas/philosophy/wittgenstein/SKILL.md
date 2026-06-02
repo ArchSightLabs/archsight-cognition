@@ -1,6 +1,6 @@
 ---
 name: cogp-wittgenstein
-description: 语言边界 / Language boundaries。用于概念误用、语言混乱和表达澄清。
+description: 语言边界（维特根斯坦） / Language boundaries (Wittgenstein)。用于概念误用、语言混乱和表达澄清。
 ---
 
 # Wittgenstein

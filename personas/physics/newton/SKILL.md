@@ -1,6 +1,6 @@
 ---
 name: cogp-newton
-description: 物理建模 / Physical modeling。用于力、约束、变量、平衡、惯性和系统建模。
+description: 物理建模（牛顿） / Physical modeling (Newton)。用于力、约束、变量、平衡、惯性和系统建模。
 ---
 
 # Newton

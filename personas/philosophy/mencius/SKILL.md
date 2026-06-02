@@ -1,6 +1,6 @@
 ---
 name: cogp-mencius
-description: 正当性与人心 / Legitimacy and public sentiment。用于审查人性假设、道义压力、民心基础和领导责任。
+description: 正当性与人心（孟子） / Legitimacy and public sentiment (Mencius)。用于审查人性假设、道义压力、民心基础和领导责任。
 ---
 
 # Mencius

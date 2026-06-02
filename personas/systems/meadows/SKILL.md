@@ -1,6 +1,6 @@
 ---
 name: cogp-meadows
-description: 系统思维 / Systems thinking。用于库存/流量、反馈回路、延迟、非线性、副作用、杠杆点和复杂系统干预。
+description: 系统思维（梅多斯） / Systems thinking (Meadows)。用于库存/流量、反馈回路、延迟、非线性、副作用、杠杆点和复杂系统干预。
 ---
 
 # Meadows

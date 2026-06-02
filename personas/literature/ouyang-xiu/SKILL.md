@@ -1,6 +1,6 @@
 ---
 name: cogp-ouyang-xiu
-description: 平易文气 / Clear Chinese prose。用于把复杂观点写得平正、清楚、有秩序、有余味。
+description: 平易文气（欧阳修） / Clear Chinese prose (Ouyang Xiu)。用于把复杂观点写得平正、清楚、有秩序、有余味。
 ---
 
 # Ouyang Xiu

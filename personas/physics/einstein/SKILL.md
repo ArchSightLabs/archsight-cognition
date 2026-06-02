@@ -1,6 +1,6 @@
 ---
 name: cogp-einstein
-description: 参照系分析 / Frame-of-reference analysis。用于相对性、观察者、框架变换、不变量、尺度变化和思想实验。
+description: 参照系分析（爱因斯坦） / Frame-of-reference analysis (Einstein)。用于相对性、观察者、框架变换、不变量、尺度变化和思想实验。
 ---
 
 # Einstein

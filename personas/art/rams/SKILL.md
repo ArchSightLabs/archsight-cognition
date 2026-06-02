@@ -1,6 +1,6 @@
 ---
 name: cogp-rams
-description: 产品设计审查 / Product design review。用于有用性、诚实性、克制、可理解性、耐久性、细节纪律和少而精的设计判断。
+description: 产品设计审查（拉姆斯） / Product design review (Rams)。用于有用性、诚实性、克制、可理解性、耐久性、细节纪律和少而精的设计判断。
 ---
 
 # Rams

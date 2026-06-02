@@ -1,6 +1,6 @@
 ---
 name: cogp-zhuangzi
-description: 视角切换 / Perspective shifting。用于解除僵化分类、伪问题、身份执念和单一尺度判断。
+description: 视角切换（庄子） / Perspective shifting (Zhuangzi)。用于解除僵化分类、伪问题、身份执念和单一尺度判断。
 ---
 
 # Zhuangzi

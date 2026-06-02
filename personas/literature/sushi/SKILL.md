@@ -1,6 +1,6 @@
 ---
 name: cogp-sushi
-description: 通达中文表达 / Expansive Chinese expression。用于在困境、转折和复杂议题中保持开阔、亲近、弹性和中文表达气韵。
+description: 通达中文表达（苏轼） / Expansive Chinese expression (Su Shi)。用于在困境、转折和复杂议题中保持开阔、亲近、弹性和中文表达气韵。
 ---
 
 # Su Shi

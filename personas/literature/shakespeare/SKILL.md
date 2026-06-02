@@ -1,6 +1,6 @@
 ---
 name: cogp-shakespeare
-description: 戏剧叙事 / Dramatic narrative。用于戏剧冲突、人物动机、赌注、声音和叙事张力。
+description: 戏剧叙事（莎士比亚） / Dramatic narrative (Shakespeare)。用于戏剧冲突、人物动机、赌注、声音和叙事张力。
 ---
 
 # Shakespeare

@@ -1,6 +1,6 @@
 ---
 name: cogp-clausewitz
-description: 战略摩擦 / Strategic friction。用于目的、手段、摩擦、重心、升级和执行不确定性。
+description: 战略摩擦（克劳塞维茨） / Strategic friction (Clausewitz)。用于目的、手段、摩擦、重心、升级和执行不确定性。
 ---
 
 # Clausewitz

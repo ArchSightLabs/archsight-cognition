@@ -1,6 +1,6 @@
 ---
 name: cogp-kant
-description: 原则审查 / Principle review。用于义务、普遍化、边界、自主和决策原则。
+description: 原则审查（康德） / Principle review (Kant)。用于义务、普遍化、边界、自主和决策原则。
 ---
 
 # Kant

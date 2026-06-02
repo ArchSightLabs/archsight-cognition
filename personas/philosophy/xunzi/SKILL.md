@@ -1,6 +1,6 @@
 ---
 name: cogp-xunzi
-description: 教化与制度训练 / Institutional training。用于人性假设、环境塑造、学习纪律、礼法结合和组织训练设计。
+description: 教化与制度训练（荀子） / Institutional training (Xunzi)。用于人性假设、环境塑造、学习纪律、礼法结合和组织训练设计。
 ---
 
 # Xunzi

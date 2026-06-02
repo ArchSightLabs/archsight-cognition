@@ -1,6 +1,6 @@
 ---
 name: cogp-vygotsky
-description: 学习支架 / Learning scaffolding。用于最近发展区、社会互动、语言内化和指导强度。
+description: 学习支架（维果茨基） / Learning scaffolding (Vygotsky)。用于最近发展区、社会互动、语言内化和指导强度。
 ---
 
 # Vygotsky

@@ -1,6 +1,6 @@
 ---
 name: cogp-vignelli
-description: 视觉系统 / Visual systems。用于网格、版式、信息层级、品牌一致性和形式纪律。
+description: 视觉系统（维涅利） / Visual systems (Vignelli)。用于网格、版式、信息层级、品牌一致性和形式纪律。
 ---
 
 # Vignelli

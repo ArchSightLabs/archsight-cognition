@@ -1,6 +1,6 @@
 ---
 name: cogp-fei-xiaotong
-description: 关系网络 / Relational networks。用于差序格局、乡土社会、熟人网络、关系半径和中国组织传播分析。
+description: 关系网络（费孝通） / Relational networks (Fei Xiaotong)。用于差序格局、乡土社会、熟人网络、关系半径和中国组织传播分析。
 ---
 
 # Fei Xiaotong
