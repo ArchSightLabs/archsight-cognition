@@ -3,8 +3,56 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const root = process.cwd();
+const root = fs.realpathSync(process.cwd());
 const errors = [];
+
+function isInsideRoot(targetPath) {
+  const relative = path.relative(root, targetPath);
+  return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function assertInsideRoot(targetPath) {
+  if (!isInsideRoot(targetPath)) {
+    throw new Error(`Path traversal detected: ${targetPath}`);
+  }
+}
+
+function resolveCandidatePath(targetPath) {
+  const resolved = path.resolve(targetPath);
+  assertInsideRoot(resolved);
+  return resolved;
+}
+
+function resolveExistingPath(targetPath) {
+  const resolved = resolveCandidatePath(targetPath);
+  const realPath = fs.realpathSync(resolved);
+  assertInsideRoot(realPath);
+  return realPath;
+}
+
+function safeExistsSync(targetPath) {
+  const resolved = resolveCandidatePath(targetPath);
+  try {
+    const realPath = fs.realpathSync(resolved);
+    assertInsideRoot(realPath);
+    return true;
+  } catch (error) {
+    if (error?.code === "ENOENT" || error?.code === "ENOTDIR") {
+      return false;
+    }
+    throw error;
+  }
+}
+
+function safeReadFileSync(targetPath, encoding) {
+  const filePath = resolveExistingPath(targetPath);
+  return fs.readFileSync(filePath, encoding);
+}
+
+function safeReaddirSync(targetPath, options) {
+  const dirPath = resolveExistingPath(targetPath);
+  return fs.readdirSync(dirPath, options);
+}
 
 const skillRules = [
   {
@@ -80,8 +128,8 @@ const methodReferenceFiles = [
 const ignoredDirs = new Set([".git", ".omx", "node_modules"]);
 
 function walk(dir, predicate, files = []) {
-  if (!fs.existsSync(dir)) return files;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  if (!safeExistsSync(dir)) return files;
+  for (const entry of safeReaddirSync(dir, { withFileTypes: true })) {
     if (ignoredDirs.has(entry.name)) continue;
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
@@ -104,21 +152,24 @@ function parseFrontmatter(raw, file) {
     return null;
   }
 
-  const fields = {};
+  const fields = Object.create(null);
   for (const line of match[1].split(/\r?\n/)) {
     const field = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (field) fields[field[1]] = field[2].trim();
+    if (field) {
+      const key = field[1];
+      if (key !== "__proto__" && key !== "constructor") {
+        fields[key] = field[2].trim();
+      }
+    }
   }
   return fields;
 }
 
 function hasSection(raw, section) {
-  const sectionPattern = new RegExp(`^##\\s+${escapeRegExp(section)}\\s*$`, "m");
-  return sectionPattern.test(raw);
-}
-
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return raw.split(/\r?\n/).some((line) => {
+    const trimmed = line.trim();
+    return trimmed.startsWith("##") && trimmed.slice(2).trim() === section;
+  });
 }
 
 function assertSections(raw, file, sections) {
@@ -145,7 +196,7 @@ function assertNoCosplay(raw, file) {
 
 function validateSkill(filePath, rule) {
   const file = rel(filePath);
-  const raw = fs.readFileSync(filePath, "utf8");
+  const raw = safeReadFileSync(filePath, "utf8");
   const frontmatter = parseFrontmatter(raw, file);
   if (frontmatter) {
     if (!frontmatter.name) errors.push(`${file}: missing name`);
@@ -171,7 +222,7 @@ function validatePublicSkillName(file, skillName) {
 function validateMethodReferences(skillDir, file) {
   for (const reference of methodReferenceFiles) {
     const fullPath = path.join(skillDir, reference);
-    if (!fs.existsSync(fullPath)) {
+    if (!safeExistsSync(fullPath)) {
       errors.push(`${file}: missing method reference ${reference.replaceAll(path.sep, "/")}`);
     }
   }
@@ -179,11 +230,11 @@ function validateMethodReferences(skillDir, file) {
 
 function validateOptionalEvals(skillDir, file, skillName) {
   const evalsPath = path.join(skillDir, "evals", "evals.json");
-  if (!fs.existsSync(evalsPath)) return;
+  if (!safeExistsSync(evalsPath)) return;
 
   let evals;
   try {
-    evals = JSON.parse(fs.readFileSync(evalsPath, "utf8"));
+    evals = JSON.parse(safeReadFileSync(evalsPath, "utf8"));
   } catch (error) {
     errors.push(`${rel(evalsPath)}: invalid JSON (${error.message})`);
     return;
@@ -209,11 +260,11 @@ function validateOptionalEvals(skillDir, file, skillName) {
 function validateTemplate(template) {
   const fullPath = path.join(root, template.file);
   const file = rel(fullPath);
-  if (!fs.existsSync(fullPath)) {
+  if (!safeExistsSync(fullPath)) {
     errors.push(`${file}: missing template`);
     return;
   }
-  const raw = fs.readFileSync(fullPath, "utf8");
+  const raw = safeReadFileSync(fullPath, "utf8");
   assertSections(raw, file, template.sections);
   assertNoCosplay(raw, file);
 }
