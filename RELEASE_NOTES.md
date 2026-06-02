@@ -1,5 +1,43 @@
 # ArchSight Cognition 发布说明
 
+## v2.4.0
+
+发布日期：2026-06-02
+
+这是一次公共发现和跨 host 上架增强版本，重点是让 ArchSight Cognition 更容易被 GitHub、npm、skills CLI、Claude marketplace、Gemini CLI 兼容入口和 Antigravity/agy 用户发现。
+
+### 公共发现入口
+
+- `skills/` 公共包装入口从 6 个扩展到 14 个，新增结构化思考、多视角评审、结构化分歧、写作评审、设计评审、产品战略、技术领导和中国思想/中文表达入口。
+- 公共 `skills/*/SKILL.md` 的 `Output` 模板改为用户语言自适应；中文请求默认使用中文标题，避免英文前缀污染中文输出。
+- `skills/README.md`、中文 README 和英文 README 已同步说明：`skills/` 是公共发现和快速上手包装，不替代 `personas/`、`methods/`、`teams/`、`deliverables/`、`voices/` 和 `debates/` 的 canonical 工具。
+
+### Antigravity / Gemini 口径
+
+- 已验证支持 Antigravity 2.0 安装，推荐新 Google CLI 用户优先使用 `npx @archsight/cognition install antigravity --global`。
+- `gemini-extension.json` 继续保留，用作 Gemini CLI extension 兼容入口、Gallery/第三方索引信号和仍在使用 Gemini CLI 的环境入口。
+- `adapters/gemini/README.md` 已调整为兼容适配说明，`adapters/antigravity/README.md` 明确 Antigravity 2.0 支持。
+
+### 上架元数据
+
+- `package.json`、Claude plugin manifest、Gemini extension manifest 和公共发现文档已同步新的 description、keywords 和 version。
+- GitHub About 建议同步为 20 个 topics，并加入 `cognition` 作为项目身份词。
+- `README_EN.md` 保留英文发现层，同时说明默认中文 README 是项目特色而不是缺失。
+
+### 兼容性
+
+- 这是 minor 版本新增公共发现入口和 host 文档口径，不要求已有 `cogp-*`、`cogm-*`、`cogt-*`、`cogx-*`、`cogv-*` 或 `cogd-*` 用户迁移。
+- npm 包仍然只是 Markdown skills 和安装器的分发包，不引入新的运行时依赖。
+
+### 验证
+
+- 已执行 `npm run validate:skills`。
+- 已执行 `npx skills add . --list`，确认发现 14 个公共 skills。
+- 已执行 `claude plugin validate .`。
+- 已执行 JSON manifest parse。
+- 已执行 `npm pack --dry-run`。
+- 已执行 `git diff --check`。
+
 ## v2.3.0
 
 发布日期：2026-06-02
